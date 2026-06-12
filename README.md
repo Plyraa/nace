@@ -10,6 +10,7 @@ python -m pip install -r requirements.txt
 run.cmd        # Windows
 # or: bash run.sh
 python resolver.py "oto galericisiyim"
+python demo_ui.py  # optional local UI at http://127.0.0.1:8000
 ```
 
 Pipeline: `scripts/01_ingest.py` cleans the workbook, `scripts/02_generate_aliases.py` builds aliases, `scripts/03_validate.py` samples LLM validation, and `eval/run_eval.py` reports metrics.
