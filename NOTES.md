@@ -101,8 +101,8 @@ Gold NACE listeleri alias tablosundan değil, temizlenmiş resmi mapping'den `me
 Son keyless koşu:
 
 - Top-1 NACE accuracy: `0.8714`
-- Top-3 NACE accuracy: `0.9000`
-- Bucket accuracy: `0.7571`
+- Top-3 NACE accuracy: `0.8857`
+- Bucket accuracy: `0.8000`
 - LLM fallback: `10 / 70`
 
 Kategori bazında top-1:

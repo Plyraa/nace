@@ -20,6 +20,36 @@ from config import (
 from llm_client import MissingLLMCache, call_json
 from utils import BUCKETS, bucket_for_code, load_bucket_maps, normalize_text
 
+EXACT_CODE_PRIORS = {
+    "nalbur": {
+        "47.52.02": 0.080,
+        "46.84.01": 0.005,
+        "47.52.06": 0.010,
+        "46.84.02": -0.055,
+        "46.84.05": -0.040,
+        "46.15.02": -0.025,
+    },
+    "hırdavat": {
+        "47.52.02": 0.070,
+        "46.84.01": 0.040,
+        "47.52.06": 0.010,
+        "46.84.02": -0.040,
+    },
+    "hırdavatçı": {
+        "47.52.02": 0.070,
+        "46.84.01": 0.040,
+        "47.52.06": 0.010,
+        "46.84.02": -0.040,
+    },
+    "bakkal": {
+        "47.11.01": 0.080,
+        "47.11.05": 0.045,
+        "47.11.99": 0.035,
+        "11.07.03": -0.050,
+        "35.30.22": -0.050,
+    },
+}
+
 
 @dataclass
 class Candidate:
@@ -59,7 +89,9 @@ def _aggregate(rows: list[Candidate], k: int) -> list[Candidate]:
 def _rows_to_candidates(rows: pd.DataFrame, score: float | None, match_type: str, k: int) -> list[Candidate]:
     candidates = []
     for _, row in rows.iterrows():
-        if score is not None:
+        if "score_override" in rows.columns and pd.notna(row.get("score_override")):
+            row_score = float(row["score_override"])
+        elif score is not None:
             row_score = float(score) * (0.85 + 0.15 * float(row["confidence"]))
         else:
             row_score = float(row["confidence"])
@@ -73,6 +105,19 @@ def _rows_to_candidates(rows: pd.DataFrame, score: float | None, match_type: str
             )
         )
     return _aggregate(candidates, k)
+
+
+def _score_exact_row(row: pd.Series, norm: str) -> float:
+    score = EXACT_SCORE * (0.85 + 0.15 * float(row["confidence"]))
+    label = normalize_text(row["nace_label"])
+
+    if norm and norm in label:
+        score += 0.025
+    if "aracı" in label or "aracılar" in label:
+        score -= 0.040
+    score += EXACT_CODE_PRIORS.get(norm, {}).get(row["nace_code"], 0.0)
+
+    return round(max(0.0, min(score, 0.995)), 4)
 
 
 def _shortlist(text: str, limit: int = 30) -> pd.DataFrame:
@@ -168,8 +213,10 @@ def resolve(text: str, k: int = 3) -> list[Candidate]:
 
     exact_rows = aliases[aliases["normalized_alias"].eq(norm)]
     if not exact_rows.empty:
-        exact_rows = exact_rows.sort_values("confidence", ascending=False)
-        return _rows_to_candidates(exact_rows, EXACT_SCORE, "exact", k)
+        exact_rows = exact_rows.copy()
+        exact_rows["score_override"] = exact_rows.apply(lambda row: _score_exact_row(row, norm), axis=1)
+        exact_rows = exact_rows.sort_values(["score_override", "confidence"], ascending=False)
+        return _rows_to_candidates(exact_rows, None, "exact", k)
 
     fuzzy_rows: list[Candidate] = []
     matches = process.extract(norm, alias_choices, scorer=fuzz.token_set_ratio, limit=20)

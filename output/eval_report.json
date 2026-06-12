@@ -1,8 +1,8 @@
 {
   "cases": 70,
   "top1_nace_accuracy": 0.8714,
-  "top3_nace_accuracy": 0.9,
-  "bucket_accuracy": 0.7571,
+  "top3_nace_accuracy": 0.8857,
+  "bucket_accuracy": 0.8,
   "llm_fallback_top1_count": 10,
   "top1_match_type_counts": {
     "exact": 49,
@@ -13,14 +13,14 @@
     "ambiguous": {
       "n": 10,
       "top1": 0.8,
-      "top3": 0.9,
+      "top3": 0.8,
       "bucket": 0.6
     },
     "easy": {
       "n": 20,
       "top1": 1.0,
       "top3": 1.0,
-      "bucket": 0.85
+      "bucket": 0.95
     },
     "long_tail": {
       "n": 20,
@@ -38,15 +38,15 @@
       "n": 10,
       "top1": 0.8,
       "top3": 0.8,
-      "bucket": 0.5
+      "bucket": 0.6
     }
   },
   "by_match_type": {
     "exact": {
       "n": 49,
       "top1": 0.9388,
-      "top3": 0.9592,
-      "bucket": 0.7551
+      "top3": 0.9388,
+      "bucket": 0.8163
     },
     "fuzzy": {
       "n": 11,

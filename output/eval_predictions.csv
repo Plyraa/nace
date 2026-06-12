@@ -1,53 +1,53 @@
 utterance,category,gold_bucket,top1_nace,top3_nace,bucket_hit,pred_code,pred_bucket,score,match_type,acceptable_nace_codes
-bakkal,easy,food,True,True,True,11.07.03,food,0.9594,exact,11.07.03|35.30.22|46.17.01|46.34.03|46.36.03|46.38.03|46.38.04|46.38.05|46.38.99|46.39.03|47.11.01|47.11.05|47.11.99|47.21.02|47.25.01|47.25.03|47.26.01|47.26.02|47.27.03|47.27.08|47.27.99|47.62.03|56.11.12
-berber,easy,services,True,True,True,96.21.02,services,0.9594,exact,96.21.02
+bakkal,easy,food,True,True,True,47.11.01,food,0.995,exact,11.07.03|35.30.22|46.17.01|46.34.03|46.36.03|46.38.03|46.38.04|46.38.05|46.38.99|46.39.03|47.11.01|47.11.05|47.11.99|47.21.02|47.25.01|47.25.03|47.26.01|47.26.02|47.27.03|47.27.08|47.27.99|47.62.03|56.11.12
+berber,easy,services,True,True,True,96.21.02,services,0.9844,exact,96.21.02
 kasap,easy,food,True,True,True,10.11.01,food,0.9594,exact,10.11.01|10.12.01|10.12.02|10.13.01|10.13.02|10.13.03|10.13.04|32.99.99|46.32.01|46.32.02|46.32.03|46.32.04|47.22.02|47.22.05|47.22.06
-lokanta,easy,food,True,True,True,56.11.01,food,0.9594,exact,56.11.01|56.11.02|56.11.03|56.11.05|56.11.06|56.11.09|56.11.11|56.11.13|56.11.90|56.21.01|56.22.02|56.22.90
-manav,easy,food,True,True,True,47.21.01,food,0.9594,exact,47.21.01
-fırın,easy,food,True,True,True,10.61.09,food,0.9594,exact,10.61.09|10.71.02|10.71.04|46.36.02|47.24.01|56.11.04
-dondurmacı,easy,food,True,True,True,10.52.01,food,0.9594,exact,10.52.01|10.52.02|46.33.04|47.27.02|56.11.10
-kırtasiye,easy,trade,True,True,False,20.59.05,manufacturing,0.9594,exact,20.59.05|25.99.04|32.99.04|32.99.08|46.49.03|46.49.24|47.62.01|47.78.08
-nalbur,easy,trade,True,True,True,46.15.02,trade,0.9594,exact,46.15.02|46.84.01|46.84.02|46.84.05|47.52.02|47.52.06
-emlakçı,easy,services,True,True,True,68.31.01,services,0.9594,exact,68.31.01|68.32.01|68.32.02|68.32.03|68.32.04|81.10.01
-taksi,easy,logistics,True,True,True,49.33.01,logistics,0.9594,exact,49.33.01
+lokanta,easy,food,True,True,True,56.11.01,food,0.9844,exact,56.11.01|56.11.02|56.11.03|56.11.05|56.11.06|56.11.09|56.11.11|56.11.13|56.11.90|56.21.01|56.22.02|56.22.90
+manav,easy,food,True,True,True,47.21.01,food,0.9844,exact,47.21.01
+fırın,easy,food,True,True,True,10.61.09,food,0.9844,exact,10.61.09|10.71.02|10.71.04|46.36.02|47.24.01|56.11.04
+dondurmacı,easy,food,True,True,True,56.11.10,food,0.9844,exact,10.52.01|10.52.02|46.33.04|47.27.02|56.11.10
+kırtasiye,easy,trade,True,True,True,46.49.03,trade,0.9844,exact,20.59.05|25.99.04|32.99.04|32.99.08|46.49.03|46.49.24|47.62.01|47.78.08
+nalbur,easy,trade,True,True,True,47.52.02,trade,0.995,exact,46.15.02|46.84.01|46.84.02|46.84.05|47.52.02|47.52.06
+emlakçı,easy,services,True,True,True,68.32.02,services,0.9594,exact,68.31.01|68.32.01|68.32.02|68.32.03|68.32.04|81.10.01
+taksi,easy,logistics,True,True,True,49.33.01,logistics,0.9844,exact,49.33.01
 nakliyeci,easy,logistics,True,True,True,49.41.01,logistics,0.9594,exact,49.41.01|49.41.02|49.41.03|49.41.05|49.41.06|49.41.08|49.41.09|49.41.10|49.41.90|49.42.01
 çiçekçi,easy,trade,True,True,False,01.19.02,agriculture,0.9594,exact,01.19.02|46.21.08|46.22.01|47.76.02|47.78.26
-kuaför,easy,services,True,True,True,96.21.01,services,0.9594,exact,96.21.01
-terzi,easy,textile,True,True,True,14.10.05,textile,0.9594,exact,14.10.05|14.21.04|95.29.02
-marangoz,easy,manufacturing,True,True,True,16.11.02,manufacturing,0.9594,exact,16.11.02|16.11.03|16.11.04|16.21.01|16.21.02|16.22.01|16.23.99|16.24.02|16.24.90|16.25.00|16.27.00|16.28.01|16.28.02|16.28.03|16.28.04|16.28.05|16.28.06|16.28.99|25.63.03|32.99.07|32.99.11|32.99.16|46.49.05|46.49.25|46.83.14|46.83.20|47.52.17|47.52.22|47.55.04
+kuaför,easy,services,True,True,True,96.21.01,services,0.9844,exact,96.21.01
+terzi,easy,textile,True,True,True,14.21.04,textile,0.9844,exact,14.10.05|14.21.04|95.29.02
+marangoz,easy,manufacturing,True,True,True,16.23.99,manufacturing,0.9844,exact,16.11.02|16.11.03|16.11.04|16.21.01|16.21.02|16.22.01|16.23.99|16.24.02|16.24.90|16.25.00|16.27.00|16.28.01|16.28.02|16.28.03|16.28.04|16.28.05|16.28.06|16.28.99|25.63.03|32.99.07|32.99.11|32.99.16|46.49.05|46.49.25|46.83.14|46.83.20|47.52.17|47.52.22|47.55.04
 mobilyacı,easy,manufacturing,True,True,True,31.00.01,manufacturing,0.9418,exact,31.00.01|31.00.02|31.00.03|31.00.04|31.00.07|31.00.90|43.32.01
-kuyumcu,easy,trade,True,True,False,08.99.03,other,0.9594,exact,08.99.03|24.41.16|24.41.17|24.41.18|24.41.19|32.12.01|32.12.04|32.12.90|32.99.03|46.48.01|46.82.02|47.77.01|47.77.02|47.77.05|95.25.02
+kuyumcu,easy,trade,True,True,True,47.77.01,trade,0.9844,exact,08.99.03|24.41.16|24.41.17|24.41.18|24.41.19|32.12.01|32.12.04|32.12.90|32.99.03|46.48.01|46.82.02|47.77.01|47.77.02|47.77.05|95.25.02
 oto yıkama,easy,services,True,True,True,95.31.03,services,0.9594,exact,95.31.03
 oto elektrik,easy,services,True,True,True,95.31.06,services,0.9594,exact,95.31.06
-bakkalım,suffix,food,True,True,True,11.07.03,food,0.9594,exact,11.07.03|35.30.22|46.17.01|46.34.03|46.36.03|46.38.03|46.38.04|46.38.05|46.38.99|46.39.03|47.11.01|47.11.05|47.11.99|47.21.02|47.25.01|47.25.03|47.26.01|47.26.02|47.27.03|47.27.08|47.27.99|47.62.03|56.11.12
-lokantacıyım,suffix,food,True,True,True,56.11.01,food,0.9594,exact,56.11.01|56.11.02|56.11.03|56.11.05|56.11.06|56.11.09|56.11.11|56.11.13|56.11.90|56.21.01|56.22.02|56.22.90
+bakkalım,suffix,food,True,True,True,47.11.01,food,0.995,exact,11.07.03|35.30.22|46.17.01|46.34.03|46.36.03|46.38.03|46.38.04|46.38.05|46.38.99|46.39.03|47.11.01|47.11.05|47.11.99|47.21.02|47.25.01|47.25.03|47.26.01|47.26.02|47.27.03|47.27.08|47.27.99|47.62.03|56.11.12
+lokantacıyım,suffix,food,True,True,True,56.11.01,food,0.9844,exact,56.11.01|56.11.02|56.11.03|56.11.05|56.11.06|56.11.09|56.11.11|56.11.13|56.11.90|56.21.01|56.22.02|56.22.90
 kasabım,suffix,food,True,True,True,10.11.01,food,0.9418,exact,10.11.01|10.12.01|10.12.02|10.13.01|10.13.02|10.13.03|10.13.04|32.99.99|46.32.01|46.32.02|46.32.03|46.32.04|47.22.02|47.22.05|47.22.06
-berberim,suffix,services,True,True,True,96.21.02,services,0.9594,exact,96.21.02
-manavım,suffix,food,True,True,True,47.21.01,food,0.9594,exact,47.21.01
+berberim,suffix,services,True,True,True,96.21.02,services,0.9844,exact,96.21.02
+manavım,suffix,food,True,True,True,47.21.01,food,0.9844,exact,47.21.01
 oto galericisiyim,suffix,trade,True,True,True,47.81.14,trade,0.9594,exact,47.81.14|47.81.90|49.32.04|49.33.02|77.11.01|77.12.01
 nakliyeciyim,suffix,logistics,True,True,True,49.41.01,logistics,0.9594,exact,49.41.01|49.41.02|49.41.03|49.41.05|49.41.06|49.41.08|49.41.09|49.41.10|49.41.90|49.42.01
-emlakçıyım,suffix,services,True,True,True,68.31.01,services,0.9594,exact,68.31.01|68.32.01|68.32.02|68.32.03|68.32.04|81.10.01
-çiçekçiyim,suffix,trade,True,True,False,01.19.02,agriculture,0.9594,exact,01.19.02|46.21.08|46.22.01|47.76.02|47.78.26
+emlakçıyım,suffix,services,True,True,True,68.32.02,services,0.9594,exact,68.31.01|68.32.01|68.32.02|68.32.03|68.32.04|81.10.01
+çiçekçiyim,suffix,trade,True,True,False,01.19.02,agriculture,0.9844,exact,01.19.02|46.21.08|46.22.01|47.76.02|47.78.26
 terziyim,suffix,textile,False,False,True,13.30.06,textile,0.6,llm,14.10.05|14.21.04|95.29.02
 galerici,ambiguous,trade,True,True,True,47.81.14,trade,0.9594,exact,47.81.14|47.81.90|49.32.04|49.33.02|77.11.01|77.12.01
-tatlıcı,ambiguous,food,True,True,True,10.71.01,food,0.9594,exact,10.71.01|10.71.03|10.72.01|10.72.02|56.11.08|56.30.08
+tatlıcı,ambiguous,food,True,True,True,56.11.08,food,0.9844,exact,10.71.01|10.71.03|10.72.01|10.72.02|56.11.08|56.30.08
 servisçi,ambiguous,logistics,True,True,True,49.31.09,logistics,0.9594,exact,49.31.09|49.31.10
 tamirci,ambiguous,services,True,True,False,33.12.09,manufacturing,0.9594,exact,33.12.09|71.20.12|95.31.01
-pazarcı,ambiguous,trade,False,True,False,47.11.03,food,0.9418,exact,47.12.03|47.52.24|47.52.25|47.53.04|47.55.12|47.64.09|47.75.02
+pazarcı,ambiguous,trade,False,False,False,47.11.03,food,0.9418,exact,47.12.03|47.52.24|47.52.25|47.53.04|47.55.12|47.64.09|47.75.02
 bayi işletiyorum,ambiguous,food,True,True,True,11.07.03,food,0.9594,exact,11.07.03|35.30.22|46.17.01|46.34.03|46.36.03|46.38.03|46.38.04|46.38.05|46.38.99|46.39.03|47.11.01|47.11.05|47.11.99|47.21.02|47.25.01|47.25.03|47.26.01|47.26.02|47.27.03|47.27.08|47.27.99|47.62.03|56.11.12
 plastikçi,ambiguous,manufacturing,True,True,False,15.12.10,textile,0.9418,exact,15.12.10|19.20.17|20.17.01|22.12.01|22.12.02|22.12.03|22.12.04|22.12.05|22.12.06|22.12.07|22.12.10|22.12.11|22.21.03|22.21.04|22.22.43|22.24.02|22.24.03|22.26.01|22.26.02|22.26.03|22.26.04|22.26.05|22.26.06|22.26.99|30.11.05|31.00.09|32.91.01|32.91.99|32.99.01|46.49.17|46.86.01|46.86.02
 boyacı,ambiguous,manufacturing,False,False,False,13.30.01,textile,0.9594,exact,20.11.01|20.12.01|20.12.02|20.13.02|20.13.03|20.13.90|20.13.99|20.14.00|20.16.01|20.16.02|20.16.03|20.16.04|20.16.05|20.30.11|20.30.12|20.30.15|20.30.16|20.30.17|20.30.90|20.59.01|20.59.02|20.59.04|20.59.08|20.59.09|20.59.10|20.59.12|20.59.15|20.59.17|20.59.20|20.59.99|32.99.17
 tesisatçı,ambiguous,construction,True,True,True,43.22.03,construction,0.9594,exact,43.22.03|43.22.05
 servis aracı işletiyorum,ambiguous,logistics,True,True,True,49.31.09,logistics,0.9594,exact,49.31.09|49.31.10
-kuafor,typo,services,True,True,True,96.21.01,services,0.9594,exact,96.21.01
+kuafor,typo,services,True,True,True,96.21.01,services,0.9844,exact,96.21.01
 börber,typo,services,False,False,True,96.99.11,services,1.0,llm,96.21.02
-kirtasiye,typo,trade,True,True,False,20.59.05,manufacturing,0.9594,exact,20.59.05|25.99.04|32.99.04|32.99.08|46.49.03|46.49.24|47.62.01|47.78.08
-insaatciyim,typo,construction,True,True,False,08.11.04,other,0.9594,exact,08.11.04|23.70.01|38.11.02|41.00.01|41.00.02|41.00.03|41.00.04|42.11.02|43.11.01|43.12.00|43.23.01|43.23.02|43.24.99|43.31.01|43.32.03|43.33.01|43.33.99|43.34.01|43.34.03|43.35.00|43.42.02|43.42.03|43.50.02|43.50.05|43.91.00|43.99.05|43.99.07|43.99.13|43.99.99|46.83.07|46.83.09|47.52.19
+kirtasiye,typo,trade,True,True,True,46.49.03,trade,0.9844,exact,20.59.05|25.99.04|32.99.04|32.99.08|46.49.03|46.49.24|47.62.01|47.78.08
+insaatciyim,typo,construction,True,True,False,38.11.02,services,0.9844,exact,08.11.04|23.70.01|38.11.02|41.00.01|41.00.02|41.00.03|41.00.04|42.11.02|43.11.01|43.12.00|43.23.01|43.23.02|43.24.99|43.31.01|43.32.03|43.33.01|43.33.99|43.34.01|43.34.03|43.35.00|43.42.02|43.42.03|43.50.02|43.50.05|43.91.00|43.99.05|43.99.07|43.99.13|43.99.99|46.83.07|46.83.09|47.52.19
 pasta satiyorum,typo,food,True,True,True,10.71.01,food,0.8256,fuzzy,10.71.01|10.71.03|10.72.01|10.72.02|56.11.08|56.30.08
 oto galericiyim,typo,trade,True,True,True,47.81.14,trade,0.9594,exact,47.81.14|47.81.90|49.32.04|49.33.02|77.11.01|77.12.01
 elektrikci,typo,construction,False,False,False,23.43.01,manufacturing,0.9418,exact,35.11.00|35.12.00|43.21.01
 cicek dukkanim var,typo,trade,True,True,False,01.19.02,agriculture,0.8256,fuzzy,01.19.02|46.21.08|46.22.01|47.76.02|47.78.26
-tuhafiye,typo,textile,True,True,True,13.96.02,textile,0.9594,exact,13.96.02|13.96.04|13.96.07|13.99.03|13.99.06|14.29.04|15.12.11|32.99.02|46.21.07|46.41.02|46.41.04|46.42.03|46.42.06|46.86.04|47.51.02|47.51.04|47.51.90|47.71.02|47.71.05|47.78.16
+tuhafiye,typo,textile,True,True,True,46.41.02,textile,0.9844,exact,13.96.02|13.96.04|13.96.07|13.99.03|13.99.06|14.29.04|15.12.11|32.99.02|46.21.07|46.41.02|46.41.04|46.42.03|46.42.06|46.86.04|47.51.02|47.51.04|47.51.90|47.71.02|47.71.05|47.78.16
 ayakkabici,typo,textile,True,True,False,96.99.11,services,0.85,llm,15.20.06|15.20.07|15.20.15|15.20.17|15.20.18|15.20.19|46.42.02|46.42.08|47.63.07|47.72.01|47.72.06|95.23.01|96.99.11
 drone ile düğün çekiyorum,long_tail,services,True,True,True,74.20.27,services,0.95,llm,46.43.10|47.78.22|74.20.22|74.20.25|74.20.26|74.20.27|74.20.29|74.20.90
 evden pasta yapıp satıyorum,long_tail,food,True,True,True,10.71.01,food,0.8256,fuzzy,10.71.01|10.71.03|10.72.01|10.72.02|56.11.08|56.30.08
@@ -64,8 +64,8 @@ arı kovanım var bal satıyorum,long_tail,agriculture,True,True,True,01.48.01,a
 köy tavuğu yumurta satıyorum,long_tail,agriculture,True,True,True,01.47.03,agriculture,0.9,llm,01.47.01|01.47.02|01.47.03|01.48.99|10.12.04|46.11.02|46.23.02|47.76.05
 ikinci el eşya alıp satıyorum,long_tail,trade,True,True,True,47.79.04,trade,0.8256,fuzzy,47.79.04|47.79.90|47.92.00|77.22.99
 halı yıkama dükkanım var,long_tail,services,True,True,True,96.10.04,services,0.9594,exact,96.10.04
-kuru temizleme yapıyorum,long_tail,services,True,True,True,96.10.01,services,0.9594,exact,96.10.01|96.10.02|96.10.03
+kuru temizleme yapıyorum,long_tail,services,True,True,True,96.10.03,services,0.9844,exact,96.10.01|96.10.02|96.10.03
 düğün salonu işletiyorum,long_tail,services,True,True,True,93.29.02,services,0.9594,exact,93.29.02|96.99.14|96.99.15
-internet kafe işletiyorum,long_tail,services,True,True,False,61.90.05,technology,0.9594,exact,61.90.05|93.29.03|93.29.08|93.29.11
+internet kafe işletiyorum,long_tail,services,True,True,False,61.90.05,technology,0.9844,exact,61.90.05|93.29.03|93.29.08|93.29.11
 oto kurtarıcı çekici,long_tail,logistics,True,True,True,52.21.04,logistics,0.8256,fuzzy,52.21.04
 akaryakıt istasyonum var,long_tail,trade,True,True,False,20.51.24,manufacturing,0.8256,fuzzy,20.51.24|46.81.01|47.30.01|47.78.09
