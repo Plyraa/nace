@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"C.17\", \"meslek_tanim\": \"Telekomünikasyon cihazları ticareti\", \"sektor_tanim\": \"ELEKTRİK, ELEKTRONİK, BİLGİSAYAR\", \"nace_examples\": [{\"nace_code\": \"46.50.02\", \"nace_label\": \"Telekomünikasyon ekipman ve parçalarının toptan ticareti (telefon ve iletişim ekipmanları dahil)\"}, {\"nace_code\": \"47.40.02\", \"nace_label\": \"Telekomünikasyon teçhizatının perakende ticareti\"}, {\"nace_code\": \"61.20.04\", \"nace_label\": \"Telekomünikasyon ürünlerinin yeniden satışı ve telekomünikasyon için aracılık hizmeti faaliyetleri\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"telekom cihazları ticareti\",\n    \"telekom ekipman ticareti\",\n    \"telefoncu\",\n    \"iletişim cihazları satışı\",\n    \"telekom ürünleri toptan\",\n    \"telekom perakende\",\n    \"telekom aletleri satıyorum\",\n    \"telekom ekipmanları ticareti\",\n    \"telekom ürünleri satışı\",\n    \"telekom cihazları toptan\",\n    \"telekom teçhizatı ticareti\",\n    \"iletişim ekipmanları ticareti\",\n    \"telekom aksesuarları ticareti\",\n    \"telekom cihazları perakende\",\n    \"telekom ürünleri toptancısı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "telekom cihazları ticareti",
+      "telekom ekipman ticareti",
+      "telefoncu",
+      "iletişim cihazları satışı",
+      "telekom ürünleri toptan",
+      "telekom perakende",
+      "telekom aletleri satıyorum",
+      "telekom ekipmanları ticareti",
+      "telekom ürünleri satışı",
+      "telekom cihazları toptan",
+      "telekom teçhizatı ticareti",
+      "iletişim ekipmanları ticareti",
+      "telekom aksesuarları ticareti",
+      "telekom cihazları perakende",
+      "telekom ürünleri toptancısı"
+    ]
+  }
+}

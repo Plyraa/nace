@@ -1,0 +1,20 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.13\", \"meslek_tanim\": \"Kuyumculuk\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"08.99.03\", \"nace_label\": \"Kıymetli ve yarı kıymetli taşların ocakçılığı (kehribar, Oltu taşı, lüle taşı ve elmas hariç)\"}, {\"nace_code\": \"24.41.16\", \"nace_label\": \"İşlenmemiş, yarı işlenmiş, toz halde altın imalatı ile gümüş veya adi metallerin altınla preslenerek kaplanması (Mücevher ve benzeri eşyaların imalatı hariç)\"}, {\"nace_code\": \"24.41.17\", \"nace_label\": \"İşlenmemiş, yarı işlenmiş, toz halde gümüş imalatı ile adi metallerin gümüşle preslenerek kaplanması (Mücevher ve benzeri eşyaların imalatı hariç)\"}, {\"nace_code\": \"24.41.18\", \"nace_label\": \"İşlenmemiş, yarı işlenmiş, toz halde platin imalatı ile altın, gümüş veya adi metallerin platinle preslenerek kaplanması (paladyum, rodyum, osmiyum ve rutenyum imalatı ile platin katalizör imalatı dahil) (Mücevher ve benzeri eşyaların imalatı hariç)\"}, {\"nace_code\": \"24.41.19\", \"nace_label\": \"Değerli metal alaşımlarının imalatı (Mücevher ve benzeri eşyaların imalatı hariç)\"}, {\"nace_code\": \"32.12.01\", \"nace_label\": \"Değerli metallerden takı ve mücevherlerin imalatı (değerli metallerle baskı, yapıştırma vb. yöntemlerle giydirilmiş adi metallerden olanlar dahil)\"}, {\"nace_code\": \"32.12.04\", \"nace_label\": \"İnci ve değerli doğal taşların işlenmesi ve değerli taşlardan takı ve mücevher ile bunların parçalarının imalatı (sentetik veya yeniden oluşturulmuş olanlar dahil)\"}, {\"nace_code\": \"32.12.90\", \"nace_label\": \"Mücevher ve benzeri diğer eşyaların imalatı\"}, {\"nace_code\": \"32.99.03\", \"nace_label\": \"Pipo, sigara ağızlıkları, Oltu veya lüle taşından tespih vb. imalatı\"}, {\"nace_code\": \"46.48.01\", \"nace_label\": \"Mücevher ve takı toptan ticareti (altın, gümüş, vb. olanlar) (imitasyon olanlar hariç)\"}, {\"nace_code\": \"46.82.02\", \"nace_label\": \"Değerli metal cevherleri ve konsantrelerinin toptan ticareti (altın, gümüş, platin vb.)\"}, {\"nace_code\": \"47.77.01\", \"nace_label\": \"Altın ve diğer değerli metallerden takı, eşya ve mücevherat perakende ticareti (kuyumculuk ürünleri perakende ticareti dahil, gümüşten olanlar hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{}",
+  "parsed": {}
+}

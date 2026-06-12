@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"14245\", \"alias\": \"makineci dükkanı\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.93.02\", \"nace_label\": \"Şarap, meyve suyu ve benzeri içeceklerin imalatında kullanılan makinelerin imalatı (presler, eziciler ve benzeri makineler)\"}, {\"id\": \"6258\", \"alias\": \"elektrik tesisatı tamiri\", \"meslek_tanim\": \"Elektrik tesisatçılığı\", \"nace_code\": \"43.21.01\", \"nace_label\": \"Bina ve bina dışı yapıların (ulaşım için aydınlatma ve sinyalizasyon sistemleri hariç) elektrik tesisatı, kablolu televizyon ve bilgisayar ağı tesisatı ile konut tipi antenler (uydu antenleri dahil), elektrikli güneş enerjisi kollektörleri, elektrik sayaçları, elektrikli araçlar için elektrikli şarj cihazları tesisatının kurulumu, duvar dibi ısıtma sistemleri, yangın ve hırsızlık alarm sistemleri vb. kurulumu\"}, {\"id\": \"14421\", \"alias\": \"mama satışı\", \"meslek_tanim\": \"Evcil hayvan bakımı, ticareti\", \"nace_code\": \"10.91.01\", \"nace_label\": \"Çiftlik hayvanları için hazır yem imalatı\"}, {\"id\": \"13917\", \"alias\": \"makine onaran\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"32.40.02\", \"nace_label\": \"Bozuk para veya jetonla çalışan oyun makineleri ile bilardo için kullanılan eşya ve aksesuarların imalatı (rulet vb. oyun makineleri ile bilardo masa ve istekaları, isteka dayanakları, bilardo topları, tebeşirleri, toplu veya sürgülü puan sayaçları vb.)\"}, {\"id\": \"8065\", \"alias\": \"gübrelemeci\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\", \"nace_code\": \"01.63.06\", \"nace_label\": \"Nişastalı kök ürünlerinin ayıklanması ve temizlenmesi (patates vb.)\"}, {\"id\": \"10324\", \"alias\": \"kargo komisyoncusu\", \"meslek_tanim\": \"Nakliyat komisyonculuğu\", \"nace_code\": \"52.31.02\", \"nace_label\": \"Kara yolu yük nakliyat komisyoncularının faaliyetleri\"}, {\"id\": \"2725\", \"alias\": \"bobinajcı\", \"meslek_tanim\": \"Elektrik makineleri imalatı, kurulumu, onarımı\", \"nace_code\": \"27.11.03\", \"nace_label\": \"Elektrik motoru, jeneratör ve transformatörlerin aksam ve parçalarının imalatı\"}, {\"id\": \"6561\", \"alias\": \"elektronik tamir\", \"meslek_tanim\": \"Elektronik ürün imalatı, onarımı\", \"nace_code\": \"33.12.18\", \"nace_label\": \"Büro ve muhasebe makinelerinin onarım ve bakımı (daktilo, yazar kasa, fotokopi makineleri, hesap makineleri, vb.)\"}, {\"id\": \"21381\", \"alias\": \"yapboz imalatı\", \"meslek_tanim\": \"Oyuncak imalatı, ticareti\", \"nace_code\": \"32.40.05\", \"nace_label\": \"Oyuncak bebek, kukla ve hayvanlar ile bunların giysi, parça ve aksesuarlarının imalatı (içi doldurulmuş olanlar hariç)\"}, {\"id\": \"9475\", \"alias\": \"İnşaat malzemesi üretimi\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"17.24.02\", \"nace_label\": \"Duvar kağıdı ve benzeri duvar kaplamalarının imalatı (tekstilden olanlar hariç)\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"14245\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"6258\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"14421\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"13917\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"8065\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"10324\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"2725\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"6561\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"21381\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"9475\",\n      \"verdict\": \"no\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "14245",
+        "verdict": "no"
+      },
+      {
+        "id": "6258",
+        "verdict": "yes"
+      },
+      {
+        "id": "14421",
+        "verdict": "no"
+      },
+      {
+        "id": "13917",
+        "verdict": "no"
+      },
+      {
+        "id": "8065",
+        "verdict": "no"
+      },
+      {
+        "id": "10324",
+        "verdict": "yes"
+      },
+      {
+        "id": "2725",
+        "verdict": "yes"
+      },
+      {
+        "id": "6561",
+        "verdict": "no"
+      },
+      {
+        "id": "21381",
+        "verdict": "no"
+      },
+      {
+        "id": "9475",
+        "verdict": "no"
+      }
+    ]
+  }
+}

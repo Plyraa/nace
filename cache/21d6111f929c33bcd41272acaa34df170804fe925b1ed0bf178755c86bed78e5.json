@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.10\", \"meslek_tanim\": \"İklimlendirme, soğutma sistemi imalatı, kurulumu, onarımı\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"28.21.10\", \"nace_label\": \"Güneşle (güneş kolektörleri), buharla ve yağla ısıtma sistemleri ile benzeri ocak ve ısınma donanımları gibi elektriksiz ev tipi ısıtma, soğutma, havalandırma donanımlarının imalatı\"}, {\"nace_code\": \"28.25.01\", \"nace_label\": \"Sanayi tipi soğutucu ve dondurucu donanımları ile ısı pompalarının imalatı (camekanlı, tezgahlı veya mobilya tipi soğutucular, kondenserleri ısı değiştiricisi fonksiyonu gören kompresörlü üniteler vb.)\"}, {\"nace_code\": \"28.25.02\", \"nace_label\": \"Sanayi tipi fan ve vantilatörlerin imalatı (çatı havalandırma pervaneleri dahil)\"}, {\"nace_code\": \"28.25.03\", \"nace_label\": \"İklimlendirme cihazlarının (klimalar) imalatı (motorlu taşıtlarda kullanılanlar hariç)\"}, {\"nace_code\": \"29.32.24\", \"nace_label\": \"Motorlu kara taşıtları için iklimlendirme cihazlarının (klimalar) imalatı\"}, {\"nace_code\": \"33.12.06\", \"nace_label\": \"Sanayi tipi soğutma ve havalandırma ekipmanlarının onarım ve bakımı\"}, {\"nace_code\": \"33.20.45\", \"nace_label\": \"Sanayi tipi ısıtma, iklimlendirme ve soğutma cihaz ve ekipmanlarının kurulumu\"}, {\"nace_code\": \"35.30.21\", \"nace_label\": \"Buhar ve sıcak su üretimi, toplanması ve dağıtımı\"}, {\"nace_code\": \"43.22.06\", \"nace_label\": \"Bina veya diğer inşaat projelerinde ısıtma, havalandırma, soğutma ve iklimlendirme sistemlerinin onarım ve bakımı (iklimlendirme cihazı ve/veya ısı pompası dahil)\"}, {\"nace_code\": \"43.22.07\", \"nace_label\": \"Bina veya diğer inşaat projelerinde ısıtma, havalandırma, soğutma ve iklimlendirme sistemlerinin kurulumu (iklimlendirme cihazı ve/veya ısı pompası dahil)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"klima tamircisi\",\n    \"soğutma sistemleri kurulumu\",\n    \"iklimlendirme ustası\",\n    \"klima bakım onarım\",\n    \"soğutma montajı yapıyorum\",\n    \"klima servisi\",\n    \"soğutma sistemleri imalatı\",\n    \"iklimlendirme kurulumu\",\n    \"klima tamir bakım\",\n    \"soğutma onarımı\",\n    \"iklimlendirmeci\",\n    \"klima montajı\",\n    \"soğutma sistemleri tamiri\",\n    \"klima imalatçısı\",\n    \"soğutma ustası\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "klima tamircisi",
+      "soğutma sistemleri kurulumu",
+      "iklimlendirme ustası",
+      "klima bakım onarım",
+      "soğutma montajı yapıyorum",
+      "klima servisi",
+      "soğutma sistemleri imalatı",
+      "iklimlendirme kurulumu",
+      "klima tamir bakım",
+      "soğutma onarımı",
+      "iklimlendirmeci",
+      "klima montajı",
+      "soğutma sistemleri tamiri",
+      "klima imalatçısı",
+      "soğutma ustası"
+    ]
+  }
+}

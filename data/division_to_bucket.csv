@@ -1,0 +1,100 @@
+division,bucket,reason
+01,agriculture,tarım ve hayvancılık
+02,agriculture,ormancılık
+03,agriculture,balıkçılık
+04,other,NACE boş/özel kullanım
+05,other,madencilik enerji girdisi
+06,other,madencilik enerji girdisi
+07,other,madencilik
+08,other,madencilik
+09,other,madencilik destek
+10,food,gıda imalatı
+11,food,içecek imalatı
+12,food,tütün ve tüketim ürünü imalatı
+13,textile,tekstil imalatı
+14,textile,giyim imalatı
+15,textile,deri ve ayakkabı
+16,manufacturing,ağaç ürünleri imalatı
+17,manufacturing,kağıt imalatı
+18,manufacturing,basım çoğaltma
+19,manufacturing,kok/petrol ürünleri imalatı
+20,manufacturing,kimyasal imalat
+21,manufacturing,ilaç imalatı
+22,manufacturing,kauçuk plastik
+23,manufacturing,mineral ürünler
+24,manufacturing,ana metal
+25,manufacturing,metal eşya
+26,technology,bilgisayar elektronik optik imalatı
+27,manufacturing,elektrikli teçhizat
+28,manufacturing,makine imalatı
+29,manufacturing,motorlu araç imalatı
+30,manufacturing,ulaşım aracı imalatı
+31,manufacturing,mobilya imalatı
+32,manufacturing,diğer imalat
+33,manufacturing,makine kurulum onarım
+34,other,NACE boş/özel kullanım
+35,other,enerji
+36,other,su temini
+37,other,kanalizasyon
+38,services,atık toplama ve geri kazanım
+39,services,iyileştirme faaliyetleri
+40,other,NACE boş/özel kullanım
+41,construction,bina inşaatı
+42,construction,bina dışı yapı inşaatı
+43,construction,özel inşaat işleri
+44,other,NACE boş/özel kullanım
+45,trade,motorlu taşıt ticareti ve onarımı
+46,trade,toptan ticaret
+47,trade,perakende ticaret
+48,other,NACE boş/özel kullanım
+49,logistics,kara taşımacılığı
+50,logistics,su yolu taşımacılığı
+51,logistics,hava yolu taşımacılığı
+52,logistics,taşımacılık destek
+53,logistics,posta kurye
+54,other,NACE boş/özel kullanım
+55,services,konaklama
+56,food,yiyecek içecek hizmetleri
+57,other,NACE boş/özel kullanım
+58,technology,yayıncılık ve yazılım ilişkili yayınlar
+59,services,film ses kayıt
+60,services,programcılık ve yayıncılık
+61,technology,telekomünikasyon
+62,technology,bilgisayar programlama danışmanlık
+63,technology,bilgi hizmetleri
+64,services,finans
+65,services,sigorta
+66,services,finans destek
+67,other,NACE boş/özel kullanım
+68,services,gayrimenkul
+69,services,hukuk muhasebe
+70,services,idari danışmanlık
+71,services,mimarlık mühendislik
+72,services,arge
+73,services,reklam ve pazar araştırma
+74,services,diğer mesleki faaliyetler
+75,services,veterinerlik
+76,other,NACE boş/özel kullanım
+77,services,kiralama leasing
+78,services,istihdam
+79,services,seyahat acentesi
+80,services,güvenlik soruşturma
+81,services,bina ve çevre hizmetleri
+82,services,büro destek
+83,other,NACE boş/özel kullanım
+84,other,kamu yönetimi
+85,services,eğitim
+86,services,sağlık
+87,services,yatılı bakım
+88,services,sosyal hizmet
+89,other,NACE boş/özel kullanım
+90,services,yaratıcı sanat eğlence
+91,services,kültür faaliyetleri
+92,services,kumar bahis
+93,services,spor eğlence
+94,services,üyelik kuruluşları
+95,services,kişisel/ev eşyası onarım
+96,services,diğer kişisel hizmetler
+97,services,ev içi işveren faaliyetleri
+98,services,hane üretimi
+99,other,uluslararası kuruluşlar

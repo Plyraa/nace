@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"11104\", \"alias\": \"kasap şarküteri\", \"meslek_tanim\": \"Kasaplık\", \"nace_code\": \"46.32.03\", \"nace_label\": \"Yenilebilir sakatat (ciğer, işkembe, böbrek, taşlık vb.) toptan ticareti\"}, {\"id\": \"5808\", \"alias\": \"Dokumacılıkla uğraşıyorum\", \"meslek_tanim\": \"Dokumacılık\", \"nace_code\": \"13.10.09\", \"nace_label\": \"Sentetik veya suni devamsız elyafın kardelenmesi ve taraklanması\"}, {\"id\": \"10262\", \"alias\": \"İnşaatçı\", \"meslek_tanim\": \"İnşaatçılık\", \"nace_code\": \"46.83.07\", \"nace_label\": \"Mermer, granit, kayağan taşı, kum taşı vb. toptan ticareti (işlenmemiş veya blok halde olanlar)\"}, {\"id\": \"24247\", \"alias\": \"şarküteri tüccarı\", \"meslek_tanim\": \"Şarküteri ürünleri imalatı, ticareti\", \"nace_code\": \"10.51.90\", \"nace_label\": \"Sütten yapılan diğer ürünlerin imalatı\"}, {\"id\": \"23129\", \"alias\": \"yürüyen merdiven bakım\", \"meslek_tanim\": \"Asansör, yürüyen merdiven kurulumu, bakımı, onarımı\", \"nace_code\": \"43.24.01\", \"nace_label\": \"Asansörlerin, yürüyen merdivenlerin, yürüyen yolların, otomatik ve döner kapıların onarım ve bakımı dahil kurulum işleri\"}, {\"id\": \"11019\", \"alias\": \"kasabım\", \"meslek_tanim\": \"Kasaplık\", \"nace_code\": \"10.11.01\", \"nace_label\": \"Etin işlenmesi ve saklanması (mezbahacılık) (kümes hayvanlarının eti hariç)\"}, {\"id\": \"18199\", \"alias\": \"plak dükkanı\", \"meslek_tanim\": \"Kayıtlı medyaların imalatı, kiralanması, ticareti\", \"nace_code\": \"47.69.02\", \"nace_label\": \"Müzik ve video kayıtlarının perakende ticareti\"}, {\"id\": \"16979\", \"alias\": \"organizatör\", \"meslek_tanim\": \"Ajans, organizasyon faaliyetleri\", \"nace_code\": \"90.39.90\", \"nace_label\": \"Sanat ve gösteri sanatlarına yönelik diğer destek faaliyetleri (sanat ve gösteri sanatlarına yönelik yönetmenlerin ve yapımcıların faaliyetleri hariç)\"}, {\"id\": \"15186\", \"alias\": \"mantar yetiştiricisi\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\", \"nace_code\": \"01.63.06\", \"nace_label\": \"Nişastalı kök ürünlerinin ayıklanması ve temizlenmesi (patates vb.)\"}, {\"id\": \"9076\", \"alias\": \"hediyelik plastik\", \"meslek_tanim\": \"Kauçuk, plastik ürünlerin imalatı, ticareti\", \"nace_code\": \"46.86.02\", \"nace_label\": \"Sanayide kullanım amaçlı plastik poşet, çanta, torba, çuval, vb. ambalaj malzemelerinin toptan ticareti\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\"results\": [{\"id\": \"11104\", \"verdict\": \"no\"}, {\"id\": \"5808\", \"verdict\": \"no\"}, {\"id\": \"10262\", \"verdict\": \"no\"}, {\"id\": \"24247\", \"verdict\": \"no\"}, {\"id\": \"23129\", \"verdict\": \"yes\"}, {\"id\": \"11019\", \"verdict\": \"yes\"}, {\"id\": \"18199\", \"verdict\": \"yes\"}, {\"id\": \"16979\", \"verdict\": \"unsure\"}, {\"id\": \"15186\", \"verdict\": \"no\"}, {\"id\": \"9076\", \"verdict\": \"no\"}]}",
+  "parsed": {
+    "results": [
+      {
+        "id": "11104",
+        "verdict": "no"
+      },
+      {
+        "id": "5808",
+        "verdict": "no"
+      },
+      {
+        "id": "10262",
+        "verdict": "no"
+      },
+      {
+        "id": "24247",
+        "verdict": "no"
+      },
+      {
+        "id": "23129",
+        "verdict": "yes"
+      },
+      {
+        "id": "11019",
+        "verdict": "yes"
+      },
+      {
+        "id": "18199",
+        "verdict": "yes"
+      },
+      {
+        "id": "16979",
+        "verdict": "unsure"
+      },
+      {
+        "id": "15186",
+        "verdict": "no"
+      },
+      {
+        "id": "9076",
+        "verdict": "no"
+      }
+    ]
+  }
+}

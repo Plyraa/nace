@@ -1,0 +1,37 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"F.15\", \"meslek_tanim\": \"Kurs işletmeciliği\", \"sektor_tanim\": \"HEDİYELİK EŞYA, EĞİTİM, BASIM, FOTOĞRAF, ÇEŞİTLİ MALLAR\", \"nace_examples\": [{\"nace_code\": \"85.32.15\", \"nace_label\": \"Ticari sertifika veren havacılık, yelkencilik, gemicilik vb. kursların faaliyetleri\"}, {\"nace_code\": \"85.32.16\", \"nace_label\": \"Ticari taşıt kullanma belgesi veren sürücü kurslarının faaliyetleri\"}, {\"nace_code\": \"85.32.90\", \"nace_label\": \"Mesleki amaçlı eğitim veren diğer kursların faaliyetleri (özel öğretim kurumları tarafından verilen fiziksel veya zihinsel engellilere yönelik teknik ve mesleki ortaöğretim (ortaokul/lise) faaliyetleri ile çıraklık eğitimi faaliyetleri dahil)\"}, {\"nace_code\": \"85.52.05\", \"nace_label\": \"Kültürel eğitim (bale, dans, müzik, fotoğraf, halk oyunu, resim, drama, vb. eğitimi dahil, temel, orta ve yükseköğretim düzeyinde verilen eğitim hariç)\"}, {\"nace_code\": \"85.53.01\", \"nace_label\": \"Sürücü kursu faaliyetleri (ticari sertifika veren sürücülük, havacılık, yelkencilik, gemicilik eğitimi hariç)\"}, {\"nace_code\": \"85.59.03\", \"nace_label\": \"Bilgisayar, yazılım, veri tabanı, vb. eğitimi veren kursların faaliyetleri (temel, orta ve yükseköğretim düzeyinde verilen eğitim hariç)\"}, {\"nace_code\": \"85.59.05\", \"nace_label\": \"Orta öğretime, yüksek öğretime, kamu personeli vb. sınavlara yönelik kurs ve etüt merkezlerinin faaliyetleri\"}, {\"nace_code\": \"85.59.06\", \"nace_label\": \"Biçki, dikiş, nakış, halıcılık, güzellik, berberlik, kuaförlük kurslarının faaliyetleri\"}, {\"nace_code\": \"85.59.09\", \"nace_label\": \"Dil ve konuşma becerileri eğitimi veren kursların faaliyetleri (temel, orta ve yükseköğretim düzeyinde verilen eğitim hariç)\"}, {\"nace_code\": \"85.59.10\", \"nace_label\": \"Mankenlik, modelistlik, stilistlik kurslarının faaliyetleri\"}, {\"nace_code\": \"85.59.12\", \"nace_label\": \"Muhasebe eğitimi kurslarının faaliyeti\"}, {\"nace_code\": \"85.59.15\", \"nace_label\": \"Akademik özel ders verme faaliyeti (temel, orta ve yükseköğretim düzeyinde bire bir eğitim)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"kurs işletmeciliği\",\n    \"kurs işletmecisi\",\n    \"kurs yöneticisi\",\n    \"kurs sahibi\",\n    \"kurs merkezi\",\n    \"kurs açtım\",\n    \"kurs veriyorum\",\n    \"kurs işletiyorum\",\n    \"kurs hocası\",\n    \"kurs koordinatörü\",\n    \"kurs eğitmeni\",\n    \"kurs organizasyonu\",\n    \"kurs düzenleyen\",\n    \"kurs işletmecilii\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "kurs işletmeciliği",
+      "kurs işletmecisi",
+      "kurs yöneticisi",
+      "kurs sahibi",
+      "kurs merkezi",
+      "kurs açtım",
+      "kurs veriyorum",
+      "kurs işletiyorum",
+      "kurs hocası",
+      "kurs koordinatörü",
+      "kurs eğitmeni",
+      "kurs organizasyonu",
+      "kurs düzenleyen",
+      "kurs işletmecilii"
+    ]
+  }
+}

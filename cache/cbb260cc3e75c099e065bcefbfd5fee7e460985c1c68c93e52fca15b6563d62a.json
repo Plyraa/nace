@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"G.06\", \"meslek_tanim\": \"Genel temizlik, haşere kontrol faaliyetleri\", \"sektor_tanim\": \"KUAFÖR, BERBER, TEMİZLİK, SPOR, KOZMETİK, SAĞLIK\", \"nace_examples\": [{\"nace_code\": \"81.21.01\", \"nace_label\": \"Binaların genel temizliği (uzmanlaşmış temizlik faaliyetleri hariç)\"}, {\"nace_code\": \"81.22.03\", \"nace_label\": \"Nesne veya binaların (ameliyathaneler vb.) sterilizasyonu faaliyetleri\"}, {\"nace_code\": \"81.22.04\", \"nace_label\": \"Yapıların dış cepheleri için buharlı temizleme, kum püskürtme vb. uzmanlaşmış temizlik faaliyetleri\"}, {\"nace_code\": \"81.22.05\", \"nace_label\": \"Yeni binaların inşaat sonrası temizliği\"}, {\"nace_code\": \"81.22.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer bina ve endüstriyel temizlik faaliyetleri (sterilizasyon faaliyetleri hariç)\"}, {\"nace_code\": \"81.23.01\", \"nace_label\": \"Böceklerin, kemirgenlerin ve diğer zararlıların imhası ve haşere kontrol faaliyetleri (tarımsal zararlılarla mücadele hariç)\"}, {\"nace_code\": \"81.23.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer temizlik faaliyetleri (oto yıkama hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"temizlikçi\",\n    \"haşere ilaçlama\",\n    \"genel temizlik\",\n    \"temizlik hizmetleri\",\n    \"haşere kontrol\",\n    \"ilaçlama\",\n    \"temizlik yaparım\",\n    \"haşere ilaçlarım\",\n    \"böcek ilaçlama\",\n    \"temizlik şirketi\",\n    \"dezenfeksiyon\",\n    \"sterilizasyon\",\n    \"haşare ilaçlama\",\n    \"temizlik yapılır\",\n    \"haşere kontrol hizmeti\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "temizlikçi",
+      "haşere ilaçlama",
+      "genel temizlik",
+      "temizlik hizmetleri",
+      "haşere kontrol",
+      "ilaçlama",
+      "temizlik yaparım",
+      "haşere ilaçlarım",
+      "böcek ilaçlama",
+      "temizlik şirketi",
+      "dezenfeksiyon",
+      "sterilizasyon",
+      "haşare ilaçlama",
+      "temizlik yapılır",
+      "haşere kontrol hizmeti"
+    ]
+  }
+}

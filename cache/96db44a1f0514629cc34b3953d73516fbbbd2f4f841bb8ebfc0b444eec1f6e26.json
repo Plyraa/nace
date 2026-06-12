@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"18891\", \"alias\": \"soba ve ocak tamiri\", \"meslek_tanim\": \"Ev aletleri imalatı, onarımı, ticareti\", \"nace_code\": \"27.52.06\", \"nace_label\": \"Elektriksiz ev aletlerinin aksam ve parçalarının imalatı\"}, {\"id\": \"8234\", \"alias\": \"hasta bakıcı\", \"meslek_tanim\": \"Hasta bakıcılığı\", \"nace_code\": \"88.99.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış barınacak yer sağlanmaksızın verilen diğer sosyal yardım hizmetleri (aile danışmanlığı ve rehberliği, borç danışmanlığı, sosyal hizmet için para toplama, evlat edindirme, evsiz, afetzede ve mültecilere geçici barınak sağlama, yardım için uygun kişi belirleme vb.)\"}, {\"id\": \"15635\", \"alias\": \"müzik aletleri imalatçısı\", \"meslek_tanim\": \"Müzik aletleri imalatı, onarımı, ticareti\", \"nace_code\": \"32.20.23\", \"nace_label\": \"Ağızları huni gibi genişleyen neviden olan boru esaslı müzik aletleri ile diğer üflemeli müzik aletlerinin imalatı (saksafon, flüt, trombon, borazan, vb.)\"}, {\"id\": \"2199\", \"alias\": \"Beyaz eşya satışı\", \"meslek_tanim\": \"Beyaz eşya ticareti\", \"nace_code\": \"47.54.01\", \"nace_label\": \"Beyaz eşya ve elektrikli küçük ev aleti perakende ticareti (radyo, televizyon ve fotoğrafçılık ürünleri hariç)\"}, {\"id\": \"6348\", \"alias\": \"elektrikçi\", \"meslek_tanim\": \"Elektrik malzemeleri imalatı, ticareti\", \"nace_code\": \"23.43.01\", \"nace_label\": \"Seramik yalıtkanların (izolatörlerin) ve yalıtkan bağlantı parçalarının imalatı\"}, {\"id\": \"14739\", \"alias\": \"marangozluk işleri\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"16.25.00\", \"nace_label\": \"Ahşap kapı ve pencere imalatı\"}, {\"id\": \"80\", \"alias\": \"ajans işletmesi\", \"meslek_tanim\": \"Ajans, organizasyon faaliyetleri\", \"nace_code\": \"78.10.04\", \"nace_label\": \"Oyuncu seçme ajansları ve bürolarının faaliyetleri\"}, {\"id\": \"15231\", \"alias\": \"Mobilya satıyorum\", \"meslek_tanim\": \"Mobilya ticareti\", \"nace_code\": \"77.33.02\", \"nace_label\": \"Büro mobilyalarının kiralanması ve leasingi (büro sandalyesi ve masasının kiralanması dahil) (finansal leasing hariç)\"}, {\"id\": \"10223\", \"alias\": \"kaplama işleri\", \"meslek_tanim\": \"Kalaycılık, kaplamacılık\", \"nace_code\": \"25.52.00\", \"nace_label\": \"Metallerin ısıl işlemi\"}, {\"id\": \"17980\", \"alias\": \"reklam ajansı\", \"meslek_tanim\": \"Reklamcılık, tabelacılık\", \"nace_code\": \"27.40.06\", \"nace_label\": \"Işıklı tabela, ışıklı reklam panosu ve benzerlerinin imalatı\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"18891\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"8234\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"15635\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"2199\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"6348\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"14739\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"80\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"15231\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"10223\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"17980\",\n      \"verdict\": \"no\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "18891",
+        "verdict": "yes"
+      },
+      {
+        "id": "8234",
+        "verdict": "yes"
+      },
+      {
+        "id": "15635",
+        "verdict": "no"
+      },
+      {
+        "id": "2199",
+        "verdict": "yes"
+      },
+      {
+        "id": "6348",
+        "verdict": "no"
+      },
+      {
+        "id": "14739",
+        "verdict": "yes"
+      },
+      {
+        "id": "80",
+        "verdict": "yes"
+      },
+      {
+        "id": "15231",
+        "verdict": "no"
+      },
+      {
+        "id": "10223",
+        "verdict": "no"
+      },
+      {
+        "id": "17980",
+        "verdict": "no"
+      }
+    ]
+  }
+}

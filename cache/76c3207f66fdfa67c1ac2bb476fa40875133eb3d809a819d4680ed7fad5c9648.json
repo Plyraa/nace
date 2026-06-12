@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"17867\", \"alias\": \"pazar yeri\", \"meslek_tanim\": \"Pazarda yiyecek, içecek ticareti\", \"nace_code\": \"47.11.03\", \"nace_label\": \"Tezgahlar ve pazar yerleri vasıtasıyla diğer gıda ürünleri (bal, un, tahıl, pirinç, bakliyat vb. dahil) perakende ticareti (seyyar satıcılar hariç)\"}, {\"id\": \"9113\", \"alias\": \"helvacı\", \"meslek_tanim\": \"Şekercilik, çikolatacılık\", \"nace_code\": \"10.82.07\", \"nace_label\": \"Kakao tozu, kakao ezmesi/hamuru ve kakao yağı imalatı\"}, {\"id\": \"19047\", \"alias\": \"Saatçı\", \"meslek_tanim\": \"Saatçilik\", \"nace_code\": \"46.48.02\", \"nace_label\": \"Saat toptan ticareti\"}, {\"id\": \"11748\", \"alias\": \"kimyasal ürün imalatçısı\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\", \"nace_code\": \"20.59.15\", \"nace_label\": \"Yangın söndürücü müstahzarları ve dolum malzemeleri imalatı\"}, {\"id\": \"279\", \"alias\": \"alternatif terapi merkezi\", \"meslek_tanim\": \"Alternatif tedavi merkezi işletmeciliği\", \"nace_code\": \"86.95.00\", \"nace_label\": \"Fizyoterapi hizmetleri (tıp doktorları dışında yetkili kişilerce sağlanan fizyoterapi, ergoterapi vb. alanlardaki hizmetler) (hastane dışı)\"}, {\"id\": \"6662\", \"alias\": \"Elektrikli Ev Aletleri Tamircisi\", \"meslek_tanim\": \"Elektrikli ev aletleri imalatı, onarımı\", \"nace_code\": \"27.51.02\", \"nace_label\": \"Ev tipi elektrikli su ısıtıcıları (depolu su ısıtıcıları, anında su ısıtıcıları, şofben, termosifon dahil), elektrikli ısıtma cihazları (elektrikli soba, radyatör, vb.) ve elektrikli toprak ısıtma cihazlarının imalatı\"}, {\"id\": \"18007\", \"alias\": \"pc kurulum ve onarım\", \"meslek_tanim\": \"Bilgisayar kurulumu, onarımı, programlama, veri kurtarma\", \"nace_code\": \"62.10.00\", \"nace_label\": \"Bilgisayar programlama faaliyetleri (sistem, veri tabanı, network, web sayfası vb. yazılımları ile müşteriye özel yazılımların kodlanması, masaüstü ya da mobil cihazlar için uygulama geliştirme, vb)\"}, {\"id\": \"14273\", \"alias\": \"makine kuran\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.94.05\", \"nace_label\": \"Tekstil ipliği ve kumaşını yıkama, ağartma, boyama, apreleme, temizleme, sıkma, sarma, emprenye etme, bitirme, kesme, surfile ve benzerleri için makineler ile keçe imalatında ve bitirilmesinde kullanılan makinelerin imalatı\"}, {\"id\": \"11738\", \"alias\": \"kimyasal ürün imalatçısı\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\", \"nace_code\": \"20.30.16\", \"nace_label\": \"Boya müstahzarları hazır kurutucu maddelerinin imalatı\"}, {\"id\": \"6487\", \"alias\": \"elektrik malzemeleri perakende\", \"meslek_tanim\": \"Elektrik malzemeleri imalatı, ticareti\", \"nace_code\": \"27.12.02\", \"nace_label\": \"Elektrik dağıtım ve kontrol cihazlarının aksam ve parçalarının imalatı\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"17867\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"9113\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"19047\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"11748\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"279\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"6662\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"18007\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"14273\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"11738\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"6487\",\n      \"verdict\": \"no\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "17867",
+        "verdict": "yes"
+      },
+      {
+        "id": "9113",
+        "verdict": "no"
+      },
+      {
+        "id": "19047",
+        "verdict": "yes"
+      },
+      {
+        "id": "11748",
+        "verdict": "no"
+      },
+      {
+        "id": "279",
+        "verdict": "no"
+      },
+      {
+        "id": "6662",
+        "verdict": "no"
+      },
+      {
+        "id": "18007",
+        "verdict": "no"
+      },
+      {
+        "id": "14273",
+        "verdict": "no"
+      },
+      {
+        "id": "11738",
+        "verdict": "no"
+      },
+      {
+        "id": "6487",
+        "verdict": "no"
+      }
+    ]
+  }
+}

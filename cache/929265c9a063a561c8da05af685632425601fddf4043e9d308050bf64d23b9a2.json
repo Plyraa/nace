@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"B.02\", \"meslek_tanim\": \"Düğün salonu işletmeciliği\", \"sektor_tanim\": \"EĞLENCE, DİNLENME, ORGANİZASYON\", \"nace_examples\": [{\"nace_code\": \"93.29.02\", \"nace_label\": \"Düğün, balo ve kokteyl salonlarının işletilmesi\"}, {\"nace_code\": \"96.99.14\", \"nace_label\": \"Nikah salonlarının hizmetleri\"}, {\"nace_code\": \"96.99.15\", \"nace_label\": \"Söz, isteme ve davet evleri hizmetleri\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"düğün salonu işletmecisi\",\n    \"düğün salonu sahibi\",\n    \"nikah salonu işletiyorum\",\n    \"düğün organizasyonu\",\n    \"balo salonu işletmecisi\",\n    \"düğün salonu\",\n    \"kokteyl salonu\",\n    \"dügün salonu\",\n    \"düğün mekanı işletmecisi\",\n    \"nikah salonu sahibi\",\n    \"davet salonu işletiyorum\",\n    \"düğün organizatörü\",\n    \"söz kesme salonu\",\n    \"davet evi işletmecisi\",\n    \"dügün organizasyonu\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "düğün salonu işletmecisi",
+      "düğün salonu sahibi",
+      "nikah salonu işletiyorum",
+      "düğün organizasyonu",
+      "balo salonu işletmecisi",
+      "düğün salonu",
+      "kokteyl salonu",
+      "dügün salonu",
+      "düğün mekanı işletmecisi",
+      "nikah salonu sahibi",
+      "davet salonu işletiyorum",
+      "düğün organizatörü",
+      "söz kesme salonu",
+      "davet evi işletmecisi",
+      "dügün organizasyonu"
+    ]
+  }
+}

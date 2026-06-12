@@ -1,0 +1,25 @@
+nace_prefix,bucket,reason
+46.31,food,sebze meyve toptanı
+46.32,food,et ve et ürünleri toptanı
+46.33,food,süt yumurta yağ toptanı
+46.34,food,içecek toptanı
+46.36,food,şeker çikolata toptanı
+46.37,food,kahve çay kakao baharat toptanı
+46.38,food,diğer gıda toptanı
+46.39,food,gıda içecek tütün genel toptanı
+47.11,food,bakkal/market ağırlıklı gıda perakendesi
+47.21,food,sebze meyve perakendesi
+47.22,food,et perakendesi
+47.23,food,balık perakendesi
+47.24,food,ekmek pasta şekerleme perakendesi
+47.25,food,içecek perakendesi
+47.26,food,tütün perakendesi
+47.29,food,diğer gıda perakendesi
+47.51,textile,tekstil ürünleri perakendesi
+47.71,textile,giyim perakendesi
+47.72,textile,ayakkabı deri perakendesi
+46.41,textile,tekstil toptanı
+46.42,textile,giyim ayakkabı toptanı
+95.11,technology,bilgisayar ve çevre birimi onarımı
+95.12,technology,iletişim cihazları onarımı
+74.20,services,fotoğrafçılık hizmettir

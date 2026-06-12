@@ -1,0 +1,35 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"B.10\", \"meslek_tanim\": \"Şans oyunları bayiliği\", \"sektor_tanim\": \"EĞLENCE, DİNLENME, ORGANİZASYON\", \"nace_examples\": [{\"nace_code\": \"92.00.01\", \"nace_label\": \"Müşterek bahis faaliyetleri (at yarışı, köpek yarışı, futbol ve diğer spor yarışmaları konusunda bahis hizmetleri)\"}, {\"nace_code\": \"92.00.02\", \"nace_label\": \"Loto vb. sayısal şans oyunlarına ilişkin faaliyetler (piyango biletlerinin satışı dahil)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"Şans oyunları bayisi\",\n    \"Loto bayisi\",\n    \"Müşterek bahis bayisi\",\n    \"İddia bayisi\",\n    \"At yarışı bayi\",\n    \"Sayısal loto bayi\",\n    \"Şans bayi\",\n    \"Kupon bayi\",\n    \"Bahis bayisi\",\n    \"Ben şans oyunları satarım\",\n    \"sans oyunlari bayii\",\n    \"Şans oyunları satış noktası\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "Şans oyunları bayisi",
+      "Loto bayisi",
+      "Müşterek bahis bayisi",
+      "İddia bayisi",
+      "At yarışı bayi",
+      "Sayısal loto bayi",
+      "Şans bayi",
+      "Kupon bayi",
+      "Bahis bayisi",
+      "Ben şans oyunları satarım",
+      "sans oyunlari bayii",
+      "Şans oyunları satış noktası"
+    ]
+  }
+}

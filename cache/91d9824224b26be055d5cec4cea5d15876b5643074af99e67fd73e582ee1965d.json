@@ -1,0 +1,37 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"G.13\", \"meslek_tanim\": \"Spor malzemeleri imalatı, ticareti\", \"sektor_tanim\": \"KUAFÖR, BERBER, TEMİZLİK, SPOR, KOZMETİK, SAĞLIK\", \"nace_examples\": [{\"nace_code\": \"13.96.10\", \"nace_label\": \"Can yeleği ve can kurtaran simidi imalatı\"}, {\"nace_code\": \"13.96.11\", \"nace_label\": \"Paraşüt (yönlendirilebilen paraşütler dahil) ve rotoşüt ile bunların parçalarının imalatı\"}, {\"nace_code\": \"32.30.17\", \"nace_label\": \"Kar kayakları, kayak ayakkabıları, kayak botları, kayak batonları, buz patenleri ve tekerlekli patenler ile su kayağı araçları, sörf tahtaları, rüzgar sörfleri vb. ekipmanlar ile bunların parçalarının imalatı (kaykaylar dahil)\"}, {\"nace_code\": \"32.30.18\", \"nace_label\": \"Jimnastik ve atletizm eşyaları ile form tutma salonlarına ait eşya ve ekipmanların imalatı (atlama beygiri, dambıl ve halterler, kürek çekme ve bisiklete binme aletleri, ciritler, çekiçler; boks çalışma topları, boks veya güreş için ringler vb.)\"}, {\"nace_code\": \"32.30.19\", \"nace_label\": \"Spor amaçlı dağcılık, avcılık veya balıkçılık eşyalarının imalatı (kasklar, olta kamışları, olta iğneleri ve kancaları, otomatik olta makaraları, el kepçeleri, kelebek ağları, yapma balıklar, sinekler gibi suni yemler, kurşunlar, yapma kuşlar vb.)\"}, {\"nace_code\": \"32.30.20\", \"nace_label\": \"Spor veya açık hava oyunları için diğer eşyaların imalatı (boks eldiveni, spor eldiveni, yaylar, beyzbol ve golf sopaları ile top ve diğer eşyaları, tenis masası, raket, ağ ve topları, tozluklar, bacak koruyucular, şişme ve diğer havuzlar vb.)\"}, {\"nace_code\": \"32.30.21\", \"nace_label\": \"Top imalatı (beyzbol, futbol, basketbol ve voleybol için)\"}, {\"nace_code\": \"46.49.02\", \"nace_label\": \"Spor malzemesi toptan ticareti\"}, {\"nace_code\": \"46.49.09\", \"nace_label\": \"Sportif amaçlı avcılık ve balıkçılık malzemeleri toptan ticareti (tabanca, av tüfeği ve balık ağları hariç)\"}, {\"nace_code\": \"47.63.03\", \"nace_label\": \"Kamp malzemeleri perakende ticareti\"}, {\"nace_code\": \"47.63.05\", \"nace_label\": \"Jimnastik ve atletizm eşya ve ekipmanları ile form tutma merkezlerine ait eşya ve ekipmanların perakende ticareti (halter, yürüme bantları, vb.)\"}, {\"nace_code\": \"47.63.08\", \"nace_label\": \"Avcılık ve balıkçılık teçhizatı ve malzemeleri ile silah ve mühimmat perakende ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"spor malzemeleri\",\n    \"spor aletleri\",\n    \"spor ekipmanları\",\n    \"spor mağazam\",\n    \"ben sporcu\",\n    \"sporcu dükkanı\",\n    \"spor ürünleri\",\n    \"spor shop\",\n    \"fitness ekipmanları\",\n    \"sporcular için\",\n    \"sporcu malzemeleri\",\n    \"spor aksesuarları\",\n    \"spor malzemecisi\",\n    \"spor market\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "spor malzemeleri",
+      "spor aletleri",
+      "spor ekipmanları",
+      "spor mağazam",
+      "ben sporcu",
+      "sporcu dükkanı",
+      "spor ürünleri",
+      "spor shop",
+      "fitness ekipmanları",
+      "sporcular için",
+      "sporcu malzemeleri",
+      "spor aksesuarları",
+      "spor malzemecisi",
+      "spor market"
+    ]
+  }
+}

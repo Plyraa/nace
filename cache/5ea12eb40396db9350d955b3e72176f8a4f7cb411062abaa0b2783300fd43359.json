@@ -1,0 +1,36 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"G.15\", \"meslek_tanim\": \"Temizlik malzemeleri imalatı, ticareti\", \"sektor_tanim\": \"KUAFÖR, BERBER, TEMİZLİK, SPOR, KOZMETİK, SAĞLIK\", \"nace_examples\": [{\"nace_code\": \"17.22.02\", \"nace_label\": \"Kağıt hamurundan, kağıttan, selüloz vatkadan veya selüloz lifli ağlardan tuvalet kağıdı, kağıt mendil, temizlik veya yüz temizleme için kağıt mendil ve havlular ile masa örtüsü ve peçetelerin imalatı\"}, {\"nace_code\": \"17.22.04\", \"nace_label\": \"Kağıt hamurundan, kağıttan, selüloz vatkadan veya selüloz lifli ağlardan hijyenik havlu ve tamponlar, kadın bağı, pedler, bebek bezleri vb. hijyenik ürünler ile giyim eşyası ve giysi aksesuarlarının imalatı\"}, {\"nace_code\": \"20.13.04\", \"nace_label\": \"Karbonatların imalatı (sodyum, kalsiyum ve diğerleri) (çamaşır sodası dahil)\"}, {\"nace_code\": \"20.20.11\", \"nace_label\": \"Böcek ilacı, kemirgen ilacı, küf ve mantar ilacı, yabancı otla mücadele ilacı imalatı\"}, {\"nace_code\": \"20.20.15\", \"nace_label\": \"Dezenfektan imalatı (tarımsal ve diğer kullanımlar için) (hijyenik maddeler, bakteriostatlar ve sterilize ediciler dahil) (doğal dezenfektanlar hariç)\"}, {\"nace_code\": \"20.20.16\", \"nace_label\": \"Doğal dezenfektan imalatı\"}, {\"nace_code\": \"20.41.01\", \"nace_label\": \"Kapalı alanlar için kokulu müstahzarlar ve koku gidericiler ile suni mumların imalatı (kişisel kullanım için olanlar hariç)\"}, {\"nace_code\": \"20.41.04\", \"nace_label\": \"Sabun, yıkama ve temizleme müstahzarları (deterjanlar) ile sabun olarak kullanılan müstahzarlar imalatı (kişisel bakım için olanlar ile ovalama toz ve kremleri hariç)\"}, {\"nace_code\": \"20.41.06\", \"nace_label\": \"Cila, krem ve ovalama krem ve tozlarının imalatı (ayakkabı, mobilya, yer döşemesi, kaporta, cam, metal vb. için)\"}, {\"nace_code\": \"46.44.02\", \"nace_label\": \"Temizlik malzemesi toptan ticareti (kişisel temizlik sabunları hariç)\"}, {\"nace_code\": \"46.44.04\", \"nace_label\": \"Cila ve krem (ayakkabı, mobilya, yer döşemesi, kaporta, cam veya metal için) toptan ticareti\"}, {\"nace_code\": \"46.45.02\", \"nace_label\": \"Sabun toptan ticareti (kişisel temizlik için)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"temizlik malzemesi imalatı\",\n    \"temizlik ürünleri ticareti\",\n    \"temizlik malzemesi satışı\",\n    \"sabun imalatçısı\",\n    \"deterjan üreticisi\",\n    \"bez üreticisi\",\n    \"hijyen malzemesi satıcısı\",\n    \"temizlik malzemeleri imalatı\",\n    \"temizlik ürünleri toptancısı\",\n    \"temizlik malzemeleri toptancısı\",\n    \"temizlik malzemesi üreticisi\",\n    \"sabun satıcısı\",\n    \"deterjan satıcısı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "temizlik malzemesi imalatı",
+      "temizlik ürünleri ticareti",
+      "temizlik malzemesi satışı",
+      "sabun imalatçısı",
+      "deterjan üreticisi",
+      "bez üreticisi",
+      "hijyen malzemesi satıcısı",
+      "temizlik malzemeleri imalatı",
+      "temizlik ürünleri toptancısı",
+      "temizlik malzemeleri toptancısı",
+      "temizlik malzemesi üreticisi",
+      "sabun satıcısı",
+      "deterjan satıcısı"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "resolver_fallback",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe serbest meslek/sektör ifadesini verilen NACE kısa listesinden seçen bir resolver'sın. Sadece geçerli JSON döndür; listede olmayan kod üretme."
+      },
+      {
+        "role": "user",
+        "content": "{\"user_text\": \"evden pasta yapıp satıyorum\", \"normalized_text\": \"evden pasta yapıp\", \"buckets\": {\"manufacturing\": \"Gıda/tekstil hariç imalat, üretim ve onarım ağırlıklı sanayi.\", \"trade\": \"Perakende, toptan satış, bayilik, e-ticaret ve aracılık.\", \"food\": \"Gıda üretimi, gıda perakendesi, lokanta, kafe ve içecek faaliyetleri.\", \"textile\": \"Tekstil, konfeksiyon, ayakkabı, deri ve ilgili bakım/ticaret.\", \"construction\": \"İnşaat, tesisat, yapı malzemesi ve yapı destek işleri.\", \"logistics\": \"Yolcu/yük taşımacılığı, depolama, otopark, kurye ve taşıma destekleri.\", \"technology\": \"Yazılım, bilişim, telekom, elektronik cihaz ve dijital altyapı.\", \"services\": \"Kişisel, mesleki, eğitim, sağlık, sanat, turizm ve bakım hizmetleri.\", \"agriculture\": \"Tarım, hayvancılık, ormancılık, balıkçılık ve zirai destek.\", \"other\": \"Yukarıdaki kovalara net oturmayan veya kamusal/karma faaliyetler.\"}, \"candidate_nace_codes\": [{\"nace_code\": \"47.24.01\", \"nace_label\": \"Ekmek, pasta ve unlu mamullerin perakende ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Fırıncılık\"}, {\"nace_code\": \"10.71.01\", \"nace_label\": \"Taze pastane ürünleri imalatı (yaş pasta, kuru pasta, poğaça, kek, börek, pay, turta, waffles vb.)\", \"bucket\": \"food\", \"meslek_tanim\": \"Pastanecilik, tatlıcılık\"}, {\"nace_code\": \"08.11.03\", \"nace_label\": \"Yapı taşları ocakçılığı\", \"bucket\": \"other\", \"meslek_tanim\": \"Mermer, taş, kum ocakçılığı\"}, {\"nace_code\": \"25.11.08\", \"nace_label\": \"Metalden prefabrik yapı imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\"}, {\"nace_code\": \"31.00.90\", \"nace_label\": \"Diğer mobilyaların imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Mobilya imalatı\"}, {\"nace_code\": \"46.31.03\", \"nace_label\": \"Narenciye toptan ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Yaş sebze, meyve ticareti\"}, {\"nace_code\": \"23.61.03\", \"nace_label\": \"Betondan yapılmış prefabrik yapıların imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Prefabrik yapıların imalatı, kurulumu, ticareti\"}, {\"nace_code\": \"47.55.08\", \"nace_label\": \"Yatak perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Mobilya ticareti\"}, {\"nace_code\": \"47.78.10\", \"nace_label\": \"Evlerde kullanılan tüpgaz perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Tüp gaz bayiliği\"}, {\"nace_code\": \"46.49.11\", \"nace_label\": \"Kitap, dergi ve gazete toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Kitapçılık\"}, {\"nace_code\": \"47.22.06\", \"nace_label\": \"Sakatat perakende ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Kasaplık\"}, {\"nace_code\": \"47.71.07\", \"nace_label\": \"Deri veya deri bileşimli giyim eşyası perakende ticareti\", \"bucket\": \"textile\", \"meslek_tanim\": \"Deri giyim eşyası ticareti\"}, {\"nace_code\": \"46.31.04\", \"nace_label\": \"Diğer taze meyve sebze toptan ticareti (patates dahil)\", \"bucket\": \"food\", \"meslek_tanim\": \"Yaş sebze, meyve ticareti\"}, {\"nace_code\": \"22.24.05\", \"nace_label\": \"Plastikten prefabrik yapıların imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Prefabrik yapıların imalatı, kurulumu, ticareti\"}, {\"nace_code\": \"16.26.00\", \"nace_label\": \"Bitkisel biyokütleden katı yakıt imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Yakacak imalatı, ticareti\"}, {\"nace_code\": \"47.22.05\", \"nace_label\": \"Et perakende ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Kasaplık\"}, {\"nace_code\": \"47.79.01\", \"nace_label\": \"Antika perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Sanat eseri, antika ticareti\"}, {\"nace_code\": \"43.41.00\", \"nace_label\": \"Çatı işleri\", \"bucket\": \"construction\", \"meslek_tanim\": \"Tenekecilik\"}, {\"nace_code\": \"11.02.01\", \"nace_label\": \"Üzümden şarap, köpüklü şarap, şampanya vb. imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Meşrubat imalatı, ticareti\"}, {\"nace_code\": \"46.42.04\", \"nace_label\": \"Kürk ve deriden giyim eşyalarının toptan ticareti\", \"bucket\": \"textile\", \"meslek_tanim\": \"Deri giyim eşyası ticareti\"}, {\"nace_code\": \"47.91.14\", \"nace_label\": \"Radyo, TV, posta yoluyla veya internet üzerinden yapılan perakende ticaret\", \"bucket\": \"trade\", \"meslek_tanim\": \"E-ticaret\"}, {\"nace_code\": \"90.13.00\", \"nace_label\": \"Diğer sanatsal yaratıcılık faaliyetleri\", \"bucket\": \"services\", \"meslek_tanim\": \"Bireysel sanatkârlık faaliyetleri\"}, {\"nace_code\": \"46.31.06\", \"nace_label\": \"Kültür mantarı toptan ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Yaş sebze, meyve ticareti\"}, {\"nace_code\": \"16.23.02\", \"nace_label\": \"Ahşap prefabrik yapılar ve ahşap taşınabilir evlerin imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Prefabrik yapıların imalatı, kurulumu, ticareti\"}, {\"nace_code\": \"49.33.01\", \"nace_label\": \"Taksi ile yolcu taşımacılığı\", \"bucket\": \"logistics\", \"meslek_tanim\": \"Taksicilik\"}, {\"nace_code\": \"47.78.26\", \"nace_label\": \"Yapma çiçek, yaprak ve meyveler ile mum perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Çiçekçilik\"}, {\"nace_code\": \"36.00.03\", \"nace_label\": \"Su sayaçlarının bakım ve onarımı\", \"bucket\": \"other\", \"meslek_tanim\": \"Elektronik ürün imalatı, onarımı\"}, {\"nace_code\": \"24.43.05\", \"nace_label\": \"Kalay imalatı (işlenmemiş halde)\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Kalaycılık, kaplamacılık\"}, {\"nace_code\": \"23.12.01\", \"nace_label\": \"Cam ayna imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Camcılık\"}, {\"nace_code\": \"46.21.01\", \"nace_label\": \"Hayvan yemi toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Evcil hayvan bakımı, ticareti\"}], \"instruction\": \"En olası ilk 3 NACE kodunu sırala. Kodlar sadece candidate_nace_codes içinden olmalı.\", \"schema\": {\"candidates\": [{\"nace_code\": \"string\", \"bucket\": \"string\", \"confidence\": 0.0}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"candidates\": [\n    {\n      \"nace_code\": \"10.71.01\",\n      \"bucket\": \"food\",\n      \"confidence\": 0.95\n    },\n    {\n      \"nace_code\": \"47.24.01\",\n      \"bucket\": \"food\",\n      \"confidence\": 0.03\n    },\n    {\n      \"nace_code\": \"47.91.14\",\n      \"bucket\": \"trade\",\n      \"confidence\": 0.02\n    }\n  ]\n}",
+  "parsed": {
+    "candidates": [
+      {
+        "nace_code": "10.71.01",
+        "bucket": "food",
+        "confidence": 0.95
+      },
+      {
+        "nace_code": "47.24.01",
+        "bucket": "food",
+        "confidence": 0.03
+      },
+      {
+        "nace_code": "47.91.14",
+        "bucket": "trade",
+        "confidence": 0.02
+      }
+    ]
+  }
+}

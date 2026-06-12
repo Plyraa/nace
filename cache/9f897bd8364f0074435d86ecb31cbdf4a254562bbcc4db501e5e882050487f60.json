@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"K.10\", \"meslek_tanim\": \"Mermer, taş, kum ocakçılığı\", \"sektor_tanim\": \"YAPI SANATLARI\", \"nace_examples\": [{\"nace_code\": \"08.11.01\", \"nace_label\": \"Mermer ocakçılığı (traverten dahil)\"}, {\"nace_code\": \"08.11.02\", \"nace_label\": \"Granit ocakçılığı\"}, {\"nace_code\": \"08.11.03\", \"nace_label\": \"Yapı taşları ocakçılığı\"}, {\"nace_code\": \"08.11.05\", \"nace_label\": \"Dolomit ve kayağan taşı (arduvaz / kayraktaşı) ocakçılığı\"}, {\"nace_code\": \"08.11.06\", \"nace_label\": \"Kireçtaşı (kalker) ocakçılığı (kireçtaşının kabaca kırılması ve parçalanması dahil)\"}, {\"nace_code\": \"08.11.07\", \"nace_label\": \"Tebeşir, alçıtaşı ve anhidrit ocakçılığı (çıkarma, parçalama, pişirme işlemi dahil)\"}, {\"nace_code\": \"08.12.01\", \"nace_label\": \"Çakıl ve kum ocakçılığı (taşların kırılması ile kil ve kaolin madenciliği hariç)\"}, {\"nace_code\": \"08.12.02\", \"nace_label\": \"Çakıl taşlarının kırılması ve parçalanması\"}, {\"nace_code\": \"08.91.05\", \"nace_label\": \"Kehribar, oltu taşı ve lületaşı ocakçılığı\"}, {\"nace_code\": \"08.93.01\", \"nace_label\": \"Kaya tuzunun çıkarımı (tuzun elenmesi ve kırılması dahil) (tuzun yemeklik tuza dönüştürülmesi hariç)\"}, {\"nace_code\": \"08.93.02\", \"nace_label\": \"Deniz, göl ve kaynak tuzu üretimi (tuzun yemeklik tuza dönüştürülmesi hariç)\"}, {\"nace_code\": \"08.99.04\", \"nace_label\": \"Grafit ocakçılığı\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"Mermer Ocağı\",\n    \"Taş Ocağı\",\n    \"Kum Ocağı\",\n    \"Mermercilik\",\n    \"Taşçı\",\n    \"Kumcu\",\n    \"Mermerciyim\",\n    \"Taşocakçılığı\",\n    \"Mermer ve Taş Ocağı\",\n    \"Kum ve Çakıl Ocağı\",\n    \"Mermer ocakçılıı\",\n    \"Granit Ocağı\",\n    \"Kireçtaşı Ocağı\",\n    \"Ocakçı\",\n    \"Mermer ocakcılığı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "Mermer Ocağı",
+      "Taş Ocağı",
+      "Kum Ocağı",
+      "Mermercilik",
+      "Taşçı",
+      "Kumcu",
+      "Mermerciyim",
+      "Taşocakçılığı",
+      "Mermer ve Taş Ocağı",
+      "Kum ve Çakıl Ocağı",
+      "Mermer ocakçılıı",
+      "Granit Ocağı",
+      "Kireçtaşı Ocağı",
+      "Ocakçı",
+      "Mermer ocakcılığı"
+    ]
+  }
+}

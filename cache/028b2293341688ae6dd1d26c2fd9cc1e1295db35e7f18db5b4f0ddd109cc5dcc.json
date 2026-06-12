@@ -1,0 +1,36 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.07\", \"meslek_tanim\": \"Dökümcülük\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"24.45.01\", \"nace_label\": \"Maden cevherlerinden ya da oksitlerden işlenmemiş krom, manganez, nikel, tungsten, molibden, tantalum, kobalt, bizmut, titanyum, zirkonyum, berilyum, germanyum vb. imalatı (alaşımları dahil)(atık ve hurdalardan dahil)\"}, {\"nace_code\": \"24.45.02\", \"nace_label\": \"Krom, manganez, tungsten, molibden, tantalum, kobalt, bizmut, titanyum, zirkonyum, berilyum, germanyum vb. diğer demir dışı metallerden yapılan ürünlerin imalatı (sermetler ve diğer ara ürünler dahil, nikelden olanlar hariç)\"}, {\"nace_code\": \"24.52.20\", \"nace_label\": \"Çelik dökümü\"}, {\"nace_code\": \"24.53.01\", \"nace_label\": \"Hafif metallerin dökümü\"}, {\"nace_code\": \"24.54.02\", \"nace_label\": \"Değerli metallerin dökümü\"}, {\"nace_code\": \"24.54.90\", \"nace_label\": \"Demir dışı diğer metallerin dökümü (değerli metallerin dökümü hariç)\"}, {\"nace_code\": \"25.63.01\", \"nace_label\": \"Metalden kalıp ve döküm modeli imalatı (kek ve ayakkabı kalıpları hariç)\"}, {\"nace_code\": \"25.63.02\", \"nace_label\": \"Plastikten kalıp ve döküm modeli imalatı (kek ve ayakkabı kalıpları hariç)\"}, {\"nace_code\": \"25.99.12\", \"nace_label\": \"Kalıba dökülerek yapılan zil, çan, gong vb. eşyalar ile adi metallerden kalıba dökülerek yapılan biblo, heykelcik ve diğer süs eşyası imalatı (bisiklet zilleri dahil ancak bakırdan olanlar ile mutfak eşyaları hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\"aliases\": [\"dökümcü\", \"döküm işi\", \"dökümhane\", \"metal döküm\", \"döküm yaparım\", \"döküm ustası\", \"döküm işleri\", \"kalıp döküm\", \"çelik döküm\", \"alüminyum döküm\", \"döküm modeli\", \"sıvı metal döküm\", \"sanayi döküm\"]}",
+  "parsed": {
+    "aliases": [
+      "dökümcü",
+      "döküm işi",
+      "dökümhane",
+      "metal döküm",
+      "döküm yaparım",
+      "döküm ustası",
+      "döküm işleri",
+      "kalıp döküm",
+      "çelik döküm",
+      "alüminyum döküm",
+      "döküm modeli",
+      "sıvı metal döküm",
+      "sanayi döküm"
+    ]
+  }
+}

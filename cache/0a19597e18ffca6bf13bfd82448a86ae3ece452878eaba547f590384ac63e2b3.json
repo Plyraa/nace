@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"K.13\", \"meslek_tanim\": \"PVC ürün ticareti\", \"sektor_tanim\": \"YAPI SANATLARI\", \"nace_examples\": [{\"nace_code\": \"46.83.11\", \"nace_label\": \"Plastik kapı, pencere ve bunların kasaları ile kapı eşikleri, panjurlar, jaluziler, storlar vb. eşyaların toptan ticareti\"}, {\"nace_code\": \"47.52.09\", \"nace_label\": \"Plastik kapı, pencere ve bunların kasaları ile kapı eşikleri, panjurlar, jaluziler, storlar ve benzeri eşyaların perakende ticareti (PVC olanlar dahil)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"PVC işi yapıyorum\",\n    \"PVC doğrama\",\n    \"pvc pencere kapı\",\n    \"PVC ürünleri satışı\",\n    \"pivsi ürün\",\n    \"pvc ticareti\",\n    \"plastik kapı pencere\",\n    \"pvc dükkanı\",\n    \"PVC satıyorum\",\n    \"pvc jaluzi stor\",\n    \"PVC ürün ticaret\",\n    \"pivsici\",\n    \"PVC toptan perakende\",\n    \"pivic doğrama\",\n    \"pvc ürünleri\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "PVC işi yapıyorum",
+      "PVC doğrama",
+      "pvc pencere kapı",
+      "PVC ürünleri satışı",
+      "pivsi ürün",
+      "pvc ticareti",
+      "plastik kapı pencere",
+      "pvc dükkanı",
+      "PVC satıyorum",
+      "pvc jaluzi stor",
+      "PVC ürün ticaret",
+      "pivsici",
+      "PVC toptan perakende",
+      "pivic doğrama",
+      "pvc ürünleri"
+    ]
+  }
+}

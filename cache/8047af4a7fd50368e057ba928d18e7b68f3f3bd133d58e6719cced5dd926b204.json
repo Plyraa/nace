@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"21474\", \"alias\": \"Yapı malzemeleri\", \"meslek_tanim\": \"İnşaat malzemeleri ticareti\", \"nace_code\": \"46.83.08\", \"nace_label\": \"Taş, kum, çakıl, mıcır, kil, kaolin vb. inşaat malzemeleri toptan ticareti\"}, {\"id\": \"10299\", \"alias\": \"kapı konuşma sistemi\", \"meslek_tanim\": \"Güvenlik sistemleri hizmetleri\", \"nace_code\": \"26.30.09\", \"nace_label\": \"Hırsız ve yangın alarm sistemleri ve kapı konuşma sistemlerinin (diyafon) (görüntülü olanlar dahil) imalatı (motorlu kara taşıtları için alarm sistemleri hariç)\"}, {\"id\": \"13223\", \"alias\": \"makina tamircisi\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.96.01\", \"nace_label\": \"Plastik ve kauçuk makinelerinin imalatı\"}, {\"id\": \"4321\", \"alias\": \"demir çelik işleri yapıyorum\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"43.24.03\", \"nace_label\": \"Parmaklık ve korkuluk tesisatı işleri (metal yangın merdivenlerinin kurulumu dahil)\"}, {\"id\": \"11479\", \"alias\": \"konfeksiyon dükkanı\", \"meslek_tanim\": \"Konfeksiyonculuk\", \"nace_code\": \"14.22.02\", \"nace_label\": \"Gecelik, sabahlık, pijama, bornoz ve ropdöşambır imalatı (örgü veya tığ işi kumaştan olanlar hariç)\"}, {\"id\": \"17201\", \"alias\": \"pencere yapıyorum\", \"meslek_tanim\": \"PVC ürün imalatı\", \"nace_code\": \"22.23.08\", \"nace_label\": \"Plastikten kapı ve pencere imalatı\"}, {\"id\": \"6033\", \"alias\": \"elektrik imalatçısı\", \"meslek_tanim\": \"Elektrik malzemeleri imalatı, ticareti\", \"nace_code\": \"23.43.01\", \"nace_label\": \"Seramik yalıtkanların (izolatörlerin) ve yalıtkan bağlantı parçalarının imalatı\"}, {\"id\": \"17938\", \"alias\": \"PVC ürünleri satışı\", \"meslek_tanim\": \"PVC ürün ticareti\", \"nace_code\": \"46.83.11\", \"nace_label\": \"Plastik kapı, pencere ve bunların kasaları ile kapı eşikleri, panjurlar, jaluziler, storlar vb. eşyaların toptan ticareti\"}, {\"id\": \"134\", \"alias\": \"akide şekeri\", \"meslek_tanim\": \"Şekercilik, çikolatacılık\", \"nace_code\": \"10.81.03\", \"nace_label\": \"Akçaağaç şurubu imalatı\"}, {\"id\": \"10162\", \"alias\": \"kalıcı makyaj\", \"meslek_tanim\": \"Güzellik salonu işletmeciliği\", \"nace_code\": \"96.22.02\", \"nace_label\": \"Sadece manikür ve pedikür hizmeti sunan salonların faaliyetleri\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"21474\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"10299\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"13223\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"4321\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"11479\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"17201\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"6033\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"17938\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"134\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"10162\",\n      \"verdict\": \"no\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "21474",
+        "verdict": "yes"
+      },
+      {
+        "id": "10299",
+        "verdict": "yes"
+      },
+      {
+        "id": "13223",
+        "verdict": "no"
+      },
+      {
+        "id": "4321",
+        "verdict": "yes"
+      },
+      {
+        "id": "11479",
+        "verdict": "no"
+      },
+      {
+        "id": "17201",
+        "verdict": "yes"
+      },
+      {
+        "id": "6033",
+        "verdict": "no"
+      },
+      {
+        "id": "17938",
+        "verdict": "yes"
+      },
+      {
+        "id": "134",
+        "verdict": "no"
+      },
+      {
+        "id": "10162",
+        "verdict": "no"
+      }
+    ]
+  }
+}

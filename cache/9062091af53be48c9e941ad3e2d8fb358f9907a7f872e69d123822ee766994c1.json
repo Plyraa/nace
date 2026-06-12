@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"G.03\", \"meslek_tanim\": \"Diş laboratuvarlarının faaliyetleri\", \"sektor_tanim\": \"KUAFÖR, BERBER, TEMİZLİK, SPOR, KOZMETİK, SAĞLIK\", \"nace_examples\": [{\"nace_code\": \"32.50.03\", \"nace_label\": \"Diş laboratuvarlarının faaliyetleri (protez diş, metal kuron, vb. imalatı)\"}, {\"nace_code\": \"32.50.06\", \"nace_label\": \"Dişçi çimentosu, dişçilik mumları, dolgu maddesi, kemik tedavisinde kullanılan çimento, jel preparat, steril adhezyon bariyeri, dikiş malzemesi (katgüt hariç), doku yapıştırıcısı, laminarya, emilebilir hemostatik, vb. imalatı\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"diş laboratuvarı\",\n    \"protez laboratuvarı\",\n    \"diş protez laboratuvarı\",\n    \"diş lab\",\n    \"protez lab\",\n    \"dişçi laboratuvarı\",\n    \"diş protez imalatı\",\n    \"kuron laboratuvarı\",\n    \"diş kuron imalatı\",\n    \"diş labaratuvari\",\n    \"protez diş labı\",\n    \"diş protez yapımı\",\n    \"diş laboratuvarı sahibi\",\n    \"protezci\",\n    \"diş protez ustası\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "diş laboratuvarı",
+      "protez laboratuvarı",
+      "diş protez laboratuvarı",
+      "diş lab",
+      "protez lab",
+      "dişçi laboratuvarı",
+      "diş protez imalatı",
+      "kuron laboratuvarı",
+      "diş kuron imalatı",
+      "diş labaratuvari",
+      "protez diş labı",
+      "diş protez yapımı",
+      "diş laboratuvarı sahibi",
+      "protezci",
+      "diş protez ustası"
+    ]
+  }
+}

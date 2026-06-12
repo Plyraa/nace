@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.01\", \"meslek_tanim\": \"Alüminyum ürün imalatı\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"24.42.16\", \"nace_label\": \"Alüminyum folyo imalatı (alaşımdan olanlar dahil)\"}, {\"nace_code\": \"24.42.18\", \"nace_label\": \"Alüminyum sac, levha, tabaka, şerit imalatı (alaşımdan olanlar dahil)\"}, {\"nace_code\": \"24.42.21\", \"nace_label\": \"Alüminyum bar, çubuk, tel ve profil, tüp, boru ve bağlantı parçaları imalatı (alaşımdan olanlar dahil)\"}, {\"nace_code\": \"25.12.04\", \"nace_label\": \"Alüminyum kapı, pencere, bunların kasaları, kapı eşiği, panjur, vb. imalatı\"}, {\"nace_code\": \"25.92.03\", \"nace_label\": \"Kapasitesi 300 lt.yi geçmeyen alüminyum varil fıçı, kova vb. imalatı (diş macunu, krem gibi kapaklı tüpler ve katlanabilir kutular ile aerosol kutuları dahil)\"}, {\"nace_code\": \"25.99.01\", \"nace_label\": \"Demir, çelik ve alüminyumdan sofra ve mutfak eşyalarının imalatı (tencere, tava, çaydanlık, cezve, yemek kapları, bulaşık telleri vb.) (teflon, emaye vb. ile kaplanmışlar dahil, bakırdan olanlar hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"alüminyum işleri\",\n    \"alüminyum imalat\",\n    \"alüminyum ürün imalatçısı\",\n    \"alüminyum doğrama\",\n    \"alüminyum profil imalatı\",\n    \"alüminyum sac kesim\",\n    \"alüminyum folyo imalatı\",\n    \"alüminyum kapı pencere\",\n    \"alüminyum mutfak eşyası\",\n    \"alüminyum tencere tava\",\n    \"alüminyum boru profil\",\n    \"alüminyum levha imalatı\",\n    \"alüminyum kova varil\",\n    \"alüminyum işleme\",\n    \"alüminyum ürünleri\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "alüminyum işleri",
+      "alüminyum imalat",
+      "alüminyum ürün imalatçısı",
+      "alüminyum doğrama",
+      "alüminyum profil imalatı",
+      "alüminyum sac kesim",
+      "alüminyum folyo imalatı",
+      "alüminyum kapı pencere",
+      "alüminyum mutfak eşyası",
+      "alüminyum tencere tava",
+      "alüminyum boru profil",
+      "alüminyum levha imalatı",
+      "alüminyum kova varil",
+      "alüminyum işleme",
+      "alüminyum ürünleri"
+    ]
+  }
+}

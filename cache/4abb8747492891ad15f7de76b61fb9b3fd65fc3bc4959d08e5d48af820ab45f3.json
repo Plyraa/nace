@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"1896\", \"alias\": \"Ben inşaatçıyım\", \"meslek_tanim\": \"İnşaatçılık\", \"nace_code\": \"43.11.01\", \"nace_label\": \"Yıkım işleri (binaların ve diğer yapıların yıkılması ve sökülmesi)\"}, {\"id\": \"9428\", \"alias\": \"ikinci el kitap\", \"meslek_tanim\": \"Kitapçılık\", \"nace_code\": \"47.79.03\", \"nace_label\": \"İkinci el kitapların perakende ticareti (sahafların faaliyetleri)\"}, {\"id\": \"12257\", \"alias\": \"konfeksiyoncu atölyem\", \"meslek_tanim\": \"Konfeksiyonculuk\", \"nace_code\": \"14.29.01\", \"nace_label\": \"Giyim eşyası imalatı (keçeden veya diğer dokusuz kumaştan ya da emdirilmiş veya kaplanmış tekstil kumaşından olanlar)\"}, {\"id\": \"3247\", \"alias\": \"Boya ve Kimyasal Ticareti\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin ticareti\", \"nace_code\": \"47.52.03\", \"nace_label\": \"Boya, vernik, lak, solvent vb. ürünlerin perakende ticareti\"}, {\"id\": \"9677\", \"alias\": \"İnşaat malzeme imalatı\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"23.99.01\", \"nace_label\": \"Asfalttan ve benzeri malzemelerden yapılan ürünlerin imalatı (çatı yapımında veya su yalıtımında kullanılan bitüm esaslı keçeler dahil)\"}, {\"id\": \"4192\", \"alias\": \"demir çelik atölyesi\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"25.61.05\", \"nace_label\": \"Tıraş bıçakları, usturalar ile jiletler ve tıraş makinelerinin bıçaklarının imalatı\"}, {\"id\": \"15983\", \"alias\": \"mobilya yapıyorum\", \"meslek_tanim\": \"Mobilya imalatı\", \"nace_code\": \"31.00.04\", \"nace_label\": \"Mağazalar için tezgah, banko, vitrin, raf, çekmeceli dolap vb. özel mobilya imalatı (laboratuvarlar ve teknik bürolar için olanlar hariç)\"}, {\"id\": \"11741\", \"alias\": \"kimyasal ürün imalatçısı\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\", \"nace_code\": \"20.59.01\", \"nace_label\": \"Fotoğrafik levha ve filmlerin (hassaslaştırılmış, ışığa maruz kalmamış olanlar), anında baskılanan filmlerin, fotoğrafçılıkta kullanılan kimyasal müstahzarların ve karışımsız (saf) ürünlerin imalatı\"}, {\"id\": \"19202\", \"alias\": \"sanayi makinaları tamiri\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.91.01\", \"nace_label\": \"Konvertörler (metalürji), külçe kalıpları (ingot kalıpları), döküm kepçeleri, döküm makineleri, vb. sıcak metallerin işlenmesi için kullanılan makine ve teçhizatın imalatı\"}, {\"id\": \"15308\", \"alias\": \"marangoz ustası\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"16.28.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer ağaç ürünleri imalatı; mantardan, saz, saman ve benzeri örme malzemelerinden yapılmış ürünlerin imalatı\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\"results\": [{\"id\": \"1896\", \"verdict\": \"no\"}, {\"id\": \"9428\", \"verdict\": \"yes\"}, {\"id\": \"12257\", \"verdict\": \"no\"}, {\"id\": \"3247\", \"verdict\": \"yes\"}, {\"id\": \"9677\", \"verdict\": \"unsure\"}, {\"id\": \"4192\", \"verdict\": \"no\"}, {\"id\": \"15983\", \"verdict\": \"yes\"}, {\"id\": \"11741\", \"verdict\": \"no\"}, {\"id\": \"19202\", \"verdict\": \"no\"}, {\"id\": \"15308\", \"verdict\": \"unsure\"}]}",
+  "parsed": {
+    "results": [
+      {
+        "id": "1896",
+        "verdict": "no"
+      },
+      {
+        "id": "9428",
+        "verdict": "yes"
+      },
+      {
+        "id": "12257",
+        "verdict": "no"
+      },
+      {
+        "id": "3247",
+        "verdict": "yes"
+      },
+      {
+        "id": "9677",
+        "verdict": "unsure"
+      },
+      {
+        "id": "4192",
+        "verdict": "no"
+      },
+      {
+        "id": "15983",
+        "verdict": "yes"
+      },
+      {
+        "id": "11741",
+        "verdict": "no"
+      },
+      {
+        "id": "19202",
+        "verdict": "no"
+      },
+      {
+        "id": "15308",
+        "verdict": "unsure"
+      }
+    ]
+  }
+}

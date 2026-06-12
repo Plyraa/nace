@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "resolver_fallback",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe serbest meslek/sektör ifadesini verilen NACE kısa listesinden seçen bir resolver'sın. Sadece geçerli JSON döndür; listede olmayan kod üretme."
+      },
+      {
+        "role": "user",
+        "content": "{\"user_text\": \"arı kovanım var bal satıyorum\", \"normalized_text\": \"arı kovan var bal\", \"buckets\": {\"manufacturing\": \"Gıda/tekstil hariç imalat, üretim ve onarım ağırlıklı sanayi.\", \"trade\": \"Perakende, toptan satış, bayilik, e-ticaret ve aracılık.\", \"food\": \"Gıda üretimi, gıda perakendesi, lokanta, kafe ve içecek faaliyetleri.\", \"textile\": \"Tekstil, konfeksiyon, ayakkabı, deri ve ilgili bakım/ticaret.\", \"construction\": \"İnşaat, tesisat, yapı malzemesi ve yapı destek işleri.\", \"logistics\": \"Yolcu/yük taşımacılığı, depolama, otopark, kurye ve taşıma destekleri.\", \"technology\": \"Yazılım, bilişim, telekom, elektronik cihaz ve dijital altyapı.\", \"services\": \"Kişisel, mesleki, eğitim, sağlık, sanat, turizm ve bakım hizmetleri.\", \"agriculture\": \"Tarım, hayvancılık, ormancılık, balıkçılık ve zirai destek.\", \"other\": \"Yukarıdaki kovalara net oturmayan veya kamusal/karma faaliyetler.\"}, \"candidate_nace_codes\": [{\"nace_code\": \"01.48.01\", \"nace_label\": \"Arıcılık, bal ve bal mumu üretilmesi (arı sütü dahil)\", \"bucket\": \"agriculture\", \"meslek_tanim\": \"Arıcılık\"}, {\"nace_code\": \"46.49.25\", \"nace_label\": \"Arı kovanı toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Marangozluk\"}, {\"nace_code\": \"20.59.20\", \"nace_label\": \"Barut vb. itici tozların imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\"}, {\"nace_code\": \"16.24.90\", \"nace_label\": \"Diğer ahşap konteyner imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Marangozluk\"}, {\"nace_code\": \"38.12.01\", \"nace_label\": \"Tehlikeli atıkların toplanması\", \"bucket\": \"services\", \"meslek_tanim\": \"Hurdacılık\"}, {\"nace_code\": \"20.51.24\", \"nace_label\": \"Sıvı biyoyakıt imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Akaryakıt ticareti\"}, {\"nace_code\": \"11.06.01\", \"nace_label\": \"Malt imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Meşrubat imalatı, ticareti\"}, {\"nace_code\": \"13.20.14\", \"nace_label\": \"Kot kumaşı imalatı\", \"bucket\": \"textile\", \"meslek_tanim\": \"Dokumacılık\"}, {\"nace_code\": \"46.37.01\", \"nace_label\": \"Çay toptan ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Aktar ürünleri imalatı, ticareti\"}, {\"nace_code\": \"46.36.03\", \"nace_label\": \"Şeker toptan ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Bakkallık, bayilik, büfecilik\"}, {\"nace_code\": \"17.11.08\", \"nace_label\": \"Kağıt hamuru imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Kağıt, kağıt ürünleri imalatı, ticareti\"}, {\"nace_code\": \"13.10.08\", \"nace_label\": \"İpeğin kozadan ayrılması ve sarılması\", \"bucket\": \"textile\", \"meslek_tanim\": \"Besicilik, celeplik\"}, {\"nace_code\": \"23.15.05\", \"nace_label\": \"Vitray cam imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Camcılık\"}, {\"nace_code\": \"20.42.02\", \"nace_label\": \"Kolonya imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Kozmetik imalatı, ticareti\"}, {\"nace_code\": \"46.47.01\", \"nace_label\": \"Mobilya ve mobilya aksesuarları toptan ticareti (yatak dahil)\", \"bucket\": \"trade\", \"meslek_tanim\": \"Mobilya ticareti\"}, {\"nace_code\": \"31.00.90\", \"nace_label\": \"Diğer mobilyaların imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Mobilya imalatı\"}, {\"nace_code\": \"42.22.05\", \"nace_label\": \"Telekomünikasyon şebeke ve ağlarının bakım ve onarımı\", \"bucket\": \"construction\", \"meslek_tanim\": \"Telekomünikasyon cihazları onarımı\"}, {\"nace_code\": \"46.21.01\", \"nace_label\": \"Hayvan yemi toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Evcil hayvan bakımı, ticareti\"}, {\"nace_code\": \"46.31.06\", \"nace_label\": \"Kültür mantarı toptan ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Yaş sebze, meyve ticareti\"}, {\"nace_code\": \"46.49.06\", \"nace_label\": \"Müzik aletleri toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Müzik aletleri imalatı, onarımı, ticareti\"}, {\"nace_code\": \"20.11.01\", \"nace_label\": \"Sanayi gazları imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\"}, {\"nace_code\": \"23.12.03\", \"nace_label\": \"Çok katlı yalıtım camları imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Camcılık\"}, {\"nace_code\": \"46.86.04\", \"nace_label\": \"Tekstil elyafı toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Tuhafiye imalatı, ticareti\"}, {\"nace_code\": \"46.31.03\", \"nace_label\": \"Narenciye toptan ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Yaş sebze, meyve ticareti\"}, {\"nace_code\": \"46.41.02\", \"nace_label\": \"Tuhafiye ürünleri toptan ticareti\", \"bucket\": \"textile\", \"meslek_tanim\": \"Tuhafiye imalatı, ticareti\"}, {\"nace_code\": \"23.99.07\", \"nace_label\": \"Amyantlı kağıt imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\"}, {\"nace_code\": \"47.22.06\", \"nace_label\": \"Sakatat perakende ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Kasaplık\"}, {\"nace_code\": \"47.61.00\", \"nace_label\": \"Kitap perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Kitapçılık\"}, {\"nace_code\": \"95.29.05\", \"nace_label\": \"Bisiklet onarımı\", \"bucket\": \"services\", \"meslek_tanim\": \"Motosiklet, bisiklet imalatı, onarımı\"}, {\"nace_code\": \"47.52.04\", \"nace_label\": \"Düz cam perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Camcılık\"}], \"instruction\": \"En olası ilk 3 NACE kodunu sırala. Kodlar sadece candidate_nace_codes içinden olmalı.\", \"schema\": {\"candidates\": [{\"nace_code\": \"string\", \"bucket\": \"string\", \"confidence\": 0.0}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"candidates\": [\n    {\n      \"nace_code\": \"01.48.01\",\n      \"bucket\": \"agriculture\",\n      \"confidence\": 0.95\n    },\n    {\n      \"nace_code\": \"46.49.25\",\n      \"bucket\": \"trade\",\n      \"confidence\": 0.60\n    },\n    {\n      \"nace_code\": \"46.36.03\",\n      \"bucket\": \"food\",\n      \"confidence\": 0.25\n    }\n  ]\n}",
+  "parsed": {
+    "candidates": [
+      {
+        "nace_code": "01.48.01",
+        "bucket": "agriculture",
+        "confidence": 0.95
+      },
+      {
+        "nace_code": "46.49.25",
+        "bucket": "trade",
+        "confidence": 0.6
+      },
+      {
+        "nace_code": "46.36.03",
+        "bucket": "food",
+        "confidence": 0.25
+      }
+    ]
+  }
+}

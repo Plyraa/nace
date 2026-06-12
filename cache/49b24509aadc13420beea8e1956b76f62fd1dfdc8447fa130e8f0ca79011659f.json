@@ -1,0 +1,37 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"G.16\", \"meslek_tanim\": \"Tıbbi malzemelerin imalatı, ticareti\", \"sektor_tanim\": \"KUAFÖR, BERBER, TEMİZLİK, SPOR, KOZMETİK, SAĞLIK\", \"nace_examples\": [{\"nace_code\": \"20.59.07\", \"nace_label\": \"Laboratuvar için hazır kültür ortamları, model hamurları, kompozit diyagnostik reaktifler veya laboratuvar reaktifleri imalatı\"}, {\"nace_code\": \"21.20.02\", \"nace_label\": \"Yapışkanlı bandajlar, katkütler ve benzeri tıbbi malzemelerin üretimi (steril cerrahi katgütler, eczacılık maddeleri ile birlikte kullanılan tamponlar, hidrofil pamuk, gazlı bez, sargı bezi vb.)\"}, {\"nace_code\": \"22.12.08\", \"nace_label\": \"Kauçuktan hijyenik ve eczacılık ürünlerinin imalatı (prezervatifler, emzikler, hijyenik eldivenler vb. dahil)\"}, {\"nace_code\": \"26.60.01\", \"nace_label\": \"Işınlama, elektro medikal ve elektro terapi ile ilgili cihazların imalatı\"}, {\"nace_code\": \"32.50.02\", \"nace_label\": \"Tıpta, cerrahide ve dişçilikte kullanılan protezler, ortopedik cihazlar ve aksesuarların imalatı\"}, {\"nace_code\": \"32.50.07\", \"nace_label\": \"Tıpta, cerrahide, dişçilikte veya veterinerlikte kullanılan şırınga, iğne, katater, kanül ve benzerlerinin imalatı\"}, {\"nace_code\": \"32.50.14\", \"nace_label\": \"Tıpta, cerrahide ve dişçilikte kullanılan araç-gereç ve cihazların imalatı (ortopedik cihazlar hariç)\"}, {\"nace_code\": \"32.50.15\", \"nace_label\": \"Terapatik alet ve cihazların imalatı (suni solunum veya terapatik solunum cihazları hariç)\"}, {\"nace_code\": \"32.50.90\", \"nace_label\": \"Tıbbi ve dişçilik ile ilgili diğer araç ve gereçlerin imalatı\"}, {\"nace_code\": \"32.99.09\", \"nace_label\": \"Koruyucu amaçlı solunum ekipmanları ve gaz maskelerinin imalatı (tedavi edici olanlar hariç)\"}, {\"nace_code\": \"46.18.03\", \"nace_label\": \"Tıbbi ürünlerin, araç ve malzemelerin toptan satışı ile ilgili aracıların faaliyetleri\"}, {\"nace_code\": \"46.46.01\", \"nace_label\": \"Cerrahi, tıbbi ve ortopedik alet ve cihazların toptan ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\"aliases\": [\"Tıbbi malzemeci\", \"Sağlık malzemeleri\", \"Medikal ürünler\", \"Hastane malzemeleri\", \"Cerrahi aletler\", \"Ortopedik malzeme\", \"Protez ve ortez\", \"Sargı bezi\", \"Gazlı bez\", \"Tıbbi cihazlar\", \"medikalciyim\", \"Tıbbi alet tamiri\", \"Sağlık ekipmanları\", \"Tıbbi sarf malzeme\"]}",
+  "parsed": {
+    "aliases": [
+      "Tıbbi malzemeci",
+      "Sağlık malzemeleri",
+      "Medikal ürünler",
+      "Hastane malzemeleri",
+      "Cerrahi aletler",
+      "Ortopedik malzeme",
+      "Protez ve ortez",
+      "Sargı bezi",
+      "Gazlı bez",
+      "Tıbbi cihazlar",
+      "medikalciyim",
+      "Tıbbi alet tamiri",
+      "Sağlık ekipmanları",
+      "Tıbbi sarf malzeme"
+    ]
+  }
+}

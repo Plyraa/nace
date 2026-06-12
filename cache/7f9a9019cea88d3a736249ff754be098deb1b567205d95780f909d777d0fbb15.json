@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.11\", \"meslek_tanim\": \"Kalaycılık, kaplamacılık\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"24.43.01\", \"nace_label\": \"Kurşun tabaka, levha, şerit, folyo, kurşun tozu ve pulu imalatı (alaşımdan olanlar dahil)\"}, {\"nace_code\": \"24.43.02\", \"nace_label\": \"Kurşun imalatı (işlenmemiş)\"}, {\"nace_code\": \"24.43.05\", \"nace_label\": \"Kalay imalatı (işlenmemiş halde)\"}, {\"nace_code\": \"24.43.06\", \"nace_label\": \"Çinko imalatı (işlenmemiş halde)\"}, {\"nace_code\": \"24.43.08\", \"nace_label\": \"Çinko sac, tabaka, levha, şerit, folyo, çinko tozları, vb. imalatı (alaşımdan olanlar dahil)\"}, {\"nace_code\": \"25.51.01\", \"nace_label\": \"Metallerin nikel ile kaplanması (nikelajcılık) faaliyeti\"}, {\"nace_code\": \"25.51.02\", \"nace_label\": \"Metallerin kalay ile kaplanması (kalaycılık) faaliyeti\"}, {\"nace_code\": \"25.51.09\", \"nace_label\": \"Metallerin diğer malzemelerle kaplanması (ısıl işlem hariç)\"}, {\"nace_code\": \"25.52.00\", \"nace_label\": \"Metallerin ısıl işlemi\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"kalaycı\",\n    \"kaplamacı\",\n    \"kalaycılık\",\n    \"nikelajcı\",\n    \"çinkocu\",\n    \"kalay kaplama\",\n    \"metal kaplama\",\n    \"kalaycı ustası\",\n    \"kaplama işleri\",\n    \"kalaycı dükkanı\",\n    \"kalaycılık yapıyorum\",\n    \"kaplamacılık yapıyorum\",\n    \"kalayci\",\n    \"kaplamaci\",\n    \"nikel kaplama\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "kalaycı",
+      "kaplamacı",
+      "kalaycılık",
+      "nikelajcı",
+      "çinkocu",
+      "kalay kaplama",
+      "metal kaplama",
+      "kalaycı ustası",
+      "kaplama işleri",
+      "kalaycı dükkanı",
+      "kalaycılık yapıyorum",
+      "kaplamacılık yapıyorum",
+      "kalayci",
+      "kaplamaci",
+      "nikel kaplama"
+    ]
+  }
+}

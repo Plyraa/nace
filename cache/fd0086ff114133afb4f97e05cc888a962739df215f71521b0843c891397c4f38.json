@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"19492\", \"alias\": \"saz imalatı\", \"meslek_tanim\": \"Müzik aletleri imalatı, onarımı, ticareti\", \"nace_code\": \"32.20.27\", \"nace_label\": \"Müzik kutuları, orkestriyonlar, laternalar, çıngıraklar vb. imalatı\"}, {\"id\": \"15942\", \"alias\": \"Minibüsüm\", \"meslek_tanim\": \"Minibüsçülük\", \"nace_code\": \"49.31.90\", \"nace_label\": \"Kara yoluyla tarifeli diğer yolcu taşımacılığı\"}, {\"id\": \"11349\", \"alias\": \"kayıt kopyalama servisi\", \"meslek_tanim\": \"Kayıtlı medyaların imalatı, kiralanması, ticareti\", \"nace_code\": \"26.70.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış manyetik ve optik ortamların imalatı\"}, {\"id\": \"24076\", \"alias\": \"çiçekci\", \"meslek_tanim\": \"Çiçekçilik\", \"nace_code\": \"47.78.26\", \"nace_label\": \"Yapma çiçek, yaprak ve meyveler ile mum perakende ticareti\"}, {\"id\": \"9086\", \"alias\": \"hediyelik ürünler\", \"meslek_tanim\": \"Çeşitli malların ticareti\", \"nace_code\": \"96.99.10\", \"nace_label\": \"Jeton ile çalışan kişisel hizmet makinelerinin işletilmesi faaliyetleri (jetonlu makinelerle vesikalık fotoğraf, emanet dolapları, tartı, tansiyon ölçümü vb. hizmetler dahil; oyun ve kumar makineleri ile çamaşırhane hizmetleri hariç)\"}, {\"id\": \"13735\", \"alias\": \"makina tamir atölyesi\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.30.12\", \"nace_label\": \"Çim biçme makinelerinin imalatı (traktörlere monte edilen kesici barlar dahil)\"}, {\"id\": \"2280\", \"alias\": \"besicilik yaparım\", \"meslek_tanim\": \"Besicilik, celeplik\", \"nace_code\": \"01.42.09\", \"nace_label\": \"Diğer sığır ve manda yetiştiriciliği (sütü için yetiştirilenler hariç)\"}, {\"id\": \"9492\", \"alias\": \"iklimlendirme ustası\", \"meslek_tanim\": \"İklimlendirme, soğutma sistemi imalatı, kurulumu, onarımı\", \"nace_code\": \"33.12.06\", \"nace_label\": \"Sanayi tipi soğutma ve havalandırma ekipmanlarının onarım ve bakımı\"}, {\"id\": \"1263\", \"alias\": \"bakkaliye dükkanı\", \"meslek_tanim\": \"Bakkallık, bayilik, büfecilik\", \"nace_code\": \"47.11.01\", \"nace_label\": \"Bakkal ve marketlerde yapılan perakende ticaret (gıda, içecek veya tütün ağırlıklı perakende ticaret)\"}, {\"id\": \"13405\", \"alias\": \"lastikçi\", \"meslek_tanim\": \"Kauçuk, plastik ürünlerin imalatı, ticareti\", \"nace_code\": \"22.12.01\", \"nace_label\": \"Kauçuktan tüp, boru ve hortumların imalatı (vulkanize kauçuktan)\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\"id\": \"19492\", \"verdict\": \"no\"},\n    {\"id\": \"15942\", \"verdict\": \"no\"},\n    {\"id\": \"11349\", \"verdict\": \"no\"},\n    {\"id\": \"24076\", \"verdict\": \"no\"},\n    {\"id\": \"9086\", \"verdict\": \"no\"},\n    {\"id\": \"13735\", \"verdict\": \"no\"},\n    {\"id\": \"2280\", \"verdict\": \"yes\"},\n    {\"id\": \"9492\", \"verdict\": \"yes\"},\n    {\"id\": \"1263\", \"verdict\": \"yes\"},\n    {\"id\": \"13405\", \"verdict\": \"no\"}\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "19492",
+        "verdict": "no"
+      },
+      {
+        "id": "15942",
+        "verdict": "no"
+      },
+      {
+        "id": "11349",
+        "verdict": "no"
+      },
+      {
+        "id": "24076",
+        "verdict": "no"
+      },
+      {
+        "id": "9086",
+        "verdict": "no"
+      },
+      {
+        "id": "13735",
+        "verdict": "no"
+      },
+      {
+        "id": "2280",
+        "verdict": "yes"
+      },
+      {
+        "id": "9492",
+        "verdict": "yes"
+      },
+      {
+        "id": "1263",
+        "verdict": "yes"
+      },
+      {
+        "id": "13405",
+        "verdict": "no"
+      }
+    ]
+  }
+}

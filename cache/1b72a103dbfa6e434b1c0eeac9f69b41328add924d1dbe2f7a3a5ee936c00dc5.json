@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"4314\", \"alias\": \"demir çelik işleri yapıyorum\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"29.20.03\", \"nace_label\": \"Konteyner imalatı (bir veya daha fazla taşıma şekline göre özel olarak tasarlanmış olanlar)\"}, {\"id\": \"948\", \"alias\": \"ağda\", \"meslek_tanim\": \"Güzellik salonu işletmeciliği\", \"nace_code\": \"96.22.01\", \"nace_label\": \"Güzellik salonlarının faaliyetleri (cilt bakımı, kaş alma, ağda, manikür, pedikür, makyaj, kalıcı makyaj vb.nin bir arada sunulduğu salonlar) (sağlık bakım hizmetleri hariç)\"}, {\"id\": \"10691\", \"alias\": \"kauçuk ürünleri ticareti\", \"meslek_tanim\": \"Kauçuk, plastik ürünlerin imalatı, ticareti\", \"nace_code\": \"19.20.17\", \"nace_label\": \"Vazelin, parafin mumu, petrol mumu, petrol koku, petrol bitümeni ve diğer petrol ürünlerinin imalatı\"}, {\"id\": \"9478\", \"alias\": \"İnşaat malzemesi üretimi\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"22.24.04\", \"nace_label\": \"Vinil, linolyum (muşamba) gibi esnek yer kaplamaları ile plastik zemin, duvar ve tavan kaplamalarının imalatı (duvar kağıdı hariç)\"}, {\"id\": \"8595\", \"alias\": \"hediyelik eşya toptancısı\", \"meslek_tanim\": \"Züccaciye imalatı, ticareti\", \"nace_code\": \"23.45.01\", \"nace_label\": \"Tarımsal amaçlı olanlar ile malların taşınması ya da ambalajlanması için kullanılan seramik ürünlerin imalatı\"}, {\"id\": \"5390\", \"alias\": \"Dokumacılık yapıyorum\", \"meslek_tanim\": \"Dokumacılık\", \"nace_code\": \"13.91.01\", \"nace_label\": \"Örgü ve tığ işi kumaşların imalatı (penye ve havlı kumaşlar ile raschel veya benzeri makineler ile örülen tül kumaş, perdelik kumaş vb. örgü veya tığ ile örülmüş kumaşlar dahil)\"}, {\"id\": \"3954\", \"alias\": \"demir profil imalatı\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"25.93.03\", \"nace_label\": \"Telden yapılan diğer ürünlerin imalatı (örgülü tel, örme şerit,örme halat, taşıma askısı, dikenli tel (elektrik yalıtımı olanlar hariç) ve demir, çelik veya bakır tellerden mensucat, ızgara, ağ, kafeslik ve çitler)\"}, {\"id\": \"21763\", \"alias\": \"yazılım yükleme\", \"meslek_tanim\": \"Bilgisayar kurulumu, onarımı, programlama, veri kurtarma\", \"nace_code\": \"63.91.02\", \"nace_label\": \"Web arama portalı faaliyetleri\"}, {\"id\": \"3308\", \"alias\": \"böcek ilaçlama\", \"meslek_tanim\": \"Genel temizlik, haşere kontrol faaliyetleri\", \"nace_code\": \"81.21.01\", \"nace_label\": \"Binaların genel temizliği (uzmanlaşmış temizlik faaliyetleri hariç)\"}, {\"id\": \"16703\", \"alias\": \"oyuncak hayvan imalatı\", \"meslek_tanim\": \"Oyuncak imalatı, ticareti\", \"nace_code\": \"46.49.04\", \"nace_label\": \"Oyun ve oyuncak toptan ticareti\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"4314\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"948\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"10691\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"9478\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"8595\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"5390\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"3954\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"21763\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"3308\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"16703\",\n      \"verdict\": \"yes\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "4314",
+        "verdict": "no"
+      },
+      {
+        "id": "948",
+        "verdict": "yes"
+      },
+      {
+        "id": "10691",
+        "verdict": "no"
+      },
+      {
+        "id": "9478",
+        "verdict": "no"
+      },
+      {
+        "id": "8595",
+        "verdict": "no"
+      },
+      {
+        "id": "5390",
+        "verdict": "yes"
+      },
+      {
+        "id": "3954",
+        "verdict": "yes"
+      },
+      {
+        "id": "21763",
+        "verdict": "no"
+      },
+      {
+        "id": "3308",
+        "verdict": "no"
+      },
+      {
+        "id": "16703",
+        "verdict": "yes"
+      }
+    ]
+  }
+}

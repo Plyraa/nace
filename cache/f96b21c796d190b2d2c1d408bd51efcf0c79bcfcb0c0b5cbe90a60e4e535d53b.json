@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"11131\", \"alias\": \"kimyasal ürün imalatçısı\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\", \"nace_code\": \"20.13.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış kimyasal elementler, inorganik asitler ve bileşiklerin imalatı\"}, {\"id\": \"16757\", \"alias\": \"oyuncak ticaret\", \"meslek_tanim\": \"Oyuncak imalatı, ticareti\", \"nace_code\": \"46.49.04\", \"nace_label\": \"Oyun ve oyuncak toptan ticareti\"}, {\"id\": \"22232\", \"alias\": \"zirai ilaç toptan\", \"meslek_tanim\": \"Gübre, zirai ilaç imalatı, ticareti\", \"nace_code\": \"20.20.13\", \"nace_label\": \"Çimlenmeyi önleyici ve bitki gelişimini düzenleyici ürün imalatı\"}, {\"id\": \"19087\", \"alias\": \"spor aletleri\", \"meslek_tanim\": \"Spor malzemeleri imalatı, ticareti\", \"nace_code\": \"47.63.08\", \"nace_label\": \"Avcılık ve balıkçılık teçhizatı ve malzemeleri ile silah ve mühimmat perakende ticareti\"}, {\"id\": \"5923\", \"alias\": \"ekskavatörcü\", \"meslek_tanim\": \"İş makinesi işletmeciliği\", \"nace_code\": \"77.32.01\", \"nace_label\": \"Bina ve bina dışı inşaatlarda kullanılan makine ve ekipmanların operatörsüz olarak kiralanması ve operasyonel leasingi (kurma/sökme hariç)\"}, {\"id\": \"7372\", \"alias\": \"fide üreticisi\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\", \"nace_code\": \"01.63.04\", \"nace_label\": \"Mısır vb. ürünlerin tanelenmesi ve temizlenmesi ile ilgili faaliyetler\"}, {\"id\": \"11584\", \"alias\": \"konfeksiyon işletmesi\", \"meslek_tanim\": \"Konfeksiyonculuk\", \"nace_code\": \"47.71.12\", \"nace_label\": \"Gelinlik perakende ticareti\"}, {\"id\": \"8376\", \"alias\": \"hayvancılık\", \"meslek_tanim\": \"Besicilik, celeplik\", \"nace_code\": \"46.23.01\", \"nace_label\": \"Canlı hayvanların toptan ticareti (kümes hayvanları hariç)\"}, {\"id\": \"2194\", \"alias\": \"Beyaz eşya perakende\", \"meslek_tanim\": \"Beyaz eşya ticareti\", \"nace_code\": \"46.43.01\", \"nace_label\": \"Beyaz eşya toptan ticareti\"}, {\"id\": \"23361\", \"alias\": \"şov ajansı\", \"meslek_tanim\": \"Ajans, organizasyon faaliyetleri\", \"nace_code\": \"93.19.02\", \"nace_label\": \"Spor etkinlikleri yapımcılarının faaliyetleri ile bu etkinliklerin kendi tesisleri olmayan kuruluşlar tarafından düzenlenmesi faaliyetleri (spor kulüpleri tarafından yapılanlar hariç)\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\"results\": [{\"id\": \"11131\", \"verdict\": \"yes\"}, {\"id\": \"16757\", \"verdict\": \"yes\"}, {\"id\": \"22232\", \"verdict\": \"no\"}, {\"id\": \"19087\", \"verdict\": \"no\"}, {\"id\": \"5923\", \"verdict\": \"no\"}, {\"id\": \"7372\", \"verdict\": \"no\"}, {\"id\": \"11584\", \"verdict\": \"no\"}, {\"id\": \"8376\", \"verdict\": \"yes\"}, {\"id\": \"2194\", \"verdict\": \"yes\"}, {\"id\": \"23361\", \"verdict\": \"no\"}]}",
+  "parsed": {
+    "results": [
+      {
+        "id": "11131",
+        "verdict": "yes"
+      },
+      {
+        "id": "16757",
+        "verdict": "yes"
+      },
+      {
+        "id": "22232",
+        "verdict": "no"
+      },
+      {
+        "id": "19087",
+        "verdict": "no"
+      },
+      {
+        "id": "5923",
+        "verdict": "no"
+      },
+      {
+        "id": "7372",
+        "verdict": "no"
+      },
+      {
+        "id": "11584",
+        "verdict": "no"
+      },
+      {
+        "id": "8376",
+        "verdict": "yes"
+      },
+      {
+        "id": "2194",
+        "verdict": "yes"
+      },
+      {
+        "id": "23361",
+        "verdict": "no"
+      }
+    ]
+  }
+}

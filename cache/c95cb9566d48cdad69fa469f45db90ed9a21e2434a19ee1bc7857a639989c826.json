@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"A.06\", \"meslek_tanim\": \"Mobilya imalatı\", \"sektor_tanim\": \"AĞAÇ İŞLERİ\", \"nace_examples\": [{\"nace_code\": \"31.00.01\", \"nace_label\": \"Yatak odası, yemek odası, mutfak mobilyası, banyo dolabı, genç ve çocuk odası takımı, gardırop, vestiyer, vb. imalatı (gömme dolap, masa, zigon, vb. dahil)\"}, {\"nace_code\": \"31.00.02\", \"nace_label\": \"Büro, okul, ibadethane, otel, lokanta, sinema, tiyatro vb. kapalı alanlar için mobilya imalatı (iskelet imalatı dahil; taş, beton, seramikten olanlar hariç)\"}, {\"nace_code\": \"31.00.03\", \"nace_label\": \"Sandalye, koltuk, kanepe, oturma takımı, çekyat, divan, markiz, vb. imalatı (iskelet imalatı dahil; plastik olanlar ile bürolarda ve park ve bahçelerde kullanılanlar hariç)\"}, {\"nace_code\": \"31.00.04\", \"nace_label\": \"Mağazalar için tezgah, banko, vitrin, raf, çekmeceli dolap vb. özel mobilya imalatı (laboratuvarlar ve teknik bürolar için olanlar hariç)\"}, {\"nace_code\": \"31.00.07\", \"nace_label\": \"Park ve bahçelerde kullanılan bank, masa, tabure, sandalye, koltuk, vb. mobilyaların imalatı (plastik olanlar hariç)\"}, {\"nace_code\": \"31.00.90\", \"nace_label\": \"Diğer mobilyaların imalatı\"}, {\"nace_code\": \"43.32.01\", \"nace_label\": \"Hazır mutfaklar, mutfak tezgahları, gömme dolaplar, iç merdivenler ile ince tahta, lambri ve benzerlerinin montajı işleri\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"mobilyacı\",\n    \"mobilya imalatçısı\",\n    \"mobilya imalatı\",\n    \"mobilya yapıyorum\",\n    \"mobilyacıyım\",\n    \"mobilya atölyesi\",\n    \"mobilya üretimi\",\n    \"mobilyacılık\",\n    \"mobilya dükkanı\",\n    \"mobilya ustası\",\n    \"mobilya imal ediyorum\",\n    \"mobilya imalatcısı\",\n    \"mobilya üreticisi\",\n    \"ağaç mobilya imalatı\",\n    \"mobilya yapımı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "mobilyacı",
+      "mobilya imalatçısı",
+      "mobilya imalatı",
+      "mobilya yapıyorum",
+      "mobilyacıyım",
+      "mobilya atölyesi",
+      "mobilya üretimi",
+      "mobilyacılık",
+      "mobilya dükkanı",
+      "mobilya ustası",
+      "mobilya imal ediyorum",
+      "mobilya imalatcısı",
+      "mobilya üreticisi",
+      "ağaç mobilya imalatı",
+      "mobilya yapımı"
+    ]
+  }
+}

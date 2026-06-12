@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"16163\", \"alias\": \"mobilya üretimi\", \"meslek_tanim\": \"Mobilya imalatı\", \"nace_code\": \"31.00.01\", \"nace_label\": \"Yatak odası, yemek odası, mutfak mobilyası, banyo dolabı, genç ve çocuk odası takımı, gardırop, vestiyer, vb. imalatı (gömme dolap, masa, zigon, vb. dahil)\"}, {\"id\": \"16044\", \"alias\": \"Mobilya Dünyası\", \"meslek_tanim\": \"Mobilya ticareti\", \"nace_code\": \"47.55.03\", \"nace_label\": \"Ev mobilyalarının ve aksesuarlarının perakende ticareti (baza, somya, karyola dahil; hasır ve sepetçi söğüdü gibi malzemelerden olanlar hariç)\"}, {\"id\": \"19708\", \"alias\": \"Seyyar satıcı\", \"meslek_tanim\": \"Pazarda ayakkabı, tekstil ürünleri ticareti\", \"nace_code\": \"47.51.06\", \"nace_label\": \"Tezgahlar ve pazar yerleri vasıtasıyla tuhafiye, manifatura ve mefruşat ürünleri perakende ticareti (seyyar satıcılar hariç)\"}, {\"id\": \"22647\", \"alias\": \"Yapı market\", \"meslek_tanim\": \"İnşaat malzemeleri ticareti\", \"nace_code\": \"46.83.18\", \"nace_label\": \"Duvar kağıdı, tekstil duvar kaplamaları, plastikten zemin, duvar veya tavan kaplamalarının toptan ticareti\"}, {\"id\": \"10463\", \"alias\": \"iş makinası yedek parça\", \"meslek_tanim\": \"Makine, yedek parça ticareti\", \"nace_code\": \"46.61.02\", \"nace_label\": \"Tarım, hayvancılık ve ormancılık makine ve ekipmanları ile aksam ve parçalarının toptan ticareti\"}, {\"id\": \"23908\", \"alias\": \"çiftçi\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\", \"nace_code\": \"01.61.04\", \"nace_label\": \"Bitkisel üretimi destekleyici ilaçlama ve zirai mücadele faaliyetleri (zararlı otların imhası dahil, hava yoluyla yapılanlar hariç)\"}, {\"id\": \"459\", \"alias\": \"antika alırım satarım\", \"meslek_tanim\": \"Sanat eseri, antika ticareti\", \"nace_code\": \"47.69.03\", \"nace_label\": \"Sanat eserlerinin perakende ticareti (antika eşyalar hariç)\"}, {\"id\": \"4706\", \"alias\": \"demirçelik eşya\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"33.11.03\", \"nace_label\": \"Buhar kazanları veya buhar jeneratörlerinin onarım ve bakımı\"}, {\"id\": \"23015\", \"alias\": \"yük birleştirme\", \"meslek_tanim\": \"Yük taşımacılığını destekleyici faaliyetler\", \"nace_code\": \"52.24.10\", \"nace_label\": \"Kara yolu taşımacılığıyla ilgili kargo yükleme boşaltma (elleçleme) hizmetleri\"}, {\"id\": \"11183\", \"alias\": \"kassap\", \"meslek_tanim\": \"Kasaplık\", \"nace_code\": \"47.22.06\", \"nace_label\": \"Sakatat perakende ticareti\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"16163\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"16044\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"19708\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"22647\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"10463\",\n      \"verdict\": \"unsure\"\n    },\n    {\n      \"id\": \"23908\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"459\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"4706\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"23015\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"11183\",\n      \"verdict\": \"yes\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "16163",
+        "verdict": "yes"
+      },
+      {
+        "id": "16044",
+        "verdict": "yes"
+      },
+      {
+        "id": "19708",
+        "verdict": "no"
+      },
+      {
+        "id": "22647",
+        "verdict": "no"
+      },
+      {
+        "id": "10463",
+        "verdict": "unsure"
+      },
+      {
+        "id": "23908",
+        "verdict": "no"
+      },
+      {
+        "id": "459",
+        "verdict": "no"
+      },
+      {
+        "id": "4706",
+        "verdict": "no"
+      },
+      {
+        "id": "23015",
+        "verdict": "yes"
+      },
+      {
+        "id": "11183",
+        "verdict": "yes"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "resolver_fallback",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe serbest meslek/sektör ifadesini verilen NACE kısa listesinden seçen bir resolver'sın. Sadece geçerli JSON döndür; listede olmayan kod üretme."
+      },
+      {
+        "role": "user",
+        "content": "{\"user_text\": \"cicek dukkanim var\", \"normalized_text\": \"çiçek dukkan var\", \"buckets\": {\"manufacturing\": \"Gıda/tekstil hariç imalat, üretim ve onarım ağırlıklı sanayi.\", \"trade\": \"Perakende, toptan satış, bayilik, e-ticaret ve aracılık.\", \"food\": \"Gıda üretimi, gıda perakendesi, lokanta, kafe ve içecek faaliyetleri.\", \"textile\": \"Tekstil, konfeksiyon, ayakkabı, deri ve ilgili bakım/ticaret.\", \"construction\": \"İnşaat, tesisat, yapı malzemesi ve yapı destek işleri.\", \"logistics\": \"Yolcu/yük taşımacılığı, depolama, otopark, kurye ve taşıma destekleri.\", \"technology\": \"Yazılım, bilişim, telekom, elektronik cihaz ve dijital altyapı.\", \"services\": \"Kişisel, mesleki, eğitim, sağlık, sanat, turizm ve bakım hizmetleri.\", \"agriculture\": \"Tarım, hayvancılık, ormancılık, balıkçılık ve zirai destek.\", \"other\": \"Yukarıdaki kovalara net oturmayan veya kamusal/karma faaliyetler.\"}, \"candidate_nace_codes\": [{\"nace_code\": \"01.30.90\", \"nace_label\": \"Dikim için çiçek ve diğer bitkilerin yetiştirilmesi (dekoratif amaçlarla bitki ve çim yetiştirilmesi dahil, sebze fidesi, meyve fidanı hariç)\", \"bucket\": \"agriculture\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\"}, {\"nace_code\": \"01.19.02\", \"nace_label\": \"Çiçek yetiştirilmesi (lale, kasımpatı, zambak, gül vb. ile bunların tohumları)\", \"bucket\": \"agriculture\", \"meslek_tanim\": \"Çiçekçilik\"}, {\"nace_code\": \"47.76.02\", \"nace_label\": \"Çiçek, bitki ve tohum perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Çiçekçilik\"}, {\"nace_code\": \"47.78.26\", \"nace_label\": \"Yapma çiçek, yaprak ve meyveler ile mum perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Çiçekçilik\"}, {\"nace_code\": \"32.99.01\", \"nace_label\": \"Terzi mankeni, el kalbur ve eleği, yapma çiçek, meyve ve bitkiler, şaka ve sihirbazlık benzeri eşya, koku püskürtücüleri ve mekanizmaları, tabut vb. eşyaların imalatı (gelin çiçeği dahil)\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Kauçuk, plastik ürünlerin imalatı, ticareti\"}, {\"nace_code\": \"47.76.06\", \"nace_label\": \"Tezgahlar ve pazar yerleri vasıtasıyla çiçek, bitki ve bitki tohumu (çiçek toprağı ve saksıları dahil) perakende ticareti (seyyar satıcılar hariç)\", \"bucket\": \"trade\", \"meslek_tanim\": \"Pazarda bitki, hayvan, su ürünleri ticareti\"}, {\"nace_code\": \"24.52.20\", \"nace_label\": \"Çelik dökümü\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Dökümcülük\"}, {\"nace_code\": \"47.51.03\", \"nace_label\": \"Kumaş perakende ticareti\", \"bucket\": \"textile\", \"meslek_tanim\": \"Dokumacılık\"}, {\"nace_code\": \"38.33.00\", \"nace_label\": \"Diğer atıkların bertarafı\", \"bucket\": \"services\", \"meslek_tanim\": \"Hurdacılık\"}, {\"nace_code\": \"24.51.13\", \"nace_label\": \"Demir döküm\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\"}, {\"nace_code\": \"46.22.01\", \"nace_label\": \"Çiçeklerin ve bitkilerin toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Çiçekçilik\"}, {\"nace_code\": \"24.34.01\", \"nace_label\": \"Tellerin soğuk çekilmesi\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\"}, {\"nace_code\": \"17.24.03\", \"nace_label\": \"Tekstil duvar kaplamalarının imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Dokumacılık\"}, {\"nace_code\": \"10.84.05\", \"nace_label\": \"Gıda tuzu imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Çeşitli gıdaların imalatı\"}, {\"nace_code\": \"47.22.06\", \"nace_label\": \"Sakatat perakende ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Kasaplık\"}, {\"nace_code\": \"23.20.19\", \"nace_label\": \"Ateşe dayanıklı çimento imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\"}, {\"nace_code\": \"47.22.05\", \"nace_label\": \"Et perakende ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Kasaplık\"}, {\"nace_code\": \"46.21.08\", \"nace_label\": \"Tohum (yağlı tohumlar hariç) toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Çiçekçilik\"}, {\"nace_code\": \"24.31.01\", \"nace_label\": \"Barların soğuk çekilmesi\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\"}, {\"nace_code\": \"46.49.25\", \"nace_label\": \"Arı kovanı toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Marangozluk\"}, {\"nace_code\": \"10.61.06\", \"nace_label\": \"İrmik imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Değirmencilik, zahirecilik\"}, {\"nace_code\": \"43.34.02\", \"nace_label\": \"Cam takma işleri\", \"bucket\": \"construction\", \"meslek_tanim\": \"Camcılık\"}, {\"nace_code\": \"33.20.90\", \"nace_label\": \"Diğer sanayi makine ve ekipmanlarının kurulumu\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Makine kurulumu, onarımı\"}, {\"nace_code\": \"10.84.02\", \"nace_label\": \"Sirke ve sirke ikamelerinin imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Çeşitli gıdaların imalatı\"}, {\"nace_code\": \"10.62.05\", \"nace_label\": \"Glüten imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Değirmencilik, zahirecilik\"}, {\"nace_code\": \"10.71.02\", \"nace_label\": \"Ekmek imalatı (sade pide dahil)\", \"bucket\": \"food\", \"meslek_tanim\": \"Fırıncılık\"}, {\"nace_code\": \"13.20.16\", \"nace_label\": \"Pamuklu dokuma kumaş imalatı\", \"bucket\": \"textile\", \"meslek_tanim\": \"Dokumacılık\"}, {\"nace_code\": \"13.96.09\", \"nace_label\": \"Cam elyafından kumaş imalatı\", \"bucket\": \"textile\", \"meslek_tanim\": \"Dokumacılık\"}, {\"nace_code\": \"47.78.02\", \"nace_label\": \"Kömür ve yakacak odun perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Yakacak imalatı, ticareti\"}, {\"nace_code\": \"25.91.01\", \"nace_label\": \"Çelik varil ve benzer muhafazaların imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\"}], \"instruction\": \"En olası ilk 3 NACE kodunu sırala. Kodlar sadece candidate_nace_codes içinden olmalı.\", \"schema\": {\"candidates\": [{\"nace_code\": \"string\", \"bucket\": \"string\", \"confidence\": 0.0}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"candidates\": [\n    {\n      \"nace_code\": \"47.76.02\",\n      \"bucket\": \"trade\",\n      \"confidence\": 0.95\n    },\n    {\n      \"nace_code\": \"47.76.06\",\n      \"bucket\": \"trade\",\n      \"confidence\": 0.85\n    },\n    {\n      \"nace_code\": \"46.22.01\",\n      \"bucket\": \"trade\",\n      \"confidence\": 0.75\n    }\n  ]\n}",
+  "parsed": {
+    "candidates": [
+      {
+        "nace_code": "47.76.02",
+        "bucket": "trade",
+        "confidence": 0.95
+      },
+      {
+        "nace_code": "47.76.06",
+        "bucket": "trade",
+        "confidence": 0.85
+      },
+      {
+        "nace_code": "46.22.01",
+        "bucket": "trade",
+        "confidence": 0.75
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"G.17\", \"meslek_tanim\": \"Tuvalet işletmeciliği\", \"sektor_tanim\": \"KUAFÖR, BERBER, TEMİZLİK, SPOR, KOZMETİK, SAĞLIK\", \"nace_examples\": [{\"nace_code\": \"96.99.07\", \"nace_label\": \"Genel tuvaletlerin işletilmesi faaliyeti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"tuvalet işletmecisi\",\n    \"tuvaletçi\",\n    \"wc işletmecisi\",\n    \"umumi tuvalet işletmecisi\",\n    \"tuvalet işletmesi\",\n    \"hela işletmecisi\",\n    \"tuvalet işletiyorum\",\n    \"tuvaletçilik yapıyorum\",\n    \"wc işletiyorum\",\n    \"tuvalet işletmeciliği yapıyorum\",\n    \"tuvalet işletmeciliği\",\n    \"tuvalet işletmeciliği yapan\",\n    \"tuvalet işletmeciliği yapan işletme\",\n    \"tuvalet işletmeciliği yapan işletme sahibi\",\n    \"tuvalet işletmeciliği yapan işletme sahibiyim\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "tuvalet işletmecisi",
+      "tuvaletçi",
+      "wc işletmecisi",
+      "umumi tuvalet işletmecisi",
+      "tuvalet işletmesi",
+      "hela işletmecisi",
+      "tuvalet işletiyorum",
+      "tuvaletçilik yapıyorum",
+      "wc işletiyorum",
+      "tuvalet işletmeciliği yapıyorum",
+      "tuvalet işletmeciliği",
+      "tuvalet işletmeciliği yapan",
+      "tuvalet işletmeciliği yapan işletme",
+      "tuvalet işletmeciliği yapan işletme sahibi",
+      "tuvalet işletmeciliği yapan işletme sahibiyim"
+    ]
+  }
+}

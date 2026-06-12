@@ -1,0 +1,39 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"C.04\", \"meslek_tanim\": \"Bilgisayar kurulumu, onarımı, programlama, veri kurtarma\", \"sektor_tanim\": \"ELEKTRİK, ELEKTRONİK, BİLGİSAYAR\", \"nace_examples\": [{\"nace_code\": \"18.20.03\", \"nace_label\": \"Yazılımların çoğaltılması hizmetleri (CD, kaset vb. ortamlardaki bilgisayar yazılımlarının ve verilerin asıl (master) kopyalarından çoğaltılması)\"}, {\"nace_code\": \"58.21.01\", \"nace_label\": \"Video oyunlarının yayımlanması\"}, {\"nace_code\": \"58.29.01\", \"nace_label\": \"Diğer yazılım programlarının yayımlanması\"}, {\"nace_code\": \"60.39.01\", \"nace_label\": \"Kullanıcılar tarafından üretilen ve düzenlenen içeriği yayınlayan ve editoryal sorumluluk ve kontrol altında olmayan wiki siteleri, sosyal ağ/sosyal medya siteleri gibi içerik paylaşım sitelerinin dağıtım hizmetleri\"}, {\"nace_code\": \"60.39.09\", \"nace_label\": \"Diğer içerik dağıtım faaliyetleri\"}, {\"nace_code\": \"62.10.00\", \"nace_label\": \"Bilgisayar programlama faaliyetleri (sistem, veri tabanı, network, web sayfası vb. yazılımları ile müşteriye özel yazılımların kodlanması, masaüstü ya da mobil cihazlar için uygulama geliştirme, vb)\"}, {\"nace_code\": \"62.20.00\", \"nace_label\": \"Bilgisayar danışmanlığı ve bilgisayar birimleri (sistemleri) yönetimi faaliyetleri (siber güvenlik danışmanlığı dahil)\"}, {\"nace_code\": \"62.90.01\", \"nace_label\": \"Bilgisayarları felaketten kurtarma ve veri kurtarma faaliyetleri\"}, {\"nace_code\": \"62.90.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer bilgi teknolojisi ve bilgisayar hizmet faaliyetleri\"}, {\"nace_code\": \"63.10.00\", \"nace_label\": \"Bilgi işlem altyapısı, veri işleme, barındırma ve ilgili faaliyetler\"}, {\"nace_code\": \"63.91.02\", \"nace_label\": \"Web arama portalı faaliyetleri\"}, {\"nace_code\": \"95.10.01\", \"nace_label\": \"Bilgisayarların ve bilgisayar çevre birimlerinin onarımı (ATM'ler ve pos cihazları dahil)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"bilgisayar tamiri\",\n    \"bilgisayar kurulumu\",\n    \"format atma\",\n    \"yazılım yükleme\",\n    \"veri kurtarma\",\n    \"bilgisayar programcısı\",\n    \"pc tamircisi\",\n    \"laptop onarımı\",\n    \"virüs temizleme\",\n    \"bilgisayar bakımı\",\n    \"sistem kurulumu\",\n    \"data recovery\",\n    \"yazılım tamiri\",\n    \"bilgisayar servisi\",\n    \"pc kurulum ve onarım\",\n    \"bilgisayarcı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "bilgisayar tamiri",
+      "bilgisayar kurulumu",
+      "format atma",
+      "yazılım yükleme",
+      "veri kurtarma",
+      "bilgisayar programcısı",
+      "pc tamircisi",
+      "laptop onarımı",
+      "virüs temizleme",
+      "bilgisayar bakımı",
+      "sistem kurulumu",
+      "data recovery",
+      "yazılım tamiri",
+      "bilgisayar servisi",
+      "pc kurulum ve onarım",
+      "bilgisayarcı"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"K.07\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"sektor_tanim\": \"YAPI SANATLARI\", \"nace_examples\": [{\"nace_code\": \"17.24.02\", \"nace_label\": \"Duvar kağıdı ve benzeri duvar kaplamalarının imalatı (tekstilden olanlar hariç)\"}, {\"nace_code\": \"20.59.18\", \"nace_label\": \"Mikronize edilmiş ve stearik asitle kaplanmış kalsit imalatı\"}, {\"nace_code\": \"22.24.01\", \"nace_label\": \"Plastikten banyo küvetleri, lavabolar, klozet kapakları, oturakları ve rezervuarları ile benzeri sıhhi ürünlerin imalatı (kalıcı tesisat için kullanılan montaj ve bağlantı parçaları dahil)\"}, {\"nace_code\": \"22.24.04\", \"nace_label\": \"Vinil, linolyum (muşamba) gibi esnek yer kaplamaları ile plastik zemin, duvar ve tavan kaplamalarının imalatı (duvar kağıdı hariç)\"}, {\"nace_code\": \"22.24.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış plastik inşaat malzemelerinin imalatı (plastik suni taş-mermerit imalatı hariç)\"}, {\"nace_code\": \"23.15.03\", \"nace_label\": \"Sıkıştırılmış veya kalıplanmış camdan döşeme blokları, tuğlalar, karolar ve diğer ürünler, kurşunlu lambalar ve benzerleri, blok, plaka veya benzer şekillerdeki gözenekli, köpüklü camların imalatı (vitray cam hariç)\"}, {\"nace_code\": \"23.20.16\", \"nace_label\": \"Silisli süzme topraktan (kizelgur) ısı yalıtımlı seramik ürünler ile ateşe dayanıklı briket, blok, tuğla, ateş tuğlası, vb. ateşe dayanıklı seramik yapı ürünleri imalatı\"}, {\"nace_code\": \"23.20.17\", \"nace_label\": \"Ateşe dayanıklı imbikler, damıtma kabı, eritme potası, vana ucu, tüp, boru, döküm potaları, mufl ocağı, püskürtme tüpleri vb. seramik ürünlerin imalatı\"}, {\"nace_code\": \"23.20.19\", \"nace_label\": \"Ateşe dayanıklı çimento imalatı\"}, {\"nace_code\": \"23.20.20\", \"nace_label\": \"Ateşe dayanıklı çamur, harç, beton vb. imalatı\"}, {\"nace_code\": \"23.31.01\", \"nace_label\": \"Seramik karo ve kaldırım taşları imalatı (mozaik taşı ve mozaik küpleri dahil) (ateşe dayanıklı olanlar hariç)\"}, {\"nace_code\": \"23.32.02\", \"nace_label\": \"Fırınlanmış, ateşe dayanıklı olmayan kil ve topraktan baca künkleri ve başlıkları, şömine ve baca boruları, oluklar ve bağlantı parçaları ile karo vb. inşaat malzemeleri imalatı (seramikten oluklar, borular ve bağlantı parçaları dahil) (tuğla ve kiremit hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"İnşaat malzemeleri imalatı\",\n    \"Yapı malzemeleri imalatı\",\n    \"İnşaat malzemesi üretimi\",\n    \"Yapı malzemesi üretimi\",\n    \"İnşaat malzemeleri\",\n    \"Yapı malzemeleri\",\n    \"İnşaat malzemeleri üreticisi\",\n    \"Yapı malzemeleri üreticisi\",\n    \"İnşaat malzemeleri imal ediyorum\",\n    \"Yapı malzemeleri üretiyorum\",\n    \"İnsaat malzemeleri imalati\",\n    \"Yapi malzemeleri imalatı\",\n    \"İnşaat malzeme imalatı\",\n    \"Bina malzemeleri imalatı\",\n    \"İnşaat ürünleri imalatı\",\n    \"İnşaat Malzemeleri Atölyesi\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "İnşaat malzemeleri imalatı",
+      "Yapı malzemeleri imalatı",
+      "İnşaat malzemesi üretimi",
+      "Yapı malzemesi üretimi",
+      "İnşaat malzemeleri",
+      "Yapı malzemeleri",
+      "İnşaat malzemeleri üreticisi",
+      "Yapı malzemeleri üreticisi",
+      "İnşaat malzemeleri imal ediyorum",
+      "Yapı malzemeleri üretiyorum",
+      "İnsaat malzemeleri imalati",
+      "Yapi malzemeleri imalatı",
+      "İnşaat malzeme imalatı",
+      "Bina malzemeleri imalatı",
+      "İnşaat ürünleri imalatı",
+      "İnşaat Malzemeleri Atölyesi"
+    ]
+  }
+}

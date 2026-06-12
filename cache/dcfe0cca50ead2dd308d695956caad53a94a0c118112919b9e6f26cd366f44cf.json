@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"D.13\", \"meslek_tanim\": \"Gübre, zirai ilaç imalatı, ticareti\", \"sektor_tanim\": \"GIDA, TARIM\", \"nace_examples\": [{\"nace_code\": \"20.15.01\", \"nace_label\": \"Fosfatlı veya potasyumlu gübreler, iki (azot ve fosfor veya fosfor ve potasyum) veya üç besin maddesi (azot, fosfor ve potasyum) içeren gübreler, sodyum nitrat ile diğer kimyasal ve mineral gübrelerin imalatı\"}, {\"nace_code\": \"20.15.02\", \"nace_label\": \"Bileşik azotlu ürünlerin imalatı (gübreler hariç)\"}, {\"nace_code\": \"20.20.13\", \"nace_label\": \"Çimlenmeyi önleyici ve bitki gelişimini düzenleyici ürün imalatı\"}, {\"nace_code\": \"20.20.90\", \"nace_label\": \"Diğer zirai kimyasal ürünlerin imalatı (gübre ve azotlu bileşik imalatı hariç)\"}, {\"nace_code\": \"46.85.02\", \"nace_label\": \"Suni gübrelerin toptan ticareti (gübre mineralleri, gübre ve azot bileşikleri ve turba ile amonyum sülfat, amonyum nitrat, sodyum nitrat, potasyum nitrat vb. dahil, nitrik asit, sülfonitrik asit ve amonyak hariç)\"}, {\"nace_code\": \"46.85.03\", \"nace_label\": \"Zirai kimyasal ürünlerin toptan ticareti (haşere ilaçları, yabancı ot ilaçları, dezenfektanlar, mantar ilaçları, çimlenmeyi önleyici ürünler, bitki gelişimini düzenleyiciler ve diğer zirai kimyasal ürünler)\"}, {\"nace_code\": \"46.85.04\", \"nace_label\": \"Hayvansal veya bitkisel gübrelerin toptan ticareti (kapalı alanda yapılan ticaret)\"}, {\"nace_code\": \"46.85.05\", \"nace_label\": \"Hayvansal veya bitkisel gübrelerin toptan ticareti (açık alanda yapılan ticaret)\"}, {\"nace_code\": \"47.76.03\", \"nace_label\": \"Gübre ve zirai kimyasal ürünlerin perakende ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"gübreci\",\n    \"zirai ilaççı\",\n    \"gübre bayi\",\n    \"tarım ilaçları satışı\",\n    \"zirai gübre ticareti\",\n    \"gübre imalatçısı\",\n    \"ilaçlı gübre satışı\",\n    \"zirai kimyasal ürünler\",\n    \"gübre toptancısı\",\n    \"bitki koruma ürünleri\",\n    \"gubre zirai ilac\",\n    \"zirai ilaç toptan\",\n    \"tarım gübreleri\",\n    \"gübre perakende\",\n    \"gübre ve ilaç bayi\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "gübreci",
+      "zirai ilaççı",
+      "gübre bayi",
+      "tarım ilaçları satışı",
+      "zirai gübre ticareti",
+      "gübre imalatçısı",
+      "ilaçlı gübre satışı",
+      "zirai kimyasal ürünler",
+      "gübre toptancısı",
+      "bitki koruma ürünleri",
+      "gubre zirai ilac",
+      "zirai ilaç toptan",
+      "tarım gübreleri",
+      "gübre perakende",
+      "gübre ve ilaç bayi"
+    ]
+  }
+}

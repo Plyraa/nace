@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"5765\", \"alias\": \"Dokumacılık işi\", \"meslek_tanim\": \"Dokumacılık\", \"nace_code\": \"13.10.06\", \"nace_label\": \"Doğal jüt, keten ve diğer bitkisel tekstil elyaflarının imalatı (kardelenmesi, taraklanması vb.) (pamuk hariç)\"}, {\"id\": \"21917\", \"alias\": \"tuhafiyeci\", \"meslek_tanim\": \"Tuhafiye imalatı, ticareti\", \"nace_code\": \"47.71.02\", \"nace_label\": \"Giysi aksesuarları perakende ticareti (eldiven, kravat, şapka, eşarp, şal, mendil, kemer, pantolon askısı, şemsiye, baston, vb.)\"}, {\"id\": \"20803\", \"alias\": \"tekstil aracılık\", \"meslek_tanim\": \"Ev tekstil ürünleri imalatı, ticareti\", \"nace_code\": \"47.53.01\", \"nace_label\": \"Perde, iç stor, perde veya yatak saçağı ve farbelası perakende ticareti\"}, {\"id\": \"3737\", \"alias\": \"cammcı\", \"meslek_tanim\": \"Camcılık\", \"nace_code\": \"23.14.01\", \"nace_label\": \"Cam elyafı imalatı (cam yünü ve bunlardan yapılmış dokuma dışı ürünler dahil)\"}, {\"id\": \"1938\", \"alias\": \"ben iş makinesi operatörüyüm\", \"meslek_tanim\": \"İş makinesi işletmeciliği\", \"nace_code\": \"37.00.01\", \"nace_label\": \"Kanalizasyon (kanalizasyon atıklarının uzaklaştırılması ve arıtılması, kanalizasyon sistemlerinin ve atık su arıtma tesislerinin işletimi, foseptik çukurların ve havuzların boşaltılması ve temizlenmesi, seyyar tuvalet faaliyetleri vb.)\"}, {\"id\": \"4545\", \"alias\": \"demir çelik ticareti\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"25.61.08\", \"nace_label\": \"Kılıç, pala, kasatura, mızrak, süngü, avcı bıçağı ve benzeri silahlar ile bunların parçalarının imalatı\"}, {\"id\": \"6332\", \"alias\": \"elektrik bakımcısı\", \"meslek_tanim\": \"Elektrik makineleri imalatı, kurulumu, onarımı\", \"nace_code\": \"33.14.01\", \"nace_label\": \"Güç transformatörleri, dağıtım transformatörleri ve özel transformatörlerin onarım ve bakımı (elektrik dağıtım ve kontrol cihazları dahil)\"}, {\"id\": \"6675\", \"alias\": \"Elektrikli Süpürge Bakımı\", \"meslek_tanim\": \"Elektrikli ev aletleri imalatı, onarımı\", \"nace_code\": \"27.51.02\", \"nace_label\": \"Ev tipi elektrikli su ısıtıcıları (depolu su ısıtıcıları, anında su ısıtıcıları, şofben, termosifon dahil), elektrikli ısıtma cihazları (elektrikli soba, radyatör, vb.) ve elektrikli toprak ısıtma cihazlarının imalatı\"}, {\"id\": \"17964\", \"alias\": \"pazarda satış yapıyorum\", \"meslek_tanim\": \"Pazarda yiyecek, içecek ticareti\", \"nace_code\": \"47.27.09\", \"nace_label\": \"Tezgahlar ve pazar yerleri vasıtasıyla yenilebilir katı ve sıvı yağ (tereyağı hariç) perakende ticareti (seyyar satıcılar hariç)\"}, {\"id\": \"2588\", \"alias\": \"Bina malzemeleri imalatı\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"17.24.02\", \"nace_label\": \"Duvar kağıdı ve benzeri duvar kaplamalarının imalatı (tekstilden olanlar hariç)\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"5765\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"21917\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"20803\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"3737\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"1938\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"4545\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"6332\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"6675\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"17964\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"2588\",\n      \"verdict\": \"no\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "5765",
+        "verdict": "yes"
+      },
+      {
+        "id": "21917",
+        "verdict": "yes"
+      },
+      {
+        "id": "20803",
+        "verdict": "no"
+      },
+      {
+        "id": "3737",
+        "verdict": "no"
+      },
+      {
+        "id": "1938",
+        "verdict": "no"
+      },
+      {
+        "id": "4545",
+        "verdict": "no"
+      },
+      {
+        "id": "6332",
+        "verdict": "yes"
+      },
+      {
+        "id": "6675",
+        "verdict": "no"
+      },
+      {
+        "id": "17964",
+        "verdict": "no"
+      },
+      {
+        "id": "2588",
+        "verdict": "no"
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"6762\", \"alias\": \"elektronik eşya al sat\", \"meslek_tanim\": \"Elektronik ürün ticareti\", \"nace_code\": \"77.33.03\", \"nace_label\": \"Bilgisayar ve çevre birimlerinin operatörsüz olarak kiralanması ve leasingi (finansal leasing hariç)\"}, {\"id\": \"15513\", \"alias\": \"marangozluk ürünleri\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"32.99.07\", \"nace_label\": \"Şemsiyeler, güneş şemsiyeleri, baston ve koltuklu baston, koltuk değneği vb. imalatı (parçaları dahil)\"}, {\"id\": \"14964\", \"alias\": \"makineci dükkanı\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.30.90\", \"nace_label\": \"Ormancılığa özgü makineler ile tarla bahçe bakımına mahsus diğer makine ve cihazların imalatı\"}, {\"id\": \"8707\", \"alias\": \"hasta bakımı\", \"meslek_tanim\": \"Hasta bakıcılığı\", \"nace_code\": \"88.99.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış barınacak yer sağlanmaksızın verilen diğer sosyal yardım hizmetleri (aile danışmanlığı ve rehberliği, borç danışmanlığı, sosyal hizmet için para toplama, evlat edindirme, evsiz, afetzede ve mültecilere geçici barınak sağlama, yardım için uygun kişi belirleme vb.)\"}, {\"id\": \"11188\", \"alias\": \"kassapcı\", \"meslek_tanim\": \"Kasaplık\", \"nace_code\": \"10.13.02\", \"nace_label\": \"Et ve kümes hayvanları etlerinden üretilen sosis, salam, sucuk, pastırma, kavurma et, konserve et, salamura et, jambon vb. tuzlanmış, kurutulmuş veya tütsülenmiş ürünlerin imalatı (yemek olanlar hariç)\"}, {\"id\": \"2938\", \"alias\": \"boya yapıyorum\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\", \"nace_code\": \"32.99.17\", \"nace_label\": \"Sigara çakmakları ve diğer çakmaklar ile çabuk tutuşan (piroforik) alaşımların imalatı (çakmaklar için kap hacmi ≤ 300cm3 sıvı veya sıvılaştırılmış gaz yakıtları dahil)\"}, {\"id\": \"7158\", \"alias\": \"elektronik ürün ticareti yapıyorum\", \"meslek_tanim\": \"Elektronik ürün ticareti\", \"nace_code\": \"47.40.03\", \"nace_label\": \"Ses ve görüntü cihazlarının ve bunların parçalarının perakende ticareti\"}, {\"id\": \"22870\", \"alias\": \"Yedek parça ticareti makine\", \"meslek_tanim\": \"Makine, yedek parça ticareti\", \"nace_code\": \"46.64.06\", \"nace_label\": \"Kompresör ve parçalarının toptan ticareti (soğutma, hava ve diğer amaçlar için)\"}, {\"id\": \"10170\", \"alias\": \"İnşaatçilik\", \"meslek_tanim\": \"İnşaatçılık\", \"nace_code\": \"23.70.01\", \"nace_label\": \"Taş ve mermerin kesilmesi, şekil verilmesi ve bitirilmesi (doğal taşlardan, mermerden, su mermerinden, travertenden, kayağantaşından levha/tabaka, kurna, lavabo, karo, kaldırım taşı, yapı taşı, mezar taşı, vb. imalatı dahil, süs eşyası hariç)\"}, {\"id\": \"6787\", \"alias\": \"elektronik imalat\", \"meslek_tanim\": \"Elektronik ürün imalatı, onarımı\", \"nace_code\": \"33.13.02\", \"nace_label\": \"Işınlama, elektromedikal ve elektroterapi ekipmanlarının onarım ve bakımı\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\"id\": \"6762\", \"verdict\": \"no\"},\n    {\"id\": \"15513\", \"verdict\": \"no\"},\n    {\"id\": \"14964\", \"verdict\": \"no\"},\n    {\"id\": \"8707\", \"verdict\": \"no\"},\n    {\"id\": \"11188\", \"verdict\": \"no\"},\n    {\"id\": \"2938\", \"verdict\": \"no\"},\n    {\"id\": \"7158\", \"verdict\": \"yes\"},\n    {\"id\": \"22870\", \"verdict\": \"yes\"},\n    {\"id\": \"10170\", \"verdict\": \"no\"},\n    {\"id\": \"6787\", \"verdict\": \"no\"}\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "6762",
+        "verdict": "no"
+      },
+      {
+        "id": "15513",
+        "verdict": "no"
+      },
+      {
+        "id": "14964",
+        "verdict": "no"
+      },
+      {
+        "id": "8707",
+        "verdict": "no"
+      },
+      {
+        "id": "11188",
+        "verdict": "no"
+      },
+      {
+        "id": "2938",
+        "verdict": "no"
+      },
+      {
+        "id": "7158",
+        "verdict": "yes"
+      },
+      {
+        "id": "22870",
+        "verdict": "yes"
+      },
+      {
+        "id": "10170",
+        "verdict": "no"
+      },
+      {
+        "id": "6787",
+        "verdict": "no"
+      }
+    ]
+  }
+}

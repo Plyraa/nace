@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"F.18\", \"meslek_tanim\": \"Oyuncak imalatı, ticareti\", \"sektor_tanim\": \"HEDİYELİK EŞYA, EĞİTİM, BASIM, FOTOĞRAF, ÇEŞİTLİ MALLAR\", \"nace_examples\": [{\"nace_code\": \"32.40.03\", \"nace_label\": \"Yap boz, puzzle ve benzeri ürünlerin imalatı (lego vb. dahil)\"}, {\"nace_code\": \"32.40.04\", \"nace_label\": \"İçi doldurulmuş oyuncak bebeklerin ve oyuncak hayvanların imalatı\"}, {\"nace_code\": \"32.40.05\", \"nace_label\": \"Oyuncak bebek, kukla ve hayvanlar ile bunların giysi, parça ve aksesuarlarının imalatı (içi doldurulmuş olanlar hariç)\"}, {\"nace_code\": \"32.40.09\", \"nace_label\": \"Oyun tahtaları (satranç, dama, dart, tavla tahtaları, okey istekası, go vb.) ve tabu, monopol vb. oyunların imalatı\"}, {\"nace_code\": \"32.40.10\", \"nace_label\": \"Tekerlekli oyuncaklar, oyuncak bebek arabaları, oyuncak trenler ve diğer küçültülmüş boyutlu modeller/maketler veya inşaat oyun takımları, yarış setleri imalatı (motorlu olanlar, pres döküm oyuncaklar ve plastik diğer oyuncaklar dahil)\"}, {\"nace_code\": \"32.40.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer oyun ve oyuncakların imalatı\"}, {\"nace_code\": \"46.18.01\", \"nace_label\": \"Oyun ve oyuncak, spor malzemesi, bisiklet, kitap, gazete, dergi, kırtasiye ürünleri, müzik aleti, saat ve mücevher ile fotoğrafçılıkla ilgili ve optik aletlerin toptan satışı ile ilgili aracıların faaliyetleri\"}, {\"nace_code\": \"46.49.04\", \"nace_label\": \"Oyun ve oyuncak toptan ticareti\"}, {\"nace_code\": \"47.64.08\", \"nace_label\": \"Oyunlar ve oyuncakların perakende ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"oyuncakçı\",\n    \"oyuncak imalatı\",\n    \"oyuncak ticareti\",\n    \"oyuncak dükkanı\",\n    \"oyuncak satışı\",\n    \"oyuncak üretimi\",\n    \"oyuncak yapıyorum\",\n    \"oyuncak satıyorum\",\n    \"oyuncak imal ediyorum\",\n    \"oyuncakcı\",\n    \"oyuncak imalat\",\n    \"oyuncak ticaret\",\n    \"oyuncak bebek imalatı\",\n    \"oyuncak hayvan imalatı\",\n    \"yapboz imalatı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "oyuncakçı",
+      "oyuncak imalatı",
+      "oyuncak ticareti",
+      "oyuncak dükkanı",
+      "oyuncak satışı",
+      "oyuncak üretimi",
+      "oyuncak yapıyorum",
+      "oyuncak satıyorum",
+      "oyuncak imal ediyorum",
+      "oyuncakcı",
+      "oyuncak imalat",
+      "oyuncak ticaret",
+      "oyuncak bebek imalatı",
+      "oyuncak hayvan imalatı",
+      "yapboz imalatı"
+    ]
+  }
+}

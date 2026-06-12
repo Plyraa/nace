@@ -1,0 +1,35 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.02\", \"meslek_tanim\": \"At arabası imalatı, onarımı\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"30.99.02\", \"nace_label\": \"Hayvanlar tarafından çekilen araçların imalatı (at, eşek arabası, fayton, vb.)\"}, {\"nace_code\": \"33.17.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer ulaşım ekipmanlarının onarım ve bakımı\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"At arabası imalatı ve onarımı\",\n    \"At arabası ustası\",\n    \"At arabası tamircisi\",\n    \"Fayton imalatı\",\n    \"Fayton tamiri\",\n    \"At arabası yapıyorum\",\n    \"At arabası tamir ediyorum\",\n    \"At arabası onarım\",\n    \"At arabası imalatı yapan\",\n    \"At arabası tamirhanesi\",\n    \"At arabası imalat ve onarım\",\n    \"Fayton yapıyorum\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "At arabası imalatı ve onarımı",
+      "At arabası ustası",
+      "At arabası tamircisi",
+      "Fayton imalatı",
+      "Fayton tamiri",
+      "At arabası yapıyorum",
+      "At arabası tamir ediyorum",
+      "At arabası onarım",
+      "At arabası imalatı yapan",
+      "At arabası tamirhanesi",
+      "At arabası imalat ve onarım",
+      "Fayton yapıyorum"
+    ]
+  }
+}

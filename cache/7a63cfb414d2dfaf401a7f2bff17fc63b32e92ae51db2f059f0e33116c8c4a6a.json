@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"B.09\", \"meslek_tanim\": \"Ses, sahne sanatçılığı\", \"sektor_tanim\": \"EĞLENCE, DİNLENME, ORGANİZASYON\", \"nace_examples\": [{\"nace_code\": \"90.20.02\", \"nace_label\": \"Bağımsız müzisyen, ses sanatçısı, konuşmacı, sunucu vb.lerin faaliyetleri (müzik grupları dahil)\"}, {\"nace_code\": \"90.20.03\", \"nace_label\": \"Canlı tiyatro, opera, bale, müzikal, konser vb. yapımların sahneye konulması faaliyetleri (illüzyon gösterileri, kukla gösterileri ve kumpanyalar dahil)\"}, {\"nace_code\": \"90.20.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer gösteri sanatları\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"ses sanatçısı\",\n    \"sahne sanatçısı\",\n    \"müzisyen\",\n    \"şarkıcı\",\n    \"konser sanatçısı\",\n    \"gösteri sanatçısı\",\n    \"bağımsız müzisyen\",\n    \"seslendirme sanatçısı\",\n    \"sahne gösterisi yapıyorum\",\n    \"müzik yapıyorum\",\n    \"konser veriyorum\",\n    \"illüzyonist\",\n    \"tiyatrocu\",\n    \"operalı\",\n    \"balet\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "ses sanatçısı",
+      "sahne sanatçısı",
+      "müzisyen",
+      "şarkıcı",
+      "konser sanatçısı",
+      "gösteri sanatçısı",
+      "bağımsız müzisyen",
+      "seslendirme sanatçısı",
+      "sahne gösterisi yapıyorum",
+      "müzik yapıyorum",
+      "konser veriyorum",
+      "illüzyonist",
+      "tiyatrocu",
+      "operalı",
+      "balet"
+    ]
+  }
+}

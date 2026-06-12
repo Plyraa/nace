@@ -1,0 +1,20 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"14270\", \"alias\": \"makine kuran\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.94.02\", \"nace_label\": \"Sanayi tipi çamaşır makinesi, kuru temizleme makinesi, çamaşır kurutma makinesi, ütü makinesi ve pres ütü imalatı\"}, {\"id\": \"4608\", \"alias\": \"demirci\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"25.22.01\", \"nace_label\": \"Metalden rezervuarlar, tanklar, fıçılar ve benzeri kapasitesi > 300 litre olan konteynerlerin imalatı (sıkıştırılmış veya sıvılaştırılmış gazlar için olanlar ile mekanik veya termal ekipmanlı olanlar hariç)\"}, {\"id\": \"12454\", \"alias\": \"kozmetik işi\", \"meslek_tanim\": \"Kozmetik imalatı, ticareti\", \"nace_code\": \"46.18.02\", \"nace_label\": \"Kozmetik, parfüm ve bakım ürünleri ile temizlik malzemesinin toptan satışı ile ilgili aracıların faaliyetleri\"}, {\"id\": \"18471\", \"alias\": \"plastikçi\", \"meslek_tanim\": \"Kauçuk, plastik ürünlerin imalatı, ticareti\", \"nace_code\": \"20.17.01\", \"nace_label\": \"Birincil formda sentetik kauçuk imalatı\"}, {\"id\": \"6590\", \"alias\": \"elektrik tesisatı hizmetleri\", \"meslek_tanim\": \"Elektrik tesisatçılığı\", \"nace_code\": \"35.12.00\", \"nace_label\": \"Yenilenebilir kaynaklardan elektrik üretimi\"}, {\"id\": \"19212\", \"alias\": \"sanayi makinaları tamiri\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.93.07\", \"nace_label\": \"Ekmek ve diğer unlu mamuller için elektrikli olmayan fırınların imalatı (gaz, sıvı ve katı yakıtlı olanlar)\"}, {\"id\": \"134\", \"alias\": \"akide şekeri\", \"meslek_tanim\": \"Şekercilik, çikolatacılık\", \"nace_code\": \"10.81.03\", \"nace_label\": \"Akçaağaç şurubu imalatı\"}, {\"id\": \"11055\", \"alias\": \"kasap benim\", \"meslek_tanim\": \"Kasaplık\", \"nace_code\": \"10.13.04\", \"nace_label\": \"Sığır, koyun, keçi vb. hayvanların sakatat ve yağlarından yenilebilir ürünlerin imalatı\"}, {\"id\": \"21125\", \"alias\": \"Teneke çatı\", \"meslek_tanim\": \"Tenekecilik\", \"nace_code\": \"25.99.13\", \"nace_label\": \"Metalden çatı olukları, çatı kaplamaları vb. imalatı\"}, {\"id\": \"7429\", \"alias\": \"ev aletleri satıyorum\", \"meslek_tanim\": \"Elektrikli ev aletleri ticareti\", \"nace_code\": \"47.54.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış elektrikli ev aletleri perakende ticareti (radyo, TV ve fotoğrafçılık ürünleri hariç)\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{}",
+  "parsed": {}
+}

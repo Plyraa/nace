@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"E.14\", \"meslek_tanim\": \"Tekstil baskıcılığı, boyacılığı\", \"sektor_tanim\": \"GİYİM, DERİ ÜRÜN, EV TEKSTİLİ, DOKUMA\", \"nace_examples\": [{\"nace_code\": \"13.30.01\", \"nace_label\": \"Kumaş ve tekstil ürünlerini ağartma ve boyama hizmetleri (giyim eşyası dahil)\"}, {\"nace_code\": \"13.30.02\", \"nace_label\": \"Tekstil elyaf ve ipliklerini ağartma ve boyama hizmetleri (kasarlama dahil)\"}, {\"nace_code\": \"13.30.03\", \"nace_label\": \"Kumaş ve tekstil ürünlerine baskı yapılması hizmetleri (giyim eşyası dahil, emprime baskı dahil, transfer baskı hariç)\"}, {\"nace_code\": \"13.30.04\", \"nace_label\": \"Kumaş ve tekstil ürünlerine ilişkin diğer bitirme hizmetleri (apreleme, pliseleme, sanforlama, vb. dahil)\"}, {\"nace_code\": \"13.30.05\", \"nace_label\": \"Kumaş ve tekstil ürünlerine transfer baskı yapılması hizmetleri\"}, {\"nace_code\": \"96.10.90\", \"nace_label\": \"Diğer tekstil temizleme hizmetleri ile giyim eşyası ve diğer tekstil ürünlerini boyama ve renklendirme hizmetleri (imalat aşamasında yapılanlar hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"tekstil boyacısı\",\n    \"kumaş boyama\",\n    \"baskı atölyesi\",\n    \"tekstil baskı\",\n    \"boya baskı\",\n    \"ben tekstil boyarım\",\n    \"kumaş baskıcı\",\n    \"tekstil boyama\",\n    \"boyahane\",\n    \"tekstil baskıcısı\",\n    \"tekstil boyacisi\",\n    \"baskici\",\n    \"ben kumaş boyarım\",\n    \"emprime baskı\",\n    \"boya atölyesi\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "tekstil boyacısı",
+      "kumaş boyama",
+      "baskı atölyesi",
+      "tekstil baskı",
+      "boya baskı",
+      "ben tekstil boyarım",
+      "kumaş baskıcı",
+      "tekstil boyama",
+      "boyahane",
+      "tekstil baskıcısı",
+      "tekstil boyacisi",
+      "baskici",
+      "ben kumaş boyarım",
+      "emprime baskı",
+      "boya atölyesi"
+    ]
+  }
+}

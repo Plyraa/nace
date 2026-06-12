@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"23353\", \"alias\": \"şov ajansı\", \"meslek_tanim\": \"Ajans, organizasyon faaliyetleri\", \"nace_code\": \"74.99.01\", \"nace_label\": \"Sanatçı, sporcu, şovmen, manken ve diğerleri için ajansların ve menajerlerin faaliyetleri\"}, {\"id\": \"1528\", \"alias\": \"battaniyeci\", \"meslek_tanim\": \"Ev tekstil ürünleri imalatı, ticareti\", \"nace_code\": \"13.99.04\", \"nace_label\": \"Tekstil kırpıntısı imalatı (yatak, yorgan, yastık, şilte ve benzeri doldurmak için)\"}, {\"id\": \"3140\", \"alias\": \"boya ve kimyasal üretimi\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\", \"nace_code\": \"20.16.05\", \"nace_label\": \"Birincil formda diğer amino reçineler, fenolik reçineler, poliüretanlar, politerpenler, polisülfürler, selüloz ve kimyasal türevleri ile diğer petrol reçineleri imalatı\"}, {\"id\": \"16598\", \"alias\": \"otoyedek parça imalatı\", \"meslek_tanim\": \"Oto yedek parça imalatı\", \"nace_code\": \"30.92.03\", \"nace_label\": \"Engelli araçlarının imalatı (motorlu, motorsuz, akülü, şarjlı, vb.)\"}, {\"id\": \"22724\", \"alias\": \"çelikçi\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"33.11.03\", \"nace_label\": \"Buhar kazanları veya buhar jeneratörlerinin onarım ve bakımı\"}, {\"id\": \"20932\", \"alias\": \"tuhafiyecilik\", \"meslek_tanim\": \"Tuhafiye imalatı, ticareti\", \"nace_code\": \"14.29.04\", \"nace_label\": \"Eldiven, kemer, şal, papyon, kravat, saç fileleri, kumaş mendil, atkı, fular vb. giysi aksesuarları imalatı (kürklü deriden olanlar hariç)\"}, {\"id\": \"12403\", \"alias\": \"Küçük Ev Aletleri İmalatı\", \"meslek_tanim\": \"Elektrikli ev aletleri imalatı, onarımı\", \"nace_code\": \"27.51.02\", \"nace_label\": \"Ev tipi elektrikli su ısıtıcıları (depolu su ısıtıcıları, anında su ısıtıcıları, şofben, termosifon dahil), elektrikli ısıtma cihazları (elektrikli soba, radyatör, vb.) ve elektrikli toprak ısıtma cihazlarının imalatı\"}, {\"id\": \"10054\", \"alias\": \"Kagıtcı\", \"meslek_tanim\": \"Kağıt, kağıt ürünleri imalatı, ticareti\", \"nace_code\": \"17.22.03\", \"nace_label\": \"Kağıt veya mukavvadan tepsi, tabak, kase, bardak ve benzerlerinin imalatı\"}, {\"id\": \"7875\", \"alias\": \"giysi üretimi\", \"meslek_tanim\": \"Konfeksiyonculuk\", \"nace_code\": \"14.22.01\", \"nace_label\": \"Atlet, fanila, külot, slip, iç etek, kombinezon, jüp, jüpon, sütyen, korse vb. iç çamaşırı imalatı (örgü veya tığ işi kumaştan olanlar hariç)\"}, {\"id\": \"12332\", \"alias\": \"kuş bakımı\", \"meslek_tanim\": \"Evcil hayvan bakımı, ticareti\", \"nace_code\": \"10.92.01\", \"nace_label\": \"Ev hayvanları için hazır gıda imalatı (kedi ve köpek mamaları, kuş ve balık yemleri vb.)\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\"results\": [{\"id\": \"23353\", \"verdict\": \"yes\"}, {\"id\": \"1528\", \"verdict\": \"no\"}, {\"id\": \"3140\", \"verdict\": \"no\"}, {\"id\": \"16598\", \"verdict\": \"no\"}, {\"id\": \"22724\", \"verdict\": \"no\"}, {\"id\": \"20932\", \"verdict\": \"yes\"}, {\"id\": \"12403\", \"verdict\": \"no\"}, {\"id\": \"10054\", \"verdict\": \"yes\"}, {\"id\": \"7875\", \"verdict\": \"yes\"}, {\"id\": \"12332\", \"verdict\": \"no\"}]}",
+  "parsed": {
+    "results": [
+      {
+        "id": "23353",
+        "verdict": "yes"
+      },
+      {
+        "id": "1528",
+        "verdict": "no"
+      },
+      {
+        "id": "3140",
+        "verdict": "no"
+      },
+      {
+        "id": "16598",
+        "verdict": "no"
+      },
+      {
+        "id": "22724",
+        "verdict": "no"
+      },
+      {
+        "id": "20932",
+        "verdict": "yes"
+      },
+      {
+        "id": "12403",
+        "verdict": "no"
+      },
+      {
+        "id": "10054",
+        "verdict": "yes"
+      },
+      {
+        "id": "7875",
+        "verdict": "yes"
+      },
+      {
+        "id": "12332",
+        "verdict": "no"
+      }
+    ]
+  }
+}

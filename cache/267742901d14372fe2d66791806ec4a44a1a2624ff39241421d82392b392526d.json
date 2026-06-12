@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"17312\", \"alias\": \"piliççi\", \"meslek_tanim\": \"Tavukçuluk\", \"nace_code\": \"10.12.04\", \"nace_label\": \"Kuş tüyü ve ince kuş tüyü imalatı (derileri dahil)\"}, {\"id\": \"20697\", \"alias\": \"trafik danışmanı\", \"meslek_tanim\": \"Trafik müşavirliği, iş takipçiliği\", \"nace_code\": \"82.99.08\", \"nace_label\": \"İş takipçiliği faaliyeti\"}, {\"id\": \"17815\", \"alias\": \"prefabrik yapıcı\", \"meslek_tanim\": \"Prefabrik yapıların imalatı, kurulumu, ticareti\", \"nace_code\": \"46.83.22\", \"nace_label\": \"Ahşaptan prefabrik yapıların ve yapı elemanlarının toptan ticareti\"}, {\"id\": \"4682\", \"alias\": \"deri aksesuar satışı\", \"meslek_tanim\": \"Deri aksesuar imalatı, ticareti\", \"nace_code\": \"47.72.90\", \"nace_label\": \"Deriden veya deri bileşimlerinden diğer ürünlerin perakende ticareti (deri veya deri bileşimli giyim eşyası hariç)\"}, {\"id\": \"9577\", \"alias\": \"İnşaat Ustası\", \"meslek_tanim\": \"İnşaatçılık\", \"nace_code\": \"41.00.01\", \"nace_label\": \"İkamet amaçlı binaların inşaatı (ahşap binaların inşaatı hariç)\"}, {\"id\": \"8643\", \"alias\": \"hediyelik plastik\", \"meslek_tanim\": \"Kauçuk, plastik ürünlerin imalatı, ticareti\", \"nace_code\": \"46.86.02\", \"nace_label\": \"Sanayide kullanım amaçlı plastik poşet, çanta, torba, çuval, vb. ambalaj malzemelerinin toptan ticareti\"}, {\"id\": \"2432\", \"alias\": \"bilgisayarcı\", \"meslek_tanim\": \"Elektronik ürün ticareti\", \"nace_code\": \"46.15.03\", \"nace_label\": \"Radyo, televizyon ve video cihazlarının toptan satışı ile ilgili aracıların faaliyetleri\"}, {\"id\": \"13155\", \"alias\": \"makina tamirci\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"33.12.28\", \"nace_label\": \"Plastik ve kauçuk imalatında ve işlenmesinde kullanılan makinelerin onarım ve bakımı\"}, {\"id\": \"805\", \"alias\": \"Ayakkabı ve tekstil pazar satıcısı\", \"meslek_tanim\": \"Pazarda ayakkabı, tekstil ürünleri ticareti\", \"nace_code\": \"47.51.06\", \"nace_label\": \"Tezgahlar ve pazar yerleri vasıtasıyla tuhafiye, manifatura ve mefruşat ürünleri perakende ticareti (seyyar satıcılar hariç)\"}, {\"id\": \"22153\", \"alias\": \"Zahirecilik\", \"meslek_tanim\": \"Değirmencilik, zahirecilik\", \"nace_code\": \"10.61.90\", \"nace_label\": \"Dövülmüş diğer tahıl ürünlerinin imalatı (bulgur ve irmik hariç)\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"17312\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"20697\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"17815\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"4682\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"9577\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"8643\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"2432\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"13155\",\n      \"verdict\": \"unsure\"\n    },\n    {\n      \"id\": \"805\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"22153\",\n      \"verdict\": \"yes\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "17312",
+        "verdict": "no"
+      },
+      {
+        "id": "20697",
+        "verdict": "yes"
+      },
+      {
+        "id": "17815",
+        "verdict": "no"
+      },
+      {
+        "id": "4682",
+        "verdict": "yes"
+      },
+      {
+        "id": "9577",
+        "verdict": "yes"
+      },
+      {
+        "id": "8643",
+        "verdict": "no"
+      },
+      {
+        "id": "2432",
+        "verdict": "no"
+      },
+      {
+        "id": "13155",
+        "verdict": "unsure"
+      },
+      {
+        "id": "805",
+        "verdict": "yes"
+      },
+      {
+        "id": "22153",
+        "verdict": "yes"
+      }
+    ]
+  }
+}

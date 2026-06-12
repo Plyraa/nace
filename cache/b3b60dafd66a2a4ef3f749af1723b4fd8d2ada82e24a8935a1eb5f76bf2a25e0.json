@@ -1,0 +1,34 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.09\", \"meslek_tanim\": \"Hurdacılık\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"38.11.01\", \"nace_label\": \"Tehlikesiz atıkların toplanması (çöpler, geri dönüştürülebilir maddeler, tekstil atıkları, vb.) (inşaat ve yıkım atıkları, çalı, çırpı, moloz gibi enkazlar hariç)\"}, {\"nace_code\": \"38.11.03\", \"nace_label\": \"Tehlikesiz atık transfer istasyonlarının işletilmesi\"}, {\"nace_code\": \"38.12.01\", \"nace_label\": \"Tehlikeli atıkların toplanması\"}, {\"nace_code\": \"38.21.02\", \"nace_label\": \"Gemi ve yüzer yapıların hurdalarının materyallerinin geri kazanımı amacıyla parçalara ayrılması (sökülmesi)\"}, {\"nace_code\": \"38.21.03\", \"nace_label\": \"Hurdaların geri kazanım amacıyla parçalara ayrılması (otomobil, bilgisayar, televizyon vb. donanımlar) (gemiler ve yüzer yapılar ile satmak için kullanılabilir parçalar oluşturmak amacıyla sökme hariç)\"}, {\"nace_code\": \"38.21.04\", \"nace_label\": \"Tasnif edilmiş metal atıklar, hurdalar ve diğer parçaların genellikle mekanik veya kimyasal değişim işlemleri ile geri kazanılması\"}, {\"nace_code\": \"38.21.05\", \"nace_label\": \"Tasnif edilmiş metal dışı atıklar, hurdalar ve diğer parçaların genellikle mekanik veya kimyasal değişim işlemleri ile geri kazanılması\"}, {\"nace_code\": \"38.22.00\", \"nace_label\": \"Enerji geri kazanımı\"}, {\"nace_code\": \"38.23.00\", \"nace_label\": \"Diğer atık geri kazanımı\"}, {\"nace_code\": \"38.31.00\", \"nace_label\": \"Enerji geri kazanımı olmaksızın atıkların yakılması\"}, {\"nace_code\": \"38.32.03\", \"nace_label\": \"Tehlikesiz atıkların düzenli veya kalıcı olarak depolanması\"}, {\"nace_code\": \"38.32.04\", \"nace_label\": \"Tehlikeli atıkların düzenli veya kalıcı olarak depolanması (radyoaktif atıklar hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"hurda\",\n    \"hurdacı\",\n    \"hurdaci\",\n    \"hurdacıyım\",\n    \"hurda alımı\",\n    \"hurda satışı\",\n    \"hurda toplama\",\n    \"hurda geri dönüşüm\",\n    \"hurdaci alım satım\",\n    \"hırdavat\",\n    \"hırdacılık\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "hurda",
+      "hurdacı",
+      "hurdaci",
+      "hurdacıyım",
+      "hurda alımı",
+      "hurda satışı",
+      "hurda toplama",
+      "hurda geri dönüşüm",
+      "hurdaci alım satım",
+      "hırdavat",
+      "hırdacılık"
+    ]
+  }
+}

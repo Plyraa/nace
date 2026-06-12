@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"D.03\", \"meslek_tanim\": \"Bakkallık, bayilik, büfecilik\", \"sektor_tanim\": \"GIDA, TARIM\", \"nace_examples\": [{\"nace_code\": \"11.07.03\", \"nace_label\": \"İçme suyu üretimi (şişelenmiş, gazsız, tatlandırılmamış ve aromalandırılmamış)\"}, {\"nace_code\": \"35.30.22\", \"nace_label\": \"Soğutulmuş hava ve soğutulmuş su üretim ve dağıtımı (buz üretimi dahil)\"}, {\"nace_code\": \"46.17.01\", \"nace_label\": \"Gıda maddelerinin toptan satışı ile ilgili aracıların faaliyetleri (aracı üretici birlikleri dahil, içecekler ile yaş sebze ve meyve hariç)\"}, {\"nace_code\": \"46.34.03\", \"nace_label\": \"Su toptan ticareti (su istasyonları dahil, şebeke suyu hariç)\"}, {\"nace_code\": \"46.36.03\", \"nace_label\": \"Şeker toptan ticareti\"}, {\"nace_code\": \"46.38.03\", \"nace_label\": \"Gıda tuzu (sofra tuzu) toptan ticareti\"}, {\"nace_code\": \"46.38.04\", \"nace_label\": \"Un, nişasta, makarna, şehriye vb. ürünler ile hazır gıdaların toptan ticareti\"}, {\"nace_code\": \"46.38.05\", \"nace_label\": \"Hazır homojenize gıda ile diyetetik gıda ürünleri toptan ticareti\"}, {\"nace_code\": \"46.38.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer gıda ürünlerinin toptan ticareti\"}, {\"nace_code\": \"46.39.03\", \"nace_label\": \"Uzmanlaşmamış gıda, içecek ve tütün toptan ticareti\"}, {\"nace_code\": \"47.11.01\", \"nace_label\": \"Bakkal ve marketlerde yapılan perakende ticaret (gıda, içecek veya tütün ağırlıklı perakende ticaret)\"}, {\"nace_code\": \"47.11.05\", \"nace_label\": \"Büfelerde gıda, alkollü ve alkolsüz içecek veya tütün ağırlıklı perakende ticaret\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"bakkal\",\n    \"bakkaliye\",\n    \"büfe\",\n    \"bayilik\",\n    \"bakkalım\",\n    \"bakkaliyem\",\n    \"büfecilik\",\n    \"bakkal dükkanı\",\n    \"bakkaliyeci\",\n    \"bakkalcı\",\n    \"bakkal ve büfe\",\n    \"bakkalım ben\",\n    \"bakkaliye dükkanı\",\n    \"bakkal işletmesi\",\n    \"bakkal bayii\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "bakkal",
+      "bakkaliye",
+      "büfe",
+      "bayilik",
+      "bakkalım",
+      "bakkaliyem",
+      "büfecilik",
+      "bakkal dükkanı",
+      "bakkaliyeci",
+      "bakkalcı",
+      "bakkal ve büfe",
+      "bakkalım ben",
+      "bakkaliye dükkanı",
+      "bakkal işletmesi",
+      "bakkal bayii"
+    ]
+  }
+}

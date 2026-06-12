@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"C.01\", \"meslek_tanim\": \"Asansör, yürüyen merdiven kurulumu, bakımı, onarımı\", \"sektor_tanim\": \"ELEKTRİK, ELEKTRONİK, BİLGİSAYAR\", \"nace_examples\": [{\"nace_code\": \"43.24.01\", \"nace_label\": \"Asansörlerin, yürüyen merdivenlerin, yürüyen yolların, otomatik ve döner kapıların onarım ve bakımı dahil kurulum işleri\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"asansörcü\",\n    \"asansör bakım\",\n    \"asansör tamir\",\n    \"yürüyen merdiven bakım\",\n    \"asansör montaj\",\n    \"asansör kurulum\",\n    \"asansör servisi\",\n    \"asansör arıza\",\n    \"asansörcü ustası\",\n    \"asansör onarım\",\n    \"asansör bakım onarım\",\n    \"asansör tamircisi\",\n    \"asansörcü dükkanı\",\n    \"asansör bakım servisi\",\n    \"asansör montajcısı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "asansörcü",
+      "asansör bakım",
+      "asansör tamir",
+      "yürüyen merdiven bakım",
+      "asansör montaj",
+      "asansör kurulum",
+      "asansör servisi",
+      "asansör arıza",
+      "asansörcü ustası",
+      "asansör onarım",
+      "asansör bakım onarım",
+      "asansör tamircisi",
+      "asansörcü dükkanı",
+      "asansör bakım servisi",
+      "asansör montajcısı"
+    ]
+  }
+}

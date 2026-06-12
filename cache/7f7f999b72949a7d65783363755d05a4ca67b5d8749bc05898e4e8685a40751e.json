@@ -1,0 +1,35 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.30\", \"meslek_tanim\": \"Tenekecilik\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"25.99.13\", \"nace_label\": \"Metalden çatı olukları, çatı kaplamaları vb. imalatı\"}, {\"nace_code\": \"43.41.00\", \"nace_label\": \"Çatı işleri\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"Tenekeci\",\n    \"Tenekecilik\",\n    \"Teneke işleri\",\n    \"Teneke çatı\",\n    \"Oluk teneke\",\n    \"Tenekeciyim\",\n    \"Teneke işi yaparım\",\n    \"Tenekecil\",\n    \"Tenekeci dükkanı\",\n    \"Teneke saç işleri\",\n    \"Tenekecelik\",\n    \"Teneke tamir\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "Tenekeci",
+      "Tenekecilik",
+      "Teneke işleri",
+      "Teneke çatı",
+      "Oluk teneke",
+      "Tenekeciyim",
+      "Teneke işi yaparım",
+      "Tenekecil",
+      "Tenekeci dükkanı",
+      "Teneke saç işleri",
+      "Tenekecelik",
+      "Teneke tamir"
+    ]
+  }
+}

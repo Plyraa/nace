@@ -1,0 +1,36 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"G.02\", \"meslek_tanim\": \"Cenaze hizmetleri\", \"sektor_tanim\": \"KUAFÖR, BERBER, TEMİZLİK, SPOR, KOZMETİK, SAĞLIK\", \"nace_examples\": [{\"nace_code\": \"96.30.01\", \"nace_label\": \"Cenaze işleri ile ilgili faaliyetler (cenaze yıkama yerlerinin işletilmesi, cenazenin nakli, yıkama hizmetleri, defin hizmetleri vb.)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"Cenaze levazımatı\",\n    \"Cenazeci\",\n    \"Cenaze yıkama\",\n    \"Cenaze hizmetleri\",\n    \"Ölü nakli\",\n    \"Cenaze nakliyatı\",\n    \"Defin işleri\",\n    \"Cenaze işleri\",\n    \"Mezarcı\",\n    \"Cenaze levazımatçısı\",\n    \"Cenaze yıkama ve kefenleme\",\n    \"Cenaze arabası kiralama\",\n    \"Cenazeciyim\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "Cenaze levazımatı",
+      "Cenazeci",
+      "Cenaze yıkama",
+      "Cenaze hizmetleri",
+      "Ölü nakli",
+      "Cenaze nakliyatı",
+      "Defin işleri",
+      "Cenaze işleri",
+      "Mezarcı",
+      "Cenaze levazımatçısı",
+      "Cenaze yıkama ve kefenleme",
+      "Cenaze arabası kiralama",
+      "Cenazeciyim"
+    ]
+  }
+}

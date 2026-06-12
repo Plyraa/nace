@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"G.11\", \"meslek_tanim\": \"Kozmetik imalatı, ticareti\", \"sektor_tanim\": \"KUAFÖR, BERBER, TEMİZLİK, SPOR, KOZMETİK, SAĞLIK\", \"nace_examples\": [{\"nace_code\": \"20.42.01\", \"nace_label\": \"Ağız veya diş bakım ürünleri imalatı (diş macunu, vb. ile takma dişleri ağızda sabit tutmaya yarayan macun ve tozlar ile diş temizleme iplikleri dahil)\"}, {\"nace_code\": \"20.42.02\", \"nace_label\": \"Kolonya imalatı\"}, {\"nace_code\": \"20.42.03\", \"nace_label\": \"Parfüm ve koku verici diğer sıvı ürün, manikür/pedikür müstahzarı, güneş koruyucu ürünler, dudak ve göz makyajı ürünü, banyo tuzu, kozmetik veya kişisel bakım amaçlı pudra, sabun ve organik yüzey aktif müstahzarı, deodorant, vb. imalatı (kolonya hariç)\"}, {\"nace_code\": \"20.42.04\", \"nace_label\": \"Şampuan, saç kremi, saç spreyi, jöle, saç düzleştirme ve perma ürünleri, saç losyonları, saç boyaları, vb. imalatı\"}, {\"nace_code\": \"20.59.19\", \"nace_label\": \"Uçucu yağların imalatı\"}, {\"nace_code\": \"32.91.03\", \"nace_label\": \"Diş fırçaları, saç fırçaları, tıraş fırçaları ve kişisel bakım için kullanılan diğer fırçalar ile resim fırçaları, yazı fırçaları ve kozmetik fırçaların imalatı\"}, {\"nace_code\": \"32.99.06\", \"nace_label\": \"Peruk, takma saç, takma sakal, takma kaş vb. imalatı\"}, {\"nace_code\": \"46.18.02\", \"nace_label\": \"Kozmetik, parfüm ve bakım ürünleri ile temizlik malzemesinin toptan satışı ile ilgili aracıların faaliyetleri\"}, {\"nace_code\": \"46.45.01\", \"nace_label\": \"Parfüm, kozmetik ürünleri ve kolonya toptan ticareti (ıtriyat dahil)\"}, {\"nace_code\": \"46.49.22\", \"nace_label\": \"Tıraş bıçakları, usturalar ve jiletlerin toptan ticareti\"}, {\"nace_code\": \"47.75.01\", \"nace_label\": \"Kozmetik ve kişisel bakım malzemelerinin perakende ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\"aliases\":[\"kozmetikçi\",\"ıtriyatçı\",\"parfüm satıyorum\",\"kozmetik üretiyorum\",\"kolonya imalatı\",\"bakım ürünleri ticareti\",\"kozmatik\",\"itriyat\",\"parfum\",\"kolanya\",\"saç bakım ürünleri\",\"cilt bakım ürünleri\",\"kozmetik toptancısı\",\"dükkanım\",\"kozmetik işi\"]}",
+  "parsed": {
+    "aliases": [
+      "kozmetikçi",
+      "ıtriyatçı",
+      "parfüm satıyorum",
+      "kozmetik üretiyorum",
+      "kolonya imalatı",
+      "bakım ürünleri ticareti",
+      "kozmatik",
+      "itriyat",
+      "parfum",
+      "kolanya",
+      "saç bakım ürünleri",
+      "cilt bakım ürünleri",
+      "kozmetik toptancısı",
+      "dükkanım",
+      "kozmetik işi"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"12373\", \"alias\": \"köpek yetiştirme\", \"meslek_tanim\": \"Evcil hayvan bakımı, ticareti\", \"nace_code\": \"01.48.03\", \"nace_label\": \"Evcil hayvanların yetiştirilmesi ve üretilmesi (balık hariç) (kedi, köpek, kuşlar, hamsterler vb.)\"}, {\"id\": \"15639\", \"alias\": \"müzik aletleri imalatçısı\", \"meslek_tanim\": \"Müzik aletleri imalatı, onarımı, ticareti\", \"nace_code\": \"32.20.27\", \"nace_label\": \"Müzik kutuları, orkestriyonlar, laternalar, çıngıraklar vb. imalatı\"}, {\"id\": \"10349\", \"alias\": \"kariyer danışmanı\", \"meslek_tanim\": \"Arzuhalcilik, danışmanlık, bilgi hizmetleri\", \"nace_code\": \"78.20.02\", \"nace_label\": \"Geçici iş bulma acenteleri ile diğer insan kaynaklarının sağlanması faaliyetleri\"}, {\"id\": \"2502\", \"alias\": \"Bina malzemeleri imalatı\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"23.99.05\", \"nace_label\": \"Bitümlü karışımların imalatı (doğal veya suni taştan malzemeler ile bir bağlayıcı olarak bitüm, doğal asfalt veya ilgili maddelerin karıştırılmasıyla elde edilenler)\"}, {\"id\": \"8127\", \"alias\": \"güzellik uzmanı\", \"meslek_tanim\": \"Güzellik salonu işletmeciliği\", \"nace_code\": \"96.22.01\", \"nace_label\": \"Güzellik salonlarının faaliyetleri (cilt bakımı, kaş alma, ağda, manikür, pedikür, makyaj, kalıcı makyaj vb.nin bir arada sunulduğu salonlar) (sağlık bakım hizmetleri hariç)\"}, {\"id\": \"22850\", \"alias\": \"çiftçi\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\", \"nace_code\": \"01.63.05\", \"nace_label\": \"Tütünün sınıflandırılması, balyalanması vb. hizmetler\"}, {\"id\": \"12348\", \"alias\": \"köfteci\", \"meslek_tanim\": \"Lokantacılık\", \"nace_code\": \"56.22.90\", \"nace_label\": \"Dışarıya yemek sunan diğer işletmelerin faaliyetleri (spor, fabrika, işyeri, üniversite vb. mensupları için tabldot servisi vb. dahil; özel günlerde hizmet verenler hariç)\"}, {\"id\": \"8183\", \"alias\": \"halı yıkama işi\", \"meslek_tanim\": \"Halı yıkama hizmetleri\", \"nace_code\": \"96.10.04\", \"nace_label\": \"Halı ve kilim yıkama hizmetleri\"}, {\"id\": \"19588\", \"alias\": \"tarla ürünleri\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\", \"nace_code\": \"02.10.02\", \"nace_label\": \"Orman yetiştirmek için fidan ve tohum üretimi\"}, {\"id\": \"15421\", \"alias\": \"Mobilyacı\", \"meslek_tanim\": \"Mobilya ticareti\", \"nace_code\": \"47.55.06\", \"nace_label\": \"Büro mobilyaları ve aksesuarlarının perakende ticareti\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{}",
+  "parsed": {}
+}

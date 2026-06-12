@@ -1,0 +1,33 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"I.01\", \"meslek_tanim\": \"Pazarda ayakkabı, tekstil ürünleri ticareti\", \"sektor_tanim\": \"PAZAR, SEYYAR\", \"nace_examples\": [{\"nace_code\": \"47.51.06\", \"nace_label\": \"Tezgahlar ve pazar yerleri vasıtasıyla tuhafiye, manifatura ve mefruşat ürünleri perakende ticareti (seyyar satıcılar hariç)\"}, {\"nace_code\": \"47.71.13\", \"nace_label\": \"Tezgahlar ve pazar yerleri vasıtasıyla iç giyim eşyası, dış giyim eşyası, çorap, giysi aksesuarı ve ayakkabı perakende ticareti (seyyar satıcılar hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"Pazarda ayakkabı satıcısı\",\n    \"Pazarda tekstil satıcısı\",\n    \"Ayakkabıcı\",\n    \"Tekstilci\",\n    \"Pazarcı\",\n    \"Seyyar satıcı\",\n    \"Pazar esnafı\",\n    \"Ayakkabı ve tekstil pazar satıcısı\",\n    \"Pazarda ayakkabı satarım\",\n    \"Seyyar ayakkabı satıcısı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "Pazarda ayakkabı satıcısı",
+      "Pazarda tekstil satıcısı",
+      "Ayakkabıcı",
+      "Tekstilci",
+      "Pazarcı",
+      "Seyyar satıcı",
+      "Pazar esnafı",
+      "Ayakkabı ve tekstil pazar satıcısı",
+      "Pazarda ayakkabı satarım",
+      "Seyyar ayakkabı satıcısı"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"F.01\", \"meslek_tanim\": \"Arzuhalcilik, danışmanlık, bilgi hizmetleri\", \"sektor_tanim\": \"HEDİYELİK EŞYA, EĞİTİM, BASIM, FOTOĞRAF, ÇEŞİTLİ MALLAR\", \"nace_examples\": [{\"nace_code\": \"63.92.00\", \"nace_label\": \"Diğer bilgi hizmeti faaliyetleri\"}, {\"nace_code\": \"70.20.01\", \"nace_label\": \"İşletme ve diğer idari danışmanlık faaliyetleri\"}, {\"nace_code\": \"70.20.02\", \"nace_label\": \"İnsan kaynakları yönetim danışmanlığı faaliyetleri\"}, {\"nace_code\": \"73.20.03\", \"nace_label\": \"Piyasa ve kamuoyu araştırma faaliyetleri\"}, {\"nace_code\": \"74.99.03\", \"nace_label\": \"İşyeri komisyonculuğu faaliyetleri (küçük ve orta ölçekli işletmelerin alım ve satımının düzenlenmesi vb.)\"}, {\"nace_code\": \"78.10.01\", \"nace_label\": \"İş bulma acentelerinin faaliyetleri (işe girecek kişilerin seçimi ve yerleştirilmesi faaliyetleri dahil)\"}, {\"nace_code\": \"78.20.02\", \"nace_label\": \"Geçici iş bulma acenteleri ile diğer insan kaynaklarının sağlanması faaliyetleri\"}, {\"nace_code\": \"82.10.01\", \"nace_label\": \"Büro yönetimi ve destek faaliyetleri (sanal ofis, hazır ofis ve paylaşımlı ofis hariç)\"}, {\"nace_code\": \"82.10.02\", \"nace_label\": \"Sanal ofis, hazır ofis ve paylaşımlı ofis yönetimi ve destek faaliyetleri\"}, {\"nace_code\": \"82.20.01\", \"nace_label\": \"Çağrı merkezlerinin faaliyetleri\"}, {\"nace_code\": \"82.99.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer işletme destek hizmeti faaliyetleri\"}, {\"nace_code\": \"96.99.08\", \"nace_label\": \"Arzuhalcilerin faaliyetleri\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"arzuhalci\",\n    \"dilekçeci\",\n    \"danışman\",\n    \"bilgi hizmetleri\",\n    \"iş danışmanlığı\",\n    \"kariyer danışmanı\",\n    \"iş bulma\",\n    \"işe yerleştirme\",\n    \"çağrı merkezi\",\n    \"sanal ofis\",\n    \"hazır ofis\",\n    \"arzuhalcilik yaparım\",\n    \"danışmanlık yapıyorum\",\n    \"bilgi hizmeti veriyorum\",\n    \"dilekçe yazarım\",\n    \"iş kurma danışmanı\",\n    \"kobi danışmanı\",\n    \"işletme destek\",\n    \"arzuhâlci\",\n    \"danışmanlık ofisi\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "arzuhalci",
+      "dilekçeci",
+      "danışman",
+      "bilgi hizmetleri",
+      "iş danışmanlığı",
+      "kariyer danışmanı",
+      "iş bulma",
+      "işe yerleştirme",
+      "çağrı merkezi",
+      "sanal ofis",
+      "hazır ofis",
+      "arzuhalcilik yaparım",
+      "danışmanlık yapıyorum",
+      "bilgi hizmeti veriyorum",
+      "dilekçe yazarım",
+      "iş kurma danışmanı",
+      "kobi danışmanı",
+      "işletme destek",
+      "arzuhâlci",
+      "danışmanlık ofisi"
+    ]
+  }
+}

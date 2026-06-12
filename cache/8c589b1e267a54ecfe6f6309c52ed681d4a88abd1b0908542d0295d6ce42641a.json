@@ -1,0 +1,36 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"G.08\", \"meslek_tanim\": \"Hasta bakıcılığı\", \"sektor_tanim\": \"KUAFÖR, BERBER, TEMİZLİK, SPOR, KOZMETİK, SAĞLIK\", \"nace_examples\": [{\"nace_code\": \"86.94.01\", \"nace_label\": \"Ebe, sağlık memuru, sünnetçi, iğneci, pansumancı vb.leri tarafından verilen hizmetler (tıp doktorları dışında yetkili kişilerce sağlanan gebelik süresince ve doğum sonrası izleme ve tıbbi işlemleri kapsayan aile planlaması hizmetleri dahil) (hastane dışı)\"}, {\"nace_code\": \"86.94.02\", \"nace_label\": \"Hemşirelik hizmetleri (evdeki hastalar için bakım, koruma, anne bakımı, çocuk sağlığı ve hemşirelik bakımı alanındaki benzeri hizmetler dahil; hemşireli yatılı bakım tesislerinin faaliyetleri ile tıp doktorlarının hizmetleri hariç) (hastane dışı)\"}, {\"nace_code\": \"87.10.01\", \"nace_label\": \"Hemşireli yatılı bakım faaliyetleri (hemşireli bakım evlerinin, hemşireli huzur evlerinin faaliyetleri dahil; sadece asgari düzeyde hemşire bakımı sağlanan yaşlı evlerinin, yetimhanelerin, yurtların faaliyetleri ile evlerde sağlanan hizmetler hariç)\"}, {\"nace_code\": \"87.20.02\", \"nace_label\": \"Zihinsel rahatsızlığı veya madde kullanımı teşhisi olan kişilere yönelik yatılı bakım faaliyetleri (hastanelerin faaliyetleri ile yatılı sosyal hizmet faaliyetleri hariç)\"}, {\"nace_code\": \"87.30.02\", \"nace_label\": \"Yaşlılara ve bedensel engellilere yönelik yatılı bakım faaliyetleri (destekli yaşam tesisleri, hemşire bakımı olmayan huzurevleri ve asgari düzeyde hemşire bakımı olan evlerin faaliyetleri dahil, yaşlılar için hemşire bakımlı evlerin faaliyetleri hariç)\"}, {\"nace_code\": \"88.10.02\", \"nace_label\": \"Yaşlılar ve bedensel engelliler için barınacak yer sağlanmaksızın verilen sosyal hizmetler (yatılı bakım faaliyetleri ile engelli çocuklara yönelik gündüz bakım (kreş) faaliyetleri hariç)\"}, {\"nace_code\": \"88.99.07\", \"nace_label\": \"Barınacak yer sağlanmaksızın mesleki rehabilitasyon hizmetleri (bedensel engelliler için rehabilitasyon hizmetleri hariç)\"}, {\"nace_code\": \"88.99.09\", \"nace_label\": \"Barınacak yer sağlanmaksızın çocuk ve gençlere yönelik rehabilitasyon hizmetleri (zihinsel engelliler için olanlar dahil, bedensel engellilere yönelik olanlar hariç)\"}, {\"nace_code\": \"88.99.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış barınacak yer sağlanmaksızın verilen diğer sosyal yardım hizmetleri (aile danışmanlığı ve rehberliği, borç danışmanlığı, sosyal hizmet için para toplama, evlat edindirme, evsiz, afetzede ve mültecilere geçici barınak sağlama, yardım için uygun kişi belirleme vb.)\"}, {\"nace_code\": \"96.99.01\", \"nace_label\": \"Eskort ve refakat hizmetleri (güvenlik hizmetleri hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\"aliases\": [\"hasta bakıcı\", \"yaşlı bakıcı\", \"refakatçi\", \"hasta bakımı\", \"bakıcı\", \"hastabakıcı\", \"yaşlı bakımı\", \"hasta bakıcılığı yaparım\", \"bakım hizmeti\", \"evde bakım\", \"bakıcı aranıyor\", \"hasta bakıcı hizmetleri\", \"yaşlı bakıcılığı\"]}",
+  "parsed": {
+    "aliases": [
+      "hasta bakıcı",
+      "yaşlı bakıcı",
+      "refakatçi",
+      "hasta bakımı",
+      "bakıcı",
+      "hastabakıcı",
+      "yaşlı bakımı",
+      "hasta bakıcılığı yaparım",
+      "bakım hizmeti",
+      "evde bakım",
+      "bakıcı aranıyor",
+      "hasta bakıcı hizmetleri",
+      "yaşlı bakıcılığı"
+    ]
+  }
+}

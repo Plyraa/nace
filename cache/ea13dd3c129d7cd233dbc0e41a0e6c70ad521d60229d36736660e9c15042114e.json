@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"C.06\", \"meslek_tanim\": \"Elektrik malzemeleri imalatı, ticareti\", \"sektor_tanim\": \"ELEKTRİK, ELEKTRONİK, BİLGİSAYAR\", \"nace_examples\": [{\"nace_code\": \"23.43.01\", \"nace_label\": \"Seramik yalıtkanların (izolatörlerin) ve yalıtkan bağlantı parçalarının imalatı\"}, {\"nace_code\": \"27.12.01\", \"nace_label\": \"Elektrik dağıtım ve kontrol cihazları imalatı\"}, {\"nace_code\": \"27.12.02\", \"nace_label\": \"Elektrik dağıtım ve kontrol cihazlarının aksam ve parçalarının imalatı\"}, {\"nace_code\": \"27.33.00\", \"nace_label\": \"Kablolamada kullanılan gereçlerin imalatı\"}, {\"nace_code\": \"27.40.02\", \"nace_label\": \"Hava ve motorlu kara taşıtları için monoblok far üniteleri, kara, hava ve deniz taşıtları için elektrikli aydınlatma donanımları veya görsel sinyalizasyon ekipmanları imalatı (polis araçları, ambulans vb. araçların dış ikaz lambaları dahil)\"}, {\"nace_code\": \"27.40.03\", \"nace_label\": \"Avize, aplik ve diğer elektrikli aydınlatma armatürleri, sahne, fotoğraf veya sinema stüdyoları için projektörler ve spot ışıkları, elektrikli masa lambaları, çalışma lambaları, abajur vb. lambaların imalatı (süsleme için ışıklandırma setleri dahil)\"}, {\"nace_code\": \"27.40.04\", \"nace_label\": \"Sokak aydınlatma donanımlarının imalatı (trafik ışıkları hariç)\"}, {\"nace_code\": \"27.40.05\", \"nace_label\": \"Pil, akümülatör veya manyeto ile çalışan portatif elektrik lambaları ve elektriksiz lambalar ile el feneri, gaz ve lüks lambası vb. aydınlatma armatürlerinin imalatı (taşıtlar için olanlar hariç)\"}, {\"nace_code\": \"27.40.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış aydınlatma ekipmanları imalatı\"}, {\"nace_code\": \"27.90.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer elektrikli ekipmanların imalatı\"}, {\"nace_code\": \"29.31.05\", \"nace_label\": \"Motorlu kara taşıtları ve motosikletler için elektrikli sinyalizasyon donanımları, kornalar, sirenler, cam silecekleri, buğu önleyiciler, elektrikli cam/kapı sistemleri, voltaj regülatörleri vb. elektrikli ekipmanların imalatı\"}, {\"nace_code\": \"46.47.03\", \"nace_label\": \"Aydınlatma ekipmanlarının toptan ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"elektrik malzemeleri imalatı\",\n    \"elektrik malzemeleri ticareti\",\n    \"elektrik malzemeleri satışı\",\n    \"elektrikçi\",\n    \"elektrik malzemeleri imalat ve ticaret\",\n    \"elektrik ekipmanları imalatı\",\n    \"elektrik dağıtım malzemeleri\",\n    \"elektrikli aydınlatma imalatı\",\n    \"kablo ve gereçleri imalatı\",\n    \"elektrik malzemeleri toptan\",\n    \"elektrik malzemeleri perakende\",\n    \"elektrik imalatçısı\",\n    \"elektrik malzemeleri imalatı ticareti\",\n    \"elektrikçi dükkanı\",\n    \"elektrik malzemeleri\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "elektrik malzemeleri imalatı",
+      "elektrik malzemeleri ticareti",
+      "elektrik malzemeleri satışı",
+      "elektrikçi",
+      "elektrik malzemeleri imalat ve ticaret",
+      "elektrik ekipmanları imalatı",
+      "elektrik dağıtım malzemeleri",
+      "elektrikli aydınlatma imalatı",
+      "kablo ve gereçleri imalatı",
+      "elektrik malzemeleri toptan",
+      "elektrik malzemeleri perakende",
+      "elektrik imalatçısı",
+      "elektrik malzemeleri imalatı ticareti",
+      "elektrikçi dükkanı",
+      "elektrik malzemeleri"
+    ]
+  }
+}

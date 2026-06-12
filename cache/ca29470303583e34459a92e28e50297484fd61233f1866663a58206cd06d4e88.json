@@ -1,0 +1,20 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"21991\", \"alias\": \"yük birleştirme\", \"meslek_tanim\": \"Yük taşımacılığını destekleyici faaliyetler\", \"nace_code\": \"52.21.06\", \"nace_label\": \"Kara taşımacılığına yönelik emanet büroları işletmeciliği (demir yollarında yapılanlar dahil)\"}, {\"id\": \"3734\", \"alias\": \"data recovery\", \"meslek_tanim\": \"Bilgisayar kurulumu, onarımı, programlama, veri kurtarma\", \"nace_code\": \"63.91.02\", \"nace_label\": \"Web arama portalı faaliyetleri\"}, {\"id\": \"1906\", \"alias\": \"ben otopark işletiyorum\", \"meslek_tanim\": \"Durak, otopark işletmeciliği\", \"nace_code\": \"52.21.07\", \"nace_label\": \"Otopark ve garaj işletmeciliği (bisiklet parkları ve karavanların kışın saklanması dahil)\"}, {\"id\": \"21592\", \"alias\": \"Yapı malzemeleri üretiyorum\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"23.64.01\", \"nace_label\": \"Toz harç imalatı\"}, {\"id\": \"564\", \"alias\": \"araç döşeme\", \"meslek_tanim\": \"Oto döşemecilik\", \"nace_code\": \"30.11.06\", \"nace_label\": \"Gemiler ve yüzer yapılar için oturulacak yerlerin imalatı\"}, {\"id\": \"3554\", \"alias\": \"cameı\", \"meslek_tanim\": \"Camcılık\", \"nace_code\": \"23.11.01\", \"nace_label\": \"Düz cam imalatı (telli, buzlu cam, renkli veya boyalı düz cam dahil) (dökülmüş, haddelenmiş, çekilmiş, üflenmiş, float, yüzeyi parlatılmış veya cilalanmış ancak başka şekilde işlenmemiş olanlar)\"}, {\"id\": \"9091\", \"alias\": \"imitasyon takı satışı\", \"meslek_tanim\": \"Hediyelik eşya imalatı, ticareti\", \"nace_code\": \"23.41.02\", \"nace_label\": \"Seramik ve porselenden heykelcik, vazo, biblo, vb. süs eşyası imalatı (oyuncaklar hariç)\"}, {\"id\": \"6403\", \"alias\": \"elektronik aletler\", \"meslek_tanim\": \"Elektronik ürün ticareti\", \"nace_code\": \"46.50.03\", \"nace_label\": \"Elektronik cihaz ve parçalarının toptan ticareti (elektronik valfler, tüpler, yarı iletken cihazlar, mikroçipler, entegre devreler, baskılı devreler, vb.) (seyrüsefer cihazları hariç)\"}, {\"id\": \"15839\", \"alias\": \"Ocakçı\", \"meslek_tanim\": \"Mermer, taş, kum ocakçılığı\", \"nace_code\": \"08.11.07\", \"nace_label\": \"Tebeşir, alçıtaşı ve anhidrit ocakçılığı (çıkarma, parçalama, pişirme işlemi dahil)\"}, {\"id\": \"19053\", \"alias\": \"soğutma ustası\", \"meslek_tanim\": \"İklimlendirme, soğutma sistemi imalatı, kurulumu, onarımı\", \"nace_code\": \"33.12.06\", \"nace_label\": \"Sanayi tipi soğutma ve havalandırma ekipmanlarının onarım ve bakımı\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{}",
+  "parsed": {}
+}

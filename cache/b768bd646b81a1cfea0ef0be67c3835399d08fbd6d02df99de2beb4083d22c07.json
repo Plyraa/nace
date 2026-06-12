@@ -1,0 +1,37 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.03\", \"meslek_tanim\": \"Bakırcılık\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"24.44.01\", \"nace_label\": \"Bakır, bakır matı, bakır tozu, semente bakır, bakır anotu ile bakır ve bakır alaşımlarının imalatı\"}, {\"nace_code\": \"24.44.03\", \"nace_label\": \"Bakır sac, tabaka, levha, şerit, folyo imalatı (alaşımdan olanlar dahil)\"}, {\"nace_code\": \"24.44.04\", \"nace_label\": \"Bakırın çekilmesi ve haddelenmesi ile tüp, boru, bunların bağlantı elemanları, bar, çubuk, tel ve profil imalatı (alaşımdan olanlar dahil)\"}, {\"nace_code\": \"25.99.06\", \"nace_label\": \"Bakırdan sofra ve mutfak eşyası imalatı (cezve, tencere, çanak, tabak, ibrik vb.)\"}, {\"nace_code\": \"25.99.18\", \"nace_label\": \"Bakırdan yapılan biblolar, çerçeveler, aynalar ve diğer süsleme eşyaları ile süsleme işleri (mutfak eşyaları hariç)\"}, {\"nace_code\": \"47.55.13\", \"nace_label\": \"Bakır eşya, bakır sofra ve mutfak eşyası perakende ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"bakırcı\",\n    \"bakırcılık\",\n    \"bakiracı\",\n    \"bakırcı dükkanı\",\n    \"bakır işleme\",\n    \"bakır ustası\",\n    \"bakırcıyım\",\n    \"bakırcılık yapıyorum\",\n    \"bakır sofra eşyası\",\n    \"bakır mutfak eşyası\",\n    \"bakırdan herşey\",\n    \"bakır süs eşyası\",\n    \"bakiracılık\",\n    \"bakır dövme\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "bakırcı",
+      "bakırcılık",
+      "bakiracı",
+      "bakırcı dükkanı",
+      "bakır işleme",
+      "bakır ustası",
+      "bakırcıyım",
+      "bakırcılık yapıyorum",
+      "bakır sofra eşyası",
+      "bakır mutfak eşyası",
+      "bakırdan herşey",
+      "bakır süs eşyası",
+      "bakiracılık",
+      "bakır dövme"
+    ]
+  }
+}

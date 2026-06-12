@@ -1,0 +1,36 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"F.14\", \"meslek_tanim\": \"Kreş işletmeciliği\", \"sektor_tanim\": \"HEDİYELİK EŞYA, EĞİTİM, BASIM, FOTOĞRAF, ÇEŞİTLİ MALLAR\", \"nace_examples\": [{\"nace_code\": \"85.10.02\", \"nace_label\": \"Özel öğretim kurumları tarafından verilen okul öncesi eğitim faaliyeti (okula yönelik eğitim verilmeyen gündüz bakım (kreş) faaliyetleri hariç)\"}, {\"nace_code\": \"88.91.01\", \"nace_label\": \"Çocuk gündüz bakım (kreş) faaliyetleri (engelli çocuklar için olanlar ile bebek bakıcılığı dahil; okul öncesi eğitim faaliyetleri ile çocuk kulüpleri (6 yaş ve üzeri çocuklar için) hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\"aliases\": [\"Kreş\", \"Kreş işletmesi\", \"Kreş sahibi\", \"Gündüz bakım evi\", \"Çocuk bakımı\", \"Kreşçi\", \"Kreş işletiyorum\", \"Kreş sahibiyim\", \"Kreşim\", \"Bebek bakıcılığı\", \"Kreş yuvası\", \"Kreş işletmeciliği\", \"Kreş bakım hizmet\"]}",
+  "parsed": {
+    "aliases": [
+      "Kreş",
+      "Kreş işletmesi",
+      "Kreş sahibi",
+      "Gündüz bakım evi",
+      "Çocuk bakımı",
+      "Kreşçi",
+      "Kreş işletiyorum",
+      "Kreş sahibiyim",
+      "Kreşim",
+      "Bebek bakıcılığı",
+      "Kreş yuvası",
+      "Kreş işletmeciliği",
+      "Kreş bakım hizmet"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"D.11\", \"meslek_tanim\": \"Evcil hayvan bakımı, ticareti\", \"sektor_tanim\": \"GIDA, TARIM\", \"nace_examples\": [{\"nace_code\": \"01.48.03\", \"nace_label\": \"Evcil hayvanların yetiştirilmesi ve üretilmesi (balık hariç) (kedi, köpek, kuşlar, hamsterler vb.)\"}, {\"nace_code\": \"10.91.01\", \"nace_label\": \"Çiftlik hayvanları için hazır yem imalatı\"}, {\"nace_code\": \"10.92.01\", \"nace_label\": \"Ev hayvanları için hazır gıda imalatı (kedi ve köpek mamaları, kuş ve balık yemleri vb.)\"}, {\"nace_code\": \"46.21.01\", \"nace_label\": \"Hayvan yemi toptan ticareti\"}, {\"nace_code\": \"46.38.02\", \"nace_label\": \"Ev hayvanları için yemlerin veya yiyeceklerin toptan ticareti (çiftlik hayvanları için olanlar hariç)\"}, {\"nace_code\": \"47.76.01\", \"nace_label\": \"Ev hayvanları, bunların mama ve gıdaları ile eşyalarının perakende ticareti\"}, {\"nace_code\": \"96.99.04\", \"nace_label\": \"Ev hayvanları ve terk edilmiş hayvanlar için bakım hizmetleri\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"evcil hayvan bakımı\",\n    \"kedi köpek bakımı\",\n    \"pet shop\",\n    \"hayvan pansiyonu\",\n    \"kuş bakımı\",\n    \"balık bakımı\",\n    \"hayvan ticareti\",\n    \"pet bakıcısı\",\n    \"hayvan oteli\",\n    \"mama satışı\",\n    \"hayvan malzemeleri\",\n    \"pet kuaför\",\n    \"evcil hayvan üretimi\",\n    \"kedi yetiştirme\",\n    \"köpek yetiştirme\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "evcil hayvan bakımı",
+      "kedi köpek bakımı",
+      "pet shop",
+      "hayvan pansiyonu",
+      "kuş bakımı",
+      "balık bakımı",
+      "hayvan ticareti",
+      "pet bakıcısı",
+      "hayvan oteli",
+      "mama satışı",
+      "hayvan malzemeleri",
+      "pet kuaför",
+      "evcil hayvan üretimi",
+      "kedi yetiştirme",
+      "köpek yetiştirme"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"K.03\", \"meslek_tanim\": \"Camcılık\", \"sektor_tanim\": \"YAPI SANATLARI\", \"nace_examples\": [{\"nace_code\": \"23.11.01\", \"nace_label\": \"Düz cam imalatı (telli, buzlu cam, renkli veya boyalı düz cam dahil) (dökülmüş, haddelenmiş, çekilmiş, üflenmiş, float, yüzeyi parlatılmış veya cilalanmış ancak başka şekilde işlenmemiş olanlar)\"}, {\"nace_code\": \"23.12.01\", \"nace_label\": \"Cam ayna imalatı\"}, {\"nace_code\": \"23.12.03\", \"nace_label\": \"Çok katlı yalıtım camları imalatı\"}, {\"nace_code\": \"23.12.04\", \"nace_label\": \"Levha veya tabaka halinde işlenmiş cam imalatı (kavislendirilmiş, kenarları işlenmiş, gravür yapılmış, delinmiş, emaylanmış/sırlanmış veya başka bir şekilde işlenmiş, fakat çerçevelenmemiş veya monte edilmemiş olanlar) (optik camlar dahil)\"}, {\"nace_code\": \"23.14.01\", \"nace_label\": \"Cam elyafı imalatı (cam yünü ve bunlardan yapılmış dokuma dışı ürünler dahil)\"}, {\"nace_code\": \"23.15.01\", \"nace_label\": \"Laboratuvar, hijyen veya eczacılık ile ilgili cam eşyalar ile cam ampullerin (serum ampulleri) imalatı (ambalajlama ve taşımada kullanılanlar hariç)\"}, {\"nace_code\": \"23.15.02\", \"nace_label\": \"Lamba ve aydınlatma teçhizatının, ışıklı işaretlerin, isim tabelalarının vb.nin cam parçalarının imalatı (cam tabelaların imalatı dahil)\"}, {\"nace_code\": \"23.15.05\", \"nace_label\": \"Vitray cam imalatı\"}, {\"nace_code\": \"23.15.06\", \"nace_label\": \"Camdan elektrik izolasyon malzemesi imalatı\"}, {\"nace_code\": \"23.15.07\", \"nace_label\": \"Cam zarflar (açık) ve bunların cam parçalarının imalatı (elektrik ampulleri, elektrik lambaları, katot ışınlı tüpler vb. için kullanılan)\"}, {\"nace_code\": \"23.15.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer cam ürünlerin imalatı ve işlenmesi (düz camdan yapılmış akvaryumların imalatı dahil)\"}, {\"nace_code\": \"43.34.02\", \"nace_label\": \"Cam takma işleri\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"camcı\",\n    \"camcılık\",\n    \"cam takma\",\n    \"cam işleri\",\n    \"ben camcıyım\",\n    \"camcı dükkanı\",\n    \"cam ustası\",\n    \"cam montaj\",\n    \"düz cam\",\n    \"cam balkon\",\n    \"ayna cam\",\n    \"vitray\",\n    \"cam kesim\",\n    \"cameı\",\n    \"cammcı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "camcı",
+      "camcılık",
+      "cam takma",
+      "cam işleri",
+      "ben camcıyım",
+      "camcı dükkanı",
+      "cam ustası",
+      "cam montaj",
+      "düz cam",
+      "cam balkon",
+      "ayna cam",
+      "vitray",
+      "cam kesim",
+      "cameı",
+      "cammcı"
+    ]
+  }
+}

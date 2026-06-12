@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"9175\", \"alias\": \"İnşaat malzeme imalatı\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"23.65.02\", \"nace_label\": \"Lif ve çimento karışımlı ürünlerin imalatı\"}, {\"id\": \"10236\", \"alias\": \"kaplamacı\", \"meslek_tanim\": \"Kalaycılık, kaplamacılık\", \"nace_code\": \"24.43.06\", \"nace_label\": \"Çinko imalatı (işlenmemiş halde)\"}, {\"id\": \"15426\", \"alias\": \"mobilyacılık\", \"meslek_tanim\": \"Mobilya imalatı\", \"nace_code\": \"31.00.01\", \"nace_label\": \"Yatak odası, yemek odası, mutfak mobilyası, banyo dolabı, genç ve çocuk odası takımı, gardırop, vestiyer, vb. imalatı (gömme dolap, masa, zigon, vb. dahil)\"}, {\"id\": \"5060\", \"alias\": \"dilekçe yazarım\", \"meslek_tanim\": \"Arzuhalcilik, danışmanlık, bilgi hizmetleri\", \"nace_code\": \"70.20.02\", \"nace_label\": \"İnsan kaynakları yönetim danışmanlığı faaliyetleri\"}, {\"id\": \"11692\", \"alias\": \"konfeksiyoncu dükkanı\", \"meslek_tanim\": \"Konfeksiyonculuk\", \"nace_code\": \"46.42.01\", \"nace_label\": \"Bebek giysileri, sporcu giysileri ve diğer giyim eşyalarının toptan ticareti\"}, {\"id\": \"18063\", \"alias\": \"rezervasyon hizmeti\", \"meslek_tanim\": \"Ajans, organizasyon faaliyetleri\", \"nace_code\": \"90.20.01\", \"nace_label\": \"Bağımsız aktör, aktrist ve dublörlerin faaliyetleri\"}, {\"id\": \"12397\", \"alias\": \"kürklü deri işleri\", \"meslek_tanim\": \"Dericilik\", \"nace_code\": \"15.11.13\", \"nace_label\": \"Deri ve kösele esaslı terkip ile elde edilen levha, yaprak, şerit deri ve kösele imalatı\"}, {\"id\": \"2797\", \"alias\": \"boya yapıyorum\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\", \"nace_code\": \"20.16.02\", \"nace_label\": \"Birincil formda alkid reçine, polyester reçine, epoksi reçine, poliasetal, polikarbonat ile diğer polieter ve polyester imalatı\"}, {\"id\": \"366\", \"alias\": \"alüminyum tencere tava\", \"meslek_tanim\": \"Alüminyum ürün imalatı\", \"nace_code\": \"24.42.16\", \"nace_label\": \"Alüminyum folyo imalatı (alaşımdan olanlar dahil)\"}, {\"id\": \"18098\", \"alias\": \"römorkçu\", \"meslek_tanim\": \"Karoser imalatı, kaportacılık\", \"nace_code\": \"29.20.04\", \"nace_label\": \"Treyler (römork) ve yarı treyler (yarı römork) imalatı, römorklar için şasi imalatı (karavan tipinde olanlar ve tarımsal amaçlı olanlar hariç)\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\"id\": \"9175\", \"verdict\": \"yes\"},\n    {\"id\": \"10236\", \"verdict\": \"no\"},\n    {\"id\": \"15426\", \"verdict\": \"yes\"},\n    {\"id\": \"5060\", \"verdict\": \"no\"},\n    {\"id\": \"11692\", \"verdict\": \"no\"},\n    {\"id\": \"18063\", \"verdict\": \"no\"},\n    {\"id\": \"12397\", \"verdict\": \"yes\"},\n    {\"id\": \"2797\", \"verdict\": \"no\"},\n    {\"id\": \"366\", \"verdict\": \"no\"},\n    {\"id\": \"18098\", \"verdict\": \"yes\"}\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "9175",
+        "verdict": "yes"
+      },
+      {
+        "id": "10236",
+        "verdict": "no"
+      },
+      {
+        "id": "15426",
+        "verdict": "yes"
+      },
+      {
+        "id": "5060",
+        "verdict": "no"
+      },
+      {
+        "id": "11692",
+        "verdict": "no"
+      },
+      {
+        "id": "18063",
+        "verdict": "no"
+      },
+      {
+        "id": "12397",
+        "verdict": "yes"
+      },
+      {
+        "id": "2797",
+        "verdict": "no"
+      },
+      {
+        "id": "366",
+        "verdict": "no"
+      },
+      {
+        "id": "18098",
+        "verdict": "yes"
+      }
+    ]
+  }
+}

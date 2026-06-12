@@ -1,0 +1,69 @@
+{
+  "source_file": "SektörMeslekNace_2026.01.01 güncel Mayıs 2026.xlsx",
+  "row_count": 1531,
+  "original_columns": [
+    "SEKTOR KODU",
+    "SEKTOR TANIM",
+    "MESLEK KODU",
+    "MESLEK TANIM",
+    "NACE REV. 2.1 KODU ",
+    "NACE REV.2.1 TANIM"
+  ],
+  "clean_columns": [
+    "SEKTOR KODU",
+    "SEKTOR TANIM",
+    "MESLEK KODU",
+    "MESLEK TANIM",
+    "NACE REV. 2.1 KODU",
+    "NACE REV.2.1 TANIM"
+  ],
+  "unique_meslek_kodu": 184,
+  "unique_meslek_tanim": 184,
+  "unique_nace_code": 1531,
+  "codes_per_meslek_distribution": {
+    "1": 33,
+    "2": 22,
+    "3": 19,
+    "4": 9,
+    "5": 7,
+    "6": 15,
+    "7": 11,
+    "8": 8,
+    "9": 8,
+    "10": 8,
+    "11": 2,
+    "12": 5,
+    "13": 4,
+    "14": 5,
+    "15": 6,
+    "16": 2,
+    "17": 2,
+    "18": 3,
+    "20": 2,
+    "22": 2,
+    "23": 1,
+    "29": 2,
+    "31": 1,
+    "32": 3,
+    "33": 1,
+    "42": 1,
+    "70": 1,
+    "92": 1
+  },
+  "null_counts": {
+    "sektor_kodu": 0,
+    "sektor_tanim": 0,
+    "meslek_kodu": 0,
+    "meslek_tanim": 0,
+    "nace_code": 0,
+    "nace_label": 0,
+    "division": 0,
+    "bucket": 0,
+    "normalized_meslek": 0,
+    "normalized_nace_label": 0
+  },
+  "notes": [
+    "Header cleanup strips whitespace; source has trailing space in 'NACE REV. 2.1 KODU '.",
+    "All NACE rows in the supplied workbook are unique NACE codes."
+  ]
+}

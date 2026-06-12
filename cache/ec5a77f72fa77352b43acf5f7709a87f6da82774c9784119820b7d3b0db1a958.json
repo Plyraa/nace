@@ -1,0 +1,20 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"8821\", \"alias\": \"hurda toplama\", \"meslek_tanim\": \"Hurdacılık\", \"nace_code\": \"38.21.02\", \"nace_label\": \"Gemi ve yüzer yapıların hurdalarının materyallerinin geri kazanımı amacıyla parçalara ayrılması (sökülmesi)\"}, {\"id\": \"8481\", \"alias\": \"hediyelik eşya dükkanı\", \"meslek_tanim\": \"Basın, yayım, iletişim\", \"nace_code\": \"58.13.90\", \"nace_label\": \"Diğer dergi ve süreli yayınların yayımlanması (haftada dörtten az yayımlananlar) (çizgi roman, magazin dergileri vb.)\"}, {\"id\": \"296\", \"alias\": \"alüminyum doğrama\", \"meslek_tanim\": \"Alüminyum ürün imalatı\", \"nace_code\": \"25.99.01\", \"nace_label\": \"Demir, çelik ve alüminyumdan sofra ve mutfak eşyalarının imalatı (tencere, tava, çaydanlık, cezve, yemek kapları, bulaşık telleri vb.) (teflon, emaye vb. ile kaplanmışlar dahil, bakırdan olanlar hariç)\"}, {\"id\": \"2690\", \"alias\": \"bitkisel ürünler\", \"meslek_tanim\": \"Aktar ürünleri imalatı, ticareti\", \"nace_code\": \"46.37.01\", \"nace_label\": \"Çay toptan ticareti\"}, {\"id\": \"2207\", \"alias\": \"Beyaz eşya ticaret\", \"meslek_tanim\": \"Beyaz eşya ticareti\", \"nace_code\": \"47.54.01\", \"nace_label\": \"Beyaz eşya ve elektrikli küçük ev aleti perakende ticareti (radyo, televizyon ve fotoğrafçılık ürünleri hariç)\"}, {\"id\": \"8782\", \"alias\": \"hurda alımı\", \"meslek_tanim\": \"Hurdacılık\", \"nace_code\": \"38.31.00\", \"nace_label\": \"Enerji geri kazanımı olmaksızın atıkların yakılması\"}, {\"id\": \"2567\", \"alias\": \"bisiklet servisi\", \"meslek_tanim\": \"Motosiklet, bisiklet imalatı, onarımı\", \"nace_code\": \"30.99.01\", \"nace_label\": \"Mekanik hareket ettirici tertibatı bulunmayan araçların imalatı (alışveriş arabaları, sanayi el arabaları, işportacı arabaları, bagaj arabaları, elle çekilen golf arabaları, hasta nakli için arabalar, kızaklar dahil)\"}, {\"id\": \"1158\", \"alias\": \"bakkalcı\", \"meslek_tanim\": \"Bakkallık, bayilik, büfecilik\", \"nace_code\": \"46.38.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer gıda ürünlerinin toptan ticareti\"}, {\"id\": \"12904\", \"alias\": \"makina kurulumu yaparım\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.42.01\", \"nace_label\": \"Ahşap, mantar, kemik, sert kauçuk, sert plastik veya benzeri sert malzemeleri işlemek için olan takım tezgahı ile bunların parçalarının imalatı (transfer, testere, planya, freze, taşlama, zımparalama, parlatma, bükme, delme, dilimleme, pres, vb.)\"}, {\"id\": \"2685\", \"alias\": \"bitkisel ürünler\", \"meslek_tanim\": \"Aktar ürünleri imalatı, ticareti\", \"nace_code\": \"10.83.01\", \"nace_label\": \"Çay ürünleri imalatı (siyah çay, yeşil çay ve poşet çay ile çay ekstre, esans ve konsantreleri)\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{}",
+  "parsed": {}
+}

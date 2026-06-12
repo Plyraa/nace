@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"D.01\", \"meslek_tanim\": \"Aktar ürünleri imalatı, ticareti\", \"sektor_tanim\": \"GIDA, TARIM\", \"nace_examples\": [{\"nace_code\": \"10.83.01\", \"nace_label\": \"Çay ürünleri imalatı (siyah çay, yeşil çay ve poşet çay ile çay ekstre, esans ve konsantreleri)\"}, {\"nace_code\": \"10.83.02\", \"nace_label\": \"Kahve ürünleri imalatı (çekilmiş kahve, çözünebilir kahve ile kahve ekstre, esans ve konsantreleri)\"}, {\"nace_code\": \"10.83.03\", \"nace_label\": \"Bitkisel çayların imalatı (nane, yaban otu, papatya, ıhlamur, kuşburnu vb. çaylar)\"}, {\"nace_code\": \"10.83.04\", \"nace_label\": \"Kahve içeren ve kahve yerine geçebilecek ürünlerin imalatı (şeker, süt vb. karıştırılmış ürünler dahil)\"}, {\"nace_code\": \"10.84.01\", \"nace_label\": \"Baharat imalatı (karabiber, kırmızı toz/pul biber, hardal unu, tarçın, yenibahar, damla sakızı, baharat karışımları vb.) (işlenmiş)\"}, {\"nace_code\": \"46.37.01\", \"nace_label\": \"Çay toptan ticareti\"}, {\"nace_code\": \"46.37.02\", \"nace_label\": \"Kahve, kakao ve baharat toptan ticareti\"}, {\"nace_code\": \"46.37.03\", \"nace_label\": \"İçecek amaçlı kullanılan aromatik bitkilerin toptan ticareti\"}, {\"nace_code\": \"47.27.04\", \"nace_label\": \"Çay, kahve, kakao ve baharat perakende ticareti (bitki çayları dahil)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"aktar\",\n    \"aktar ürünleri\",\n    \"baharatçı\",\n    \"bitki çayları\",\n    \"bitkisel çay imalatı\",\n    \"çay kahve baharat\",\n    \"çaycı\",\n    \"kahveci\",\n    \"aktariye\",\n    \"aktar dükkanı\",\n    \"ben aktarım\",\n    \"aktar ürünleri imalat\",\n    \"aktar ticareti\",\n    \"aktar malzemeleri\",\n    \"bitkisel ürünler\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "aktar",
+      "aktar ürünleri",
+      "baharatçı",
+      "bitki çayları",
+      "bitkisel çay imalatı",
+      "çay kahve baharat",
+      "çaycı",
+      "kahveci",
+      "aktariye",
+      "aktar dükkanı",
+      "ben aktarım",
+      "aktar ürünleri imalat",
+      "aktar ticareti",
+      "aktar malzemeleri",
+      "bitkisel ürünler"
+    ]
+  }
+}

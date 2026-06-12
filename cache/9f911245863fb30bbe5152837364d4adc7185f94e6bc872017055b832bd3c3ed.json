@@ -1,0 +1,37 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.14\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"27.90.01\", \"nace_label\": \"Elektro kaplama makinelerinin imalatı (galvanoplasti, elektro kaplama, elektroliz veya elektroforez için)\"}, {\"nace_code\": \"28.11.08\", \"nace_label\": \"Türbin ve türbin parçalarının imalatı (rüzgar, gaz, su ve buhar türbinleri ile su çarkları ve bunların parçaları) (hava taşıtları için turbo jetler veya turbo pervaneler hariç)\"}, {\"nace_code\": \"28.11.09\", \"nace_label\": \"Deniz taşıtlarında, demir yolu taşıtlarında ve sanayide kullanılan kıvılcım ateşlemeli veya sıkıştırma ateşlemeli içten yanmalı motorların ve bunların parçalarının imalatı (hava taşıtı, motorlu kara taşıtı ve motosiklet motorları hariç)\"}, {\"nace_code\": \"28.11.10\", \"nace_label\": \"İçten yanmalı motorlar, dizel motorlar vb.de kullanılan pistonlar, silindirler ve silindir blokları, silindir başları, silindir gömlekleri, emme ve egzos subapları, segmanlar, hareket kolları, karbüratörler, yakıt memeleri vb.nin imalatı  (hava taşıtı, motorlu kara taşıtı ve motosiklet motorları hariç)\"}, {\"nace_code\": \"28.12.05\", \"nace_label\": \"Akışkan gücü ile çalışan ekipmanların ve bunların parçalarının imalatı (hidrolik ve pnömatik motorlar, hidrolik pompalar, hidrolik ve pnömatik valfler, hidrolik sistemler ve bunların parçaları)\"}, {\"nace_code\": \"28.13.01\", \"nace_label\": \"Hava veya vakum pompaları ile hava veya diğer gaz kompresörlerinin imalatı (el ve ayakla çalışan hava pompaları ile motorlu taşıtlar için olanlar hariç)\"}, {\"nace_code\": \"28.13.02\", \"nace_label\": \"Sıvı pompaları ve sıvı elevatörleri imalatı (yakıt, yağlama, soğutma ve diğer amaçlar için) (deplasmanlı ve santrifüjlü pompalar ile benzinliklerde kullanılan akaryakıt pompaları dahil) (tulumba dahil, içten yanmalı motorlar için olanlar hariç)\"}, {\"nace_code\": \"28.13.03\", \"nace_label\": \"El ve ayakla çalışan hava pompalarının imalatı\"}, {\"nace_code\": \"28.15.01\", \"nace_label\": \"Rulmanlar ve mekanik güç aktarma donanımları imalatı\"}, {\"nace_code\": \"28.15.02\", \"nace_label\": \"Debriyajlar (kavramalar), mil (şaft) kaplinler ve üniversal mafsalların imalatı (motorlu kara taşıtlarında kullanılan debriyajlar hariç)\"}, {\"nace_code\": \"28.15.03\", \"nace_label\": \"Dişliler/dişli takımları, bilyeli ve makaralı vidalar, şanzımanlar, vites kutuları ve diğer hız değiştiricilerin imalatı (motorlu kara taşıtlarında kullanılan vites kutuları ve diferansiyelleri hariç)\"}, {\"nace_code\": \"28.15.04\", \"nace_label\": \"Volanlar ve kasnaklar ile mafsallı bağlantı zincirleri ve güç aktarım zincirlerinin imalatı\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"makineci\",\n    \"makina tamircisi\",\n    \"makine kuran\",\n    \"makine onaran\",\n    \"makineleri tamir ederim\",\n    \"makina kurulumu yaparım\",\n    \"sanayi makinaları tamiri\",\n    \"makine bakım onarım\",\n    \"makina ustası\",\n    \"makineci dükkanı\",\n    \"makina tamir atölyesi\",\n    \"makine kurdum onardım\",\n    \"makina tamirci\",\n    \"makine onarımı yapan\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "makineci",
+      "makina tamircisi",
+      "makine kuran",
+      "makine onaran",
+      "makineleri tamir ederim",
+      "makina kurulumu yaparım",
+      "sanayi makinaları tamiri",
+      "makine bakım onarım",
+      "makina ustası",
+      "makineci dükkanı",
+      "makina tamir atölyesi",
+      "makine kurdum onardım",
+      "makina tamirci",
+      "makine onarımı yapan"
+    ]
+  }
+}

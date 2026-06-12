@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"4601\", \"alias\": \"demirci\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"25.11.06\", \"nace_label\": \"İnşaat ve inşaatın parçaları için metal çatı ya da iskeletlerin imalatı (kuleler, direkler, destekler, köprüler vb.) (kepenk ve yangın merdiveni ile prefabrik yapılar hariç)\"}, {\"id\": \"1008\", \"alias\": \"baharatçı\", \"meslek_tanim\": \"Aktar ürünleri imalatı, ticareti\", \"nace_code\": \"47.27.04\", \"nace_label\": \"Çay, kahve, kakao ve baharat perakende ticareti (bitki çayları dahil)\"}, {\"id\": \"11617\", \"alias\": \"kereste ustası\", \"meslek_tanim\": \"Kerestecilik\", \"nace_code\": \"02.40.02\", \"nace_label\": \"Ormanda kesilmiş ve temizlenmiş ağaçların taşınması, istiflenmesi ve yüklenmesi faaliyetleri\"}, {\"id\": \"10173\", \"alias\": \"İnşaatçilik\", \"meslek_tanim\": \"İnşaatçılık\", \"nace_code\": \"41.00.02\", \"nace_label\": \"İkamet amaçlı olmayan binaların inşaatı\"}, {\"id\": \"9219\", \"alias\": \"hurdacıyım\", \"meslek_tanim\": \"Hurdacılık\", \"nace_code\": \"46.87.01\", \"nace_label\": \"Atık ve hurda toptan ticareti (metal olanlar) (kağıt, cam, plastik vb. ikincil hammaddeler hariç)\"}, {\"id\": \"5805\", \"alias\": \"Dokumacılıkla uğraşıyorum\", \"meslek_tanim\": \"Dokumacılık\", \"nace_code\": \"13.10.03\", \"nace_label\": \"Doğal pamuk elyafının imalatı (kardelenmesi, taraklanması vb.)\"}, {\"id\": \"4241\", \"alias\": \"demir çelik eşya imalatı\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"24.20.09\", \"nace_label\": \"Çelikten/demirden yapılmış tüp, boru, içi boş profiller ve ilgili bağlantı parçalarının imalatı (sıcak çekilmiş veya sıcak haddelenmiş)\"}, {\"id\": \"23441\", \"alias\": \"züccaciye ticareti\", \"meslek_tanim\": \"Züccaciye imalatı, ticareti\", \"nace_code\": \"23.41.01\", \"nace_label\": \"Seramik veya porselenden sofra takımları (tabak, bardak, fincan, vb.) ve diğer ev ve tuvalet eşyasının imalatı (çiniden olanlar ve sıhhi ürünler hariç)\"}, {\"id\": \"3579\", \"alias\": \"cam eşya imalatı\", \"meslek_tanim\": \"Züccaciye imalatı, ticareti\", \"nace_code\": \"46.44.01\", \"nace_label\": \"Porselen ve cam eşyalar ile toprak ve seramikten yapılan ürünlerin toptan ticareti\"}, {\"id\": \"17956\", \"alias\": \"pazarda manav\", \"meslek_tanim\": \"Pazarda yiyecek, içecek ticareti\", \"nace_code\": \"47.24.03\", \"nace_label\": \"Tezgahlar ve pazar yerleri vasıtasıyla fırın ürünleri perakende ticareti (seyyar satıcılar hariç)\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"4601\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"1008\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"11617\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"10173\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"9219\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"5805\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"4241\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"23441\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"3579\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"17956\",\n      \"verdict\": \"no\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "4601",
+        "verdict": "yes"
+      },
+      {
+        "id": "1008",
+        "verdict": "yes"
+      },
+      {
+        "id": "11617",
+        "verdict": "no"
+      },
+      {
+        "id": "10173",
+        "verdict": "yes"
+      },
+      {
+        "id": "9219",
+        "verdict": "yes"
+      },
+      {
+        "id": "5805",
+        "verdict": "no"
+      },
+      {
+        "id": "4241",
+        "verdict": "yes"
+      },
+      {
+        "id": "23441",
+        "verdict": "no"
+      },
+      {
+        "id": "3579",
+        "verdict": "no"
+      },
+      {
+        "id": "17956",
+        "verdict": "no"
+      }
+    ]
+  }
+}

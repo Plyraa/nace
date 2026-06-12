@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"D.21\", \"meslek_tanim\": \"Şarküteri ürünleri imalatı, ticareti\", \"sektor_tanim\": \"GIDA, TARIM\", \"nace_examples\": [{\"nace_code\": \"10.12.03\", \"nace_label\": \"Kümes hayvanlarının yağlarının sofra yağına çevrilmesi\"}, {\"nace_code\": \"10.41.01\", \"nace_label\": \"Ayçiçek yağı imalatı\"}, {\"nace_code\": \"10.41.02\", \"nace_label\": \"Bitkisel sıvı yağ (yenilebilen) imalatı (soya, susam, haşhaş, pamuk, fındık, kolza, hardal vb. yağlar) (zeytin yağı, ayçiçeği yağı ve mısır yağı hariç)\"}, {\"nace_code\": \"10.41.03\", \"nace_label\": \"Bezir yağı (keten tohumu yağı, keten yağı) imalatı\"}, {\"nace_code\": \"10.41.05\", \"nace_label\": \"Prina yağı imalatı (diğer küspelerden elde edilen yağlar dahil) (mısır yağı hariç)\"}, {\"nace_code\": \"10.41.06\", \"nace_label\": \"Kakao yağı, badem yağı, kekik yağı, defne yağı, hurma çekirdeği veya babassu yağı, Hint yağı, tung yağı ve diğer benzer yağların imalatı (bezir yağı hariç)\"}, {\"nace_code\": \"10.41.07\", \"nace_label\": \"Zeytinyağı imalatı (saf, sızma, rafine)\"}, {\"nace_code\": \"10.41.10\", \"nace_label\": \"Balık ve deniz memelilerinden yağ elde edilmesi\"}, {\"nace_code\": \"10.42.01\", \"nace_label\": \"Margarin ve benzeri yenilebilir katı yağların imalatı\"}, {\"nace_code\": \"10.51.01\", \"nace_label\": \"Süt imalatı, işlenmiş (pastörize edilmiş, sterilize edilmiş, homojenleştirilmiş ve/veya yüksek ısıdan geçirilmiş) (katı veya toz halde süt hariç)\"}, {\"nace_code\": \"10.51.02\", \"nace_label\": \"Peynir, lor ve çökelek imalatı\"}, {\"nace_code\": \"10.51.03\", \"nace_label\": \"Süt tozu, peynir özü (kazein), süt şekeri (laktoz) ve peynir altı suyu (kesilmiş sütün suyu) imalatı (katı veya toz halde süt, krema dahil)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"sarkuteri\",\n    \"şarküteri ürünleri\",\n    \"sarkuteri imalatı\",\n    \"peynirci\",\n    \"zeytinci\",\n    \"sarküteri ticareti\",\n    \"şarküteri dükkanı\",\n    \"sarkuteri dukkani\",\n    \"ben şarküteri işi yapıyorum\",\n    \"sarkuteri imalatı ve ticareti\",\n    \"sarkuteri urunleri\",\n    \"şarküteri tüccarı\",\n    \"sarkuteri tüccarı\",\n    \"pazarci\",\n    \"şarküteri malzemeleri\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "sarkuteri",
+      "şarküteri ürünleri",
+      "sarkuteri imalatı",
+      "peynirci",
+      "zeytinci",
+      "sarküteri ticareti",
+      "şarküteri dükkanı",
+      "sarkuteri dukkani",
+      "ben şarküteri işi yapıyorum",
+      "sarkuteri imalatı ve ticareti",
+      "sarkuteri urunleri",
+      "şarküteri tüccarı",
+      "sarkuteri tüccarı",
+      "pazarci",
+      "şarküteri malzemeleri"
+    ]
+  }
+}

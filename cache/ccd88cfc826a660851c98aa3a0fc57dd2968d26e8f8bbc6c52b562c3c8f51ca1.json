@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"D.17\", \"meslek_tanim\": \"Lokantacılık\", \"sektor_tanim\": \"GIDA, TARIM\", \"nace_examples\": [{\"nace_code\": \"56.11.01\", \"nace_label\": \"Genel lokanta ve restoranların (içkili ve içkisiz) faaliyetleri\"}, {\"nace_code\": \"56.11.02\", \"nace_label\": \"Çorbacıların ve işkembecilerin faaliyetleri (imalatçıların faaliyetleri ile seyyar olanlar hariç)\"}, {\"nace_code\": \"56.11.03\", \"nace_label\": \"Döner, ciğer, kokoreç, köfte ve kebapçıların faaliyeti (garson servisi sunanlar ile self servis sunanlar dahil; imalatçıların ve al götür tesislerin faaliyetleri ile seyyar olanlar hariç)\"}, {\"nace_code\": \"56.11.05\", \"nace_label\": \"Pizzacıların faaliyeti (garson servisi sunanlar ile self servis sunanlar dahil; imalatçıların ve al götür tesislerin faaliyetleri ile seyyar olanlar hariç)\"}, {\"nace_code\": \"56.11.06\", \"nace_label\": \"Mantıcı ve gözlemecilerin faaliyeti (garson servisi sunanlar ile self servis sunanlar dahil; imalatçıların ve al götür tesislerinin faaliyetleri ile seyyar olanlar hariç)\"}, {\"nace_code\": \"56.11.09\", \"nace_label\": \"Yiyecek ağırlıklı hizmet veren kafe ve kafeteryaların faaliyetleri\"}, {\"nace_code\": \"56.11.11\", \"nace_label\": \"Oturacak yeri olan fast-food (hamburger, sandviç, tost vb.) satış yerleri (büfeler dahil) tarafından sağlanan yemek hazırlama ve sunum faaliyetleri\"}, {\"nace_code\": \"56.11.13\", \"nace_label\": \"Lahmacun ve pidecilik (içli pide (kıymalı, peynirli vb.)) faaliyeti (garson servisi sunanlar ile self servis sunanlar dahil; imalatçıların ve al götür tesislerin faaliyetleri ile seyyar olanlar hariç)\"}, {\"nace_code\": \"56.11.90\", \"nace_label\": \"Diğer lokantaların faaliyetleri\"}, {\"nace_code\": \"56.21.01\", \"nace_label\": \"Özel günlerde dışarıya yemek hizmeti sunan işletmelerin faaliyetleri\"}, {\"nace_code\": \"56.22.02\", \"nace_label\": \"Hava yolu şirketleri ve diğer ulaştırma şirketleri için sözleşmeye bağlı düzenlemelere dayalı olarak yiyecek hazırlanması ve temini hizmetleri\"}, {\"nace_code\": \"56.22.90\", \"nace_label\": \"Dışarıya yemek sunan diğer işletmelerin faaliyetleri (spor, fabrika, işyeri, üniversite vb. mensupları için tabldot servisi vb. dahil; özel günlerde hizmet verenler hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"lokantacı\",\n    \"restoran işletmecisi\",\n    \"aşçıbaşı\",\n    \"lokanta sahibi\",\n    \"restorancı\",\n    \"dükkanım lokanta\",\n    \"yemekçi\",\n    \"kebapçı\",\n    \"çorbacı\",\n    \"pideci\",\n    \"dönerci\",\n    \"köfteci\",\n    \"pizzacı\",\n    \"fast food işletmecisi\",\n    \"kafe işletmecisi\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "lokantacı",
+      "restoran işletmecisi",
+      "aşçıbaşı",
+      "lokanta sahibi",
+      "restorancı",
+      "dükkanım lokanta",
+      "yemekçi",
+      "kebapçı",
+      "çorbacı",
+      "pideci",
+      "dönerci",
+      "köfteci",
+      "pizzacı",
+      "fast food işletmecisi",
+      "kafe işletmecisi"
+    ]
+  }
+}

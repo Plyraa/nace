@@ -1,0 +1,123 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"6151\", \"alias\": \"elektrik malzemeleri perakende\", \"meslek_tanim\": \"Elektrik malzemeleri imalatı, ticareti\", \"nace_code\": \"27.12.02\", \"nace_label\": \"Elektrik dağıtım ve kontrol cihazlarının aksam ve parçalarının imalatı\"}, {\"id\": \"16744\", \"alias\": \"oyuncak satışı\", \"meslek_tanim\": \"Oyuncak imalatı, ticareti\", \"nace_code\": \"32.40.09\", \"nace_label\": \"Oyun tahtaları (satranç, dama, dart, tavla tahtaları, okey istekası, go vb.) ve tabu, monopol vb. oyunların imalatı\"}, {\"id\": \"13226\", \"alias\": \"makina tamircisi\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.99.08\", \"nace_label\": \"Sicim ve halat makinelerinin imalatı\"}, {\"id\": \"10784\", \"alias\": \"kayıtlı medya imalatçısı\", \"meslek_tanim\": \"Kayıtlı medyaların imalatı, kiralanması, ticareti\", \"nace_code\": \"47.69.02\", \"nace_label\": \"Müzik ve video kayıtlarının perakende ticareti\"}, {\"id\": \"5945\", \"alias\": \"El dokuma\", \"meslek_tanim\": \"Dokumacılık\", \"nace_code\": \"13.20.22\", \"nace_label\": \"Suni ve sentetik filamentlerden ve devamsız elyaflardan dokuma kumaş imalatı\"}, {\"id\": \"8295\", \"alias\": \"Hastane malzemeleri\", \"meslek_tanim\": \"Tıbbi malzemelerin imalatı, ticareti\", \"nace_code\": \"32.50.90\", \"nace_label\": \"Tıbbi ve dişçilik ile ilgili diğer araç ve gereçlerin imalatı\"}, {\"id\": \"13106\", \"alias\": \"makina tamirci\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.42.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer takım tezgahlarının imalatı\"}, {\"id\": \"3945\", \"alias\": \"demir profil imalatı\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"25.61.06\", \"nace_label\": \"Sofra bıçakları (balık bıçakları, kahvaltı ve meyve bıçakları hariç), budama bıçakları, sustalı bıçaklar, satır,balta vb. bıçaklar (makineler için olanlar hariç) ile terzi makasları, vb. makaslar ve bunların ağızlarının imalatı\"}, {\"id\": \"3523\", \"alias\": \"camcı\", \"meslek_tanim\": \"Camcılık\", \"nace_code\": \"43.34.02\", \"nace_label\": \"Cam takma işleri\"}, {\"id\": \"14770\", \"alias\": \"marangozluk ürünleri\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"16.28.01\", \"nace_label\": \"Ahşap mutfak ve sofra eşyası imalatı (kaşık, kepçe, spatula, bardak, havan, havan eli, tepsi vb.)\"}, {\"id\": \"3682\", \"alias\": \"dantelci\", \"meslek_tanim\": \"Ev tekstil ürünleri imalatı, ticareti\", \"nace_code\": \"46.41.01\", \"nace_label\": \"Evde kullanılan tekstil takımları, perdeler ve çeşitli tekstil malzemesinden ev eşyaları toptan ticareti\"}, {\"id\": \"14039\", \"alias\": \"Makine parçaları toptan\", \"meslek_tanim\": \"Makine, yedek parça ticareti\", \"nace_code\": \"46.61.03\", \"nace_label\": \"Çim biçme ve bahçe makine ve ekipmanları ile aksam ve parçalarının toptan ticareti\"}, {\"id\": \"13347\", \"alias\": \"Makina yedek parça\", \"meslek_tanim\": \"Makine, yedek parça ticareti\", \"nace_code\": \"46.14.02\", \"nace_label\": \"Tarımsal ekipmanlar ile makine ve sanayi ekipmanlarının toptan satışı ile ilgili aracıların faaliyetleri\"}, {\"id\": \"10199\", \"alias\": \"kamyoncu\", \"meslek_tanim\": \"Kara yolu ile yük taşımacılığı\", \"nace_code\": \"49.41.90\", \"nace_label\": \"Kara yolu ile diğer yük taşımacılığı\"}, {\"id\": \"1672\", \"alias\": \"ben demirciyim\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"25.91.01\", \"nace_label\": \"Çelik varil ve benzer muhafazaların imalatı\"}, {\"id\": \"18135\", \"alias\": \"Saat tamir\", \"meslek_tanim\": \"Saatçilik\", \"nace_code\": \"46.48.02\", \"nace_label\": \"Saat toptan ticareti\"}, {\"id\": \"21450\", \"alias\": \"Yapı malzemeleri\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"23.32.03\", \"nace_label\": \"Fırınlanmış, ateşe dayanıklı olmayan kil ve topraktan tuğla ve kiremit imalatı\"}, {\"id\": \"4824\", \"alias\": \"deri ticareti yapıyorum\", \"meslek_tanim\": \"Deri giyim eşyası ticareti\", \"nace_code\": \"46.16.01\", \"nace_label\": \"Deri giyim eşyası, kürk ve ayakkabının bir ücret veya sözleşmeye dayalı olarak toptan satışını yapan aracılar\"}, {\"id\": \"14724\", \"alias\": \"marangozluk hizmetleri\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"46.49.25\", \"nace_label\": \"Arı kovanı toptan ticareti\"}, {\"id\": \"3002\", \"alias\": \"boya imalatı\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\", \"nace_code\": \"20.30.11\", \"nace_label\": \"Boya ve vernikler, akrilik ve vinil polimer esaslı olanların (sulu ortamda dağılanlar, çözülenler ve çözeltiler) imalatı\"}, {\"id\": \"22047\", \"alias\": \"yük taşıma aracısı\", \"meslek_tanim\": \"Nakliyat komisyonculuğu\", \"nace_code\": \"52.26.03\", \"nace_label\": \"Kara yolu yük nakliyat acentelerinin faaliyetleri\"}, {\"id\": \"11468\", \"alias\": \"konfeksiyon atölyesi\", \"meslek_tanim\": \"Konfeksiyonculuk\", \"nace_code\": \"47.71.12\", \"nace_label\": \"Gelinlik perakende ticareti\"}, {\"id\": \"14141\", \"alias\": \"makineci\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.41.07\", \"nace_label\": \"Metal işleyen takım tezgahlarının parça ve aksesuarlarının imalatı (alet tutacakları ve kendinden açılan pafta kafaları, iş tutacakları, ayırıcı kafalar ve takım tezgahları için diğer özel aksesuarlar hariç)\"}, {\"id\": \"23297\", \"alias\": \"şekerleme imalatı\", \"meslek_tanim\": \"Şekercilik, çikolatacılık\", \"nace_code\": \"10.82.07\", \"nace_label\": \"Kakao tozu, kakao ezmesi/hamuru ve kakao yağı imalatı\"}, {\"id\": \"7452\", \"alias\": \"fotoğrafçıyım\", \"meslek_tanim\": \"Fotoğrafçılık\", \"nace_code\": \"46.43.10\", \"nace_label\": \"Fotoğrafçılıkla ilgili ürünlerin toptan ticareti\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"6151\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"16744\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"13226\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"10784\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"5945\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"8295\",\n      \"verdict\": \"unsure\"\n    },\n    {\n      \"id\": \"13106\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"3945\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"3523\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"14770\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"3682\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"14039\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"13347\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"10199\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"1672\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"18135\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"21450\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"4824\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"14724\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"3002\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"22047\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"11468\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"14141\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"23297\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"7452\",\n      \"verdict\": \"no\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "6151",
+        "verdict": "no"
+      },
+      {
+        "id": "16744",
+        "verdict": "yes"
+      },
+      {
+        "id": "13226",
+        "verdict": "no"
+      },
+      {
+        "id": "10784",
+        "verdict": "no"
+      },
+      {
+        "id": "5945",
+        "verdict": "no"
+      },
+      {
+        "id": "8295",
+        "verdict": "unsure"
+      },
+      {
+        "id": "13106",
+        "verdict": "no"
+      },
+      {
+        "id": "3945",
+        "verdict": "no"
+      },
+      {
+        "id": "3523",
+        "verdict": "yes"
+      },
+      {
+        "id": "14770",
+        "verdict": "no"
+      },
+      {
+        "id": "3682",
+        "verdict": "yes"
+      },
+      {
+        "id": "14039",
+        "verdict": "no"
+      },
+      {
+        "id": "13347",
+        "verdict": "no"
+      },
+      {
+        "id": "10199",
+        "verdict": "yes"
+      },
+      {
+        "id": "1672",
+        "verdict": "no"
+      },
+      {
+        "id": "18135",
+        "verdict": "no"
+      },
+      {
+        "id": "21450",
+        "verdict": "no"
+      },
+      {
+        "id": "4824",
+        "verdict": "yes"
+      },
+      {
+        "id": "14724",
+        "verdict": "no"
+      },
+      {
+        "id": "3002",
+        "verdict": "yes"
+      },
+      {
+        "id": "22047",
+        "verdict": "yes"
+      },
+      {
+        "id": "11468",
+        "verdict": "no"
+      },
+      {
+        "id": "14141",
+        "verdict": "no"
+      },
+      {
+        "id": "23297",
+        "verdict": "no"
+      },
+      {
+        "id": "7452",
+        "verdict": "no"
+      }
+    ]
+  }
+}

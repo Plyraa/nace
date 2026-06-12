@@ -1,0 +1,35 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"E.05\", \"meslek_tanim\": \"Deri giyim eşyası ticareti\", \"sektor_tanim\": \"GİYİM, DERİ ÜRÜN, EV TEKSTİLİ, DOKUMA\", \"nace_examples\": [{\"nace_code\": \"46.16.01\", \"nace_label\": \"Deri giyim eşyası, kürk ve ayakkabının bir ücret veya sözleşmeye dayalı olarak toptan satışını yapan aracılar\"}, {\"nace_code\": \"46.42.04\", \"nace_label\": \"Kürk ve deriden giyim eşyalarının toptan ticareti\"}, {\"nace_code\": \"47.71.03\", \"nace_label\": \"Kürklü deriden giyim eşyalarının perakende ticareti (işlenmiş kürklü deriler dahil)\"}, {\"nace_code\": \"47.71.07\", \"nace_label\": \"Deri veya deri bileşimli giyim eşyası perakende ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"deri giyimci\",\n    \"deri ceketçi\",\n    \"deri satıcısı\",\n    \"deri giyim dükkanı\",\n    \"deri ticareti yapıyorum\",\n    \"deri esya ticareti\",\n    \"kürk ve deri giyim\",\n    \"deri montçu\",\n    \"derici\",\n    \"deri giyim eşyacı\",\n    \"deri giyim tüccarı\",\n    \"deri ceket satış\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "deri giyimci",
+      "deri ceketçi",
+      "deri satıcısı",
+      "deri giyim dükkanı",
+      "deri ticareti yapıyorum",
+      "deri esya ticareti",
+      "kürk ve deri giyim",
+      "deri montçu",
+      "derici",
+      "deri giyim eşyacı",
+      "deri giyim tüccarı",
+      "deri ceket satış"
+    ]
+  }
+}

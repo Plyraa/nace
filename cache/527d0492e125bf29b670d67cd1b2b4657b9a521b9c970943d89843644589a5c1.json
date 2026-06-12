@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"F.13\", \"meslek_tanim\": \"Kitapçılık\", \"sektor_tanim\": \"HEDİYELİK EŞYA, EĞİTİM, BASIM, FOTOĞRAF, ÇEŞİTLİ MALLAR\", \"nace_examples\": [{\"nace_code\": \"46.49.11\", \"nace_label\": \"Kitap, dergi ve gazete toptan ticareti\"}, {\"nace_code\": \"47.61.00\", \"nace_label\": \"Kitap perakende ticareti\"}, {\"nace_code\": \"47.79.03\", \"nace_label\": \"İkinci el kitapların perakende ticareti (sahafların faaliyetleri)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"kitapçı\",\n    \"sahaf\",\n    \"kitap satıyorum\",\n    \"kitapcı\",\n    \"kitap dükkanı\",\n    \"kitapçılık yapıyorum\",\n    \"antika kitap\",\n    \"kirtasiye ve kitap\",\n    \"yayınevi ürünleri\",\n    \"kitap alım satım\",\n    \"okuma materyalleri\",\n    \"kitap ticareti\",\n    \"dergi ve gazete satışı\",\n    \"ikinci el kitap\",\n    \"kitap perakende\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "kitapçı",
+      "sahaf",
+      "kitap satıyorum",
+      "kitapcı",
+      "kitap dükkanı",
+      "kitapçılık yapıyorum",
+      "antika kitap",
+      "kirtasiye ve kitap",
+      "yayınevi ürünleri",
+      "kitap alım satım",
+      "okuma materyalleri",
+      "kitap ticareti",
+      "dergi ve gazete satışı",
+      "ikinci el kitap",
+      "kitap perakende"
+    ]
+  }
+}

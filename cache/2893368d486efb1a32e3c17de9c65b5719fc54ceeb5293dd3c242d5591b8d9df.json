@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.15\", \"meslek_tanim\": \"Makine, yedek parça ticareti\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"46.14.02\", \"nace_label\": \"Tarımsal ekipmanlar ile makine ve sanayi ekipmanlarının toptan satışı ile ilgili aracıların faaliyetleri\"}, {\"nace_code\": \"46.43.12\", \"nace_label\": \"Konutlarda, bürolarda ve mağazalarda kullanılan klimaların (iklimlendirme ekipmanlarının) toptan ticareti (sanayi tipi olanlar hariç)\"}, {\"nace_code\": \"46.61.02\", \"nace_label\": \"Tarım, hayvancılık ve ormancılık makine ve ekipmanları ile aksam ve parçalarının toptan ticareti\"}, {\"nace_code\": \"46.61.03\", \"nace_label\": \"Çim biçme ve bahçe makine ve ekipmanları ile aksam ve parçalarının toptan ticareti\"}, {\"nace_code\": \"46.62.01\", \"nace_label\": \"Ağaç işleme takım tezgahları ve parçalarının toptan ticareti (parça tutucuları dahil)\"}, {\"nace_code\": \"46.62.02\", \"nace_label\": \"Metal işleme takım tezgahlarının ve parçalarının toptan ticareti (parça tutucuları dahil)\"}, {\"nace_code\": \"46.64.05\", \"nace_label\": \"Tekstil endüstrisi makineleri ile dikiş ve örgü makineleri ve parçalarının toptan ticareti (ev tipi olanlar hariç)\"}, {\"nace_code\": \"46.64.06\", \"nace_label\": \"Kompresör ve parçalarının toptan ticareti (soğutma, hava ve diğer amaçlar için)\"}, {\"nace_code\": \"46.64.11\", \"nace_label\": \"İş güvenliği amaçlı kişisel koruyucu donanımların toptan ticareti\"}, {\"nace_code\": \"46.64.12\", \"nace_label\": \"Yangın söndürücüler, püskürtme tabancaları, buhar veya kum püskürtme makineleri ile benzeri mekanik cihazların toptan ticareti (tarımsal amaçlı kullanılanlar ile taşıtlar için yangın söndürücüler hariç)\"}, {\"nace_code\": \"46.64.16\", \"nace_label\": \"Makine ve ekipmanlarla ilgili aksam ve parçaların toptan ticareti (motorlu kara taşıtları için olanlar hariç)\"}, {\"nace_code\": \"46.64.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer makine ve ekipmanların toptan ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"Makine yedek parça ticareti\",\n    \"makine yedek parça satışı\",\n    \"Makina yedek parça\",\n    \"Makine parçaları toptan\",\n    \"sanayi makine yedek parça\",\n    \"Makine yedek parçaları satıyorum\",\n    \"iş makinası yedek parça\",\n    \"Yedek parça ticareti makine\",\n    \"makina parça tüccarı\",\n    \"Endüstriyel makine parçaları\",\n    \"Tarım makine yedek parça\",\n    \"makina yedek parçacı\",\n    \"sanayi tipi makine parçaları\",\n    \"üretim makine yedek parça\",\n    \"makineler yedek parça alım satım\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "Makine yedek parça ticareti",
+      "makine yedek parça satışı",
+      "Makina yedek parça",
+      "Makine parçaları toptan",
+      "sanayi makine yedek parça",
+      "Makine yedek parçaları satıyorum",
+      "iş makinası yedek parça",
+      "Yedek parça ticareti makine",
+      "makina parça tüccarı",
+      "Endüstriyel makine parçaları",
+      "Tarım makine yedek parça",
+      "makina yedek parçacı",
+      "sanayi tipi makine parçaları",
+      "üretim makine yedek parça",
+      "makineler yedek parça alım satım"
+    ]
+  }
+}

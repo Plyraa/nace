@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"D.08\", \"meslek_tanim\": \"Çeşitli gıdaların imalatı\", \"sektor_tanim\": \"GIDA, TARIM\", \"nace_examples\": [{\"nace_code\": \"10.31.01\", \"nace_label\": \"Patatesin işlenmesi ve saklanması (dondurulmuş, kurutulmuş, suyu çıkartılmış, ezilmiş patates imalatı) (soyulması dahil)\"}, {\"nace_code\": \"10.31.02\", \"nace_label\": \"Patates cipsi, patates çerezi, patates unu ve kaba unlarının imalatı\"}, {\"nace_code\": \"10.39.01\", \"nace_label\": \"Sebze ve meyve konservesi imalatı (salça, domates püresi dahil, patatesten olanlar hariç)\"}, {\"nace_code\": \"10.39.02\", \"nace_label\": \"Kavrulmuş, tuzlanmış vb. şekilde işlem görmüş sert kabuklu yemişler ile bu meyvelerin püre ve ezmelerinin imalatı (pişirilerek yapılanlar)\"}, {\"nace_code\": \"10.39.03\", \"nace_label\": \"Meyve ve sebzelerden jöle, pekmez, marmelat, reçel vb. imalatı (pestil imalatı dahil)\"}, {\"nace_code\": \"10.39.04\", \"nace_label\": \"Tuzlu su, sirke, sirkeli su, yağ veya diğer koruyucu çözeltilerle korunarak saklanan sebze ve meyvelerin imalatı (turşu, salamura yaprak, sofralık zeytin vb. dahil)\"}, {\"nace_code\": \"10.39.05\", \"nace_label\": \"Dondurulmuş veya kurutulmuş meyve ve sebzelerin imalatı\"}, {\"nace_code\": \"10.39.07\", \"nace_label\": \"Susamın işlenmesi ve tahin imalatı\"}, {\"nace_code\": \"10.81.01\", \"nace_label\": \"Şeker kamışından, pancardan, palmiyeden, akça ağaçtan şeker (sakkaroz) ve şeker ürünleri imalatı veya bunların rafine edilmesi (sıvı şeker ve melas üretimi dahil)\"}, {\"nace_code\": \"10.84.02\", \"nace_label\": \"Sirke ve sirke ikamelerinin imalatı\"}, {\"nace_code\": \"10.84.03\", \"nace_label\": \"Sos imalatı (soya sosu, ketçap, mayonez, hardal sosu, çemen, mango sosu vb.) (baharat, sirke ve salça hariç)\"}, {\"nace_code\": \"10.84.05\", \"nace_label\": \"Gıda tuzu imalatı\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"gıda imalatı\",\n    \"gida imalati\",\n    \"konserveci\",\n    \"turşu üretimi\",\n    \"reçel imalatı\",\n    \"patates işleme\",\n    \"sebze meyve işliyorum\",\n    \"ben gıda imalatçısıyım\",\n    \"doğal gıda ürünleri\",\n    \"salça yapıyorum\",\n    \"dondurulmuş gıda\",\n    \"yeycek uretimi\",\n    \"tahin imalatı\",\n    \"Lezzet Gıda\",\n    \"sos imalatı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "gıda imalatı",
+      "gida imalati",
+      "konserveci",
+      "turşu üretimi",
+      "reçel imalatı",
+      "patates işleme",
+      "sebze meyve işliyorum",
+      "ben gıda imalatçısıyım",
+      "doğal gıda ürünleri",
+      "salça yapıyorum",
+      "dondurulmuş gıda",
+      "yeycek uretimi",
+      "tahin imalatı",
+      "Lezzet Gıda",
+      "sos imalatı"
+    ]
+  }
+}

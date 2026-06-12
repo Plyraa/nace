@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"C.08\", \"meslek_tanim\": \"Elektrik tesisatçılığı\", \"sektor_tanim\": \"ELEKTRİK, ELEKTRONİK, BİLGİSAYAR\", \"nace_examples\": [{\"nace_code\": \"35.11.00\", \"nace_label\": \"Yenilenemeyen kaynaklardan elektrik üretimi\"}, {\"nace_code\": \"35.12.00\", \"nace_label\": \"Yenilenebilir kaynaklardan elektrik üretimi\"}, {\"nace_code\": \"43.21.01\", \"nace_label\": \"Bina ve bina dışı yapıların (ulaşım için aydınlatma ve sinyalizasyon sistemleri hariç) elektrik tesisatı, kablolu televizyon ve bilgisayar ağı tesisatı ile konut tipi antenler (uydu antenleri dahil), elektrikli güneş enerjisi kollektörleri, elektrik sayaçları, elektrikli araçlar için elektrikli şarj cihazları tesisatının kurulumu, duvar dibi ısıtma sistemleri, yangın ve hırsızlık alarm sistemleri vb. kurulumu\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"elektrikçi\",\n    \"elektrik tesisatçısı\",\n    \"elektrik tesisatı\",\n    \"elektrikçi ustası\",\n    \"elektrik tamircisi\",\n    \"elektrik tesisatı yapıyorum\",\n    \"elektrik işleri\",\n    \"elektrik tesisatı kurulumu\",\n    \"elektrik tesisatçılığı\",\n    \"elektrikçi dükkanı\",\n    \"elektrik tesisatı tamiri\",\n    \"elektrik tesisatı onarımı\",\n    \"elektrik tesisatı hizmetleri\",\n    \"elektrik tesisatı yapılır\",\n    \"elektrik tesisatı ustası\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "elektrikçi",
+      "elektrik tesisatçısı",
+      "elektrik tesisatı",
+      "elektrikçi ustası",
+      "elektrik tamircisi",
+      "elektrik tesisatı yapıyorum",
+      "elektrik işleri",
+      "elektrik tesisatı kurulumu",
+      "elektrik tesisatçılığı",
+      "elektrikçi dükkanı",
+      "elektrik tesisatı tamiri",
+      "elektrik tesisatı onarımı",
+      "elektrik tesisatı hizmetleri",
+      "elektrik tesisatı yapılır",
+      "elektrik tesisatı ustası"
+    ]
+  }
+}

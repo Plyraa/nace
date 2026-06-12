@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"D.15\", \"meslek_tanim\": \"Kasaplık\", \"sektor_tanim\": \"GIDA, TARIM\", \"nace_examples\": [{\"nace_code\": \"10.11.01\", \"nace_label\": \"Etin işlenmesi ve saklanması (mezbahacılık) (kümes hayvanlarının eti hariç)\"}, {\"nace_code\": \"10.12.01\", \"nace_label\": \"Kümes hayvanları etlerinin üretimi (taze veya dondurulmuş) (yenilebilir sakatatları dahil)\"}, {\"nace_code\": \"10.12.02\", \"nace_label\": \"Kümes hayvanlarının kesilmesi, temizlenmesi veya paketlenmesi işi ile uğraşan mezbahaların faaliyetleri\"}, {\"nace_code\": \"10.13.01\", \"nace_label\": \"Et ve kümes hayvanları etlerinden üretilen pişmemiş köfte vb. ürünlerin imalatı\"}, {\"nace_code\": \"10.13.02\", \"nace_label\": \"Et ve kümes hayvanları etlerinden üretilen sosis, salam, sucuk, pastırma, kavurma et, konserve et, salamura et, jambon vb. tuzlanmış, kurutulmuş veya tütsülenmiş ürünlerin imalatı (yemek olanlar hariç)\"}, {\"nace_code\": \"10.13.03\", \"nace_label\": \"Et ve sakatat unları imalatı (et ve kümes hayvanları etlerinden üretilen)\"}, {\"nace_code\": \"10.13.04\", \"nace_label\": \"Sığır, koyun, keçi vb. hayvanların sakatat ve yağlarından yenilebilir ürünlerin imalatı\"}, {\"nace_code\": \"32.99.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer imalatlar (bağırsak (ipek böceği guddesi hariç), kursak ve mesaneden mamul eşyalar dahil, tıbbi amaçlı steril olanlar hariç)\"}, {\"nace_code\": \"46.32.01\", \"nace_label\": \"Kümes hayvanları ve av hayvanları etlerinin toptan ticareti\"}, {\"nace_code\": \"46.32.02\", \"nace_label\": \"Et toptan ticareti (av hayvanları ve kümes hayvanları etleri hariç)\"}, {\"nace_code\": \"46.32.03\", \"nace_label\": \"Yenilebilir sakatat (ciğer, işkembe, böbrek, taşlık vb.) toptan ticareti\"}, {\"nace_code\": \"46.32.04\", \"nace_label\": \"Et ürünlerinin toptan ticareti (salam, sosis, sucuk, pastırma vb.)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"kasap\",\n    \"kasaplık\",\n    \"kasap dükkanı\",\n    \"et kasabı\",\n    \"kasapçı\",\n    \"kassap\",\n    \"kassapcı\",\n    \"kasabım\",\n    \"kasap benim\",\n    \"kasap şarküteri\",\n    \"etçi kasap\",\n    \"kırmızı et kasabı\",\n    \"kasapbaşı\",\n    \"kasap esnafı\",\n    \"kasapzade\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "kasap",
+      "kasaplık",
+      "kasap dükkanı",
+      "et kasabı",
+      "kasapçı",
+      "kassap",
+      "kassapcı",
+      "kasabım",
+      "kasap benim",
+      "kasap şarküteri",
+      "etçi kasap",
+      "kırmızı et kasabı",
+      "kasapbaşı",
+      "kasap esnafı",
+      "kasapzade"
+    ]
+  }
+}

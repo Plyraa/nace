@@ -1,0 +1,20 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"6364\", \"alias\": \"elektrikçi\", \"meslek_tanim\": \"Elektrik sistemleri imalatı, kurulumu, onarımı\", \"nace_code\": \"33.14.90\", \"nace_label\": \"Diğer profesyonel elektrikli ekipmanların onarım ve bakımı\"}, {\"id\": \"10218\", \"alias\": \"kaplama işleri\", \"meslek_tanim\": \"Kalaycılık, kaplamacılık\", \"nace_code\": \"24.43.06\", \"nace_label\": \"Çinko imalatı (işlenmemiş halde)\"}, {\"id\": \"21095\", \"alias\": \"Tıbbi malzemeci\", \"meslek_tanim\": \"Tıbbi malzemelerin imalatı, ticareti\", \"nace_code\": \"32.50.90\", \"nace_label\": \"Tıbbi ve dişçilik ile ilgili diğer araç ve gereçlerin imalatı\"}, {\"id\": \"16761\", \"alias\": \"oyuncak ticareti\", \"meslek_tanim\": \"Oyuncak imalatı, ticareti\", \"nace_code\": \"32.40.05\", \"nace_label\": \"Oyuncak bebek, kukla ve hayvanlar ile bunların giysi, parça ve aksesuarlarının imalatı (içi doldurulmuş olanlar hariç)\"}, {\"id\": \"8154\", \"alias\": \"gıda imalatı\", \"meslek_tanim\": \"Çeşitli gıdaların imalatı\", \"nace_code\": \"10.39.02\", \"nace_label\": \"Kavrulmuş, tuzlanmış vb. şekilde işlem görmüş sert kabuklu yemişler ile bu meyvelerin püre ve ezmelerinin imalatı (pişirilerek yapılanlar)\"}, {\"id\": \"21550\", \"alias\": \"Yapı malzemeleri üreticisi\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"23.32.03\", \"nace_label\": \"Fırınlanmış, ateşe dayanıklı olmayan kil ve topraktan tuğla ve kiremit imalatı\"}, {\"id\": \"7773\", \"alias\": \"gida imalati\", \"meslek_tanim\": \"Çeşitli gıdaların imalatı\", \"nace_code\": \"10.39.05\", \"nace_label\": \"Dondurulmuş veya kurutulmuş meyve ve sebzelerin imalatı\"}, {\"id\": \"12184\", \"alias\": \"kurs sahibi\", \"meslek_tanim\": \"Kurs işletmeciliği\", \"nace_code\": \"85.59.15\", \"nace_label\": \"Akademik özel ders verme faaliyeti (temel, orta ve yükseköğretim düzeyinde bire bir eğitim)\"}, {\"id\": \"15555\", \"alias\": \"Motosiklet ticareti\", \"meslek_tanim\": \"Motosiklet, bisiklet ticareti\", \"nace_code\": \"47.63.04\", \"nace_label\": \"Bisiklet perakende ticareti\"}, {\"id\": \"14528\", \"alias\": \"marangoz dükkanı\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"16.11.03\", \"nace_label\": \"Ağaç yünü, ağaç unu, ağaç talaşı, ağaç yonga imalatı\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{}",
+  "parsed": {}
+}

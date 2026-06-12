@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"D.06\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\", \"sektor_tanim\": \"GIDA, TARIM\", \"nace_examples\": [{\"nace_code\": \"01.13.21\", \"nace_label\": \"Mantar ve yer mantarları (domalan) yetiştirilmesi\"}, {\"nace_code\": \"01.30.03\", \"nace_label\": \"Dikim için sebze fidesi, meyve fidanı vb. yetiştirilmesi\"}, {\"nace_code\": \"01.30.90\", \"nace_label\": \"Dikim için çiçek ve diğer bitkilerin yetiştirilmesi (dekoratif amaçlarla bitki ve çim yetiştirilmesi dahil, sebze fidesi, meyve fidanı hariç)\"}, {\"nace_code\": \"01.61.03\", \"nace_label\": \"Bitkisel üretimi destekleyici tarımsal amaçlı sulama faaliyetleri\"}, {\"nace_code\": \"01.61.04\", \"nace_label\": \"Bitkisel üretimi destekleyici ilaçlama ve zirai mücadele faaliyetleri (zararlı otların imhası dahil, hava yoluyla yapılanlar hariç)\"}, {\"nace_code\": \"01.61.06\", \"nace_label\": \"Hava yoluyla yapılan bitkisel üretimi destekleyici gübreleme, ilaçlama ve zirai mücadele faaliyetleri (zararlı otların imhası dahil)\"}, {\"nace_code\": \"01.63.01\", \"nace_label\": \"Hasat sonrası diğer ürünlerin ayıklanması ve temizlenmesi ile ilgili faaliyetler (pamuğun çırçırlanması ve nişastalı kök ürünleri hariç)\"}, {\"nace_code\": \"01.63.02\", \"nace_label\": \"Sert kabuklu ürünlerin kabuklarının kırılması ve temizlenmesi ile ilgili faaliyetler\"}, {\"nace_code\": \"01.63.03\", \"nace_label\": \"Haşhaş vb. ürünlerin sürtme, ezme ve temizlenmesi ile ilgili faaliyetler\"}, {\"nace_code\": \"01.63.04\", \"nace_label\": \"Mısır vb. ürünlerin tanelenmesi ve temizlenmesi ile ilgili faaliyetler\"}, {\"nace_code\": \"01.63.05\", \"nace_label\": \"Tütünün sınıflandırılması, balyalanması vb. hizmetler\"}, {\"nace_code\": \"01.63.06\", \"nace_label\": \"Nişastalı kök ürünlerinin ayıklanması ve temizlenmesi (patates vb.)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"bitkisel ürüncü\",\n    \"çiftçi\",\n    \"sebze fidancı\",\n    \"meyve fidancı\",\n    \"mantar yetiştiricisi\",\n    \"tarla ürünleri\",\n    \"zirai ilaçlama\",\n    \"bitkisel sulama\",\n    \"fide üreticisi\",\n    \"gübrelemeci\",\n    \"hasat sonrası temizlik\",\n    \"tütün balyalama\",\n    \"çiçek yetiştiricisi\",\n    \"sert kabuklu kırma\",\n    \"patates ayıklama\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "bitkisel ürüncü",
+      "çiftçi",
+      "sebze fidancı",
+      "meyve fidancı",
+      "mantar yetiştiricisi",
+      "tarla ürünleri",
+      "zirai ilaçlama",
+      "bitkisel sulama",
+      "fide üreticisi",
+      "gübrelemeci",
+      "hasat sonrası temizlik",
+      "tütün balyalama",
+      "çiçek yetiştiricisi",
+      "sert kabuklu kırma",
+      "patates ayıklama"
+    ]
+  }
+}

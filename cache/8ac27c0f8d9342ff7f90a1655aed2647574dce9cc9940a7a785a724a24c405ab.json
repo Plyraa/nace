@@ -1,0 +1,123 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"8461\", \"alias\": \"hediyelik eşya dükkanı\", \"meslek_tanim\": \"Hediyelik eşya imalatı, ticareti\", \"nace_code\": \"32.13.01\", \"nace_label\": \"İmitasyon (taklit) takılar ve ilgili eşyaların imalatı\"}, {\"id\": \"12689\", \"alias\": \"lastikçi\", \"meslek_tanim\": \"Kauçuk, plastik ürünlerin imalatı, ticareti\", \"nace_code\": \"22.12.05\", \"nace_label\": \"Rejenere kauçuk imalatı, birincil formda veya levha, tabaka veya şerit halinde\"}, {\"id\": \"2081\", \"alias\": \"ben şarküteri işi yapıyorum\", \"meslek_tanim\": \"Şarküteri ürünleri imalatı, ticareti\", \"nace_code\": \"10.41.03\", \"nace_label\": \"Bezir yağı (keten tohumu yağı, keten yağı) imalatı\"}, {\"id\": \"8786\", \"alias\": \"hurda alımı\", \"meslek_tanim\": \"Hurdacılık\", \"nace_code\": \"46.87.01\", \"nace_label\": \"Atık ve hurda toptan ticareti (metal olanlar) (kağıt, cam, plastik vb. ikincil hammaddeler hariç)\"}, {\"id\": \"1180\", \"alias\": \"bakkaliye\", \"meslek_tanim\": \"Bakkallık, bayilik, büfecilik\", \"nace_code\": \"46.38.05\", \"nace_label\": \"Hazır homojenize gıda ile diyetetik gıda ürünleri toptan ticareti\"}, {\"id\": \"12373\", \"alias\": \"köpek yetiştirme\", \"meslek_tanim\": \"Evcil hayvan bakımı, ticareti\", \"nace_code\": \"01.48.03\", \"nace_label\": \"Evcil hayvanların yetiştirilmesi ve üretilmesi (balık hariç) (kedi, köpek, kuşlar, hamsterler vb.)\"}, {\"id\": \"15639\", \"alias\": \"müzik aletleri imalatçısı\", \"meslek_tanim\": \"Müzik aletleri imalatı, onarımı, ticareti\", \"nace_code\": \"32.20.27\", \"nace_label\": \"Müzik kutuları, orkestriyonlar, laternalar, çıngıraklar vb. imalatı\"}, {\"id\": \"10349\", \"alias\": \"kariyer danışmanı\", \"meslek_tanim\": \"Arzuhalcilik, danışmanlık, bilgi hizmetleri\", \"nace_code\": \"78.20.02\", \"nace_label\": \"Geçici iş bulma acenteleri ile diğer insan kaynaklarının sağlanması faaliyetleri\"}, {\"id\": \"2502\", \"alias\": \"Bina malzemeleri imalatı\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"23.99.05\", \"nace_label\": \"Bitümlü karışımların imalatı (doğal veya suni taştan malzemeler ile bir bağlayıcı olarak bitüm, doğal asfalt veya ilgili maddelerin karıştırılmasıyla elde edilenler)\"}, {\"id\": \"8127\", \"alias\": \"güzellik uzmanı\", \"meslek_tanim\": \"Güzellik salonu işletmeciliği\", \"nace_code\": \"96.22.01\", \"nace_label\": \"Güzellik salonlarının faaliyetleri (cilt bakımı, kaş alma, ağda, manikür, pedikür, makyaj, kalıcı makyaj vb.nin bir arada sunulduğu salonlar) (sağlık bakım hizmetleri hariç)\"}, {\"id\": \"22850\", \"alias\": \"çiftçi\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\", \"nace_code\": \"01.63.05\", \"nace_label\": \"Tütünün sınıflandırılması, balyalanması vb. hizmetler\"}, {\"id\": \"12348\", \"alias\": \"köfteci\", \"meslek_tanim\": \"Lokantacılık\", \"nace_code\": \"56.22.90\", \"nace_label\": \"Dışarıya yemek sunan diğer işletmelerin faaliyetleri (spor, fabrika, işyeri, üniversite vb. mensupları için tabldot servisi vb. dahil; özel günlerde hizmet verenler hariç)\"}, {\"id\": \"8183\", \"alias\": \"halı yıkama işi\", \"meslek_tanim\": \"Halı yıkama hizmetleri\", \"nace_code\": \"96.10.04\", \"nace_label\": \"Halı ve kilim yıkama hizmetleri\"}, {\"id\": \"19588\", \"alias\": \"tarla ürünleri\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\", \"nace_code\": \"02.10.02\", \"nace_label\": \"Orman yetiştirmek için fidan ve tohum üretimi\"}, {\"id\": \"15421\", \"alias\": \"Mobilyacı\", \"meslek_tanim\": \"Mobilya ticareti\", \"nace_code\": \"47.55.06\", \"nace_label\": \"Büro mobilyaları ve aksesuarlarının perakende ticareti\"}, {\"id\": \"18116\", \"alias\": \"Saat bakımı\", \"meslek_tanim\": \"Saatçilik\", \"nace_code\": \"95.25.01\", \"nace_label\": \"Saatlerin onarımı (kronometreler dahil, devam kayıt cihazları hariç)\"}, {\"id\": \"5499\", \"alias\": \"Dokumacılıkla uğraşıyorum\", \"meslek_tanim\": \"Dokumacılık\", \"nace_code\": \"13.10.03\", \"nace_label\": \"Doğal pamuk elyafının imalatı (kardelenmesi, taraklanması vb.)\"}, {\"id\": \"10211\", \"alias\": \"kantinci\", \"meslek_tanim\": \"Kantincilik\", \"nace_code\": \"56.22.01\", \"nace_label\": \"Kantinlerin faaliyetleri\"}, {\"id\": \"5393\", \"alias\": \"Dokumacılık yapıyorum\", \"meslek_tanim\": \"Dokumacılık\", \"nace_code\": \"13.92.06\", \"nace_label\": \"Tekstilden çuval, torba, çanta ve benzerlerinin imalatı\"}, {\"id\": \"9535\", \"alias\": \"İnşaat nalburiyesi\", \"meslek_tanim\": \"İnşaat malzemeleri ticareti\", \"nace_code\": \"47.52.01\", \"nace_label\": \"Çimento, alçı, harç, kireç, tuğla, kiremit, briket, taş, kum, çakıl vb. inşaat malzemeleri perakende ticareti\"}, {\"id\": \"22457\", \"alias\": \"çamaşırhane ve kuru temizleme\", \"meslek_tanim\": \"Çamaşırhane, kuru temizleme, ütücülük hizmetleri\", \"nace_code\": \"96.10.01\", \"nace_label\": \"Giyim eşyası ve diğer tekstil ürünlerini ütüleme hizmetleri\"}, {\"id\": \"21540\", \"alias\": \"Yapı malzemeleri üreticisi\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"22.24.01\", \"nace_label\": \"Plastikten banyo küvetleri, lavabolar, klozet kapakları, oturakları ve rezervuarları ile benzeri sıhhi ürünlerin imalatı (kalıcı tesisat için kullanılan montaj ve bağlantı parçaları dahil)\"}, {\"id\": \"10123\", \"alias\": \"kalaycı dükkanı\", \"meslek_tanim\": \"Kalaycılık, kaplamacılık\", \"nace_code\": \"25.51.09\", \"nace_label\": \"Metallerin diğer malzemelerle kaplanması (ısıl işlem hariç)\"}, {\"id\": \"16955\", \"alias\": \"patates ayıklama\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\", \"nace_code\": \"01.63.06\", \"nace_label\": \"Nişastalı kök ürünlerinin ayıklanması ve temizlenmesi (patates vb.)\"}, {\"id\": \"15568\", \"alias\": \"motosikletçi\", \"meslek_tanim\": \"Motosiklet, bisiklet imalatı, onarımı\", \"nace_code\": \"30.92.05\", \"nace_label\": \"Bebek arabaları, pusetler ve bunların parçalarının imalatı\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"8461\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"12689\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"2081\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"8786\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"1180\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"12373\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"15639\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"10349\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"2502\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"8127\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"22850\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"12348\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"8183\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"19588\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"15421\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"18116\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"5499\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"10211\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"5393\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"9535\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"22457\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"21540\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"10123\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"16955\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"15568\",\n      \"verdict\": \"no\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "8461",
+        "verdict": "no"
+      },
+      {
+        "id": "12689",
+        "verdict": "no"
+      },
+      {
+        "id": "2081",
+        "verdict": "no"
+      },
+      {
+        "id": "8786",
+        "verdict": "yes"
+      },
+      {
+        "id": "1180",
+        "verdict": "no"
+      },
+      {
+        "id": "12373",
+        "verdict": "yes"
+      },
+      {
+        "id": "15639",
+        "verdict": "no"
+      },
+      {
+        "id": "10349",
+        "verdict": "no"
+      },
+      {
+        "id": "2502",
+        "verdict": "no"
+      },
+      {
+        "id": "8127",
+        "verdict": "yes"
+      },
+      {
+        "id": "22850",
+        "verdict": "no"
+      },
+      {
+        "id": "12348",
+        "verdict": "no"
+      },
+      {
+        "id": "8183",
+        "verdict": "yes"
+      },
+      {
+        "id": "19588",
+        "verdict": "no"
+      },
+      {
+        "id": "15421",
+        "verdict": "no"
+      },
+      {
+        "id": "18116",
+        "verdict": "yes"
+      },
+      {
+        "id": "5499",
+        "verdict": "no"
+      },
+      {
+        "id": "10211",
+        "verdict": "yes"
+      },
+      {
+        "id": "5393",
+        "verdict": "no"
+      },
+      {
+        "id": "9535",
+        "verdict": "yes"
+      },
+      {
+        "id": "22457",
+        "verdict": "no"
+      },
+      {
+        "id": "21540",
+        "verdict": "yes"
+      },
+      {
+        "id": "10123",
+        "verdict": "no"
+      },
+      {
+        "id": "16955",
+        "verdict": "yes"
+      },
+      {
+        "id": "15568",
+        "verdict": "no"
+      }
+    ]
+  }
+}

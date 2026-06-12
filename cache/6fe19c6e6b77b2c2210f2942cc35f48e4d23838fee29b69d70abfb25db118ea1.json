@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"A.07\", \"meslek_tanim\": \"Mobilya ticareti\", \"sektor_tanim\": \"AĞAÇ İŞLERİ\", \"nace_examples\": [{\"nace_code\": \"46.15.01\", \"nace_label\": \"Mobilyaların toptan satışı ile ilgili aracıların faaliyetleri\"}, {\"nace_code\": \"46.47.01\", \"nace_label\": \"Mobilya ve mobilya aksesuarları toptan ticareti (yatak dahil)\"}, {\"nace_code\": \"46.47.04\", \"nace_label\": \"Büro mobilyalarının toptan ticareti\"}, {\"nace_code\": \"47.55.03\", \"nace_label\": \"Ev mobilyalarının ve aksesuarlarının perakende ticareti (baza, somya, karyola dahil; hasır ve sepetçi söğüdü gibi malzemelerden olanlar hariç)\"}, {\"nace_code\": \"47.55.06\", \"nace_label\": \"Büro mobilyaları ve aksesuarlarının perakende ticareti\"}, {\"nace_code\": \"47.55.07\", \"nace_label\": \"Bahçe mobilyalarının perakende ticareti\"}, {\"nace_code\": \"47.55.08\", \"nace_label\": \"Yatak perakende ticareti\"}, {\"nace_code\": \"77.33.02\", \"nace_label\": \"Büro mobilyalarının kiralanması ve leasingi (büro sandalyesi ve masasının kiralanması dahil) (finansal leasing hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\"aliases\": [\"Mobilyacı\", \"Mobilya satışı\", \"Mobilya ticareti\", \"Mobilya mağazası\", \"Mobilya dükkanı\", \"Mobilya perakende\", \"Mobilyacılık\", \"Mobilya satıyorum\", \"Mobilya ticareti yapıyorum\", \"Mobilyaci\", \"Mobilya alım satım\", \"Mobilya tüccarı\", \"Mobilya Evi\", \"Mobilya Dünyası\", \"Mobilya işi\"]}",
+  "parsed": {
+    "aliases": [
+      "Mobilyacı",
+      "Mobilya satışı",
+      "Mobilya ticareti",
+      "Mobilya mağazası",
+      "Mobilya dükkanı",
+      "Mobilya perakende",
+      "Mobilyacılık",
+      "Mobilya satıyorum",
+      "Mobilya ticareti yapıyorum",
+      "Mobilyaci",
+      "Mobilya alım satım",
+      "Mobilya tüccarı",
+      "Mobilya Evi",
+      "Mobilya Dünyası",
+      "Mobilya işi"
+    ]
+  }
+}

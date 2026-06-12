@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"20591\", \"alias\": \"tavuk işletmesi\", \"meslek_tanim\": \"Tavukçuluk\", \"nace_code\": \"47.76.05\", \"nace_label\": \"Canlı kümes hayvanlarının perakende ticareti\"}, {\"id\": \"801\", \"alias\": \"ayakkabı satışı\", \"meslek_tanim\": \"Ayakkabıcılık\", \"nace_code\": \"15.20.07\", \"nace_label\": \"Ayakkabı ve terliklerin plastik parçalarının imalatı\"}, {\"id\": \"4618\", \"alias\": \"demirci\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"25.92.01\", \"nace_label\": \"Demir veya çelikten yiyecek, içecek ve diğer ürünler için kapasitesi < 50 litre olan kutuların imalatı (lehim veya kıvrılarak kapatılanlar) (tenekeden olanlar dahil)\"}, {\"id\": \"15248\", \"alias\": \"marangoz atölyesi\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"16.28.05\", \"nace_label\": \"Sedef kakma ahşap işleri, kakma ile süslü ahşap eşyalar, mücevher için veya çatal-kaşık takımı ve benzeri eşyalar için ahşap kutular, ahşap biblo, heykel ve diğer süslerin imalatı\"}, {\"id\": \"13115\", \"alias\": \"kürklü deri işleri\", \"meslek_tanim\": \"Dericilik\", \"nace_code\": \"15.11.13\", \"nace_label\": \"Deri ve kösele esaslı terkip ile elde edilen levha, yaprak, şerit deri ve kösele imalatı\"}, {\"id\": \"9995\", \"alias\": \"İnşaat malzemesi üretimi\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"23.65.02\", \"nace_label\": \"Lif ve çimento karışımlı ürünlerin imalatı\"}, {\"id\": \"2351\", \"alias\": \"Bez dokuma\", \"meslek_tanim\": \"Dokumacılık\", \"nace_code\": \"13.92.04\", \"nace_label\": \"Tekstilden yer bezi, bulaşık bezi, toz bezi vb. temizlik bezleri imalatı\"}, {\"id\": \"10041\", \"alias\": \"İnşaat Onarım\", \"meslek_tanim\": \"İnşaatçılık\", \"nace_code\": \"23.70.01\", \"nace_label\": \"Taş ve mermerin kesilmesi, şekil verilmesi ve bitirilmesi (doğal taşlardan, mermerden, su mermerinden, travertenden, kayağantaşından levha/tabaka, kurna, lavabo, karo, kaldırım taşı, yapı taşı, mezar taşı, vb. imalatı dahil, süs eşyası hariç)\"}, {\"id\": \"3213\", \"alias\": \"boya ustası\", \"meslek_tanim\": \"Oto boyacılık\", \"nace_code\": \"95.31.05\", \"nace_label\": \"Motorlu kara taşıtlarının boyanması faaliyetleri\"}, {\"id\": \"3453\", \"alias\": \"börekçi dükkanı\", \"meslek_tanim\": \"Börekçilik\", \"nace_code\": \"56.11.07\", \"nace_label\": \"Börekçilerin faaliyetleri (imalatçıların faaliyetleri ile seyyar olanlar hariç)\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"20591\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"801\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"4618\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"15248\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"13115\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"9995\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"2351\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"10041\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"3213\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"3453\",\n      \"verdict\": \"yes\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "20591",
+        "verdict": "yes"
+      },
+      {
+        "id": "801",
+        "verdict": "no"
+      },
+      {
+        "id": "4618",
+        "verdict": "no"
+      },
+      {
+        "id": "15248",
+        "verdict": "no"
+      },
+      {
+        "id": "13115",
+        "verdict": "no"
+      },
+      {
+        "id": "9995",
+        "verdict": "no"
+      },
+      {
+        "id": "2351",
+        "verdict": "no"
+      },
+      {
+        "id": "10041",
+        "verdict": "no"
+      },
+      {
+        "id": "3213",
+        "verdict": "yes"
+      },
+      {
+        "id": "3453",
+        "verdict": "yes"
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"14152\", \"alias\": \"makineci\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.92.11\", \"nace_label\": \"Delme, sondaj, hafriyat ve kazı makinesi parçalarının, vinç ve hareketli kaldırma kafeslerinin ve toprak, taş ve benzeri maddeleri tasnifleme, öğütme, karıştırma veya diğer işlerde kullanılan makine parçalarının imalatı (buldozer bıçakları dahil)\"}, {\"id\": \"8451\", \"alias\": \"hediyelik eşya yapıyorum\", \"meslek_tanim\": \"Hediyelik eşya imalatı, ticareti\", \"nace_code\": \"47.78.04\", \"nace_label\": \"Hediyelik eşyaların, el işi ürünlerin ve imitasyon takıların perakende ticareti (sanat eserleri hariç)\"}, {\"id\": \"5308\", \"alias\": \"Dokumacı ustası\", \"meslek_tanim\": \"Dokumacılık\", \"nace_code\": \"13.92.04\", \"nace_label\": \"Tekstilden yer bezi, bulaşık bezi, toz bezi vb. temizlik bezleri imalatı\"}, {\"id\": \"20023\", \"alias\": \"temizlik malzemeleri toptancısı\", \"meslek_tanim\": \"Temizlik malzemeleri imalatı, ticareti\", \"nace_code\": \"17.22.04\", \"nace_label\": \"Kağıt hamurundan, kağıttan, selüloz vatkadan veya selüloz lifli ağlardan hijyenik havlu ve tamponlar, kadın bağı, pedler, bebek bezleri vb. hijyenik ürünler ile giyim eşyası ve giysi aksesuarlarının imalatı\"}, {\"id\": \"19375\", \"alias\": \"sterilizasyon\", \"meslek_tanim\": \"Genel temizlik, haşere kontrol faaliyetleri\", \"nace_code\": \"81.21.01\", \"nace_label\": \"Binaların genel temizliği (uzmanlaşmış temizlik faaliyetleri hariç)\"}, {\"id\": \"3462\", \"alias\": \"cam montaj\", \"meslek_tanim\": \"Camcılık\", \"nace_code\": \"23.14.01\", \"nace_label\": \"Cam elyafı imalatı (cam yünü ve bunlardan yapılmış dokuma dışı ürünler dahil)\"}, {\"id\": \"1792\", \"alias\": \"Ben inşaatçıyım\", \"meslek_tanim\": \"İnşaatçılık\", \"nace_code\": \"41.00.02\", \"nace_label\": \"İkamet amaçlı olmayan binaların inşaatı\"}, {\"id\": \"4258\", \"alias\": \"demir çelik eşya imalatı ve ticareti\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"46.83.13\", \"nace_label\": \"Metalden kapı, pencere ve bunların kasaları ile kapı eşiklerinin toptan ticareti\"}, {\"id\": \"5852\", \"alias\": \"dügün salonu\", \"meslek_tanim\": \"Düğün salonu işletmeciliği\", \"nace_code\": \"96.99.14\", \"nace_label\": \"Nikah salonlarının hizmetleri\"}, {\"id\": \"6162\", \"alias\": \"elektrik malzemeleri perakende\", \"meslek_tanim\": \"Elektrik malzemeleri imalatı, ticareti\", \"nace_code\": \"46.64.09\", \"nace_label\": \"Akümülatör, batarya, pil ve bunların parçalarının toptan ticareti (evlerde, motosikletlerde ve motorlu kara taşıtlarında kullanılanlar hariç)\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\"id\": \"14152\", \"verdict\": \"no\"},\n    {\"id\": \"8451\", \"verdict\": \"no\"},\n    {\"id\": \"5308\", \"verdict\": \"yes\"},\n    {\"id\": \"20023\", \"verdict\": \"no\"},\n    {\"id\": \"19375\", \"verdict\": \"no\"},\n    {\"id\": \"3462\", \"verdict\": \"no\"},\n    {\"id\": \"1792\", \"verdict\": \"yes\"},\n    {\"id\": \"4258\", \"verdict\": \"yes\"},\n    {\"id\": \"5852\", \"verdict\": \"yes\"},\n    {\"id\": \"6162\", \"verdict\": \"no\"}\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "14152",
+        "verdict": "no"
+      },
+      {
+        "id": "8451",
+        "verdict": "no"
+      },
+      {
+        "id": "5308",
+        "verdict": "yes"
+      },
+      {
+        "id": "20023",
+        "verdict": "no"
+      },
+      {
+        "id": "19375",
+        "verdict": "no"
+      },
+      {
+        "id": "3462",
+        "verdict": "no"
+      },
+      {
+        "id": "1792",
+        "verdict": "yes"
+      },
+      {
+        "id": "4258",
+        "verdict": "yes"
+      },
+      {
+        "id": "5852",
+        "verdict": "yes"
+      },
+      {
+        "id": "6162",
+        "verdict": "no"
+      }
+    ]
+  }
+}

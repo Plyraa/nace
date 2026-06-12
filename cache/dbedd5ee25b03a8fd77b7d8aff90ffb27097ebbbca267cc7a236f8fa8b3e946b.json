@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"18116\", \"alias\": \"Saat bakımı\", \"meslek_tanim\": \"Saatçilik\", \"nace_code\": \"95.25.01\", \"nace_label\": \"Saatlerin onarımı (kronometreler dahil, devam kayıt cihazları hariç)\"}, {\"id\": \"5499\", \"alias\": \"Dokumacılıkla uğraşıyorum\", \"meslek_tanim\": \"Dokumacılık\", \"nace_code\": \"13.10.03\", \"nace_label\": \"Doğal pamuk elyafının imalatı (kardelenmesi, taraklanması vb.)\"}, {\"id\": \"10211\", \"alias\": \"kantinci\", \"meslek_tanim\": \"Kantincilik\", \"nace_code\": \"56.22.01\", \"nace_label\": \"Kantinlerin faaliyetleri\"}, {\"id\": \"5393\", \"alias\": \"Dokumacılık yapıyorum\", \"meslek_tanim\": \"Dokumacılık\", \"nace_code\": \"13.92.06\", \"nace_label\": \"Tekstilden çuval, torba, çanta ve benzerlerinin imalatı\"}, {\"id\": \"9535\", \"alias\": \"İnşaat nalburiyesi\", \"meslek_tanim\": \"İnşaat malzemeleri ticareti\", \"nace_code\": \"47.52.01\", \"nace_label\": \"Çimento, alçı, harç, kireç, tuğla, kiremit, briket, taş, kum, çakıl vb. inşaat malzemeleri perakende ticareti\"}, {\"id\": \"22457\", \"alias\": \"çamaşırhane ve kuru temizleme\", \"meslek_tanim\": \"Çamaşırhane, kuru temizleme, ütücülük hizmetleri\", \"nace_code\": \"96.10.01\", \"nace_label\": \"Giyim eşyası ve diğer tekstil ürünlerini ütüleme hizmetleri\"}, {\"id\": \"21540\", \"alias\": \"Yapı malzemeleri üreticisi\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"22.24.01\", \"nace_label\": \"Plastikten banyo küvetleri, lavabolar, klozet kapakları, oturakları ve rezervuarları ile benzeri sıhhi ürünlerin imalatı (kalıcı tesisat için kullanılan montaj ve bağlantı parçaları dahil)\"}, {\"id\": \"10123\", \"alias\": \"kalaycı dükkanı\", \"meslek_tanim\": \"Kalaycılık, kaplamacılık\", \"nace_code\": \"25.51.09\", \"nace_label\": \"Metallerin diğer malzemelerle kaplanması (ısıl işlem hariç)\"}, {\"id\": \"16955\", \"alias\": \"patates ayıklama\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\", \"nace_code\": \"01.63.06\", \"nace_label\": \"Nişastalı kök ürünlerinin ayıklanması ve temizlenmesi (patates vb.)\"}, {\"id\": \"15568\", \"alias\": \"motosikletçi\", \"meslek_tanim\": \"Motosiklet, bisiklet imalatı, onarımı\", \"nace_code\": \"30.92.05\", \"nace_label\": \"Bebek arabaları, pusetler ve bunların parçalarının imalatı\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\"id\": \"18116\", \"verdict\": \"yes\"},\n    {\"id\": \"5499\", \"verdict\": \"no\"},\n    {\"id\": \"10211\", \"verdict\": \"yes\"},\n    {\"id\": \"5393\", \"verdict\": \"no\"},\n    {\"id\": \"9535\", \"verdict\": \"yes\"},\n    {\"id\": \"22457\", \"verdict\": \"no\"},\n    {\"id\": \"21540\", \"verdict\": \"no\"},\n    {\"id\": \"10123\", \"verdict\": \"yes\"},\n    {\"id\": \"16955\", \"verdict\": \"yes\"},\n    {\"id\": \"15568\", \"verdict\": \"no\"}\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "18116",
+        "verdict": "yes"
+      },
+      {
+        "id": "5499",
+        "verdict": "no"
+      },
+      {
+        "id": "10211",
+        "verdict": "yes"
+      },
+      {
+        "id": "5393",
+        "verdict": "no"
+      },
+      {
+        "id": "9535",
+        "verdict": "yes"
+      },
+      {
+        "id": "22457",
+        "verdict": "no"
+      },
+      {
+        "id": "21540",
+        "verdict": "no"
+      },
+      {
+        "id": "10123",
+        "verdict": "yes"
+      },
+      {
+        "id": "16955",
+        "verdict": "yes"
+      },
+      {
+        "id": "15568",
+        "verdict": "no"
+      }
+    ]
+  }
+}

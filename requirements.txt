@@ -1,0 +1,6 @@
+pandas
+openpyxl
+rapidfuzz
+openai
+python-dotenv
+pyarrow

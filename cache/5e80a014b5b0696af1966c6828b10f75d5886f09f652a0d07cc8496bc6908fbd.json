@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"E.01\", \"meslek_tanim\": \"Ayakkabıcılık\", \"sektor_tanim\": \"GİYİM, DERİ ÜRÜN, EV TEKSTİLİ, DOKUMA\", \"nace_examples\": [{\"nace_code\": \"15.20.06\", \"nace_label\": \"Ayakkabı ve terliklerin kauçuk parçalarının imalatı\"}, {\"nace_code\": \"15.20.07\", \"nace_label\": \"Ayakkabı ve terliklerin plastik parçalarının imalatı\"}, {\"nace_code\": \"15.20.15\", \"nace_label\": \"Deriden ayakkabı, mes, bot, çizme, postal, terlik, vb. imalatı (ortopedik ayakkabı ve kayak ayakkabısı hariç)\"}, {\"nace_code\": \"15.20.17\", \"nace_label\": \"Plastik veya kauçuktan ayakkabı, bot, çizme, postal, terlik, vb. imalatı (ortopedik ayakkabı ve kayak ayakkabısı hariç)\"}, {\"nace_code\": \"15.20.18\", \"nace_label\": \"Tekstilden ve diğer malzemelerden ayakkabı, mes, bot, çizme, postal, terlik, vb. imalatı (tamamıyla tekstilden olanlar ile ortopedik ayakkabı ve kayak ayakkabısı hariç)\"}, {\"nace_code\": \"15.20.19\", \"nace_label\": \"Ayakkabı ve terliklerin deri parçalarının imalatı ile sayacılık faaliyetleri\"}, {\"nace_code\": \"46.42.02\", \"nace_label\": \"Ayakkabı toptan ticareti (spor ayakkabıları hariç)\"}, {\"nace_code\": \"46.42.08\", \"nace_label\": \"Ayakkabı malzemeleri toptan ticareti\"}, {\"nace_code\": \"47.63.07\", \"nace_label\": \"Spor ayakkabısı perakende ticareti (kayak botları dahil)\"}, {\"nace_code\": \"47.72.01\", \"nace_label\": \"Ayakkabı, terlik vb. perakende ticareti (kavafiye dahil; spor ayakkabıları ile tamamı tekstilden olanlar hariç)\"}, {\"nace_code\": \"47.72.06\", \"nace_label\": \"Ayakkabı parçaları perakende ticareti (deri, ayakkabı sayası, topuk, topuk yastığı, ayakkabı bağları vb.)\"}, {\"nace_code\": \"95.23.01\", \"nace_label\": \"Ayakkabı ve deri eşyaların onarım ve bakımı (deri giyim eşyası hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"ayakkabıcı\",\n    \"ayakkabı tamircisi\",\n    \"sayacı\",\n    \"ayakkabı imalatçısı\",\n    \"ben ayakkabı yaparım\",\n    \"ayakkabı dükkanı\",\n    \"kavaf\",\n    \"ayakkabıcılık\",\n    \"ayakkabı tamirhanesi\",\n    \"ayakkabı üretimi\",\n    \"ayakkabı satışı\",\n    \"ayakabıcı\",\n    \"ayakkabı malzemeleri\",\n    \"terlikçi\",\n    \"botçu\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "ayakkabıcı",
+      "ayakkabı tamircisi",
+      "sayacı",
+      "ayakkabı imalatçısı",
+      "ben ayakkabı yaparım",
+      "ayakkabı dükkanı",
+      "kavaf",
+      "ayakkabıcılık",
+      "ayakkabı tamirhanesi",
+      "ayakkabı üretimi",
+      "ayakkabı satışı",
+      "ayakabıcı",
+      "ayakkabı malzemeleri",
+      "terlikçi",
+      "botçu"
+    ]
+  }
+}

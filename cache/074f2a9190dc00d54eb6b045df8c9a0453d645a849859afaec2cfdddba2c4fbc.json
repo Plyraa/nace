@@ -1,0 +1,33 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"C.09\", \"meslek_tanim\": \"Elektrikli ev aletleri imalatı, onarımı\", \"sektor_tanim\": \"ELEKTRİK, ELEKTRONİK, BİLGİSAYAR\", \"nace_examples\": [{\"nace_code\": \"27.51.02\", \"nace_label\": \"Ev tipi elektrikli su ısıtıcıları (depolu su ısıtıcıları, anında su ısıtıcıları, şofben, termosifon dahil), elektrikli ısıtma cihazları (elektrikli soba, radyatör, vb.) ve elektrikli toprak ısıtma cihazlarının imalatı\"}, {\"nace_code\": \"27.51.04\", \"nace_label\": \"Mutfakta kullanılan elektrikli küçük ev aletlerinin imalatı (çay veya kahve makinesi, semaver, ızgara, kızartma cihazı, ekmek kızartma makinesi, mutfak robotu, mikser, blender, meyve sıkacağı, et kıyma makinesi, tost makinesi, fritöz vb.)\"}, {\"nace_code\": \"27.51.05\", \"nace_label\": \"Elektrikli diğer küçük ev aletleri (elektrotermik el kurutma makinesi, elektrikli ütü, havlu dispenseri, hava nemlendirici) ile elektrikli battaniyelerin imalatı\"}, {\"nace_code\": \"27.51.07\", \"nace_label\": \"Elektrikli ev aletleri aksam ve parçalarının imalatı\"}, {\"nace_code\": \"27.51.08\", \"nace_label\": \"Ev tipi buzdolabı, dondurucu, çamaşır makinesi, çamaşır kurutma makinesi, bulaşık makinesi, vantilatör, aspiratör, fan, aspiratörlü davlumbaz, fırın, ocak, mikrodalga fırın, elektrikli pişirme sacı vb. imalatı\"}, {\"nace_code\": \"27.51.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer elektrikli ev aletlerinin imalatı\"}, {\"nace_code\": \"95.29.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer kişisel ve ev eşyalarının onarım ve bakımı\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"Elektrikli Ev Aletleri Tamircisi\",\n    \"Çamaşır Makinesi Tamir Atölyesi\",\n    \"Buzdolabı Onarım Ustası\",\n    \"Ben her türlü elektrikli ev aletini tamir ederim\",\n    \"Fırın ve Ocak Tamiri\",\n    \"Elektrikli Süpürge Bakımı\",\n    \"Küçük Ev Aletleri İmalatı\",\n    \"Elektirikli Alet Tamiri\",\n    \"Ev Aletleri Servis Hizmeti\",\n    \"Mikrodalga Fırın Onarımı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "Elektrikli Ev Aletleri Tamircisi",
+      "Çamaşır Makinesi Tamir Atölyesi",
+      "Buzdolabı Onarım Ustası",
+      "Ben her türlü elektrikli ev aletini tamir ederim",
+      "Fırın ve Ocak Tamiri",
+      "Elektrikli Süpürge Bakımı",
+      "Küçük Ev Aletleri İmalatı",
+      "Elektirikli Alet Tamiri",
+      "Ev Aletleri Servis Hizmeti",
+      "Mikrodalga Fırın Onarımı"
+    ]
+  }
+}

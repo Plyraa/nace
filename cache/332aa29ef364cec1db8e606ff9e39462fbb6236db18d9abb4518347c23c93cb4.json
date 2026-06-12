@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.16\", \"meslek_tanim\": \"Motosiklet, bisiklet imalatı, onarımı\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"30.91.02\", \"nace_label\": \"Motosiklet parça ve aksesuarları imalatı (motosikletler için pistonlar, piston segmanları, karbüratörler dahil)\"}, {\"nace_code\": \"30.92.01\", \"nace_label\": \"Bisiklet imalatı (yardımcı elektrikli motoru bulunan bisiklet dahil) (çocuklar için plastik bisikletler hariç)\"}, {\"nace_code\": \"30.92.02\", \"nace_label\": \"Bisiklet parça ve aksesuarlarının imalatı (jantlar, gidonlar, iskelet, çatallar, pedal fren göbekleri/poyraları, göbek/poyra frenleri, krank dişlileri, pedallar ve serbest dişlilerin parçaları, vb.)\"}, {\"nace_code\": \"30.92.05\", \"nace_label\": \"Bebek arabaları, pusetler ve bunların parçalarının imalatı\"}, {\"nace_code\": \"30.99.01\", \"nace_label\": \"Mekanik hareket ettirici tertibatı bulunmayan araçların imalatı (alışveriş arabaları, sanayi el arabaları, işportacı arabaları, bagaj arabaları, elle çekilen golf arabaları, hasta nakli için arabalar, kızaklar dahil)\"}, {\"nace_code\": \"95.29.05\", \"nace_label\": \"Bisiklet onarımı\"}, {\"nace_code\": \"95.32.00\", \"nace_label\": \"Motosikletlerin onarım ve bakımı\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"motosiklet tamircisi\",\n    \"bisikletçi\",\n    \"motosiklet imalatı\",\n    \"bisiklet tamircisi\",\n    \"motosiklet parçacısı\",\n    \"bisiklet parça ve aksesuar\",\n    \"motosiklet bakım onarım\",\n    \"bisiklet imalatçısı\",\n    \"motosikletçi\",\n    \"bisiklet servisi\",\n    \"motosiklet yedek parça\",\n    \"bisiklet yedek parça\",\n    \"motosiklet onarım\",\n    \"bisiklet onarım\",\n    \"motosiklet bisiklet tamir\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "motosiklet tamircisi",
+      "bisikletçi",
+      "motosiklet imalatı",
+      "bisiklet tamircisi",
+      "motosiklet parçacısı",
+      "bisiklet parça ve aksesuar",
+      "motosiklet bakım onarım",
+      "bisiklet imalatçısı",
+      "motosikletçi",
+      "bisiklet servisi",
+      "motosiklet yedek parça",
+      "bisiklet yedek parça",
+      "motosiklet onarım",
+      "bisiklet onarım",
+      "motosiklet bisiklet tamir"
+    ]
+  }
+}

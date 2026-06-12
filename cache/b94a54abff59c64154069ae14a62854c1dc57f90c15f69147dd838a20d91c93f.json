@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "resolver_fallback",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe serbest meslek/sektör ifadesini verilen NACE kısa listesinden seçen bir resolver'sın. Sadece geçerli JSON döndür; listede olmayan kod üretme."
+      },
+      {
+        "role": "user",
+        "content": "{\"user_text\": \"pasta satiyorum\", \"normalized_text\": \"pasta satiyor\", \"buckets\": {\"manufacturing\": \"Gıda/tekstil hariç imalat, üretim ve onarım ağırlıklı sanayi.\", \"trade\": \"Perakende, toptan satış, bayilik, e-ticaret ve aracılık.\", \"food\": \"Gıda üretimi, gıda perakendesi, lokanta, kafe ve içecek faaliyetleri.\", \"textile\": \"Tekstil, konfeksiyon, ayakkabı, deri ve ilgili bakım/ticaret.\", \"construction\": \"İnşaat, tesisat, yapı malzemesi ve yapı destek işleri.\", \"logistics\": \"Yolcu/yük taşımacılığı, depolama, otopark, kurye ve taşıma destekleri.\", \"technology\": \"Yazılım, bilişim, telekom, elektronik cihaz ve dijital altyapı.\", \"services\": \"Kişisel, mesleki, eğitim, sağlık, sanat, turizm ve bakım hizmetleri.\", \"agriculture\": \"Tarım, hayvancılık, ormancılık, balıkçılık ve zirai destek.\", \"other\": \"Yukarıdaki kovalara net oturmayan veya kamusal/karma faaliyetler.\"}, \"candidate_nace_codes\": [{\"nace_code\": \"47.24.01\", \"nace_label\": \"Ekmek, pasta ve unlu mamullerin perakende ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Fırıncılık\"}, {\"nace_code\": \"10.71.01\", \"nace_label\": \"Taze pastane ürünleri imalatı (yaş pasta, kuru pasta, poğaça, kek, börek, pay, turta, waffles vb.)\", \"bucket\": \"food\", \"meslek_tanim\": \"Pastanecilik, tatlıcılık\"}, {\"nace_code\": \"47.22.06\", \"nace_label\": \"Sakatat perakende ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Kasaplık\"}, {\"nace_code\": \"15.12.09\", \"nace_label\": \"Deri saat kayışı imalatı\", \"bucket\": \"textile\", \"meslek_tanim\": \"Deri aksesuar imalatı, ticareti\"}, {\"nace_code\": \"20.30.17\", \"nace_label\": \"Elektrostatik toz boya imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\"}, {\"nace_code\": \"47.22.05\", \"nace_label\": \"Et perakende ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Kasaplık\"}, {\"nace_code\": \"11.06.01\", \"nace_label\": \"Malt imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Meşrubat imalatı, ticareti\"}, {\"nace_code\": \"46.48.02\", \"nace_label\": \"Saat toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Saatçilik\"}, {\"nace_code\": \"47.79.01\", \"nace_label\": \"Antika perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Sanat eseri, antika ticareti\"}, {\"nace_code\": \"46.43.01\", \"nace_label\": \"Beyaz eşya toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Beyaz eşya ticareti\"}, {\"nace_code\": \"25.40.05\", \"nace_label\": \"Toz metalürjisi\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Tornacılık\"}, {\"nace_code\": \"11.02.02\", \"nace_label\": \"Üzüm şırası imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Meşrubat imalatı, ticareti\"}, {\"nace_code\": \"46.41.02\", \"nace_label\": \"Tuhafiye ürünleri toptan ticareti\", \"bucket\": \"textile\", \"meslek_tanim\": \"Tuhafiye imalatı, ticareti\"}, {\"nace_code\": \"23.15.05\", \"nace_label\": \"Vitray cam imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Camcılık\"}, {\"nace_code\": \"22.24.05\", \"nace_label\": \"Plastikten prefabrik yapıların imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Prefabrik yapıların imalatı, kurulumu, ticareti\"}, {\"nace_code\": \"46.37.01\", \"nace_label\": \"Çay toptan ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Aktar ürünleri imalatı, ticareti\"}, {\"nace_code\": \"46.49.03\", \"nace_label\": \"Kırtasiye ürünleri toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Kırtasiye imalatı, ticareti\"}, {\"nace_code\": \"47.61.00\", \"nace_label\": \"Kitap perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Kitapçılık\"}, {\"nace_code\": \"95.29.05\", \"nace_label\": \"Bisiklet onarımı\", \"bucket\": \"services\", \"meslek_tanim\": \"Motosiklet, bisiklet imalatı, onarımı\"}, {\"nace_code\": \"56.22.01\", \"nace_label\": \"Kantinlerin faaliyetleri\", \"bucket\": \"food\", \"meslek_tanim\": \"Kantincilik\"}, {\"nace_code\": \"15.12.10\", \"nace_label\": \"Plastik veya kauçuk saat kayışı imalatı\", \"bucket\": \"textile\", \"meslek_tanim\": \"Kauçuk, plastik ürünlerin imalatı, ticareti\"}, {\"nace_code\": \"47.71.05\", \"nace_label\": \"İç giyim ve çorap perakende ticareti\", \"bucket\": \"textile\", \"meslek_tanim\": \"Tuhafiye imalatı, ticareti\"}, {\"nace_code\": \"47.51.02\", \"nace_label\": \"Tuhafiye ürünleri perakende ticareti\", \"bucket\": \"textile\", \"meslek_tanim\": \"Tuhafiye imalatı, ticareti\"}, {\"nace_code\": \"20.59.20\", \"nace_label\": \"Barut vb. itici tozların imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\"}, {\"nace_code\": \"11.05.01\", \"nace_label\": \"Bira imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Meşrubat imalatı, ticareti\"}, {\"nace_code\": \"11.07.04\", \"nace_label\": \"Boza imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Meşrubat imalatı, ticareti\"}, {\"nace_code\": \"17.11.08\", \"nace_label\": \"Kağıt hamuru imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Kağıt, kağıt ürünleri imalatı, ticareti\"}, {\"nace_code\": \"47.63.04\", \"nace_label\": \"Bisiklet perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Motosiklet, bisiklet ticareti\"}, {\"nace_code\": \"10.62.06\", \"nace_label\": \"Mısır yağı imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Şarküteri ürünleri imalatı, ticareti\"}, {\"nace_code\": \"46.31.06\", \"nace_label\": \"Kültür mantarı toptan ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Yaş sebze, meyve ticareti\"}], \"instruction\": \"En olası ilk 3 NACE kodunu sırala. Kodlar sadece candidate_nace_codes içinden olmalı.\", \"schema\": {\"candidates\": [{\"nace_code\": \"string\", \"bucket\": \"string\", \"confidence\": 0.0}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"candidates\": [\n    {\n      \"nace_code\": \"10.71.01\",\n      \"bucket\": \"food\",\n      \"confidence\": 0.95\n    },\n    {\n      \"nace_code\": \"47.24.01\",\n      \"bucket\": \"food\",\n      \"confidence\": 0.85\n    },\n    {\n      \"nace_code\": \"47.22.05\",\n      \"bucket\": \"food\",\n      \"confidence\": 0.1\n    }\n  ]\n}",
+  "parsed": {
+    "candidates": [
+      {
+        "nace_code": "10.71.01",
+        "bucket": "food",
+        "confidence": 0.95
+      },
+      {
+        "nace_code": "47.24.01",
+        "bucket": "food",
+        "confidence": 0.85
+      },
+      {
+        "nace_code": "47.22.05",
+        "bucket": "food",
+        "confidence": 0.1
+      }
+    ]
+  }
+}

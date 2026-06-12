@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"21645\", \"alias\": \"Yapı market\", \"meslek_tanim\": \"İnşaat malzemeleri ticareti\", \"nace_code\": \"46.83.19\", \"nace_label\": \"Plastikten inşaat amaçlı tabakalar, levhalar, filmler, folyolar, şeritler ve borular ile asfalt vb. malzemeden çatı kaplama ürünlerinin toptan ticareti\"}, {\"id\": \"2277\", \"alias\": \"biblo imalatı\", \"meslek_tanim\": \"Hediyelik eşya imalatı, ticareti\", \"nace_code\": \"23.70.02\", \"nace_label\": \"Doğal taşlardan, mermerden, su mermerinden, travertenden, kayağantaşından süs eşyası imalatı (lületaşı, kehribar ve benzerlerinden olanlar dahil)\"}, {\"id\": \"12298\", \"alias\": \"Kutu imalatçısı\", \"meslek_tanim\": \"Kağıt, kağıt ürünleri imalatı, ticareti\", \"nace_code\": \"17.12.07\", \"nace_label\": \"Kağıt ve mukavva imalatı\"}, {\"id\": \"2122\", \"alias\": \"besici\", \"meslek_tanim\": \"Besicilik, celeplik\", \"nace_code\": \"46.24.01\", \"nace_label\": \"Ham deri, post ve kürklü deri toptan ticareti\"}, {\"id\": \"1892\", \"alias\": \"Ben motosiklet satarım\", \"meslek_tanim\": \"Motosiklet, bisiklet ticareti\", \"nace_code\": \"46.73.25\", \"nace_label\": \"Motosikletler ve motorlu bisikletlerin parça ve aksesuarlarının toptan ticareti\"}, {\"id\": \"18722\", \"alias\": \"sert kabuklu kırma\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\", \"nace_code\": \"01.13.21\", \"nace_label\": \"Mantar ve yer mantarları (domalan) yetiştirilmesi\"}, {\"id\": \"19723\", \"alias\": \"tavukçuluk işletmesi\", \"meslek_tanim\": \"Tavukçuluk\", \"nace_code\": \"01.48.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer hayvan yetiştiriciliği\"}, {\"id\": \"21264\", \"alias\": \"video kaset ticareti\", \"meslek_tanim\": \"Kayıtlı medyaların imalatı, kiralanması, ticareti\", \"nace_code\": \"77.39.07\", \"nace_label\": \"Ticari radyo, televizyon ve telekomünikasyon ekipmanları ile sinema filmi yapım ekipmanlarının operatörsüz olarak kiralanması veya operasyonel leasingi\"}, {\"id\": \"6009\", \"alias\": \"elektrik dağıtım malzemeleri\", \"meslek_tanim\": \"Elektrik malzemeleri imalatı, ticareti\", \"nace_code\": \"29.31.05\", \"nace_label\": \"Motorlu kara taşıtları ve motosikletler için elektrikli sinyalizasyon donanımları, kornalar, sirenler, cam silecekleri, buğu önleyiciler, elektrikli cam/kapı sistemleri, voltaj regülatörleri vb. elektrikli ekipmanların imalatı\"}, {\"id\": \"2112\", \"alias\": \"berberlik\", \"meslek_tanim\": \"Erkek berberliği\", \"nace_code\": \"96.21.02\", \"nace_label\": \"Erkekler için kuaför ve berber işletmelerinin faaliyetleri\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"21645\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"2277\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"12298\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"2122\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"1892\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"18722\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"19723\",\n      \"verdict\": \"unsure\"\n    },\n    {\n      \"id\": \"21264\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"6009\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"2112\",\n      \"verdict\": \"yes\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "21645",
+        "verdict": "no"
+      },
+      {
+        "id": "2277",
+        "verdict": "yes"
+      },
+      {
+        "id": "12298",
+        "verdict": "no"
+      },
+      {
+        "id": "2122",
+        "verdict": "no"
+      },
+      {
+        "id": "1892",
+        "verdict": "no"
+      },
+      {
+        "id": "18722",
+        "verdict": "no"
+      },
+      {
+        "id": "19723",
+        "verdict": "unsure"
+      },
+      {
+        "id": "21264",
+        "verdict": "no"
+      },
+      {
+        "id": "6009",
+        "verdict": "no"
+      },
+      {
+        "id": "2112",
+        "verdict": "yes"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"D.05\", \"meslek_tanim\": \"Besicilik, celeplik\", \"sektor_tanim\": \"GIDA, TARIM\", \"nace_examples\": [{\"nace_code\": \"01.41.31\", \"nace_label\": \"Sütü sağılan büyükbaş hayvan yetiştiriciliği (sütü için inek ve manda yetiştiriciliği)\"}, {\"nace_code\": \"01.42.09\", \"nace_label\": \"Diğer sığır ve manda yetiştiriciliği (sütü için yetiştirilenler hariç)\"}, {\"nace_code\": \"01.43.01\", \"nace_label\": \"At ve at benzeri diğer hayvan yetiştiriciliği (eşek, katır veya bardo vb.)\"}, {\"nace_code\": \"01.44.01\", \"nace_label\": \"Deve ve devegillerin yetiştiriciliği\"}, {\"nace_code\": \"01.45.01\", \"nace_label\": \"Koyun ve keçi (davar) yetiştiriciliği (işlenmemiş süt, kıl, tiftik, yapağı, yün vb. üretimi dahil)\"}, {\"nace_code\": \"01.48.02\", \"nace_label\": \"İpekböceği yetiştiriciliği ve koza üretimi\"}, {\"nace_code\": \"01.62.01\", \"nace_label\": \"Hayvan üretimini destekleyici olarak sürülerin güdülmesi, başkalarına ait hayvanların beslenmesi, kümeslerin temizlenmesi, kırkma, sağma, barınak sağlama, nalbantlık vb. faaliyetler\"}, {\"nace_code\": \"13.10.08\", \"nace_label\": \"İpeğin kozadan ayrılması ve sarılması\"}, {\"nace_code\": \"46.23.01\", \"nace_label\": \"Canlı hayvanların toptan ticareti (kümes hayvanları hariç)\"}, {\"nace_code\": \"46.24.01\", \"nace_label\": \"Ham deri, post ve kürklü deri toptan ticareti\"}, {\"nace_code\": \"46.46.04\", \"nace_label\": \"Hayvan sağlığı ile ilgili ilaçların toptan ticareti (serum, aşı, vb.)\"}, {\"nace_code\": \"47.73.02\", \"nace_label\": \"Veterinerlik ürünlerinin perakende ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"besici\",\n    \"çelepçi\",\n    \"besicilik yaparım\",\n    \"hayvan yetiştiricisi\",\n    \"büyükbaş besici\",\n    \"küçükbaş besici\",\n    \"canlı hayvan ticareti\",\n    \"hayvancılık\",\n    \"ben besiciyim\",\n    \"celeplik\",\n    \"besicii\",\n    \"hayvan alım satım\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "besici",
+      "çelepçi",
+      "besicilik yaparım",
+      "hayvan yetiştiricisi",
+      "büyükbaş besici",
+      "küçükbaş besici",
+      "canlı hayvan ticareti",
+      "hayvancılık",
+      "ben besiciyim",
+      "celeplik",
+      "besicii",
+      "hayvan alım satım"
+    ]
+  }
+}

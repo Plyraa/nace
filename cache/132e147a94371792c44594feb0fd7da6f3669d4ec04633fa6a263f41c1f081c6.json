@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"1170\", \"alias\": \"bakkalcı\", \"meslek_tanim\": \"Bakkallık, bayilik, büfecilik\", \"nace_code\": \"47.27.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer gıda ürünlerinin perakende ticareti\"}, {\"id\": \"1105\", \"alias\": \"bakkal işletmesi\", \"meslek_tanim\": \"Bakkallık, bayilik, büfecilik\", \"nace_code\": \"35.30.22\", \"nace_label\": \"Soğutulmuş hava ve soğutulmuş su üretim ve dağıtımı (buz üretimi dahil)\"}, {\"id\": \"3568\", \"alias\": \"cammcı\", \"meslek_tanim\": \"Camcılık\", \"nace_code\": \"23.11.01\", \"nace_label\": \"Düz cam imalatı (telli, buzlu cam, renkli veya boyalı düz cam dahil) (dökülmüş, haddelenmiş, çekilmiş, üflenmiş, float, yüzeyi parlatılmış veya cilalanmış ancak başka şekilde işlenmemiş olanlar)\"}, {\"id\": \"8407\", \"alias\": \"haşere ilaçlama\", \"meslek_tanim\": \"Genel temizlik, haşere kontrol faaliyetleri\", \"nace_code\": \"81.23.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer temizlik faaliyetleri (oto yıkama hariç)\"}, {\"id\": \"8919\", \"alias\": \"hırdavat dükkanı\", \"meslek_tanim\": \"Hırdavatçılık\", \"nace_code\": \"47.52.06\", \"nace_label\": \"Sıhhi tesisat ve ısıtma tesisatı malzemesi perakende ticareti (kombiler ve radyatörler hariç)\"}, {\"id\": \"19817\", \"alias\": \"teknoloji mağazası\", \"meslek_tanim\": \"Elektronik ürün ticareti\", \"nace_code\": \"46.15.03\", \"nace_label\": \"Radyo, televizyon ve video cihazlarının toptan satışı ile ilgili aracıların faaliyetleri\"}, {\"id\": \"998\", \"alias\": \"bakım ürünleri ticareti\", \"meslek_tanim\": \"Kozmetik imalatı, ticareti\", \"nace_code\": \"46.49.22\", \"nace_label\": \"Tıraş bıçakları, usturalar ve jiletlerin toptan ticareti\"}, {\"id\": \"22447\", \"alias\": \"çamaşır yıkama ve ütüleme\", \"meslek_tanim\": \"Çamaşırhane, kuru temizleme, ütücülük hizmetleri\", \"nace_code\": \"96.10.03\", \"nace_label\": \"Kuru temizleme hizmetleri\"}, {\"id\": \"7681\", \"alias\": \"gazete bayi\", \"meslek_tanim\": \"Basın, yayım, iletişim\", \"nace_code\": \"59.20.02\", \"nace_label\": \"Ses kayıt ve canlı kayıt faaliyetleri (seslerin, sözlerin ve müziğin ses kayıt stüdyosunun özel teknik ekipmanları kullanılarak kaydedilmesi ile konferans, seminer, konser vb. canlı etkinliklerde yapılan kayıt hizmetleri vb.)\"}, {\"id\": \"21749\", \"alias\": \"yazılım tamiri\", \"meslek_tanim\": \"Bilgisayar kurulumu, onarımı, programlama, veri kurtarma\", \"nace_code\": \"63.91.02\", \"nace_label\": \"Web arama portalı faaliyetleri\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"1170\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"1105\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"3568\",\n      \"verdict\": \"unsure\"\n    },\n    {\n      \"id\": \"8407\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"8919\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"19817\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"998\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"22447\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"7681\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"21749\",\n      \"verdict\": \"no\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "1170",
+        "verdict": "yes"
+      },
+      {
+        "id": "1105",
+        "verdict": "no"
+      },
+      {
+        "id": "3568",
+        "verdict": "unsure"
+      },
+      {
+        "id": "8407",
+        "verdict": "yes"
+      },
+      {
+        "id": "8919",
+        "verdict": "no"
+      },
+      {
+        "id": "19817",
+        "verdict": "no"
+      },
+      {
+        "id": "998",
+        "verdict": "no"
+      },
+      {
+        "id": "22447",
+        "verdict": "yes"
+      },
+      {
+        "id": "7681",
+        "verdict": "no"
+      },
+      {
+        "id": "21749",
+        "verdict": "no"
+      }
+    ]
+  }
+}

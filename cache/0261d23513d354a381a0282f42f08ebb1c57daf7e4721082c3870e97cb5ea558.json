@@ -1,0 +1,36 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.05\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"24.10.02\", \"nace_label\": \"Çelikten açık profil imalatı (sıcak haddeleme, sıcak çekme veya kalıptan çekme işlemlerinden daha ileri işlem görmemiş)\"}, {\"nace_code\": \"24.10.03\", \"nace_label\": \"Demir ve çelikten sıcak veya soğuk çekilmiş yassı hadde ürünleri imalatı (demir veya çelik alaşımlı levha, şerit, sac, teneke sac, vb. dahil)\"}, {\"nace_code\": \"24.10.05\", \"nace_label\": \"Sıcak haddelenmiş demir veya çelikten bar ve çubukların üretilmesi (inşaat demiri dahil)\"}, {\"nace_code\": \"24.10.06\", \"nace_label\": \"Demir veya çelik granül ve demir tozu üretilmesi\"}, {\"nace_code\": \"24.10.07\", \"nace_label\": \"Demir ya da çelik hurdaların yeniden eritilmesi\"}, {\"nace_code\": \"24.10.08\", \"nace_label\": \"Demir cevherinin doğrudan indirgenmesiyle elde edilen demirli ürünler ve diğer sünger demir ürünlerinin imalatı ile elektroliz veya diğer kimyasal yöntemlerle istisnai saflıkta demir üretilmesi\"}, {\"nace_code\": \"24.10.09\", \"nace_label\": \"Çelikten demir yolu ve tramvay yolu yapım malzemesi (birleştirilmemiş raylar ile ray donanımı, aksamı, vb.) ile levha kazıkları (palplanş) ve kaynaklı açık profil imalatı\"}, {\"nace_code\": \"24.10.10\", \"nace_label\": \"Pik demir ve manganezli dökme demir (aynalı demir/spiegeleisen) üretimi (külçe, blok, veya diğer birincil formlarda)\"}, {\"nace_code\": \"24.10.12\", \"nace_label\": \"Ferro alaşımların imalatı (ferro manganez, ferro silisyum, ferro siliko manganez, ferro krom ve diğerleri)\"}, {\"nace_code\": \"24.20.09\", \"nace_label\": \"Çelikten/demirden yapılmış tüp, boru, içi boş profiller ve ilgili bağlantı parçalarının imalatı (sıcak çekilmiş veya sıcak haddelenmiş)\"}, {\"nace_code\": \"24.20.10\", \"nace_label\": \"Çelikten/demirden yapılmış tüp, boru, içi boş profiller ve ilgili bağlantı parçalarının imalatı (soğuk çekilmiş veya soğuk haddelenmiş)\"}, {\"nace_code\": \"24.31.01\", \"nace_label\": \"Barların soğuk çekilmesi\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"demir çelik eşya imalatı\",\n    \"demir çelik ticareti\",\n    \"demirci\",\n    \"çelikçi\",\n    \"demir çelik atölyesi\",\n    \"çelik eşya imalatı\",\n    \"demir malzeme ticareti\",\n    \"demir profil imalatı\",\n    \"ben demirciyim\",\n    \"ben çelik eşya imal ediyorum\",\n    \"demir çelik işleri yapıyorum\",\n    \"demirçelik eşya\",\n    \"demir çelik eşya imalatı ve ticareti\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "demir çelik eşya imalatı",
+      "demir çelik ticareti",
+      "demirci",
+      "çelikçi",
+      "demir çelik atölyesi",
+      "çelik eşya imalatı",
+      "demir malzeme ticareti",
+      "demir profil imalatı",
+      "ben demirciyim",
+      "ben çelik eşya imal ediyorum",
+      "demir çelik işleri yapıyorum",
+      "demirçelik eşya",
+      "demir çelik eşya imalatı ve ticareti"
+    ]
+  }
+}

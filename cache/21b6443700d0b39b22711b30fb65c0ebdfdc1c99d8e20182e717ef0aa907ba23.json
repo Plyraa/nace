@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "resolver_fallback",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe serbest meslek/sektör ifadesini verilen NACE kısa listesinden seçen bir resolver'sın. Sadece geçerli JSON döndür; listede olmayan kod üretme."
+      },
+      {
+        "role": "user",
+        "content": "{\"user_text\": \"bayi işletiyorum\", \"normalized_text\": \"bayi\", \"buckets\": {\"manufacturing\": \"Gıda/tekstil hariç imalat, üretim ve onarım ağırlıklı sanayi.\", \"trade\": \"Perakende, toptan satış, bayilik, e-ticaret ve aracılık.\", \"food\": \"Gıda üretimi, gıda perakendesi, lokanta, kafe ve içecek faaliyetleri.\", \"textile\": \"Tekstil, konfeksiyon, ayakkabı, deri ve ilgili bakım/ticaret.\", \"construction\": \"İnşaat, tesisat, yapı malzemesi ve yapı destek işleri.\", \"logistics\": \"Yolcu/yük taşımacılığı, depolama, otopark, kurye ve taşıma destekleri.\", \"technology\": \"Yazılım, bilişim, telekom, elektronik cihaz ve dijital altyapı.\", \"services\": \"Kişisel, mesleki, eğitim, sağlık, sanat, turizm ve bakım hizmetleri.\", \"agriculture\": \"Tarım, hayvancılık, ormancılık, balıkçılık ve zirai destek.\", \"other\": \"Yukarıdaki kovalara net oturmayan veya kamusal/karma faaliyetler.\"}, \"candidate_nace_codes\": [{\"nace_code\": \"46.43.01\", \"nace_label\": \"Beyaz eşya toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Beyaz eşya ticareti\"}, {\"nace_code\": \"23.12.01\", \"nace_label\": \"Cam ayna imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Camcılık\"}, {\"nace_code\": \"20.59.02\", \"nace_label\": \"Tutkal imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\"}, {\"nace_code\": \"46.21.01\", \"nace_label\": \"Hayvan yemi toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Evcil hayvan bakımı, ticareti\"}, {\"nace_code\": \"96.99.11\", \"nace_label\": \"Ayakkabı boyama hizmetleri\", \"bucket\": \"services\", \"meslek_tanim\": \"Ayakkabıcılık\"}, {\"nace_code\": \"13.92.09\", \"nace_label\": \"Bayrak, sancak ve flama imalatı\", \"bucket\": \"textile\", \"meslek_tanim\": \"Dokumacılık\"}, {\"nace_code\": \"46.47.04\", \"nace_label\": \"Büro mobilyalarının toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Mobilya ticareti\"}, {\"nace_code\": \"13.96.06\", \"nace_label\": \"Kord bezi imalatı\", \"bucket\": \"textile\", \"meslek_tanim\": \"Dokumacılık\"}, {\"nace_code\": \"11.05.01\", \"nace_label\": \"Bira imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Meşrubat imalatı, ticareti\"}, {\"nace_code\": \"11.06.01\", \"nace_label\": \"Malt imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Meşrubat imalatı, ticareti\"}, {\"nace_code\": \"11.07.04\", \"nace_label\": \"Boza imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Meşrubat imalatı, ticareti\"}, {\"nace_code\": \"43.34.01\", \"nace_label\": \"Binaların iç ve dış boyama işleri\", \"bucket\": \"construction\", \"meslek_tanim\": \"İnşaatçılık\"}, {\"nace_code\": \"43.34.03\", \"nace_label\": \"Bina dışı yapıların boyama işleri\", \"bucket\": \"construction\", \"meslek_tanim\": \"İnşaatçılık\"}, {\"nace_code\": \"14.24.01\", \"nace_label\": \"Deri giyim eşyası imalatı (deri ayakkabı hariç)\", \"bucket\": \"textile\", \"meslek_tanim\": \"Deri giyim eşyası imalatı, onarımı\"}, {\"nace_code\": \"13.92.05\", \"nace_label\": \"Battaniye imalatı\", \"bucket\": \"textile\", \"meslek_tanim\": \"Ev tekstil ürünleri imalatı, ticareti\"}, {\"nace_code\": \"20.11.01\", \"nace_label\": \"Sanayi gazları imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\"}, {\"nace_code\": \"47.55.07\", \"nace_label\": \"Bahçe mobilyalarının perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Mobilya ticareti\"}, {\"nace_code\": \"47.55.08\", \"nace_label\": \"Yatak perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Mobilya ticareti\"}, {\"nace_code\": \"03.21.01\", \"nace_label\": \"Denizde yapılan balık yetiştiriciliği\", \"bucket\": \"agriculture\", \"meslek_tanim\": \"Balıkçılık\"}, {\"nace_code\": \"20.42.02\", \"nace_label\": \"Kolonya imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Kozmetik imalatı, ticareti\"}, {\"nace_code\": \"46.36.03\", \"nace_label\": \"Şeker toptan ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Bakkallık, bayilik, büfecilik\"}, {\"nace_code\": \"47.71.07\", \"nace_label\": \"Deri veya deri bileşimli giyim eşyası perakende ticareti\", \"bucket\": \"textile\", \"meslek_tanim\": \"Deri giyim eşyası ticareti\"}, {\"nace_code\": \"20.30.17\", \"nace_label\": \"Elektrostatik toz boya imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\"}, {\"nace_code\": \"31.00.90\", \"nace_label\": \"Diğer mobilyaların imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Mobilya imalatı\"}, {\"nace_code\": \"11.02.02\", \"nace_label\": \"Üzüm şırası imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Meşrubat imalatı, ticareti\"}, {\"nace_code\": \"13.30.06\", \"nace_label\": \"Serigrafi faaliyetleri\", \"bucket\": \"textile\", \"meslek_tanim\": \"Matbaacılık\"}, {\"nace_code\": \"46.42.08\", \"nace_label\": \"Ayakkabı malzemeleri toptan ticareti\", \"bucket\": \"textile\", \"meslek_tanim\": \"Ayakkabıcılık\"}, {\"nace_code\": \"95.29.05\", \"nace_label\": \"Bisiklet onarımı\", \"bucket\": \"services\", \"meslek_tanim\": \"Motosiklet, bisiklet imalatı, onarımı\"}, {\"nace_code\": \"20.59.20\", \"nace_label\": \"Barut vb. itici tozların imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\"}, {\"nace_code\": \"56.22.01\", \"nace_label\": \"Kantinlerin faaliyetleri\", \"bucket\": \"food\", \"meslek_tanim\": \"Kantincilik\"}], \"instruction\": \"En olası ilk 3 NACE kodunu sırala. Kodlar sadece candidate_nace_codes içinden olmalı.\", \"schema\": {\"candidates\": [{\"nace_code\": \"string\", \"bucket\": \"string\", \"confidence\": 0.0}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\"candidates\":[{\"nace_code\":\"46.43.01\",\"bucket\":\"trade\",\"confidence\":0.8},{\"nace_code\":\"46.47.04\",\"bucket\":\"trade\",\"confidence\":0.7},{\"nace_code\":\"47.55.07\",\"bucket\":\"trade\",\"confidence\":0.6}]}",
+  "parsed": {
+    "candidates": [
+      {
+        "nace_code": "46.43.01",
+        "bucket": "trade",
+        "confidence": 0.8
+      },
+      {
+        "nace_code": "46.47.04",
+        "bucket": "trade",
+        "confidence": 0.7
+      },
+      {
+        "nace_code": "47.55.07",
+        "bucket": "trade",
+        "confidence": 0.6
+      }
+    ]
+  }
+}

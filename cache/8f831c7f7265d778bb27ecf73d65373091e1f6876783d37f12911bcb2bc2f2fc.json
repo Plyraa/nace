@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"D.19\", \"meslek_tanim\": \"Meşrubat imalatı, ticareti\", \"sektor_tanim\": \"GIDA, TARIM\", \"nace_examples\": [{\"nace_code\": \"10.32.01\", \"nace_label\": \"Katkısız sebze ve meyve suları imalatı\"}, {\"nace_code\": \"10.32.02\", \"nace_label\": \"Konsantre meyve ve sebze suyu imalatı\"}, {\"nace_code\": \"10.51.04\", \"nace_label\": \"Süt temelli hafif içeceklerin imalatı (kefir, salep vb.)\"}, {\"nace_code\": \"11.01.01\", \"nace_label\": \"Damıtılmış alkollü içeceklerin imalatı (viski, brendi, cin, likör, rakı, votka, kanyak vb.)\"}, {\"nace_code\": \"11.01.03\", \"nace_label\": \"Etil alkol üretimi (doğal özellikleri değiştirilmemiş/tağyir edilmemiş, alkol derecesi <%80)\"}, {\"nace_code\": \"11.02.01\", \"nace_label\": \"Üzümden şarap, köpüklü şarap, şampanya vb. imalatı\"}, {\"nace_code\": \"11.02.02\", \"nace_label\": \"Üzüm şırası imalatı\"}, {\"nace_code\": \"11.03.01\", \"nace_label\": \"Elma şarabı ve diğer fermente meyve içeceklerinin imalatı\"}, {\"nace_code\": \"11.04.02\", \"nace_label\": \"Diğer damıtılmamış fermente içeceklerin imalatı (vermut ve benzeri içkiler dahil)\"}, {\"nace_code\": \"11.05.01\", \"nace_label\": \"Bira imalatı\"}, {\"nace_code\": \"11.06.01\", \"nace_label\": \"Malt imalatı\"}, {\"nace_code\": \"11.07.01\", \"nace_label\": \"Doğal veya suni maden sularının üretimi (tatlandırılmış ve aromalandırılmış olanlar dahil)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"meşrubatçı\",\n    \"içecekçi\",\n    \"ben meşrubat yapıyorum\",\n    \"meyve suyu imalathanesi\",\n    \"gazoz üreticisi\",\n    \"içecek toptancısı\",\n    \"içecek imalatçısı\",\n    \"soğuk içecek dükkanı\",\n    \"meyve suyu sıkma\",\n    \"meşrubat imalatı\",\n    \"içecek üreticisi\",\n    \"meşrubat satıcısı\",\n    \"şerbetçi\",\n    \"içecek dükkanı\",\n    \"meşrubatçı dükkanı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "meşrubatçı",
+      "içecekçi",
+      "ben meşrubat yapıyorum",
+      "meyve suyu imalathanesi",
+      "gazoz üreticisi",
+      "içecek toptancısı",
+      "içecek imalatçısı",
+      "soğuk içecek dükkanı",
+      "meyve suyu sıkma",
+      "meşrubat imalatı",
+      "içecek üreticisi",
+      "meşrubat satıcısı",
+      "şerbetçi",
+      "içecek dükkanı",
+      "meşrubatçı dükkanı"
+    ]
+  }
+}

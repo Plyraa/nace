@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"17046\", \"alias\": \"otel işletmecisi\", \"meslek_tanim\": \"Otel, pansiyon, yurt işletmeciliği\", \"nace_code\": \"55.10.05\", \"nace_label\": \"Otel vb. konaklama yerlerinin faaliyetleri (günlük temizlik ve yatak yapma hizmeti sağlanan yerlerin faaliyetleri) (kendi müşterilerine restoran hizmeti verenler ile devre mülkler hariç)\"}, {\"id\": \"11277\", \"alias\": \"kauçuk ürünleri ticareti\", \"meslek_tanim\": \"Kauçuk, plastik ürünlerin imalatı, ticareti\", \"nace_code\": \"22.22.43\", \"nace_label\": \"Plastik ambalaj malzemeleri imalatı\"}, {\"id\": \"2705\", \"alias\": \"bisiklet yedek parça\", \"meslek_tanim\": \"Motosiklet, bisiklet imalatı, onarımı\", \"nace_code\": \"30.99.01\", \"nace_label\": \"Mekanik hareket ettirici tertibatı bulunmayan araçların imalatı (alışveriş arabaları, sanayi el arabaları, işportacı arabaları, bagaj arabaları, elle çekilen golf arabaları, hasta nakli için arabalar, kızaklar dahil)\"}, {\"id\": \"8758\", \"alias\": \"hayvan alım satım\", \"meslek_tanim\": \"Besicilik, celeplik\", \"nace_code\": \"47.73.02\", \"nace_label\": \"Veterinerlik ürünlerinin perakende ticareti\"}, {\"id\": \"13380\", \"alias\": \"lastik ürünleri\", \"meslek_tanim\": \"Kauçuk, plastik ürünlerin imalatı, ticareti\", \"nace_code\": \"22.12.11\", \"nace_label\": \"Kauçuktan giyim eşyası ve giysi aksesuarlarının imalatı (giysiler, eldivenler vb.)\"}, {\"id\": \"8812\", \"alias\": \"hayvancılık\", \"meslek_tanim\": \"Besicilik, celeplik\", \"nace_code\": \"47.73.02\", \"nace_label\": \"Veterinerlik ürünlerinin perakende ticareti\"}, {\"id\": \"21071\", \"alias\": \"temizlik ürünleri ticareti\", \"meslek_tanim\": \"Temizlik malzemeleri imalatı, ticareti\", \"nace_code\": \"20.13.04\", \"nace_label\": \"Karbonatların imalatı (sodyum, kalsiyum ve diğerleri) (çamaşır sodası dahil)\"}, {\"id\": \"16614\", \"alias\": \"nikelajcı\", \"meslek_tanim\": \"Kalaycılık, kaplamacılık\", \"nace_code\": \"25.51.09\", \"nace_label\": \"Metallerin diğer malzemelerle kaplanması (ısıl işlem hariç)\"}, {\"id\": \"19380\", \"alias\": \"sarkuteri imalatı ve ticareti\", \"meslek_tanim\": \"Şarküteri ürünleri imalatı, ticareti\", \"nace_code\": \"10.41.02\", \"nace_label\": \"Bitkisel sıvı yağ (yenilebilen) imalatı (soya, susam, haşhaş, pamuk, fındık, kolza, hardal vb. yağlar) (zeytin yağı, ayçiçeği yağı ve mısır yağı hariç)\"}, {\"id\": \"5929\", \"alias\": \"dorse imalatı\", \"meslek_tanim\": \"Karoser imalatı, kaportacılık\", \"nace_code\": \"29.20.05\", \"nace_label\": \"Karavan tipinde treyler (römork) ve yarı treyler (yarı römork) imalatı - ev olarak veya kamp için kullanılanlar\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"17046\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"11277\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"2705\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"8758\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"13380\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"8812\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"21071\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"16614\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"19380\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"5929\",\n      \"verdict\": \"yes\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "17046",
+        "verdict": "yes"
+      },
+      {
+        "id": "11277",
+        "verdict": "no"
+      },
+      {
+        "id": "2705",
+        "verdict": "no"
+      },
+      {
+        "id": "8758",
+        "verdict": "no"
+      },
+      {
+        "id": "13380",
+        "verdict": "no"
+      },
+      {
+        "id": "8812",
+        "verdict": "no"
+      },
+      {
+        "id": "21071",
+        "verdict": "no"
+      },
+      {
+        "id": "16614",
+        "verdict": "yes"
+      },
+      {
+        "id": "19380",
+        "verdict": "no"
+      },
+      {
+        "id": "5929",
+        "verdict": "yes"
+      }
+    ]
+  }
+}

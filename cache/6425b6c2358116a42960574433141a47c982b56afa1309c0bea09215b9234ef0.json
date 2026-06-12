@@ -1,0 +1,20 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"2643\", \"alias\": \"bitkisel sulama\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\", \"nace_code\": \"02.10.01\", \"nace_label\": \"Baltalık olarak işletilen ormanların yetiştirilmesi (kağıtlık ve yakacak odun üretimine yönelik olanlar dahil)\"}, {\"id\": \"1750\", \"alias\": \"ben gözlükçüyüm\", \"meslek_tanim\": \"Optik ürünlerin imalatı, ticareti\", \"nace_code\": \"26.70.11\", \"nace_label\": \"Objektif merceği, levha ve tabaka halinde polarizan madde, renk filtresi, optik mercek, prizma, ayna ve diğer optik elemanlar ile dürbün, optik mikroskop, optik teleskop ve diğer astronomik aletler ile bunların aksam ve parçalarının imalatı\"}, {\"id\": \"8748\", \"alias\": \"hububat silosu işletmecisi\", \"meslek_tanim\": \"Yük taşımacılığını destekleyici faaliyetler\", \"nace_code\": \"52.25.99\", \"nace_label\": \"Başke yerde sınıflandırılmamış taşımacılığı destekleyici diğer faaliyetler (grup sevkiyatının organizasyonu, malların taşınması sırasında korunması için geçici olarak kasalara vb. yerleştirilmesi, yüklerin birleştirilmesi, gruplanması ve parçalara ayırılması, vb. dahil)\"}, {\"id\": \"11344\", \"alias\": \"klima tamircisi\", \"meslek_tanim\": \"İklimlendirme, soğutma sistemi imalatı, kurulumu, onarımı\", \"nace_code\": \"28.25.02\", \"nace_label\": \"Sanayi tipi fan ve vantilatörlerin imalatı (çatı havalandırma pervaneleri dahil)\"}, {\"id\": \"3034\", \"alias\": \"boya işi\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\", \"nace_code\": \"20.30.12\", \"nace_label\": \"Macun imalatı (dolgu, cam, sıvama için olanlar ile üstübeç, vb. dahil)\"}, {\"id\": \"8924\", \"alias\": \"hırdavat malzemeleri\", \"meslek_tanim\": \"Hırdavatçılık\", \"nace_code\": \"47.52.02\", \"nace_label\": \"Hırdavat (nalburiye) ve el aletleri perakende ticareti\"}, {\"id\": \"3905\", \"alias\": \"demir malzeme ticareti\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"46.64.10\", \"nace_label\": \"Silah ve mühimmat toptan ticareti\"}, {\"id\": \"14776\", \"alias\": \"marangozluk ürünleri\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"16.28.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer ağaç ürünleri imalatı; mantardan, saz, saman ve benzeri örme malzemelerinden yapılmış ürünlerin imalatı\"}, {\"id\": \"10808\", \"alias\": \"kayıtlı ortam imalatçısı\", \"meslek_tanim\": \"Kayıtlı medyaların imalatı, kiralanması, ticareti\", \"nace_code\": \"18.20.02\", \"nace_label\": \"Ses ve görüntü kayıtlarının çoğaltılması hizmetleri (CD'lerin, DVD'lerin, kasetlerin ve benzerlerinin asıl (master) kopyalarından çoğaltılması)\"}, {\"id\": \"17922\", \"alias\": \"pvc ticareti\", \"meslek_tanim\": \"PVC ürün ticareti\", \"nace_code\": \"46.83.11\", \"nace_label\": \"Plastik kapı, pencere ve bunların kasaları ile kapı eşikleri, panjurlar, jaluziler, storlar vb. eşyaların toptan ticareti\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{}",
+  "parsed": {}
+}

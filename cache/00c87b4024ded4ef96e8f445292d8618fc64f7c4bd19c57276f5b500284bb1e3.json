@@ -1,0 +1,20 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"F.16\", \"meslek_tanim\": \"Matbaacılık\", \"sektor_tanim\": \"HEDİYELİK EŞYA, EĞİTİM, BASIM, FOTOĞRAF, ÇEŞİTLİ MALLAR\", \"nace_examples\": [{\"nace_code\": \"13.30.06\", \"nace_label\": \"Serigrafi faaliyetleri\"}, {\"nace_code\": \"18.11.01\", \"nace_label\": \"Gazetelerin basımı (haftada dört veya daha fazla yayınlananlar)\"}, {\"nace_code\": \"18.12.01\", \"nace_label\": \"Çıkartma, takvim, ticari katalog, tanıtım broşürü, poster, satış bülteni, kartpostal, davetiye ve tebrik kartları, yıllık, rehber, resim, çizim ve boyama kitapları, çizgi roman vb. basım hizmetleri\"}, {\"nace_code\": \"18.12.02\", \"nace_label\": \"Gazetelerin, dergilerin ve süreli yayınların basım hizmetleri (haftada dört kereden daha az yayınlananlar)\"}, {\"nace_code\": \"18.12.03\", \"nace_label\": \"Ansiklopedi, sözlük, kitap, kitapçık, müzik eserleri ve müzik el yazmaları, atlas, harita vb. basım hizmetleri\"}, {\"nace_code\": \"18.12.04\", \"nace_label\": \"Röprodüksiyon basımı (bir sanat eserinin aslını bozmadan basılması)\"}, {\"nace_code\": \"18.12.06\", \"nace_label\": \"Posta pulu, damga pulu, matbu belgeler, tapu senetleri, akıllı kart, çek defterleri, kağıt para ve diğer değerli kağıtların ve benzerlerinin basım hizmetleri\"}, {\"nace_code\": \"18.12.07\", \"nace_label\": \"Plastik, cam, metal, ağaç ve seramik üstüne baskı hizmetleri\"}, {\"nace_code\": \"18.13.01\", \"nace_label\": \"Basımda kullanmak üzere baskı klişeleri ya da silindirleri ile diğer basım unsurlarının üretilmesi (klişecilik vb.) ile mizanpaj, dizgi, tabaka yapım hizmetleri, gravür baskı için silindirlerin kazınması veya asitle aşındırılması vb. hizmetler\"}, {\"nace_code\": \"18.13.02\", \"nace_label\": \"Basım öncesi bilgisayar destekli hizmetler (bilgisayar destekli sayfa tasarımı ile saydam, asetat, reprografik sunum araçları ve diğer sayısal sunum ortamları, taslaklar, planlar vb. baskı ürünlerinin tasarlanması) (masa üstü yayımcılık dahil)\"}, {\"nace_code\": \"18.14.01\", \"nace_label\": \"Ciltçilik ve ilgili hizmetler (katlama, birleştirme, dikme, yapıştırma, kesme, kapak takma gibi işlemler ile damgalama, Braille alfabesi kopyalama vb. hizmetler)\"}, {\"nace_code\": \"58.19.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer yayımcılık faaliyetleri (fotoğraf, kartpostal, tebrik kartları vb. ile katalog, poster, reklam materyali vb.)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{}",
+  "parsed": {}
+}

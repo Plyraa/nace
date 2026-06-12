@@ -1,0 +1,37 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"A.02\", \"meslek_tanim\": \"Kerestecilik\", \"sektor_tanim\": \"AĞAÇ İŞLERİ\", \"nace_examples\": [{\"nace_code\": \"02.40.01\", \"nace_label\": \"Ormanda ağaçların kesilmesi, dallarından temizlenmesi, soyulması vb. destekleyici faaliyetler\"}, {\"nace_code\": \"02.40.02\", \"nace_label\": \"Ormanda kesilmiş ve temizlenmiş ağaçların taşınması, istiflenmesi ve yüklenmesi faaliyetleri\"}, {\"nace_code\": \"16.11.01\", \"nace_label\": \"Kereste imalatı (ağaçların biçilmesi, planyalanması, rendelenmesi ve şekillendirilmesi faaliyetleri)\"}, {\"nace_code\": \"16.12.00\", \"nace_label\": \"Ahşabın işlenmesi ve bitirilmesi (bir ücret veya sözleşmeye dayalı olarak gerçekleştirilen)\"}, {\"nace_code\": \"46.13.02\", \"nace_label\": \"Kereste ve kereste ürünlerinin toptan satışı ile ilgili aracıların faaliyetleri\"}, {\"nace_code\": \"46.83.02\", \"nace_label\": \"Ağacın ilk işlenmesinden elde edilen ürünlerin toptan ticareti\"}, {\"nace_code\": \"46.83.12\", \"nace_label\": \"İşlenmemiş ağaç (tomruk-ham haldeki) toptan ticareti (orman ağaçları, endüstriyel odunlar vb.)\"}, {\"nace_code\": \"47.52.10\", \"nace_label\": \"Ağacın ilk işlenmesinden elde edilen ürünlerin perakende ticareti (kereste, ağaç talaşı ve yongası, kontrplak, yonga ve lifli levhalar (mdf, sunta vb.), parke, ahşap varil, fıçı ve diğer muhafazalar, vb.)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"kerestecim\",\n    \"kereste ustası\",\n    \"ağaç işleri atölyem\",\n    \"keresteci dükkanım\",\n    \"tomruk kesim işi\",\n    \"kereste satış\",\n    \"biçme planya\",\n    \"kereste halledici\",\n    \"orman ürünleri kereste\",\n    \"ağaç kesme ve biçme\",\n    \"nakliye ve istif\",\n    \"rendeleme atölyesi\",\n    \"keresteci abim\",\n    \"kereste doğrama\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "kerestecim",
+      "kereste ustası",
+      "ağaç işleri atölyem",
+      "keresteci dükkanım",
+      "tomruk kesim işi",
+      "kereste satış",
+      "biçme planya",
+      "kereste halledici",
+      "orman ürünleri kereste",
+      "ağaç kesme ve biçme",
+      "nakliye ve istif",
+      "rendeleme atölyesi",
+      "keresteci abim",
+      "kereste doğrama"
+    ]
+  }
+}

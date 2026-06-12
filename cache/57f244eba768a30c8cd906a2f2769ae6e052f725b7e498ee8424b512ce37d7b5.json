@@ -1,0 +1,20 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"9366\", \"alias\": \"İnsaat malzemeleri imalati\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"23.91.01\", \"nace_label\": \"Aşındırıcı ürünlerin imalatı (değirmen taşları, bileği taşı, zımpara taşı vb.)(dokuma tekstil kumaşlarına, kağıt ve mukavvaya tutturulmuş zımparalar hariç)\"}, {\"id\": \"18597\", \"alias\": \"satılık emlak\", \"meslek_tanim\": \"Emlakçılık\", \"nace_code\": \"68.31.01\", \"nace_label\": \"Gayrimenkul faaliyetleri için aracılık hizmeti faaliyetleri\"}, {\"id\": \"15860\", \"alias\": \"odun kömürü satışı\", \"meslek_tanim\": \"Yakacak imalatı, ticareti\", \"nace_code\": \"47.78.02\", \"nace_label\": \"Kömür ve yakacak odun perakende ticareti\"}, {\"id\": \"7389\", \"alias\": \"fitness ekipmanları\", \"meslek_tanim\": \"Spor malzemeleri imalatı, ticareti\", \"nace_code\": \"32.30.19\", \"nace_label\": \"Spor amaçlı dağcılık, avcılık veya balıkçılık eşyalarının imalatı (kasklar, olta kamışları, olta iğneleri ve kancaları, otomatik olta makaraları, el kepçeleri, kelebek ağları, yapma balıklar, sinekler gibi suni yemler, kurşunlar, yapma kuşlar vb.)\"}, {\"id\": \"3588\", \"alias\": \"canlı hayvan ticareti\", \"meslek_tanim\": \"Besicilik, celeplik\", \"nace_code\": \"01.62.01\", \"nace_label\": \"Hayvan üretimini destekleyici olarak sürülerin güdülmesi, başkalarına ait hayvanların beslenmesi, kümeslerin temizlenmesi, kırkma, sağma, barınak sağlama, nalbantlık vb. faaliyetler\"}, {\"id\": \"3689\", \"alias\": \"danışman\", \"meslek_tanim\": \"Arzuhalcilik, danışmanlık, bilgi hizmetleri\", \"nace_code\": \"74.99.03\", \"nace_label\": \"İşyeri komisyonculuğu faaliyetleri (küçük ve orta ölçekli işletmelerin alım ve satımının düzenlenmesi vb.)\"}, {\"id\": \"17041\", \"alias\": \"pazarci\", \"meslek_tanim\": \"Şarküteri ürünleri imalatı, ticareti\", \"nace_code\": \"10.12.03\", \"nace_label\": \"Kümes hayvanlarının yağlarının sofra yağına çevrilmesi\"}, {\"id\": \"13885\", \"alias\": \"makine onaran\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.42.02\", \"nace_label\": \"Takım tezgahları ve el aletleri için takım tutucuları ve kendinden açılan pafta kafaları, işlenecek parça tutucuları, bölme başlıkları ve diğer özel ek parçalar, dingiller, yüksükler ve rakorlar ile fikstürlerin imalatı\"}, {\"id\": \"16775\", \"alias\": \"oyuncak üretimi\", \"meslek_tanim\": \"Oyuncak imalatı, ticareti\", \"nace_code\": \"46.49.04\", \"nace_label\": \"Oyun ve oyuncak toptan ticareti\"}, {\"id\": \"16243\", \"alias\": \"otelim\", \"meslek_tanim\": \"Otel, pansiyon, yurt işletmeciliği\", \"nace_code\": \"55.90.90\", \"nace_label\": \"Diğer konaklama yerlerinin faaliyetleri (başka bir birim tarafından işletildiğinde yataklı vagonlar vb. dahil; misafirhaneler, öğretmen evi vb. hariç)\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{}",
+  "parsed": {}
+}

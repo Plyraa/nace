@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"E.12\", \"meslek_tanim\": \"Konfeksiyonculuk\", \"sektor_tanim\": \"GİYİM, DERİ ÜRÜN, EV TEKSTİLİ, DOKUMA\", \"nace_examples\": [{\"nace_code\": \"14.10.01\", \"nace_label\": \"Giyim eşyası imalatı (örgü veya tığ işi kumaştan olanlar) (spor ve bebek giysileri hariç)\"}, {\"nace_code\": \"14.10.02\", \"nace_label\": \"Bebek giyim eşyası imalatı (örgü veya tığ işi kumaştan)\"}, {\"nace_code\": \"14.10.03\", \"nace_label\": \"Spor ve antrenman giysileri, kayak kıyafetleri, yüzme kıyafetleri vb. imalatı (örgü veya tığ işi kumaştan olanlar)\"}, {\"nace_code\": \"14.10.04\", \"nace_label\": \"Çorap imalatı (örme ve tığ işi olan külotlu çorap, tayt çorap, kısa kadın çorabı, erkek çorabı, patik ve diğer çoraplar)\"}, {\"nace_code\": \"14.21.01\", \"nace_label\": \"Dış giyim eşyası imalatı (örgü veya tığ işi olanlar hariç) (spor ve bebek giysileri hariç)\"}, {\"nace_code\": \"14.21.02\", \"nace_label\": \"Bebek dış giyim eşyası imalatı (örgü veya tığ işi kumaştan olanlar hariç)\"}, {\"nace_code\": \"14.21.03\", \"nace_label\": \"Gelinlik imalatı\"}, {\"nace_code\": \"14.22.01\", \"nace_label\": \"Atlet, fanila, külot, slip, iç etek, kombinezon, jüp, jüpon, sütyen, korse vb. iç çamaşırı imalatı (örgü veya tığ işi kumaştan olanlar hariç)\"}, {\"nace_code\": \"14.22.02\", \"nace_label\": \"Gecelik, sabahlık, pijama, bornoz ve ropdöşambır imalatı (örgü veya tığ işi kumaştan olanlar hariç)\"}, {\"nace_code\": \"14.22.03\", \"nace_label\": \"Bebek iç giyim eşyalarının imalatı (örgü veya tığ işi kumaştan olanlar hariç)\"}, {\"nace_code\": \"14.22.04\", \"nace_label\": \"Çorap bağları, jartiyer, pantolon askıları vb. iç giyim eşyalarının imalatı (her tür kumaştan)\"}, {\"nace_code\": \"14.23.00\", \"nace_label\": \"İş giysisi imalatı (dikişsiz plastik olanlar ile ateşe dayanıklı ve koruyucu güvenlik kıyafetleri hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"konfeksiyoncu\",\n    \"konfeksiyon atölyesi\",\n    \"giyim imalatı\",\n    \"dikim atölyesi\",\n    \"terzi\",\n    \"giysi üretimi\",\n    \"konfeksiyon işi\",\n    \"konfeksiyon dükkanı\",\n    \"giyim üretimi\",\n    \"konfeksiyoncu dükkanı\",\n    \"konfeksiyon işletmesi\",\n    \"konfeksiyon imalatı\",\n    \"konfeksiyoncu atölyesi\",\n    \"konfeksiyon işi yapıyorum\",\n    \"konfeksiyoncu atölyem\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "konfeksiyoncu",
+      "konfeksiyon atölyesi",
+      "giyim imalatı",
+      "dikim atölyesi",
+      "terzi",
+      "giysi üretimi",
+      "konfeksiyon işi",
+      "konfeksiyon dükkanı",
+      "giyim üretimi",
+      "konfeksiyoncu dükkanı",
+      "konfeksiyon işletmesi",
+      "konfeksiyon imalatı",
+      "konfeksiyoncu atölyesi",
+      "konfeksiyon işi yapıyorum",
+      "konfeksiyoncu atölyem"
+    ]
+  }
+}

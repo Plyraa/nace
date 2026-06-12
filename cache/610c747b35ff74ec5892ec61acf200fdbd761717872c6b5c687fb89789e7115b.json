@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.12\", \"meslek_tanim\": \"Karoser imalatı, kaportacılık\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"29.20.01\", \"nace_label\": \"Treyler (römork), yarı treyler (yarı römork) ve mekanik hareket ettirici tertibatı bulunmayan diğer araçların parçalarının imalatı (bu araçların karoserleri, kasaları, aksları ve diğer parçaları)\"}, {\"nace_code\": \"29.20.02\", \"nace_label\": \"Motorlu kara taşıtları için karoser, kabin, kupa, dorse ve damper imalatı (otomobil, kamyon, kamyonet, otobüs, minibüs, traktör, damperli kamyon ve özel amaçlı motorlu kara taşıtlarının karoserleri)\"}, {\"nace_code\": \"29.20.04\", \"nace_label\": \"Treyler (römork) ve yarı treyler (yarı römork) imalatı, römorklar için şasi imalatı (karavan tipinde olanlar ve tarımsal amaçlı olanlar hariç)\"}, {\"nace_code\": \"29.20.05\", \"nace_label\": \"Karavan tipinde treyler (römork) ve yarı treyler (yarı römork) imalatı - ev olarak veya kamp için kullanılanlar\"}, {\"nace_code\": \"29.20.06\", \"nace_label\": \"Motorlu kara taşıtlarının modifiye edilmesi ve karoser hizmetleri\"}, {\"nace_code\": \"30.99.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer ulaşım ekipmanlarının imalatı\"}, {\"nace_code\": \"33.12.30\", \"nace_label\": \"Tarımsal amaçlı kullanılan römorkların onarım ve bakımı\"}, {\"nace_code\": \"95.31.04\", \"nace_label\": \"Motorlu kara taşıtlarının karoser ve kaporta onarımı vb. faaliyetleri\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"karosercim\",\n    \"kaportacı\",\n    \"karoserci\",\n    \"dorseci\",\n    \"römorkçu\",\n    \"karoser yapıyorum\",\n    \"kaporta ustası\",\n    \"karoser imalatı\",\n    \"dorse imalatı\",\n    \"römork imalatı\",\n    \"karoserci abi\",\n    \"kaportacı ustası\",\n    \"karoser modifiye\",\n    \"karoser onarım\",\n    \"karoserciyim\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "karosercim",
+      "kaportacı",
+      "karoserci",
+      "dorseci",
+      "römorkçu",
+      "karoser yapıyorum",
+      "kaporta ustası",
+      "karoser imalatı",
+      "dorse imalatı",
+      "römork imalatı",
+      "karoserci abi",
+      "kaportacı ustası",
+      "karoser modifiye",
+      "karoser onarım",
+      "karoserciyim"
+    ]
+  }
+}

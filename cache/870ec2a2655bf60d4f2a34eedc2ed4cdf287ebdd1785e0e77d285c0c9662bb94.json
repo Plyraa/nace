@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.19\", \"meslek_tanim\": \"Oto boyacılık\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"95.31.05\", \"nace_label\": \"Motorlu kara taşıtlarının boyanması faaliyetleri\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"oto boyacı\",\n    \"araba boyacısı\",\n    \"boya ustası\",\n    \"oto boya\",\n    \"araba boyama\",\n    \"boyacı\",\n    \"oto boyacılık\",\n    \"araba boyacılık\",\n    \"boya işleri\",\n    \"oto boya yaparım\",\n    \"araba boya yaparım\",\n    \"boya ustasıyım\",\n    \"oto boyacıyım\",\n    \"oto boya dükkanı\",\n    \"araba boya dükkanı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "oto boyacı",
+      "araba boyacısı",
+      "boya ustası",
+      "oto boya",
+      "araba boyama",
+      "boyacı",
+      "oto boyacılık",
+      "araba boyacılık",
+      "boya işleri",
+      "oto boya yaparım",
+      "araba boya yaparım",
+      "boya ustasıyım",
+      "oto boyacıyım",
+      "oto boya dükkanı",
+      "araba boya dükkanı"
+    ]
+  }
+}

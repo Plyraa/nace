@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"G.04\", \"meslek_tanim\": \"Dövme salonu işletmeciliği\", \"sektor_tanim\": \"KUAFÖR, BERBER, TEMİZLİK, SPOR, KOZMETİK, SAĞLIK\", \"nace_examples\": [{\"nace_code\": \"96.99.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer hizmet faaliyetleri (dövme ve piercing hizmetleri vb.)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"dövmecim\",\n    \"dövmeci\",\n    \"dövme salonum\",\n    \"dövme yapıyorum\",\n    \"dövme sanatçısıyım\",\n    \"dövme ustası\",\n    \"dövme yaptır\",\n    \"döve salonu\",\n    \"dovmeci\",\n    \"dövme salonu işletmesi\",\n    \"dövme hizmeti\",\n    \"dövme stüdyosu\",\n    \"tattoo yapıyorum\",\n    \"tatoo yapıyorum\",\n    \"dövmeciyim\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "dövmecim",
+      "dövmeci",
+      "dövme salonum",
+      "dövme yapıyorum",
+      "dövme sanatçısıyım",
+      "dövme ustası",
+      "dövme yaptır",
+      "döve salonu",
+      "dovmeci",
+      "dövme salonu işletmesi",
+      "dövme hizmeti",
+      "dövme stüdyosu",
+      "tattoo yapıyorum",
+      "tatoo yapıyorum",
+      "dövmeciyim"
+    ]
+  }
+}

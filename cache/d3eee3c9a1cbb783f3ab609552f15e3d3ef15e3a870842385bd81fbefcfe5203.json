@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.22\", \"meslek_tanim\": \"Oto lastik onarımı\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"22.11.19\", \"nace_label\": \"Lastik tekerleklerinin yeniden işlenmesi ve sırt geçirilmesi (lastiğin kaplanması)\"}, {\"nace_code\": \"95.31.02\", \"nace_label\": \"Motorlu kara taşıtlarının lastik onarımı faaliyetleri\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"lastikçi\",\n    \"oto lastikçi\",\n    \"lastik tamircisi\",\n    \"lastik onarımı yaparım\",\n    \"patlak lastikçi\",\n    \"lastik sökme takma\",\n    \"lastik kaplama\",\n    \"lastik yama\",\n    \"lastik tamir\",\n    \"lastik onarım ustası\",\n    \"lastikçi dükkanı\",\n    \"lastik tamirhanesi\",\n    \"lastik tamirci\",\n    \"lastik yamalarım\",\n    \"lastikçi abi\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "lastikçi",
+      "oto lastikçi",
+      "lastik tamircisi",
+      "lastik onarımı yaparım",
+      "patlak lastikçi",
+      "lastik sökme takma",
+      "lastik kaplama",
+      "lastik yama",
+      "lastik tamir",
+      "lastik onarım ustası",
+      "lastikçi dükkanı",
+      "lastik tamirhanesi",
+      "lastik tamirci",
+      "lastik yamalarım",
+      "lastikçi abi"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"K.11\", \"meslek_tanim\": \"Prefabrik yapıların imalatı, kurulumu, ticareti\", \"sektor_tanim\": \"YAPI SANATLARI\", \"nace_examples\": [{\"nace_code\": \"16.23.02\", \"nace_label\": \"Ahşap prefabrik yapılar ve ahşap taşınabilir evlerin imalatı\"}, {\"nace_code\": \"22.24.05\", \"nace_label\": \"Plastikten prefabrik yapıların imalatı\"}, {\"nace_code\": \"23.61.03\", \"nace_label\": \"Betondan yapılmış prefabrik yapıların imalatı\"}, {\"nace_code\": \"41.00.05\", \"nace_label\": \"Prefabrik binalar için bileşenlerin alanda birleştirilmesi ve kurulması\"}, {\"nace_code\": \"43.50.04\", \"nace_label\": \"Prefabrik yüzme havuzlarının kurulumu\"}, {\"nace_code\": \"43.50.06\", \"nace_label\": \"Prefabrik yapıların montajı ve kurulması (prefabrik binalar ve yüzme havuzları hariç her çeşit prefabrik sokak düzeneklerinin (otobüs durağı, telefon kulübesi, bank vb.) kurulumu vb.)\"}, {\"nace_code\": \"46.83.16\", \"nace_label\": \"Betondan, çimentodan ve suni taştan prefabrik yapıların, yapı elemanlarının ve diğer ürünlerin toptan ticareti\"}, {\"nace_code\": \"46.83.21\", \"nace_label\": \"Plastikten prefabrik yapılar ve yapı elemanlarının toptan ticareti\"}, {\"nace_code\": \"46.83.22\", \"nace_label\": \"Ahşaptan prefabrik yapıların ve yapı elemanlarının toptan ticareti\"}, {\"nace_code\": \"47.52.18\", \"nace_label\": \"Prefabrik yapılar ve yapı elemanlarının perakende ticareti (metalden, betondan, plastikten, ahşaptan vb.)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"prefabrik ev imalatı\",\n    \"prefabrik yapı kurulumu\",\n    \"prefabrik ev ticareti\",\n    \"prefabrik yapı montajı\",\n    \"prefabrik ev satışı\",\n    \"prefabrik yapı imalatçısı\",\n    \"prefabrik ev yapıyorum\",\n    \"prefabrik yapı satıyorum\",\n    \"prefabrik ev kuruyorum\",\n    \"prefabrik yapı ticareti\",\n    \"prefabrik ev montajı\",\n    \"prefabrik yapıcı\",\n    \"prefabrik evci\",\n    \"prefabrik yapı imalatı ve montajı\",\n    \"prefabrik yapılar\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "prefabrik ev imalatı",
+      "prefabrik yapı kurulumu",
+      "prefabrik ev ticareti",
+      "prefabrik yapı montajı",
+      "prefabrik ev satışı",
+      "prefabrik yapı imalatçısı",
+      "prefabrik ev yapıyorum",
+      "prefabrik yapı satıyorum",
+      "prefabrik ev kuruyorum",
+      "prefabrik yapı ticareti",
+      "prefabrik ev montajı",
+      "prefabrik yapıcı",
+      "prefabrik evci",
+      "prefabrik yapı imalatı ve montajı",
+      "prefabrik yapılar"
+    ]
+  }
+}

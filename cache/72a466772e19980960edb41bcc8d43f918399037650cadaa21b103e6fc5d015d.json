@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"6283\", \"alias\": \"elektrikli ekipman kuran\", \"meslek_tanim\": \"Elektrik makineleri imalatı, kurulumu, onarımı\", \"nace_code\": \"27.11.01\", \"nace_label\": \"Elektrik motoru, jeneratör ve transformatörlerin imalatı (aksam ve parçaları hariç)\"}, {\"id\": \"18238\", \"alias\": \"salça yapıyorum\", \"meslek_tanim\": \"Çeşitli gıdaların imalatı\", \"nace_code\": \"10.81.01\", \"nace_label\": \"Şeker kamışından, pancardan, palmiyeden, akça ağaçtan şeker (sakkaroz) ve şeker ürünleri imalatı veya bunların rafine edilmesi (sıvı şeker ve melas üretimi dahil)\"}, {\"id\": \"14754\", \"alias\": \"marangozluk işleri\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"46.83.14\", \"nace_label\": \"Masif, lamine ve laminant parke toptan ticareti\"}, {\"id\": \"10445\", \"alias\": \"Kartoncu\", \"meslek_tanim\": \"Kağıt, kağıt ürünleri imalatı, ticareti\", \"nace_code\": \"46.86.03\", \"nace_label\": \"Dökme halde kağıt ve mukavva toptan ticareti\"}, {\"id\": \"22271\", \"alias\": \"zirai kimyasal ürünler\", \"meslek_tanim\": \"Gübre, zirai ilaç imalatı, ticareti\", \"nace_code\": \"20.15.02\", \"nace_label\": \"Bileşik azotlu ürünlerin imalatı (gübreler hariç)\"}, {\"id\": \"8461\", \"alias\": \"hediyelik eşya dükkanı\", \"meslek_tanim\": \"Hediyelik eşya imalatı, ticareti\", \"nace_code\": \"32.13.01\", \"nace_label\": \"İmitasyon (taklit) takılar ve ilgili eşyaların imalatı\"}, {\"id\": \"12689\", \"alias\": \"lastikçi\", \"meslek_tanim\": \"Kauçuk, plastik ürünlerin imalatı, ticareti\", \"nace_code\": \"22.12.05\", \"nace_label\": \"Rejenere kauçuk imalatı, birincil formda veya levha, tabaka veya şerit halinde\"}, {\"id\": \"2081\", \"alias\": \"ben şarküteri işi yapıyorum\", \"meslek_tanim\": \"Şarküteri ürünleri imalatı, ticareti\", \"nace_code\": \"10.41.03\", \"nace_label\": \"Bezir yağı (keten tohumu yağı, keten yağı) imalatı\"}, {\"id\": \"8786\", \"alias\": \"hurda alımı\", \"meslek_tanim\": \"Hurdacılık\", \"nace_code\": \"46.87.01\", \"nace_label\": \"Atık ve hurda toptan ticareti (metal olanlar) (kağıt, cam, plastik vb. ikincil hammaddeler hariç)\"}, {\"id\": \"1180\", \"alias\": \"bakkaliye\", \"meslek_tanim\": \"Bakkallık, bayilik, büfecilik\", \"nace_code\": \"46.38.05\", \"nace_label\": \"Hazır homojenize gıda ile diyetetik gıda ürünleri toptan ticareti\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"6283\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"18238\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"14754\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"10445\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"22271\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"8461\",\n      \"verdict\": \"unsure\"\n    },\n    {\n      \"id\": \"12689\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"2081\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"8786\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"1180\",\n      \"verdict\": \"no\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "6283",
+        "verdict": "yes"
+      },
+      {
+        "id": "18238",
+        "verdict": "no"
+      },
+      {
+        "id": "14754",
+        "verdict": "no"
+      },
+      {
+        "id": "10445",
+        "verdict": "no"
+      },
+      {
+        "id": "22271",
+        "verdict": "no"
+      },
+      {
+        "id": "8461",
+        "verdict": "unsure"
+      },
+      {
+        "id": "12689",
+        "verdict": "no"
+      },
+      {
+        "id": "2081",
+        "verdict": "no"
+      },
+      {
+        "id": "8786",
+        "verdict": "yes"
+      },
+      {
+        "id": "1180",
+        "verdict": "no"
+      }
+    ]
+  }
+}

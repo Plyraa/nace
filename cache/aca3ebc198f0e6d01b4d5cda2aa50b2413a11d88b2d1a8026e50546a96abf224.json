@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"19641\", \"alias\": \"tavuk işletmesi\", \"meslek_tanim\": \"Tavukçuluk\", \"nace_code\": \"01.47.02\", \"nace_label\": \"Kuluçkahanelerin faaliyetleri\"}, {\"id\": \"6926\", \"alias\": \"Emlak Dünyası\", \"meslek_tanim\": \"Emlakçılık\", \"nace_code\": \"81.10.01\", \"nace_label\": \"Tesis bünyesindeki kombine destek hizmetleri\"}, {\"id\": \"19909\", \"alias\": \"telekom cihazları perakende\", \"meslek_tanim\": \"Telekomünikasyon cihazları ticareti\", \"nace_code\": \"46.50.02\", \"nace_label\": \"Telekomünikasyon ekipman ve parçalarının toptan ticareti (telefon ve iletişim ekipmanları dahil)\"}, {\"id\": \"4082\", \"alias\": \"demir çelik eşya imalatı\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"25.30.03\", \"nace_label\": \"Tabanca, revolver (altıpatlar), av tüfeği, havalı tabanca, cop, vb. askeri amaçlı olmayan ateşli silahlar ve benzeri aletlerin ve bunların parçalarının imalatı\"}, {\"id\": \"11641\", \"alias\": \"konfeksiyoncu atölyem\", \"meslek_tanim\": \"Konfeksiyonculuk\", \"nace_code\": \"47.71.11\", \"nace_label\": \"Spor giysisi perakende ticareti\"}, {\"id\": \"7683\", \"alias\": \"gazete bayi\", \"meslek_tanim\": \"Basın, yayım, iletişim\", \"nace_code\": \"60.10.09\", \"nace_label\": \"Radyo yayıncılığı ve ses dağıtım faaliyetleri\"}, {\"id\": \"14544\", \"alias\": \"marangoz dükkanı\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"16.28.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer ağaç ürünleri imalatı; mantardan, saz, saman ve benzeri örme malzemelerinden yapılmış ürünlerin imalatı\"}, {\"id\": \"6213\", \"alias\": \"elektrik malzemeleri toptan\", \"meslek_tanim\": \"Elektrik malzemeleri imalatı, ticareti\", \"nace_code\": \"46.64.09\", \"nace_label\": \"Akümülatör, batarya, pil ve bunların parçalarının toptan ticareti (evlerde, motosikletlerde ve motorlu kara taşıtlarında kullanılanlar hariç)\"}, {\"id\": \"21553\", \"alias\": \"Yapı malzemeleri üreticisi\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"23.52.01\", \"nace_label\": \"Sönmemiş kireç, sönmüş kireç ve suya dayanıklı kireç imalatı\"}, {\"id\": \"21225\", \"alias\": \"valey hizmeti\", \"meslek_tanim\": \"Durak, otopark işletmeciliği\", \"nace_code\": \"52.21.09\", \"nace_label\": \"Kara yolu yolcu taşımacılığına yönelik otobüs terminal hizmetleri\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"19641\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"6926\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"19909\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"4082\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"11641\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"7683\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"14544\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"6213\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"21553\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"21225\",\n      \"verdict\": \"no\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "19641",
+        "verdict": "yes"
+      },
+      {
+        "id": "6926",
+        "verdict": "no"
+      },
+      {
+        "id": "19909",
+        "verdict": "no"
+      },
+      {
+        "id": "4082",
+        "verdict": "no"
+      },
+      {
+        "id": "11641",
+        "verdict": "no"
+      },
+      {
+        "id": "7683",
+        "verdict": "no"
+      },
+      {
+        "id": "14544",
+        "verdict": "yes"
+      },
+      {
+        "id": "6213",
+        "verdict": "no"
+      },
+      {
+        "id": "21553",
+        "verdict": "no"
+      },
+      {
+        "id": "21225",
+        "verdict": "no"
+      }
+    ]
+  }
+}

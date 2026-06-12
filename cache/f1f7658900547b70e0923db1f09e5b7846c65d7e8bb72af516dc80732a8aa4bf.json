@@ -1,0 +1,37 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"E.07\", \"meslek_tanim\": \"Dokumacılık\", \"sektor_tanim\": \"GİYİM, DERİ ÜRÜN, EV TEKSTİLİ, DOKUMA\", \"nace_examples\": [{\"nace_code\": \"13.10.03\", \"nace_label\": \"Doğal pamuk elyafının imalatı (kardelenmesi, taraklanması vb.)\"}, {\"nace_code\": \"13.10.05\", \"nace_label\": \"Doğal yün ve tiftik elyafının imalatı (kardelenmesi, taraklanması, yün yağının giderilmesi, karbonize edilmesi ve yapağının boyanması vb.)\"}, {\"nace_code\": \"13.10.06\", \"nace_label\": \"Doğal jüt, keten ve diğer bitkisel tekstil elyaflarının imalatı (kardelenmesi, taraklanması vb.) (pamuk hariç)\"}, {\"nace_code\": \"13.10.09\", \"nace_label\": \"Sentetik veya suni devamsız elyafın kardelenmesi ve taraklanması\"}, {\"nace_code\": \"13.10.10\", \"nace_label\": \"Doğal ipeğin bükülmesi ve iplik haline getirilmesi\"}, {\"nace_code\": \"13.10.12\", \"nace_label\": \"Pamuk elyafının bükülmesi ve iplik haline getirilmesi\"}, {\"nace_code\": \"13.10.13\", \"nace_label\": \"Yün ve tiftik elyafının bükülmesi ve iplik haline getirilmesi\"}, {\"nace_code\": \"13.10.14\", \"nace_label\": \"Jüt, keten ve diğer bitkisel tekstil elyaflarının bükülmesi ve iplik haline getirilmesi (pamuk hariç)\"}, {\"nace_code\": \"13.10.15\", \"nace_label\": \"Suni ve sentetik elyafların bükülmesi ve iplik haline getirilmesi (filament ipliği ve suni ipek elyafı imalatı hariç)\"}, {\"nace_code\": \"13.20.14\", \"nace_label\": \"Kot kumaşı imalatı\"}, {\"nace_code\": \"13.20.16\", \"nace_label\": \"Pamuklu dokuma kumaş imalatı\"}, {\"nace_code\": \"13.20.17\", \"nace_label\": \"Doğal kıl ve yünden dokuma kumaş imalatı\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"Dokumacı\",\n    \"Dokuma\",\n    \"Dokumacıyım\",\n    \"Dokuma atölyesi\",\n    \"El dokuma\",\n    \"Bez dokuma\",\n    \"Kumaş dokuma\",\n    \"Dokumacılık yapıyorum\",\n    \"Dokumacılık işi\",\n    \"Dokuma tezgahı\",\n    \"Dokumacılık atölyesi\",\n    \"Dokumacılıkla uğraşıyorum\",\n    \"Dokumacı ustası\",\n    \"Dokumacılık\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "Dokumacı",
+      "Dokuma",
+      "Dokumacıyım",
+      "Dokuma atölyesi",
+      "El dokuma",
+      "Bez dokuma",
+      "Kumaş dokuma",
+      "Dokumacılık yapıyorum",
+      "Dokumacılık işi",
+      "Dokuma tezgahı",
+      "Dokumacılık atölyesi",
+      "Dokumacılıkla uğraşıyorum",
+      "Dokumacı ustası",
+      "Dokumacılık"
+    ]
+  }
+}

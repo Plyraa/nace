@@ -1,0 +1,33 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"E.03\", \"meslek_tanim\": \"Deri aksesuar imalatı, ticareti\", \"sektor_tanim\": \"GİYİM, DERİ ÜRÜN, EV TEKSTİLİ, DOKUMA\", \"nace_examples\": [{\"nace_code\": \"15.12.07\", \"nace_label\": \"Deri, kösele, karma deri ve diğer malzemelerden bavul ve çanta, deriden sigaralık, deri ayakkabı bağı, kişisel bakım, dikiş vb. amaçlı seyahat seti vb. ürünlerin imalatı\"}, {\"nace_code\": \"15.12.08\", \"nace_label\": \"Deriden veya diğer malzemelerden saraçlık ve koşum takımı imalatı (kamçı, semer, eyer, tasma kayışı, heybe vb.)\"}, {\"nace_code\": \"15.12.09\", \"nace_label\": \"Deri saat kayışı imalatı\"}, {\"nace_code\": \"46.16.02\", \"nace_label\": \"Deri eşyalar ve seyahat aksesuarlarının bir ücret veya sözleşmeye dayalı olarak toptan satışını yapan aracılar\"}, {\"nace_code\": \"46.49.01\", \"nace_label\": \"Deri eşyalar ve seyahat aksesuarları toptan ticareti\"}, {\"nace_code\": \"47.72.02\", \"nace_label\": \"Bavul, el çantası ve diğer seyahat aksesuarlarının perakende ticareti (deriden, deri bileşimlerinden, plastik levhadan, tekstil malzemesinden, vulkanize (ebonit) elyaf veya mukavvadan)\"}, {\"nace_code\": \"47.72.05\", \"nace_label\": \"Saraciye ürünleri ve koşum takımı perakende ticareti (eyer, semer, vb.)\"}, {\"nace_code\": \"47.72.90\", \"nace_label\": \"Deriden veya deri bileşimlerinden diğer ürünlerin perakende ticareti (deri veya deri bileşimli giyim eşyası hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"deri aksesuar imalatı\",\n    \"deri çanta imalatı\",\n    \"bavul imalatı\",\n    \"deri aksesuar ticareti\",\n    \"çanta ve bavul imalatı\",\n    \"deri çanta yapıyorum\",\n    \"deri aksesuar satışı\",\n    \"saraciye ürünleri imalatı\",\n    \"dikim ve üretim (deri aksesuar)\",\n    \"deri aksesuar üreticisi\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "deri aksesuar imalatı",
+      "deri çanta imalatı",
+      "bavul imalatı",
+      "deri aksesuar ticareti",
+      "çanta ve bavul imalatı",
+      "deri çanta yapıyorum",
+      "deri aksesuar satışı",
+      "saraciye ürünleri imalatı",
+      "dikim ve üretim (deri aksesuar)",
+      "deri aksesuar üreticisi"
+    ]
+  }
+}

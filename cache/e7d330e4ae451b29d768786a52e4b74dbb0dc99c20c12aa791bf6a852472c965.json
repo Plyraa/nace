@@ -1,0 +1,31 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"C.11\", \"meslek_tanim\": \"Elektronik ürün imalatı, onarımı\", \"sektor_tanim\": \"ELEKTRİK, ELEKTRONİK, BİLGİSAYAR\", \"nace_examples\": [{\"nace_code\": \"26.11.04\", \"nace_label\": \"Diyotların, transistörlerin, diyakların, triyaklar, tristör, rezistans, ledler, kristal, röle, mikro anahtar, sabit veya ayarlanabilir direnç ve kondansatörler ile elektronik entegre devrelerin imalatı\"}, {\"nace_code\": \"26.11.06\", \"nace_label\": \"Çıplak baskılı devre kartlarının imalatı\"}, {\"nace_code\": \"26.11.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer elektronik bileşenlerin imalatı\"}, {\"nace_code\": \"26.12.01\", \"nace_label\": \"Yüklü elektronik kart imalatı (yüklü baskılı devre kartları, ses, görüntü, denetleyici, ağ ve modem kartları ile akıllı kartlar vb.)\"}, {\"nace_code\": \"26.30.03\", \"nace_label\": \"Kızıl ötesi (enfraruj) sinyal kullanan iletişim cihazlarının imalatı (örn: uzaktan kumanda cihazları)\"}, {\"nace_code\": \"26.30.05\", \"nace_label\": \"Alıcı ve verici antenlerin imalatı (harici, teleskopik, çubuk, uydu, çanak ve hava ve deniz taşıtlarının antenleri)\"}, {\"nace_code\": \"26.40.10\", \"nace_label\": \"Mikrofon, hoparlör ve kulaklıklar ile elektrikli ses yükselteçlerinin (amplifikatörler) imalatı\"}, {\"nace_code\": \"26.40.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış tüketici elektroniği ürünlerinin imalatı\"}, {\"nace_code\": \"26.51.03\", \"nace_label\": \"Elektrik miktarını (volt, akım vb.) ölçmek ve kontrol etmek için kullanılan alet ve cihazların imalatı (avometre, voltmetre, osiloskop ile diğer voltaj, akım, direnç veya elektrik gücünü ölçüm veya kontrol için olanlar) (elektrik sayaçları hariç)\"}, {\"nace_code\": \"26.51.04\", \"nace_label\": \"Hız ve mesafe ölçümünde kullanılan alet ve cihazların imalatı (taşıt hız göstergesi, takometre, taksimetre vb.)\"}, {\"nace_code\": \"26.51.05\", \"nace_label\": \"Isı ve sıcaklık ölçümünde kullanılan alet ve cihazların imalatı (termometre, termostat, pirometre vb.)\"}, {\"nace_code\": \"26.51.06\", \"nace_label\": \"Işık, ışın ve renk ölçümünde kullanılan alet ve cihazların imalatı (polarimetre, kolorimetre, refraktometre vb.)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "[\n  \"elektronik tamir\",\n  \"elektronik imalat\",\n  \"elektronikçi\",\n  \"elektronik tamircisi\",\n  \"elektronik onarım\",\n  \"elektronik ürün imalatı\",\n  \"ben elektronik tamir ederim\",\n  \"elektronik işleri\",\n  \"elektronik tamirhanesi\",\n  \"elektronik ustası\"\n]",
+  "parsed": [
+    "elektronik tamir",
+    "elektronik imalat",
+    "elektronikçi",
+    "elektronik tamircisi",
+    "elektronik onarım",
+    "elektronik ürün imalatı",
+    "ben elektronik tamir ederim",
+    "elektronik işleri",
+    "elektronik tamirhanesi",
+    "elektronik ustası"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.08\", \"meslek_tanim\": \"Ev aletleri imalatı, onarımı, ticareti\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"27.52.05\", \"nace_label\": \"Elektriksiz yemek pişirme cihazlarının imalatı (gaz yakıtlı set üstü ocaklar, gaz veya sıvı yakıtlı fırınlar ve ocaklar vb.)\"}, {\"nace_code\": \"27.52.06\", \"nace_label\": \"Elektriksiz ev aletlerinin aksam ve parçalarının imalatı\"}, {\"nace_code\": \"47.55.09\", \"nace_label\": \"Elektriksiz fırın ve ocaklar ile hava ve su ısıtıcılarının perakende ticareti\"}, {\"nace_code\": \"95.22.02\", \"nace_label\": \"Ev ve bahçe gereçlerinin bakım ve onarımı\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"ev aletleri tamircisi\",\n    \"beyaz eşya servisi\",\n    \"fırın ve ocak bakımı\",\n    \"set üstü ocak tamiri\",\n    \"elektriksiz ev aletleri\",\n    \"gazlı ocak imalatçısı\",\n    \"ev aletleri yedek parça\",\n    \"ocakçı\",\n    \"fırıncı tamiri\",\n    \"ev aletleri satış ve onarım\",\n    \"bana ev aletlerini tamir ettir\",\n    \"soba ve ocak tamiri\",\n    \"ızgara tamircisi\",\n    \"elektriksiz pişirme cihazları\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "ev aletleri tamircisi",
+      "beyaz eşya servisi",
+      "fırın ve ocak bakımı",
+      "set üstü ocak tamiri",
+      "elektriksiz ev aletleri",
+      "gazlı ocak imalatçısı",
+      "ev aletleri yedek parça",
+      "ocakçı",
+      "fırıncı tamiri",
+      "ev aletleri satış ve onarım",
+      "bana ev aletlerini tamir ettir",
+      "soba ve ocak tamiri",
+      "ızgara tamircisi",
+      "elektriksiz pişirme cihazları"
+    ]
+  }
+}

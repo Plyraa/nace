@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"8929\", \"alias\": \"hediyelik eşya imalatçısı\", \"meslek_tanim\": \"Kauçuk, plastik ürünlerin imalatı, ticareti\", \"nace_code\": \"22.12.01\", \"nace_label\": \"Kauçuktan tüp, boru ve hortumların imalatı (vulkanize kauçuktan)\"}, {\"id\": \"14153\", \"alias\": \"makine bakım onarım\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.30.90\", \"nace_label\": \"Ormancılığa özgü makineler ile tarla bahçe bakımına mahsus diğer makine ve cihazların imalatı\"}, {\"id\": \"4232\", \"alias\": \"demir çelik eşya imalatı\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"24.10.02\", \"nace_label\": \"Çelikten açık profil imalatı (sıcak haddeleme, sıcak çekme veya kalıptan çekme işlemlerinden daha ileri işlem görmemiş)\"}, {\"id\": \"3826\", \"alias\": \"Cerrahi aletler\", \"meslek_tanim\": \"Tıbbi malzemelerin imalatı, ticareti\", \"nace_code\": \"32.50.15\", \"nace_label\": \"Terapatik alet ve cihazların imalatı (suni solunum veya terapatik solunum cihazları hariç)\"}, {\"id\": \"15960\", \"alias\": \"Minibüsçü\", \"meslek_tanim\": \"Minibüsçülük\", \"nace_code\": \"49.31.90\", \"nace_label\": \"Kara yoluyla tarifeli diğer yolcu taşımacılığı\"}, {\"id\": \"4052\", \"alias\": \"demir malzeme ticareti\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"25.61.05\", \"nace_label\": \"Tıraş bıçakları, usturalar ile jiletler ve tıraş makinelerinin bıçaklarının imalatı\"}, {\"id\": \"15086\", \"alias\": \"makineleri tamir ederim\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.91.01\", \"nace_label\": \"Konvertörler (metalürji), külçe kalıpları (ingot kalıpları), döküm kepçeleri, döküm makineleri, vb. sıcak metallerin işlenmesi için kullanılan makine ve teçhizatın imalatı\"}, {\"id\": \"14394\", \"alias\": \"makine kurdum onardım\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"33.12.28\", \"nace_label\": \"Plastik ve kauçuk imalatında ve işlenmesinde kullanılan makinelerin onarım ve bakımı\"}, {\"id\": \"11092\", \"alias\": \"kasap esnafı\", \"meslek_tanim\": \"Kasaplık\", \"nace_code\": \"47.22.05\", \"nace_label\": \"Et perakende ticareti\"}, {\"id\": \"1818\", \"alias\": \"ben elektronik tamir ederim\", \"meslek_tanim\": \"Elektronik ürün imalatı, onarımı\", \"nace_code\": \"26.40.10\", \"nace_label\": \"Mikrofon, hoparlör ve kulaklıklar ile elektrikli ses yükselteçlerinin (amplifikatörler) imalatı\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"8929\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"14153\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"4232\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"3826\",\n      \"verdict\": \"unsure\"\n    },\n    {\n      \"id\": \"15960\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"4052\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"15086\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"14394\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"11092\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"1818\",\n      \"verdict\": \"unsure\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "8929",
+        "verdict": "no"
+      },
+      {
+        "id": "14153",
+        "verdict": "no"
+      },
+      {
+        "id": "4232",
+        "verdict": "no"
+      },
+      {
+        "id": "3826",
+        "verdict": "unsure"
+      },
+      {
+        "id": "15960",
+        "verdict": "yes"
+      },
+      {
+        "id": "4052",
+        "verdict": "no"
+      },
+      {
+        "id": "15086",
+        "verdict": "no"
+      },
+      {
+        "id": "14394",
+        "verdict": "yes"
+      },
+      {
+        "id": "11092",
+        "verdict": "yes"
+      },
+      {
+        "id": "1818",
+        "verdict": "unsure"
+      }
+    ]
+  }
+}

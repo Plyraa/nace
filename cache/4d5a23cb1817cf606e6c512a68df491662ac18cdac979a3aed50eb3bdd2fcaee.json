@@ -1,0 +1,35 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"E.16\", \"meslek_tanim\": \"Tuhafiye imalatı, ticareti\", \"sektor_tanim\": \"GİYİM, DERİ ÜRÜN, EV TEKSTİLİ, DOKUMA\", \"nace_examples\": [{\"nace_code\": \"13.96.02\", \"nace_label\": \"Tekstil malzemelerinden parça halinde kordonlar; işleme yapılmamış şeritçi eşyası ve benzeri süs eşyalarının imalatı\"}, {\"nace_code\": \"13.96.04\", \"nace_label\": \"Tekstil malzemelerinden dokuma etiket, rozet, arma ve diğer benzeri eşyaların imalatı\"}, {\"nace_code\": \"13.96.07\", \"nace_label\": \"Tekstille kaplanmış kauçuk iplik veya kordon ile kauçuk veya plastikle kaplanmış veya emdirilmiş tekstilden iplik veya şeritler ve bunlardan yapılmış mensucat imalatı\"}, {\"nace_code\": \"13.99.03\", \"nace_label\": \"Keçe, basınçlı hassas giysi dokumaları, tekstilden ayakkabı bağı, pudra ponponu vb. imalatı\"}, {\"nace_code\": \"13.99.06\", \"nace_label\": \"Gipe iplik ve şeritlerin, şönil ipliklerin, şenet ipliklerin imalatı (metalize olanlar ile gipe lastikler hariç)\"}, {\"nace_code\": \"14.29.04\", \"nace_label\": \"Eldiven, kemer, şal, papyon, kravat, saç fileleri, kumaş mendil, atkı, fular vb. giysi aksesuarları imalatı (kürklü deriden olanlar hariç)\"}, {\"nace_code\": \"15.12.11\", \"nace_label\": \"Kumaş ve diğer malzemelerden saat kayışı imalatı (metal olanlar hariç)\"}, {\"nace_code\": \"32.99.02\", \"nace_label\": \"Kot vb. baskı düğmeleri, çıtçıtlar, düğmeler, fermuarlar vb. imalatı (düğme formları ve fermuar parçaları dahil)\"}, {\"nace_code\": \"46.21.07\", \"nace_label\": \"Yün ve tiftik toptan ticareti\"}, {\"nace_code\": \"46.41.02\", \"nace_label\": \"Tuhafiye ürünleri toptan ticareti\"}, {\"nace_code\": \"46.41.04\", \"nace_label\": \"İplik toptan ticareti (tuhafiye ürünleri ile dikiş ipliği hariç)\"}, {\"nace_code\": \"46.42.03\", \"nace_label\": \"Çorap ve giysi aksesuarlarının toptan ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"tuhafiyeci\",\n    \"tuhafiye dükkanı\",\n    \"tuhafiye imalatı\",\n    \"tuhafiye ticareti\",\n    \"ben tuhafiyeciyim\",\n    \"tuhafiye malzemeleri\",\n    \"tuhafiye ürünleri\",\n    \"tuhafiyem\",\n    \"tuhafiyecilik\",\n    \"tuhafye\",\n    \"tuhafiye aksesuar\",\n    \"tuhafiye dikiş malzemesi\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "tuhafiyeci",
+      "tuhafiye dükkanı",
+      "tuhafiye imalatı",
+      "tuhafiye ticareti",
+      "ben tuhafiyeciyim",
+      "tuhafiye malzemeleri",
+      "tuhafiye ürünleri",
+      "tuhafiyem",
+      "tuhafiyecilik",
+      "tuhafye",
+      "tuhafiye aksesuar",
+      "tuhafiye dikiş malzemesi"
+    ]
+  }
+}

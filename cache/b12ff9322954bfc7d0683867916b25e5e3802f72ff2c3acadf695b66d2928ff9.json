@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"D.22\", \"meslek_tanim\": \"Şekercilik, çikolatacılık\", \"sektor_tanim\": \"GIDA, TARIM\", \"nace_examples\": [{\"nace_code\": \"10.81.03\", \"nace_label\": \"Akçaağaç şurubu imalatı\"}, {\"nace_code\": \"10.82.01\", \"nace_label\": \"Çikolata ve kakao içeren şekerlemelerin imalatı (beyaz çikolata ve sürülerek yenebilen kakaolu ürünler hariç)\"}, {\"nace_code\": \"10.82.02\", \"nace_label\": \"Şekerlemelerin ve şeker pastillerinin imalatı (bonbon şekeri vb.) (kakaolu şekerlemeler hariç)\"}, {\"nace_code\": \"10.82.03\", \"nace_label\": \"Sürülerek yenebilen kakaolu ürünlerin imalatı\"}, {\"nace_code\": \"10.82.04\", \"nace_label\": \"Lokum, pişmaniye, helva, karamel, koz helva, fondan, beyaz çikolata vb. imalatı (tahin helvası dahil)\"}, {\"nace_code\": \"10.82.05\", \"nace_label\": \"Ciklet imalatı (sakız)\"}, {\"nace_code\": \"10.82.06\", \"nace_label\": \"Sert kabuklu yemiş, meyve, meyve kabuğu ve diğer bitki parçalarından şekerleme imalatı (meyan kökü hülasaları dahil)\"}, {\"nace_code\": \"10.82.07\", \"nace_label\": \"Kakao tozu, kakao ezmesi/hamuru ve kakao yağı imalatı\"}, {\"nace_code\": \"46.36.01\", \"nace_label\": \"Çikolata ve şekerleme toptan ticareti (helva, lokum, akide şekeri, bonbon şekeri vb. dahil)\"}, {\"nace_code\": \"47.24.02\", \"nace_label\": \"Çikolata ve şekerleme perakende ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"şekerci\",\n    \"çikolatacı\",\n    \"helvacı\",\n    \"lokumcu\",\n    \"şekerlemeci\",\n    \"bonboncu\",\n    \"akide şekeri\",\n    \"pişmaniyecim\",\n    \"şekerleme imalatı\",\n    \"çikolata imalatı\",\n    \"şekerci dükkanı\",\n    \"helva imalatı\",\n    \"şekerleme toptan\",\n    \"şekerleme perakende\",\n    \"şekercilik\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "şekerci",
+      "çikolatacı",
+      "helvacı",
+      "lokumcu",
+      "şekerlemeci",
+      "bonboncu",
+      "akide şekeri",
+      "pişmaniyecim",
+      "şekerleme imalatı",
+      "çikolata imalatı",
+      "şekerci dükkanı",
+      "helva imalatı",
+      "şekerleme toptan",
+      "şekerleme perakende",
+      "şekercilik"
+    ]
+  }
+}

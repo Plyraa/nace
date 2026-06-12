@@ -1,0 +1,123 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"9366\", \"alias\": \"İnsaat malzemeleri imalati\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"23.91.01\", \"nace_label\": \"Aşındırıcı ürünlerin imalatı (değirmen taşları, bileği taşı, zımpara taşı vb.)(dokuma tekstil kumaşlarına, kağıt ve mukavvaya tutturulmuş zımparalar hariç)\"}, {\"id\": \"18597\", \"alias\": \"satılık emlak\", \"meslek_tanim\": \"Emlakçılık\", \"nace_code\": \"68.31.01\", \"nace_label\": \"Gayrimenkul faaliyetleri için aracılık hizmeti faaliyetleri\"}, {\"id\": \"15860\", \"alias\": \"odun kömürü satışı\", \"meslek_tanim\": \"Yakacak imalatı, ticareti\", \"nace_code\": \"47.78.02\", \"nace_label\": \"Kömür ve yakacak odun perakende ticareti\"}, {\"id\": \"7389\", \"alias\": \"fitness ekipmanları\", \"meslek_tanim\": \"Spor malzemeleri imalatı, ticareti\", \"nace_code\": \"32.30.19\", \"nace_label\": \"Spor amaçlı dağcılık, avcılık veya balıkçılık eşyalarının imalatı (kasklar, olta kamışları, olta iğneleri ve kancaları, otomatik olta makaraları, el kepçeleri, kelebek ağları, yapma balıklar, sinekler gibi suni yemler, kurşunlar, yapma kuşlar vb.)\"}, {\"id\": \"3588\", \"alias\": \"canlı hayvan ticareti\", \"meslek_tanim\": \"Besicilik, celeplik\", \"nace_code\": \"01.62.01\", \"nace_label\": \"Hayvan üretimini destekleyici olarak sürülerin güdülmesi, başkalarına ait hayvanların beslenmesi, kümeslerin temizlenmesi, kırkma, sağma, barınak sağlama, nalbantlık vb. faaliyetler\"}, {\"id\": \"3689\", \"alias\": \"danışman\", \"meslek_tanim\": \"Arzuhalcilik, danışmanlık, bilgi hizmetleri\", \"nace_code\": \"74.99.03\", \"nace_label\": \"İşyeri komisyonculuğu faaliyetleri (küçük ve orta ölçekli işletmelerin alım ve satımının düzenlenmesi vb.)\"}, {\"id\": \"17041\", \"alias\": \"pazarci\", \"meslek_tanim\": \"Şarküteri ürünleri imalatı, ticareti\", \"nace_code\": \"10.12.03\", \"nace_label\": \"Kümes hayvanlarının yağlarının sofra yağına çevrilmesi\"}, {\"id\": \"13885\", \"alias\": \"makine onaran\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.42.02\", \"nace_label\": \"Takım tezgahları ve el aletleri için takım tutucuları ve kendinden açılan pafta kafaları, işlenecek parça tutucuları, bölme başlıkları ve diğer özel ek parçalar, dingiller, yüksükler ve rakorlar ile fikstürlerin imalatı\"}, {\"id\": \"16775\", \"alias\": \"oyuncak üretimi\", \"meslek_tanim\": \"Oyuncak imalatı, ticareti\", \"nace_code\": \"46.49.04\", \"nace_label\": \"Oyun ve oyuncak toptan ticareti\"}, {\"id\": \"16243\", \"alias\": \"otelim\", \"meslek_tanim\": \"Otel, pansiyon, yurt işletmeciliği\", \"nace_code\": \"55.90.90\", \"nace_label\": \"Diğer konaklama yerlerinin faaliyetleri (başka bir birim tarafından işletildiğinde yataklı vagonlar vb. dahil; misafirhaneler, öğretmen evi vb. hariç)\"}, {\"id\": \"18402\", \"alias\": \"sanayi makine yedek parça\", \"meslek_tanim\": \"Makine, yedek parça ticareti\", \"nace_code\": \"47.52.23\", \"nace_label\": \"Yangın söndürücüler ve ekipmanlarının perakende ticareti (arabalar için olanlar ve yüksek basınçlı olanlar hariç)\"}, {\"id\": \"2024\", \"alias\": \"ben çelik eşya imal ediyorum\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"25.11.08\", \"nace_label\": \"Metalden prefabrik yapı imalatı\"}, {\"id\": \"3750\", \"alias\": \"davul imalatı\", \"meslek_tanim\": \"Müzik aletleri imalatı, onarımı, ticareti\", \"nace_code\": \"32.20.28\", \"nace_label\": \"Metronomlar, akort çatalları (diyapazonlar) ve akort düdükleri, müzik kutuları için mekanizmalar, müzik aleti telleri ile müzik aletlerinin parça ve aksesuarlarının imalatı\"}, {\"id\": \"2266\", \"alias\": \"bez üreticisi\", \"meslek_tanim\": \"Temizlik malzemeleri imalatı, ticareti\", \"nace_code\": \"20.41.01\", \"nace_label\": \"Kapalı alanlar için kokulu müstahzarlar ve koku gidericiler ile suni mumların imalatı (kişisel kullanım için olanlar hariç)\"}, {\"id\": \"15713\", \"alias\": \"nakliyat\", \"meslek_tanim\": \"Kara yolu ile yük taşımacılığı\", \"nace_code\": \"49.41.90\", \"nace_label\": \"Kara yolu ile diğer yük taşımacılığı\"}, {\"id\": \"13195\", \"alias\": \"makina tamircisi\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.42.01\", \"nace_label\": \"Ahşap, mantar, kemik, sert kauçuk, sert plastik veya benzeri sert malzemeleri işlemek için olan takım tezgahı ile bunların parçalarının imalatı (transfer, testere, planya, freze, taşlama, zımparalama, parlatma, bükme, delme, dilimleme, pres, vb.)\"}, {\"id\": \"4246\", \"alias\": \"demir çelik eşya imalatı ve ticareti\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"33.11.01\", \"nace_label\": \"Metal boru ve boru hatları ile pompa istasyonlarının onarım ve bakımı\"}, {\"id\": \"9601\", \"alias\": \"İnşaat Ustası\", \"meslek_tanim\": \"İnşaatçılık\", \"nace_code\": \"43.99.13\", \"nace_label\": \"İnşaat demirciliği (inşaat demirinin bükülmesi ve bağlanması)\"}, {\"id\": \"7428\", \"alias\": \"format atma\", \"meslek_tanim\": \"Bilgisayar kurulumu, onarımı, programlama, veri kurtarma\", \"nace_code\": \"63.91.02\", \"nace_label\": \"Web arama portalı faaliyetleri\"}, {\"id\": \"7382\", \"alias\": \"fide üreticisi\", \"meslek_tanim\": \"Bitkisel ürünlerle ilgili faaliyetler\", \"nace_code\": \"46.11.01\", \"nace_label\": \"Çiçeklerin, bitkilerin, diğer tarımsal hammaddelerin, tekstil hammaddelerinin ve yarı mamul malların bir ücret veya sözleşmeye dayalı olarak toptan satışını yapan aracılar\"}, {\"id\": \"21452\", \"alias\": \"Yapı malzemeleri\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"23.44.01\", \"nace_label\": \"Diğer teknik seramik ürünlerin imalatı (laboratuvar, kimyasal ve diğer teknik alanlarda kullanılan seramikten ürünler) (ateşe dayanıklı seramik ürünler hariç)\"}, {\"id\": \"17721\", \"alias\": \"prefabrik ev satışı\", \"meslek_tanim\": \"Prefabrik yapıların imalatı, kurulumu, ticareti\", \"nace_code\": \"43.50.04\", \"nace_label\": \"Prefabrik yüzme havuzlarının kurulumu\"}, {\"id\": \"5411\", \"alias\": \"Dokumacılık yapıyorum\", \"meslek_tanim\": \"Dokumacılık\", \"nace_code\": \"46.41.03\", \"nace_label\": \"Kumaş toptan ticareti (manifatura ürünleri dahil)\"}, {\"id\": \"16702\", \"alias\": \"oyuncak hayvan imalatı\", \"meslek_tanim\": \"Oyuncak imalatı, ticareti\", \"nace_code\": \"46.18.01\", \"nace_label\": \"Oyun ve oyuncak, spor malzemesi, bisiklet, kitap, gazete, dergi, kırtasiye ürünleri, müzik aleti, saat ve mücevher ile fotoğrafçılıkla ilgili ve optik aletlerin toptan satışı ile ilgili aracıların faaliyetleri\"}, {\"id\": \"7103\", \"alias\": \"ev aletleri yedek parça\", \"meslek_tanim\": \"Ev aletleri imalatı, onarımı, ticareti\", \"nace_code\": \"27.52.06\", \"nace_label\": \"Elektriksiz ev aletlerinin aksam ve parçalarının imalatı\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"9366\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"18597\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"15860\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"7389\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"3588\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"3689\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"17041\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"13885\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"16775\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"16243\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"18402\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"2024\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"3750\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"2266\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"15713\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"13195\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"4246\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"9601\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"7428\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"7382\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"21452\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"17721\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"5411\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"16702\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"7103\",\n      \"verdict\": \"no\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "9366",
+        "verdict": "no"
+      },
+      {
+        "id": "18597",
+        "verdict": "yes"
+      },
+      {
+        "id": "15860",
+        "verdict": "yes"
+      },
+      {
+        "id": "7389",
+        "verdict": "no"
+      },
+      {
+        "id": "3588",
+        "verdict": "no"
+      },
+      {
+        "id": "3689",
+        "verdict": "no"
+      },
+      {
+        "id": "17041",
+        "verdict": "no"
+      },
+      {
+        "id": "13885",
+        "verdict": "no"
+      },
+      {
+        "id": "16775",
+        "verdict": "yes"
+      },
+      {
+        "id": "16243",
+        "verdict": "yes"
+      },
+      {
+        "id": "18402",
+        "verdict": "no"
+      },
+      {
+        "id": "2024",
+        "verdict": "no"
+      },
+      {
+        "id": "3750",
+        "verdict": "no"
+      },
+      {
+        "id": "2266",
+        "verdict": "no"
+      },
+      {
+        "id": "15713",
+        "verdict": "yes"
+      },
+      {
+        "id": "13195",
+        "verdict": "no"
+      },
+      {
+        "id": "4246",
+        "verdict": "no"
+      },
+      {
+        "id": "9601",
+        "verdict": "yes"
+      },
+      {
+        "id": "7428",
+        "verdict": "no"
+      },
+      {
+        "id": "7382",
+        "verdict": "no"
+      },
+      {
+        "id": "21452",
+        "verdict": "no"
+      },
+      {
+        "id": "17721",
+        "verdict": "no"
+      },
+      {
+        "id": "5411",
+        "verdict": "yes"
+      },
+      {
+        "id": "16702",
+        "verdict": "no"
+      },
+      {
+        "id": "7103",
+        "verdict": "no"
+      }
+    ]
+  }
+}

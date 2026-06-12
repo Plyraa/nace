@@ -1,0 +1,37 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"C.05\", \"meslek_tanim\": \"Elektrik makineleri imalatı, kurulumu, onarımı\", \"sektor_tanim\": \"ELEKTRİK, ELEKTRONİK, BİLGİSAYAR\", \"nace_examples\": [{\"nace_code\": \"27.11.01\", \"nace_label\": \"Elektrik motoru, jeneratör ve transformatörlerin imalatı (aksam ve parçaları hariç)\"}, {\"nace_code\": \"27.11.03\", \"nace_label\": \"Elektrik motoru, jeneratör ve transformatörlerin aksam ve parçalarının imalatı\"}, {\"nace_code\": \"27.90.05\", \"nace_label\": \"Elektrikli kaynak ve lehim teçhizatı (lehim havyaları, ark kaynak makineleri, endüksiyon kaynak makineleri vb.) ile metallerin veya sinterlenmiş metal karbürlerin sıcak spreylenmesi için elektrikli makine ve cihazlarının imalatı\"}, {\"nace_code\": \"33.14.01\", \"nace_label\": \"Güç transformatörleri, dağıtım transformatörleri ve özel transformatörlerin onarım ve bakımı (elektrik dağıtım ve kontrol cihazları dahil)\"}, {\"nace_code\": \"33.14.02\", \"nace_label\": \"Elektrik motorları, jeneratörler ve motor jeneratör setlerinin onarım ve bakımı (bobinlerin tekrar sarımı dahil)\"}, {\"nace_code\": \"33.20.51\", \"nace_label\": \"Elektrikli ekipmanların kurulum hizmetleri (yollar, vb. için elektrikli sinyalizasyon ekipmanları hariç))\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"elektrikçi\",\n    \"motor tamircisi\",\n    \"jeneratörcü\",\n    \"transformatörcü\",\n    \"kaynak makinası tamircisi\",\n    \"elektrikli ekipman kuran\",\n    \"elektrik motoru saran\",\n    \"bobinajcı\",\n    \"elektrik makineleri tamircisi\",\n    \"endüstriyel elektrikçi\",\n    \"ordu elektrikçi\",\n    \"elektrik bakımcısı\",\n    \"makineleri kurup tamir eden\",\n    \"cihaz-kurulum-bakim\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "elektrikçi",
+      "motor tamircisi",
+      "jeneratörcü",
+      "transformatörcü",
+      "kaynak makinası tamircisi",
+      "elektrikli ekipman kuran",
+      "elektrik motoru saran",
+      "bobinajcı",
+      "elektrik makineleri tamircisi",
+      "endüstriyel elektrikçi",
+      "ordu elektrikçi",
+      "elektrik bakımcısı",
+      "makineleri kurup tamir eden",
+      "cihaz-kurulum-bakim"
+    ]
+  }
+}

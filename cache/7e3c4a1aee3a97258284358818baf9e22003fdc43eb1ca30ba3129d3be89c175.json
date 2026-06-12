@@ -1,0 +1,40 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"F.12\", \"meslek_tanim\": \"Kırtasiye imalatı, ticareti\", \"sektor_tanim\": \"HEDİYELİK EŞYA, EĞİTİM, BASIM, FOTOĞRAF, ÇEŞİTLİ MALLAR\", \"nace_examples\": [{\"nace_code\": \"20.59.05\", \"nace_label\": \"Yazım ve çizim mürekkepleri ve diğer mürekkeplerin imalatı (matbaa mürekkebi imalatı hariç)\"}, {\"nace_code\": \"25.99.04\", \"nace_label\": \"Adi metalden büro malzemeleri imalatı (dosya kutuları, kaşeler, zımba telleri, kağıt ataçları vb.)\"}, {\"nace_code\": \"32.99.04\", \"nace_label\": \"Mekanik olsun veya olmasın her çeşit dolma kalem, tükenmez ve kurşun kalem ile boya kalemi, pastel boya imalatı (kalem ucu ve kurşun kalem içleri dahil)\"}, {\"nace_code\": \"32.99.08\", \"nace_label\": \"Tarih verme, damga, mühür veya numara verme kaşeleri, numaratör, elle çalışan basım aletleri, kabartma etiketleri, el baskı setleri, hazır daktilo şeritleri ve ıstampaların imalatı\"}, {\"nace_code\": \"46.49.03\", \"nace_label\": \"Kırtasiye ürünleri toptan ticareti\"}, {\"nace_code\": \"46.49.24\", \"nace_label\": \"Resim, fotoğraf vb. için çerçeve toptan ticareti\"}, {\"nace_code\": \"47.62.01\", \"nace_label\": \"Kırtasiye ürünlerinin perakende ticareti\"}, {\"nace_code\": \"47.78.08\", \"nace_label\": \"Büro makine ve ekipmanlarının perakende ticareti (hesaplama makineleri, daktilolar, fotokopi makineleri, tarama ve faks cihazları, çizim masaları vb.)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"kırtasiye\",\n    \"kırtasiyeci\",\n    \"kırtasiyecilik\",\n    \"Kırtasiye imalatı\",\n    \"kırtasiyeler\",\n    \"kırtasiye ürünleri satışı\",\n    \"kırtasiye toptan\",\n    \"kırtasiye perakende\",\n    \"kırtasiye ürünleri imalatçısı\",\n    \"kırtasiye malzemeleri\",\n    \"kırtasiye dükkanım\",\n    \"ben kırtasiyeciyim\",\n    \"kırtasiye işletmem\",\n    \"kırtasiye ürünleri\",\n    \"kırtasiyelerimiz\",\n    \"kırtasiyecilik ve ticareti\",\n    \"kırtasiye toptancısı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "kırtasiye",
+      "kırtasiyeci",
+      "kırtasiyecilik",
+      "Kırtasiye imalatı",
+      "kırtasiyeler",
+      "kırtasiye ürünleri satışı",
+      "kırtasiye toptan",
+      "kırtasiye perakende",
+      "kırtasiye ürünleri imalatçısı",
+      "kırtasiye malzemeleri",
+      "kırtasiye dükkanım",
+      "ben kırtasiyeciyim",
+      "kırtasiye işletmem",
+      "kırtasiye ürünleri",
+      "kırtasiyelerimiz",
+      "kırtasiyecilik ve ticareti",
+      "kırtasiye toptancısı"
+    ]
+  }
+}

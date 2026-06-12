@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "resolver_fallback",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 700,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe serbest meslek/sektör ifadesini verilen NACE kısa listesinden seçen bir resolver'sın. Sadece geçerli JSON döndür; listede olmayan kod üretme."
+      },
+      {
+        "role": "user",
+        "content": "{\"user_text\": \"tamirci\", \"normalized_text\": \"tamirci\", \"buckets\": {\"manufacturing\": \"Gıda/tekstil hariç imalat, üretim ve onarım ağırlıklı sanayi.\", \"trade\": \"Perakende, toptan satış, bayilik, e-ticaret ve aracılık.\", \"food\": \"Gıda üretimi, gıda perakendesi, lokanta, kafe ve içecek faaliyetleri.\", \"textile\": \"Tekstil, konfeksiyon, ayakkabı, deri ve ilgili bakım/ticaret.\", \"construction\": \"İnşaat, tesisat, yapı malzemesi ve yapı destek işleri.\", \"logistics\": \"Yolcu/yük taşımacılığı, depolama, otopark, kurye ve taşıma destekleri.\", \"technology\": \"Yazılım, bilişim, telekom, elektronik cihaz ve dijital altyapı.\", \"services\": \"Kişisel, mesleki, eğitim, sağlık, sanat, turizm ve bakım hizmetleri.\", \"agriculture\": \"Tarım, hayvancılık, ormancılık, balıkçılık ve zirai destek.\", \"other\": \"Yukarıdaki kovalara net oturmayan veya kamusal/karma faaliyetler.\"}, \"candidate_nace_codes\": [{\"nace_code\": \"11.06.01\", \"nace_label\": \"Malt imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Meşrubat imalatı, ticareti\"}, {\"nace_code\": \"20.42.02\", \"nace_label\": \"Kolonya imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Kozmetik imalatı, ticareti\"}, {\"nace_code\": \"43.34.02\", \"nace_label\": \"Cam takma işleri\", \"bucket\": \"construction\", \"meslek_tanim\": \"Camcılık\"}, {\"nace_code\": \"25.40.05\", \"nace_label\": \"Toz metalürjisi\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Tornacılık\"}, {\"nace_code\": \"47.61.00\", \"nace_label\": \"Kitap perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Kitapçılık\"}, {\"nace_code\": \"47.79.01\", \"nace_label\": \"Antika perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Sanat eseri, antika ticareti\"}, {\"nace_code\": \"46.49.06\", \"nace_label\": \"Müzik aletleri toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Müzik aletleri imalatı, onarımı, ticareti\"}, {\"nace_code\": \"47.63.04\", \"nace_label\": \"Bisiklet perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Motosiklet, bisiklet ticareti\"}, {\"nace_code\": \"23.63.01\", \"nace_label\": \"Hazır beton imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\"}, {\"nace_code\": \"47.63.03\", \"nace_label\": \"Kamp malzemeleri perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Spor malzemeleri imalatı, ticareti\"}, {\"nace_code\": \"10.61.06\", \"nace_label\": \"İrmik imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Değirmencilik, zahirecilik\"}, {\"nace_code\": \"95.29.04\", \"nace_label\": \"Anahtar çoğaltma hizmetleri\", \"bucket\": \"services\", \"meslek_tanim\": \"Çilingirlik\"}, {\"nace_code\": \"47.22.05\", \"nace_label\": \"Et perakende ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Kasaplık\"}, {\"nace_code\": \"11.05.01\", \"nace_label\": \"Bira imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Meşrubat imalatı, ticareti\"}, {\"nace_code\": \"11.07.04\", \"nace_label\": \"Boza imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Meşrubat imalatı, ticareti\"}, {\"nace_code\": \"46.48.02\", \"nace_label\": \"Saat toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Saatçilik\"}, {\"nace_code\": \"10.62.05\", \"nace_label\": \"Glüten imalatı\", \"bucket\": \"food\", \"meslek_tanim\": \"Değirmencilik, zahirecilik\"}, {\"nace_code\": \"46.49.02\", \"nace_label\": \"Spor malzemesi toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Spor malzemeleri imalatı, ticareti\"}, {\"nace_code\": \"80.09.01\", \"nace_label\": \"Çilingirlik hizmetleri\", \"bucket\": \"services\", \"meslek_tanim\": \"Çilingirlik\"}, {\"nace_code\": \"20.51.24\", \"nace_label\": \"Sıvı biyoyakıt imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Akaryakıt ticareti\"}, {\"nace_code\": \"47.55.08\", \"nace_label\": \"Yatak perakende ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Mobilya ticareti\"}, {\"nace_code\": \"46.83.03\", \"nace_label\": \"Düz cam toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Camcılık\"}, {\"nace_code\": \"46.37.01\", \"nace_label\": \"Çay toptan ticareti\", \"bucket\": \"food\", \"meslek_tanim\": \"Aktar ürünleri imalatı, ticareti\"}, {\"nace_code\": \"17.12.07\", \"nace_label\": \"Kağıt ve mukavva imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Kağıt, kağıt ürünleri imalatı, ticareti\"}, {\"nace_code\": \"43.41.00\", \"nace_label\": \"Çatı işleri\", \"bucket\": \"construction\", \"meslek_tanim\": \"Tenekecilik\"}, {\"nace_code\": \"43.31.01\", \"nace_label\": \"Sıva işleri\", \"bucket\": \"construction\", \"meslek_tanim\": \"İnşaatçılık\"}, {\"nace_code\": \"82.99.04\", \"nace_label\": \"Trafik müşavirliği\", \"bucket\": \"services\", \"meslek_tanim\": \"Trafik müşavirliği, iş takipçiliği\"}, {\"nace_code\": \"32.99.11\", \"nace_label\": \"Mantar can simitlerinin imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Marangozluk\"}, {\"nace_code\": \"46.47.04\", \"nace_label\": \"Büro mobilyalarının toptan ticareti\", \"bucket\": \"trade\", \"meslek_tanim\": \"Mobilya ticareti\"}, {\"nace_code\": \"31.00.90\", \"nace_label\": \"Diğer mobilyaların imalatı\", \"bucket\": \"manufacturing\", \"meslek_tanim\": \"Mobilya imalatı\"}], \"instruction\": \"En olası ilk 3 NACE kodunu sırala. Kodlar sadece candidate_nace_codes içinden olmalı.\", \"schema\": {\"candidates\": [{\"nace_code\": \"string\", \"bucket\": \"string\", \"confidence\": 0.0}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"candidates\": [\n    {\n      \"nace_code\": \"43.34.02\",\n      \"bucket\": \"construction\",\n      \"confidence\": 0.85\n    },\n    {\n      \"nace_code\": \"95.29.04\",\n      \"bucket\": \"services\",\n      \"confidence\": 0.1\n    },\n    {\n      \"nace_code\": \"25.40.05\",\n      \"bucket\": \"manufacturing\",\n      \"confidence\": 0.05\n    }\n  ]\n}",
+  "parsed": {
+    "candidates": [
+      {
+        "nace_code": "43.34.02",
+        "bucket": "construction",
+        "confidence": 0.85
+      },
+      {
+        "nace_code": "95.29.04",
+        "bucket": "services",
+        "confidence": 0.1
+      },
+      {
+        "nace_code": "25.40.05",
+        "bucket": "manufacturing",
+        "confidence": 0.05
+      }
+    ]
+  }
+}

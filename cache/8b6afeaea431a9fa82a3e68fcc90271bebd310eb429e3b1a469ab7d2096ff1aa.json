@@ -1,0 +1,37 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"F.17\", \"meslek_tanim\": \"Müzik aletleri imalatı, onarımı, ticareti\", \"sektor_tanim\": \"HEDİYELİK EŞYA, EĞİTİM, BASIM, FOTOĞRAF, ÇEŞİTLİ MALLAR\", \"nace_examples\": [{\"nace_code\": \"32.20.21\", \"nace_label\": \"Elektronik müzik aletleri veya klavyeli çalgıların imalatı (elektrik gücüyle ses üreten veya sesi güçlendirilen enstrümanlar) (dijital piyano, sintizayzır, elektrogitar, vb.)\"}, {\"nace_code\": \"32.20.23\", \"nace_label\": \"Ağızları huni gibi genişleyen neviden olan boru esaslı müzik aletleri ile diğer üflemeli müzik aletlerinin imalatı (saksafon, flüt, trombon, borazan, vb.)\"}, {\"nace_code\": \"32.20.24\", \"nace_label\": \"Vurmalı çalgıların imalatı (trampet, davul, ksilofon, zil, kas vs.)\"}, {\"nace_code\": \"32.20.25\", \"nace_label\": \"Piyanolar ve diğer klavyeli yaylı/telli çalgıların imalatı\"}, {\"nace_code\": \"32.20.26\", \"nace_label\": \"Borulu ve klavyeli orglar, armonyumlar, akordiyonlar, ağız mızıkaları (armonikalar), tulum vb. çalgıların imalatı\"}, {\"nace_code\": \"32.20.27\", \"nace_label\": \"Müzik kutuları, orkestriyonlar, laternalar, çıngıraklar vb. imalatı\"}, {\"nace_code\": \"32.20.28\", \"nace_label\": \"Metronomlar, akort çatalları (diyapazonlar) ve akort düdükleri, müzik kutuları için mekanizmalar, müzik aleti telleri ile müzik aletlerinin parça ve aksesuarlarının imalatı\"}, {\"nace_code\": \"32.20.90\", \"nace_label\": \"Diğer yaylı/telli müzik aletlerinin imalatı (saz, gitar, keman, vb.)\"}, {\"nace_code\": \"32.20.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer müzik aletlerinin imalatı\"}, {\"nace_code\": \"46.49.06\", \"nace_label\": \"Müzik aletleri toptan ticareti\"}, {\"nace_code\": \"47.69.01\", \"nace_label\": \"Müzik aletleri ve müzik partisyonu (nota kağıdı) perakende ticareti\"}, {\"nace_code\": \"77.22.03\", \"nace_label\": \"Müzik aletlerinin kiralanması ve operasyonel leasingi\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"müzik aletleri imalatçısı\",\n    \"müzik aleti tamircisi\",\n    \"enstrüman yapımcısı\",\n    \"çalgı yapımı ve onarımı\",\n    \"saz imalatı\",\n    \"gitar tamircisi\",\n    \"müzik aletleri satışı\",\n    \"ikinci el müzik aleti alım satım\",\n    \"müzik aleti kiralama\",\n    \"akordiyon tamiri\",\n    \"piyano akortçusu\",\n    \"davul imalatı\",\n    \"müzik aleti bakım ve onarım\",\n    \"enstrüman tamircisi\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "müzik aletleri imalatçısı",
+      "müzik aleti tamircisi",
+      "enstrüman yapımcısı",
+      "çalgı yapımı ve onarımı",
+      "saz imalatı",
+      "gitar tamircisi",
+      "müzik aletleri satışı",
+      "ikinci el müzik aleti alım satım",
+      "müzik aleti kiralama",
+      "akordiyon tamiri",
+      "piyano akortçusu",
+      "davul imalatı",
+      "müzik aleti bakım ve onarım",
+      "enstrüman tamircisi"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.28\", \"meslek_tanim\": \"Saatçilik\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"23.15.08\", \"nace_label\": \"Duvar saati, kol saati veya gözlük için camlar (bombeli, kavisli, içi oyuk vb. şekilde fakat, optik açıdan işlenmemiş) ile bu tür camların imalatı için kullanılan içi boş küre ve bunların parçalarının imalatı\"}, {\"nace_code\": \"26.52.03\", \"nace_label\": \"Devam kayıt cihazları, zaman kayıt cihazları, parkmetreler; duvar ve kol saati makineli zaman ayarlı anahtarların imalatı (vardiya saati vb.)\"}, {\"nace_code\": \"26.52.04\", \"nace_label\": \"Kol, masa, duvar ve cep saatlerinin, bunların makinelerinin, kasalarının ve diğer parçalarının imalatı (kronometreler ve taşıtlar için gösterge panellerinde bulunan saatler ve benzeri tipteki saatler dahil)\"}, {\"nace_code\": \"46.48.02\", \"nace_label\": \"Saat toptan ticareti\"}, {\"nace_code\": \"47.77.03\", \"nace_label\": \"Saat (kol, masa, duvar vb. saatler ile kronometreler) perakende ticareti\"}, {\"nace_code\": \"95.25.01\", \"nace_label\": \"Saatlerin onarımı (kronometreler dahil, devam kayıt cihazları hariç)\"}, {\"nace_code\": \"95.25.03\", \"nace_label\": \"Saatlerin yenilenmesi hizmeti faaliyetleri (telefon özelliği olmayan akıllı saatler)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"Saatçi\",\n    \"Saat tamircisi\",\n    \"Saat ustası\",\n    \"Saat onarımı\",\n    \"Kol saati tamiri\",\n    \"Duvar saati tamiri\",\n    \"Saat bakımı\",\n    \"Saat pil değişimi\",\n    \"Saatçilik hizmetleri\",\n    \"Antika saat tamiri\",\n    \"Saat tamir\",\n    \"Saatçiyim\",\n    \"Saat tamirci\",\n    \"Saat alım satım\",\n    \"Saatçı\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "Saatçi",
+      "Saat tamircisi",
+      "Saat ustası",
+      "Saat onarımı",
+      "Kol saati tamiri",
+      "Duvar saati tamiri",
+      "Saat bakımı",
+      "Saat pil değişimi",
+      "Saatçilik hizmetleri",
+      "Antika saat tamiri",
+      "Saat tamir",
+      "Saatçiyim",
+      "Saat tamirci",
+      "Saat alım satım",
+      "Saatçı"
+    ]
+  }
+}

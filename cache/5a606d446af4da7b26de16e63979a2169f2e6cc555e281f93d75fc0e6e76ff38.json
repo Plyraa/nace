@@ -1,0 +1,20 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"8295\", \"alias\": \"Hastane malzemeleri\", \"meslek_tanim\": \"Tıbbi malzemelerin imalatı, ticareti\", \"nace_code\": \"32.50.90\", \"nace_label\": \"Tıbbi ve dişçilik ile ilgili diğer araç ve gereçlerin imalatı\"}, {\"id\": \"13106\", \"alias\": \"makina tamirci\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.42.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer takım tezgahlarının imalatı\"}, {\"id\": \"3945\", \"alias\": \"demir profil imalatı\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"25.61.06\", \"nace_label\": \"Sofra bıçakları (balık bıçakları, kahvaltı ve meyve bıçakları hariç), budama bıçakları, sustalı bıçaklar, satır,balta vb. bıçaklar (makineler için olanlar hariç) ile terzi makasları, vb. makaslar ve bunların ağızlarının imalatı\"}, {\"id\": \"3523\", \"alias\": \"camcı\", \"meslek_tanim\": \"Camcılık\", \"nace_code\": \"43.34.02\", \"nace_label\": \"Cam takma işleri\"}, {\"id\": \"14770\", \"alias\": \"marangozluk ürünleri\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"16.28.01\", \"nace_label\": \"Ahşap mutfak ve sofra eşyası imalatı (kaşık, kepçe, spatula, bardak, havan, havan eli, tepsi vb.)\"}, {\"id\": \"3682\", \"alias\": \"dantelci\", \"meslek_tanim\": \"Ev tekstil ürünleri imalatı, ticareti\", \"nace_code\": \"46.41.01\", \"nace_label\": \"Evde kullanılan tekstil takımları, perdeler ve çeşitli tekstil malzemesinden ev eşyaları toptan ticareti\"}, {\"id\": \"14039\", \"alias\": \"Makine parçaları toptan\", \"meslek_tanim\": \"Makine, yedek parça ticareti\", \"nace_code\": \"46.61.03\", \"nace_label\": \"Çim biçme ve bahçe makine ve ekipmanları ile aksam ve parçalarının toptan ticareti\"}, {\"id\": \"13347\", \"alias\": \"Makina yedek parça\", \"meslek_tanim\": \"Makine, yedek parça ticareti\", \"nace_code\": \"46.14.02\", \"nace_label\": \"Tarımsal ekipmanlar ile makine ve sanayi ekipmanlarının toptan satışı ile ilgili aracıların faaliyetleri\"}, {\"id\": \"10199\", \"alias\": \"kamyoncu\", \"meslek_tanim\": \"Kara yolu ile yük taşımacılığı\", \"nace_code\": \"49.41.90\", \"nace_label\": \"Kara yolu ile diğer yük taşımacılığı\"}, {\"id\": \"1672\", \"alias\": \"ben demirciyim\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"25.91.01\", \"nace_label\": \"Çelik varil ve benzer muhafazaların imalatı\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{}",
+  "parsed": {}
+}

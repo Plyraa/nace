@@ -1,0 +1,24 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"D.04\", \"meslek_tanim\": \"Balıkçılık\", \"sektor_tanim\": \"GIDA, TARIM\", \"nace_examples\": [{\"nace_code\": \"03.11.01\", \"nace_label\": \"Deniz ve kıyı sularında yapılan balıkçılık (gırgır balıkçılığı, dalyancılık dahil)\"}, {\"nace_code\": \"03.11.02\", \"nace_label\": \"Deniz kabuklularının (midye, ıstakoz vb.), yumuşakçaların, diğer deniz canlıları ve ürünlerinin toplanması (sedef, doğal inci, sünger, mercan, deniz yosunu, vb.)\"}, {\"nace_code\": \"03.12.01\", \"nace_label\": \"Tatlı su balıkçılığı\"}, {\"nace_code\": \"03.21.01\", \"nace_label\": \"Denizde yapılan balık yetiştiriciliği\"}, {\"nace_code\": \"03.21.02\", \"nace_label\": \"Denizde yapılan diğer su ürünleri yetiştiriciliği\"}, {\"nace_code\": \"03.22.01\", \"nace_label\": \"Tatlı sularda yapılan balık yetiştiriciliği\"}, {\"nace_code\": \"03.22.02\", \"nace_label\": \"Tatlısu ürünleri yetiştiriciliği (balık hariç)\"}, {\"nace_code\": \"10.20.03\", \"nace_label\": \"Balıkların, kabuklu deniz hayvanlarının ve yumuşakçaların işlenmesi ve saklanması\"}, {\"nace_code\": \"10.20.04\", \"nace_label\": \"Balık, kabuklu deniz hayvanı ve yumuşakça ürünlerinin üretimi\"}, {\"nace_code\": \"10.20.05\", \"nace_label\": \"Balık unları, kaba unları ve peletlerinin üretilmesi (insan tüketimi için)\"}, {\"nace_code\": \"10.20.07\", \"nace_label\": \"Pişirilmemiş balık yemekleri imalatı (mayalanmış balık, balık hamuru, balık köftesi vb.)\"}, {\"nace_code\": \"10.20.08\", \"nace_label\": \"Balıkların, kabukluların, yumuşakçaların veya diğer su omurgasızlarının unları, kaba unları ve peletlerinin üretimi (insan tüketimine uygun olmayan) ile bunların diğer yenilemeyen ürünlerinin üretimi\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\"balıkçı\"]\n}",
+  "parsed": {
+    "aliases": [
+      "balıkçı"
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"17201\", \"alias\": \"pencere yapıyorum\", \"meslek_tanim\": \"PVC ürün imalatı\", \"nace_code\": \"22.23.08\", \"nace_label\": \"Plastikten kapı ve pencere imalatı\"}, {\"id\": \"6033\", \"alias\": \"elektrik imalatçısı\", \"meslek_tanim\": \"Elektrik malzemeleri imalatı, ticareti\", \"nace_code\": \"23.43.01\", \"nace_label\": \"Seramik yalıtkanların (izolatörlerin) ve yalıtkan bağlantı parçalarının imalatı\"}, {\"id\": \"17938\", \"alias\": \"PVC ürünleri satışı\", \"meslek_tanim\": \"PVC ürün ticareti\", \"nace_code\": \"46.83.11\", \"nace_label\": \"Plastik kapı, pencere ve bunların kasaları ile kapı eşikleri, panjurlar, jaluziler, storlar vb. eşyaların toptan ticareti\"}, {\"id\": \"134\", \"alias\": \"akide şekeri\", \"meslek_tanim\": \"Şekercilik, çikolatacılık\", \"nace_code\": \"10.81.03\", \"nace_label\": \"Akçaağaç şurubu imalatı\"}, {\"id\": \"10162\", \"alias\": \"kalıcı makyaj\", \"meslek_tanim\": \"Güzellik salonu işletmeciliği\", \"nace_code\": \"96.22.02\", \"nace_label\": \"Sadece manikür ve pedikür hizmeti sunan salonların faaliyetleri\"}, {\"id\": \"19641\", \"alias\": \"tavuk işletmesi\", \"meslek_tanim\": \"Tavukçuluk\", \"nace_code\": \"01.47.02\", \"nace_label\": \"Kuluçkahanelerin faaliyetleri\"}, {\"id\": \"6926\", \"alias\": \"Emlak Dünyası\", \"meslek_tanim\": \"Emlakçılık\", \"nace_code\": \"81.10.01\", \"nace_label\": \"Tesis bünyesindeki kombine destek hizmetleri\"}, {\"id\": \"19909\", \"alias\": \"telekom cihazları perakende\", \"meslek_tanim\": \"Telekomünikasyon cihazları ticareti\", \"nace_code\": \"46.50.02\", \"nace_label\": \"Telekomünikasyon ekipman ve parçalarının toptan ticareti (telefon ve iletişim ekipmanları dahil)\"}, {\"id\": \"4082\", \"alias\": \"demir çelik eşya imalatı\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"25.30.03\", \"nace_label\": \"Tabanca, revolver (altıpatlar), av tüfeği, havalı tabanca, cop, vb. askeri amaçlı olmayan ateşli silahlar ve benzeri aletlerin ve bunların parçalarının imalatı\"}, {\"id\": \"11641\", \"alias\": \"konfeksiyoncu atölyem\", \"meslek_tanim\": \"Konfeksiyonculuk\", \"nace_code\": \"47.71.11\", \"nace_label\": \"Spor giysisi perakende ticareti\"}, {\"id\": \"7683\", \"alias\": \"gazete bayi\", \"meslek_tanim\": \"Basın, yayım, iletişim\", \"nace_code\": \"60.10.09\", \"nace_label\": \"Radyo yayıncılığı ve ses dağıtım faaliyetleri\"}, {\"id\": \"14544\", \"alias\": \"marangoz dükkanı\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"16.28.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer ağaç ürünleri imalatı; mantardan, saz, saman ve benzeri örme malzemelerinden yapılmış ürünlerin imalatı\"}, {\"id\": \"6213\", \"alias\": \"elektrik malzemeleri toptan\", \"meslek_tanim\": \"Elektrik malzemeleri imalatı, ticareti\", \"nace_code\": \"46.64.09\", \"nace_label\": \"Akümülatör, batarya, pil ve bunların parçalarının toptan ticareti (evlerde, motosikletlerde ve motorlu kara taşıtlarında kullanılanlar hariç)\"}, {\"id\": \"21553\", \"alias\": \"Yapı malzemeleri üreticisi\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"23.52.01\", \"nace_label\": \"Sönmemiş kireç, sönmüş kireç ve suya dayanıklı kireç imalatı\"}, {\"id\": \"21225\", \"alias\": \"valey hizmeti\", \"meslek_tanim\": \"Durak, otopark işletmeciliği\", \"nace_code\": \"52.21.09\", \"nace_label\": \"Kara yolu yolcu taşımacılığına yönelik otobüs terminal hizmetleri\"}, {\"id\": \"18\", \"alias\": \"ahşap işleri\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"16.24.90\", \"nace_label\": \"Diğer ahşap konteyner imalatı\"}, {\"id\": \"12684\", \"alias\": \"lastikçi\", \"meslek_tanim\": \"Oto lastik onarımı\", \"nace_code\": \"22.11.19\", \"nace_label\": \"Lastik tekerleklerinin yeniden işlenmesi ve sırt geçirilmesi (lastiğin kaplanması)\"}, {\"id\": \"19204\", \"alias\": \"spor mağazam\", \"meslek_tanim\": \"Spor malzemeleri imalatı, ticareti\", \"nace_code\": \"32.30.17\", \"nace_label\": \"Kar kayakları, kayak ayakkabıları, kayak botları, kayak batonları, buz patenleri ve tekerlekli patenler ile su kayağı araçları, sörf tahtaları, rüzgar sörfleri vb. ekipmanlar ile bunların parçalarının imalatı (kaykaylar dahil)\"}, {\"id\": \"754\", \"alias\": \"ayakkabı malzemeleri\", \"meslek_tanim\": \"Ayakkabıcılık\", \"nace_code\": \"15.20.07\", \"nace_label\": \"Ayakkabı ve terliklerin plastik parçalarının imalatı\"}, {\"id\": \"4331\", \"alias\": \"demir çelik işleri yapıyorum\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"47.52.13\", \"nace_label\": \"Demirden/çelikten bar ve çubukların, profillerin, tüp ve boruların perakende ticareti\"}, {\"id\": \"14185\", \"alias\": \"makineci\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"33.12.11\", \"nace_label\": \"Metal işleme makinelerinin ve takım tezgahlarının onarım ve bakımı (CNC olanlar dahil)\"}, {\"id\": \"12031\", \"alias\": \"kurs açtım\", \"meslek_tanim\": \"Kurs işletmeciliği\", \"nace_code\": \"85.59.09\", \"nace_label\": \"Dil ve konuşma becerileri eğitimi veren kursların faaliyetleri (temel, orta ve yükseköğretim düzeyinde verilen eğitim hariç)\"}, {\"id\": \"9200\", \"alias\": \"İnşaat malzemecisi\", \"meslek_tanim\": \"İnşaat malzemeleri ticareti\", \"nace_code\": \"47.52.21\", \"nace_label\": \"Plastikten inşaat amaçlı levhalar, folyolar, şeritler ve borular ile asfalt vb. malzemeden çatı kaplama ürünlerinin perakende ticareti (inşaat için naylon örtü, shingle, mantolama amaçlı strafor vb. dahil)\"}, {\"id\": \"2173\", \"alias\": \"besicilik yaparım\", \"meslek_tanim\": \"Besicilik, celeplik\", \"nace_code\": \"46.23.01\", \"nace_label\": \"Canlı hayvanların toptan ticareti (kümes hayvanları hariç)\"}, {\"id\": \"9296\", \"alias\": \"İnşaat malzemeleri\", \"meslek_tanim\": \"İnşaat malzemeleri ticareti\", \"nace_code\": \"46.83.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer inşaat malzemesi toptan ticareti\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\"results\": [{\"id\": \"17201\", \"verdict\": \"yes\"}, {\"id\": \"6033\", \"verdict\": \"no\"}, {\"id\": \"17938\", \"verdict\": \"yes\"}, {\"id\": \"134\", \"verdict\": \"no\"}, {\"id\": \"10162\", \"verdict\": \"no\"}, {\"id\": \"19641\", \"verdict\": \"unsure\"}, {\"id\": \"6926\", \"verdict\": \"no\"}, {\"id\": \"19909\", \"verdict\": \"unsure\"}, {\"id\": \"4082\", \"verdict\": \"no\"}, {\"id\": \"11641\", \"verdict\": \"no\"}, {\"id\": \"7683\", \"verdict\": \"no\"}, {\"id\": \"14544\", \"verdict\": \"unsure\"}, {\"id\": \"6213\", \"verdict\": \"no\"}, {\"id\": \"21553\", \"verdict\": \"no\"}, {\"id\": \"21225\", \"verdict\": \"no\"}, {\"id\": \"18\", \"verdict\": \"unsure\"}, {\"id\": \"12684\", \"verdict\": \"yes\"}, {\"id\": \"19204\", \"verdict\": \"no\"}, {\"id\": \"754\", \"verdict\": \"yes\"}, {\"id\": \"4331\", \"verdict\": \"unsure\"}, {\"id\": \"14185\", \"verdict\": \"unsure\"}, {\"id\": \"12031\", \"verdict\": \"unsure\"}, {\"id\": \"9200\", \"verdict\": \"unsure\"}, {\"id\": \"2173\", \"verdict\": \"unsure\"}, {\"id\": \"9296\", \"verdict\": \"yes\"}]}",
+  "parsed": {
+    "results": [
+      {
+        "id": "17201",
+        "verdict": "yes"
+      },
+      {
+        "id": "6033",
+        "verdict": "no"
+      },
+      {
+        "id": "17938",
+        "verdict": "yes"
+      },
+      {
+        "id": "134",
+        "verdict": "no"
+      },
+      {
+        "id": "10162",
+        "verdict": "no"
+      },
+      {
+        "id": "19641",
+        "verdict": "unsure"
+      },
+      {
+        "id": "6926",
+        "verdict": "no"
+      },
+      {
+        "id": "19909",
+        "verdict": "unsure"
+      },
+      {
+        "id": "4082",
+        "verdict": "no"
+      },
+      {
+        "id": "11641",
+        "verdict": "no"
+      },
+      {
+        "id": "7683",
+        "verdict": "no"
+      },
+      {
+        "id": "14544",
+        "verdict": "unsure"
+      },
+      {
+        "id": "6213",
+        "verdict": "no"
+      },
+      {
+        "id": "21553",
+        "verdict": "no"
+      },
+      {
+        "id": "21225",
+        "verdict": "no"
+      },
+      {
+        "id": "18",
+        "verdict": "unsure"
+      },
+      {
+        "id": "12684",
+        "verdict": "yes"
+      },
+      {
+        "id": "19204",
+        "verdict": "no"
+      },
+      {
+        "id": "754",
+        "verdict": "yes"
+      },
+      {
+        "id": "4331",
+        "verdict": "unsure"
+      },
+      {
+        "id": "14185",
+        "verdict": "unsure"
+      },
+      {
+        "id": "12031",
+        "verdict": "unsure"
+      },
+      {
+        "id": "9200",
+        "verdict": "unsure"
+      },
+      {
+        "id": "2173",
+        "verdict": "unsure"
+      },
+      {
+        "id": "9296",
+        "verdict": "yes"
+      }
+    ]
+  }
+}

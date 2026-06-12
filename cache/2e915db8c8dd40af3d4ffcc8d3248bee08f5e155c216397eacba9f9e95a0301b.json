@@ -1,0 +1,20 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"18135\", \"alias\": \"Saat tamir\", \"meslek_tanim\": \"Saatçilik\", \"nace_code\": \"46.48.02\", \"nace_label\": \"Saat toptan ticareti\"}, {\"id\": \"21450\", \"alias\": \"Yapı malzemeleri\", \"meslek_tanim\": \"İnşaat malzemeleri imalatı\", \"nace_code\": \"23.32.03\", \"nace_label\": \"Fırınlanmış, ateşe dayanıklı olmayan kil ve topraktan tuğla ve kiremit imalatı\"}, {\"id\": \"4824\", \"alias\": \"deri ticareti yapıyorum\", \"meslek_tanim\": \"Deri giyim eşyası ticareti\", \"nace_code\": \"46.16.01\", \"nace_label\": \"Deri giyim eşyası, kürk ve ayakkabının bir ücret veya sözleşmeye dayalı olarak toptan satışını yapan aracılar\"}, {\"id\": \"14724\", \"alias\": \"marangozluk hizmetleri\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"46.49.25\", \"nace_label\": \"Arı kovanı toptan ticareti\"}, {\"id\": \"3002\", \"alias\": \"boya imalatı\", \"meslek_tanim\": \"Boya, kimyasal ürünlerin imalatı\", \"nace_code\": \"20.30.11\", \"nace_label\": \"Boya ve vernikler, akrilik ve vinil polimer esaslı olanların (sulu ortamda dağılanlar, çözülenler ve çözeltiler) imalatı\"}, {\"id\": \"22047\", \"alias\": \"yük taşıma aracısı\", \"meslek_tanim\": \"Nakliyat komisyonculuğu\", \"nace_code\": \"52.26.03\", \"nace_label\": \"Kara yolu yük nakliyat acentelerinin faaliyetleri\"}, {\"id\": \"11468\", \"alias\": \"konfeksiyon atölyesi\", \"meslek_tanim\": \"Konfeksiyonculuk\", \"nace_code\": \"47.71.12\", \"nace_label\": \"Gelinlik perakende ticareti\"}, {\"id\": \"14141\", \"alias\": \"makineci\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.41.07\", \"nace_label\": \"Metal işleyen takım tezgahlarının parça ve aksesuarlarının imalatı (alet tutacakları ve kendinden açılan pafta kafaları, iş tutacakları, ayırıcı kafalar ve takım tezgahları için diğer özel aksesuarlar hariç)\"}, {\"id\": \"23297\", \"alias\": \"şekerleme imalatı\", \"meslek_tanim\": \"Şekercilik, çikolatacılık\", \"nace_code\": \"10.82.07\", \"nace_label\": \"Kakao tozu, kakao ezmesi/hamuru ve kakao yağı imalatı\"}, {\"id\": \"7452\", \"alias\": \"fotoğrafçıyım\", \"meslek_tanim\": \"Fotoğrafçılık\", \"nace_code\": \"46.43.10\", \"nace_label\": \"Fotoğrafçılıkla ilgili ürünlerin toptan ticareti\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{}",
+  "parsed": {}
+}

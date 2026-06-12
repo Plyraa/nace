@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"D.09\", \"meslek_tanim\": \"Değirmencilik, zahirecilik\", \"sektor_tanim\": \"GIDA, TARIM\", \"nace_examples\": [{\"nace_code\": \"10.61.01\", \"nace_label\": \"Kahvaltılık tahıl ürünleri ile diğer taneli tahıl ürünlerinin imalatı\"}, {\"nace_code\": \"10.61.02\", \"nace_label\": \"Tahılların öğütülmesi ve un imalatı\"}, {\"nace_code\": \"10.61.05\", \"nace_label\": \"Pirinç, pirinç ezmesi ve pirinç unu imalatı (çeltik fabrikası ve ürünleri dahil)\"}, {\"nace_code\": \"10.61.06\", \"nace_label\": \"İrmik imalatı\"}, {\"nace_code\": \"10.61.07\", \"nace_label\": \"Ön pişirme yapılmış veya başka şekilde hazırlanmış tane halde hububat imalatı (bulgur dahil, mısır hariç)\"}, {\"nace_code\": \"10.61.08\", \"nace_label\": \"Sebzelerin ve baklagillerin öğütülmesi ve sebze unu ile ezmelerinin imalatı (karışımları ile hazır karıştırılmış sebze unları dahil) (pişirilerek yapılanlar hariç)\"}, {\"nace_code\": \"10.61.90\", \"nace_label\": \"Dövülmüş diğer tahıl ürünlerinin imalatı (bulgur ve irmik hariç)\"}, {\"nace_code\": \"10.62.01\", \"nace_label\": \"Nişasta imalatı (buğday, pirinç, patates, mısır, manyok vb. ürünlerden)\"}, {\"nace_code\": \"10.62.04\", \"nace_label\": \"Yaş mısırın öğütülmesi\"}, {\"nace_code\": \"10.62.05\", \"nace_label\": \"Glüten imalatı\"}, {\"nace_code\": \"10.73.03\", \"nace_label\": \"Makarna, şehriye, kuskus ve benzeri mamullerin imalatı (doldurulmuş veya dondurulmuş olanlar dahil)\"}, {\"nace_code\": \"46.21.02\", \"nace_label\": \"Tahıl toptan ticareti (buğday, arpa, çavdar, yulaf, mısır, çeltik vb.)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"Değirmen\",\n    \"Değirmenci\",\n    \"Zahireci\",\n    \"Un değirmeni\",\n    \"Değirmencim\",\n    \"Zahirecim\",\n    \"Uncu\",\n    \"Değirmen işletmesi\",\n    \"Tahıl değirmeni\",\n    \"Değirmencilik\",\n    \"Zahirecilik\",\n    \"Un öğütme\",\n    \"Değirmenim\",\n    \"Değirmenciyim\",\n    \"Degirmen\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "Değirmen",
+      "Değirmenci",
+      "Zahireci",
+      "Un değirmeni",
+      "Değirmencim",
+      "Zahirecim",
+      "Uncu",
+      "Değirmen işletmesi",
+      "Tahıl değirmeni",
+      "Değirmencilik",
+      "Zahirecilik",
+      "Un öğütme",
+      "Değirmenim",
+      "Değirmenciyim",
+      "Degirmen"
+    ]
+  }
+}

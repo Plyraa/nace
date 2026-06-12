@@ -1,0 +1,38 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"G.12\", \"meslek_tanim\": \"Optik ürünlerin imalatı, ticareti\", \"sektor_tanim\": \"KUAFÖR, BERBER, TEMİZLİK, SPOR, KOZMETİK, SAĞLIK\", \"nace_examples\": [{\"nace_code\": \"26.70.11\", \"nace_label\": \"Objektif merceği, levha ve tabaka halinde polarizan madde, renk filtresi, optik mercek, prizma, ayna ve diğer optik elemanlar ile dürbün, optik mikroskop, optik teleskop ve diğer astronomik aletler ile bunların aksam ve parçalarının imalatı\"}, {\"nace_code\": \"32.50.04\", \"nace_label\": \"Gözlükler ve lensler ile parçalarının imalatı\"}, {\"nace_code\": \"33.13.03\", \"nace_label\": \"Profesyonel optik aletlerin ve fotoğrafçılık ekipmanlarının onarım ve bakımı (tüketici elektronik ürünlerinin onarımı hariç)\"}, {\"nace_code\": \"46.43.11\", \"nace_label\": \"Optik ürünlerin toptan ticareti\"}, {\"nace_code\": \"47.74.02\", \"nace_label\": \"Gözlük, kontak lens, gözlük camı vb. perakende ticareti\"}, {\"nace_code\": \"47.78.07\", \"nace_label\": \"Optik ve hassas aletlerin perakende ticareti (mikroskop, dürbün ve pusula dahil; gözlük camı, fotoğrafik ürünler hariç)\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"gözlükçü\",\n    \"optikçi\",\n    \"lensçi\",\n    \"optisyen\",\n    \"gözlük tamircisi\",\n    \"gözlükçü dükkanı\",\n    \"optik mağazası\",\n    \"kontakt lens satışı\",\n    \"gözlük camı\",\n    \"ben gözlükçüyüm\",\n    \"gözlükçüyüm\",\n    \"optikçiyim\",\n    \"gözlükcu\",\n    \"optikci\",\n    \"lensci\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "gözlükçü",
+      "optikçi",
+      "lensçi",
+      "optisyen",
+      "gözlük tamircisi",
+      "gözlükçü dükkanı",
+      "optik mağazası",
+      "kontakt lens satışı",
+      "gözlük camı",
+      "ben gözlükçüyüm",
+      "gözlükçüyüm",
+      "optikçiyim",
+      "gözlükcu",
+      "optikci",
+      "lensci"
+    ]
+  }
+}

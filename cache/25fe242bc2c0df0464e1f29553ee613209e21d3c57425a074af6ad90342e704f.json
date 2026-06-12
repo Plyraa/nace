@@ -1,0 +1,33 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"H.26\", \"meslek_tanim\": \"Oto yedek parça ticareti\", \"sektor_tanim\": \"METAL, OTOMOTİV, MAKİNE\", \"nace_examples\": [{\"nace_code\": \"46.18.08\", \"nace_label\": \"Motorlu kara taşıtlarının parça ve aksesuarlarının toptan satışı ile ilgili aracıların faaliyetleri\"}, {\"nace_code\": \"46.72.12\", \"nace_label\": \"Motorlu kara taşıtlarının parçalarının toptan ticareti (cam, lastik ve jantlar ile motosiklet parçaları hariç)\"}, {\"nace_code\": \"46.72.14\", \"nace_label\": \"Motorlu kara taşıtlarının aksesuarlarının toptan ticareti (motosiklet aksesuarları hariç)\"}, {\"nace_code\": \"47.30.02\", \"nace_label\": \"Motorlu kara taşıtları için yağlama ve soğutma ürünlerinin perakende ticareti\"}, {\"nace_code\": \"47.82.05\", \"nace_label\": \"Motorlu kara taşıtı camlarının perakende ticareti (motosiklet parça ve aksesuarları hariç)\"}, {\"nace_code\": \"47.82.06\", \"nace_label\": \"Motorlu kara taşıtlarının ikinci el (kullanılmış) parçalarının perakende ticareti (motosiklet parça ve aksesuarları hariç)\"}, {\"nace_code\": \"47.82.07\", \"nace_label\": \"Motorlu kara taşıtlarının aksesuarlarının perakende ticareti (motosiklet parça ve aksesuarları hariç)\"}, {\"nace_code\": \"47.82.08\", \"nace_label\": \"Motorlu kara taşıtlarının akülerinin perakende ticareti\"}, {\"nace_code\": \"47.82.90\", \"nace_label\": \"Motorlu kara taşıtlarının diğer parça ve aksesuarlarının perakende ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"oto yedek parça\",\n    \"yedek parça\",\n    \"oto parça\",\n    \"oto yedekçi\",\n    \"yedekçi\",\n    \"oto parçacı\",\n    \"parçacı\",\n    \"oto yedek parça satışı\",\n    \"ben oto yedek parça satıyorum\",\n    \"oto yedek parça ticareti\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "oto yedek parça",
+      "yedek parça",
+      "oto parça",
+      "oto yedekçi",
+      "yedekçi",
+      "oto parçacı",
+      "parçacı",
+      "oto yedek parça satışı",
+      "ben oto yedek parça satıyorum",
+      "oto yedek parça ticareti"
+    ]
+  }
+}

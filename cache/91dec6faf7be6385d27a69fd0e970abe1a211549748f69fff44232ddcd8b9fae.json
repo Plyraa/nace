@@ -1,0 +1,37 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"J.11\", \"meslek_tanim\": \"Özel ambulans işletmeciliği\", \"sektor_tanim\": \"ULAŞTIRMA HİZMETLERİ\", \"nace_examples\": [{\"nace_code\": \"86.92.00\", \"nace_label\": \"Ambulansla hasta taşıma\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"Özel ambulans\",\n    \"Ambulans hizmeti\",\n    \"Hasta nakil ambulans\",\n    \"Ambulans işletmesi\",\n    \"Acil hasta taşıma\",\n    \"Özel ambulansçı\",\n    \"Ambulans kiralama\",\n    \"Ben ambulans işletiyorum\",\n    \"Ambulansçıyım\",\n    \"Ambulans ile hasta taşıma\",\n    \"Özel ambulans hizmetim\",\n    \"Ambulans taşıma\",\n    \"Ambulans servisi\",\n    \"Ambulans nakil\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "Özel ambulans",
+      "Ambulans hizmeti",
+      "Hasta nakil ambulans",
+      "Ambulans işletmesi",
+      "Acil hasta taşıma",
+      "Özel ambulansçı",
+      "Ambulans kiralama",
+      "Ben ambulans işletiyorum",
+      "Ambulansçıyım",
+      "Ambulans ile hasta taşıma",
+      "Özel ambulans hizmetim",
+      "Ambulans taşıma",
+      "Ambulans servisi",
+      "Ambulans nakil"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"F.22\", \"meslek_tanim\": \"Züccaciye imalatı, ticareti\", \"sektor_tanim\": \"HEDİYELİK EŞYA, EĞİTİM, BASIM, FOTOĞRAF, ÇEŞİTLİ MALLAR\", \"nace_examples\": [{\"nace_code\": \"23.13.01\", \"nace_label\": \"Camdan şişe, kavanoz ve diğer muhafaza kapları, bardaklar, termos ve diğer vakumlu kapların camdan yapılmış iç yüzeyleri ile camdan sofra ve mutfak eşyaları imalatı (ampuller hariç)\"}, {\"nace_code\": \"23.13.02\", \"nace_label\": \"Tuvalet, banyo, büro, iç dekorasyon, vb. amaçlarla kullanılan cam ve kristal eşya imalatı (camdan biblo, boncuk vb. küçük cam eşyalar hariç)\"}, {\"nace_code\": \"23.41.01\", \"nace_label\": \"Seramik veya porselenden sofra takımları (tabak, bardak, fincan, vb.) ve diğer ev ve tuvalet eşyasının imalatı (çiniden olanlar ve sıhhi ürünler hariç)\"}, {\"nace_code\": \"23.41.03\", \"nace_label\": \"Çiniden sofra takımı, ev, tuvalet ve süs eşyası imalatı (çinicilik) (çini dekoru dahil)\"}, {\"nace_code\": \"23.41.04\", \"nace_label\": \"Topraktan güveç, çanak, çömlek, küp, vazo, vb. eşyalar ile topraktan heykel vb. süs ve dekoratif eşya imalatı (porselen ve çiniden olanlar ile malların ambalajlanması ve taşınması için olanlar hariç)\"}, {\"nace_code\": \"23.45.01\", \"nace_label\": \"Tarımsal amaçlı olanlar ile malların taşınması ya da ambalajlanması için kullanılan seramik ürünlerin imalatı\"}, {\"nace_code\": \"23.45.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış yapı işlerinde kullanılmayan diğer seramik eşyaların imalatı (dekoratif amaçlı olmayan seramik saksılar dahil)\"}, {\"nace_code\": \"46.15.90\", \"nace_label\": \"Diğer ev eşyalarının toptan satışı ile ilgili aracıların faaliyetleri\"}, {\"nace_code\": \"46.44.01\", \"nace_label\": \"Porselen ve cam eşyalar ile toprak ve seramikten yapılan ürünlerin toptan ticareti\"}, {\"nace_code\": \"46.49.07\", \"nace_label\": \"Çatal-bıçak takımı ve diğer kesici aletler ile metal sofra ve mutfak eşyalarının toptan ticareti (bakır mutfak eşyaları dahil)\"}, {\"nace_code\": \"47.55.01\", \"nace_label\": \"Elektriksiz ev aletleri, sofra ve mutfak eşyaları ile züccaciye ürünlerinin perakende ticareti (plastikten olanlar hariç)\"}, {\"nace_code\": \"47.55.05\", \"nace_label\": \"Plastikten sofra, mutfak, tuvalet ve diğer ev eşyalarının perakende ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"züccaciyeci\",\n    \"züccaciye imalatçısı\",\n    \"züccaciye ticareti\",\n    \"cam eşya imalatı\",\n    \"cam eşya satışı\",\n    \"züccaciye dükkanı\",\n    \"züccaciye toptancısı\",\n    \"züccaciye perakendecisi\",\n    \"hediyelik eşya imalatçısı\",\n    \"hediyelik eşya toptancısı\",\n    \"cam ve seramik ürünleri\",\n    \"züccaciyeciyim\",\n    \"zücaciyecisi\",\n    \"züccaciyeci\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "züccaciyeci",
+      "züccaciye imalatçısı",
+      "züccaciye ticareti",
+      "cam eşya imalatı",
+      "cam eşya satışı",
+      "züccaciye dükkanı",
+      "züccaciye toptancısı",
+      "züccaciye perakendecisi",
+      "hediyelik eşya imalatçısı",
+      "hediyelik eşya toptancısı",
+      "cam ve seramik ürünleri",
+      "züccaciyeciyim",
+      "zücaciyecisi",
+      "züccaciyeci"
+    ]
+  }
+}

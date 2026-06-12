@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"16607\", \"alias\": \"otoyıkamacı\", \"meslek_tanim\": \"Oto yıkama, yağlama\", \"nace_code\": \"95.31.03\", \"nace_label\": \"Motorlu kara taşıtlarının yağlama, yıkama, cilalama vb. faaliyetlerİ\"}, {\"id\": \"8488\", \"alias\": \"hediyelik eşya dükkanı\", \"meslek_tanim\": \"Basın, yayım, iletişim\", \"nace_code\": \"74.20.28\", \"nace_label\": \"Bağımsız foto muhabirlerinin faaliyetleri\"}, {\"id\": \"17740\", \"alias\": \"prefabrik evci\", \"meslek_tanim\": \"Prefabrik yapıların imalatı, kurulumu, ticareti\", \"nace_code\": \"41.00.05\", \"nace_label\": \"Prefabrik binalar için bileşenlerin alanda birleştirilmesi ve kurulması\"}, {\"id\": \"10833\", \"alias\": \"Kağıt imalatı\", \"meslek_tanim\": \"Kağıt, kağıt ürünleri imalatı, ticareti\", \"nace_code\": \"17.11.08\", \"nace_label\": \"Kağıt hamuru imalatı\"}, {\"id\": \"273\", \"alias\": \"alternatif terapi merkezi\", \"meslek_tanim\": \"Alternatif tedavi merkezi işletmeciliği\", \"nace_code\": \"86.95.00\", \"nace_label\": \"Fizyoterapi hizmetleri (tıp doktorları dışında yetkili kişilerce sağlanan fizyoterapi, ergoterapi vb. alanlardaki hizmetler) (hastane dışı)\"}, {\"id\": \"6151\", \"alias\": \"elektrik malzemeleri perakende\", \"meslek_tanim\": \"Elektrik malzemeleri imalatı, ticareti\", \"nace_code\": \"27.12.02\", \"nace_label\": \"Elektrik dağıtım ve kontrol cihazlarının aksam ve parçalarının imalatı\"}, {\"id\": \"16744\", \"alias\": \"oyuncak satışı\", \"meslek_tanim\": \"Oyuncak imalatı, ticareti\", \"nace_code\": \"32.40.09\", \"nace_label\": \"Oyun tahtaları (satranç, dama, dart, tavla tahtaları, okey istekası, go vb.) ve tabu, monopol vb. oyunların imalatı\"}, {\"id\": \"13226\", \"alias\": \"makina tamircisi\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"28.99.08\", \"nace_label\": \"Sicim ve halat makinelerinin imalatı\"}, {\"id\": \"10784\", \"alias\": \"kayıtlı medya imalatçısı\", \"meslek_tanim\": \"Kayıtlı medyaların imalatı, kiralanması, ticareti\", \"nace_code\": \"47.69.02\", \"nace_label\": \"Müzik ve video kayıtlarının perakende ticareti\"}, {\"id\": \"5945\", \"alias\": \"El dokuma\", \"meslek_tanim\": \"Dokumacılık\", \"nace_code\": \"13.20.22\", \"nace_label\": \"Suni ve sentetik filamentlerden ve devamsız elyaflardan dokuma kumaş imalatı\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\"results\": [{\"id\": \"16607\", \"verdict\": \"yes\"}, {\"id\": \"8488\", \"verdict\": \"no\"}, {\"id\": \"17740\", \"verdict\": \"yes\"}, {\"id\": \"10833\", \"verdict\": \"no\"}, {\"id\": \"273\", \"verdict\": \"unsure\"}, {\"id\": \"6151\", \"verdict\": \"no\"}, {\"id\": \"16744\", \"verdict\": \"yes\"}, {\"id\": \"13226\", \"verdict\": \"no\"}, {\"id\": \"10784\", \"verdict\": \"no\"}, {\"id\": \"5945\", \"verdict\": \"no\"}]}",
+  "parsed": {
+    "results": [
+      {
+        "id": "16607",
+        "verdict": "yes"
+      },
+      {
+        "id": "8488",
+        "verdict": "no"
+      },
+      {
+        "id": "17740",
+        "verdict": "yes"
+      },
+      {
+        "id": "10833",
+        "verdict": "no"
+      },
+      {
+        "id": "273",
+        "verdict": "unsure"
+      },
+      {
+        "id": "6151",
+        "verdict": "no"
+      },
+      {
+        "id": "16744",
+        "verdict": "yes"
+      },
+      {
+        "id": "13226",
+        "verdict": "no"
+      },
+      {
+        "id": "10784",
+        "verdict": "no"
+      },
+      {
+        "id": "5945",
+        "verdict": "no"
+      }
+    ]
+  }
+}

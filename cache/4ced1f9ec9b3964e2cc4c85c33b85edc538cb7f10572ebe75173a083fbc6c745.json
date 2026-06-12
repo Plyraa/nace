@@ -1,0 +1,37 @@
+{
+  "request": {
+    "task": "alias_generation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe KOBİ sektör ifadeleri için alias üreten dikkatli bir veri etiketleyicisin.\nSadece geçerli JSON döndür. Resmi NACE kodu üretme; yalnızca verilen meslek düğümü için halk dili ifadeleri üret."
+      },
+      {
+        "role": "user",
+        "content": "{\"meslek_kodu\": \"K.08\", \"meslek_tanim\": \"İnşaat malzemeleri ticareti\", \"sektor_tanim\": \"YAPI SANATLARI\", \"nace_examples\": [{\"nace_code\": \"46.13.01\", \"nace_label\": \"İnşaat malzemesi toptan satışı ile ilgili aracıların faaliyetleri (inşaat demiri ve kerestesi hariç)\"}, {\"nace_code\": \"46.83.01\", \"nace_label\": \"Çimento, alçı, harç, kireç, mozaik vb. inşaat malzemeleri toptan ticareti\"}, {\"nace_code\": \"46.83.05\", \"nace_label\": \"Banyo küvetleri, lavabolar, eviyeler, klozet kapakları, tuvalet taşı ve rezervuarları ile seramikten karo ve fayans vb. sıhhi ürünlerin toptan ticareti\"}, {\"nace_code\": \"46.83.08\", \"nace_label\": \"Taş, kum, çakıl, mıcır, kil, kaolin vb. inşaat malzemeleri toptan ticareti\"}, {\"nace_code\": \"46.83.10\", \"nace_label\": \"Tuğla, kiremit, briket, kaldırım taşı vb. inşaat malzemeleri toptan ticareti\"}, {\"nace_code\": \"46.83.15\", \"nace_label\": \"İnşaatlarda izolasyon amaçlı kullanılan malzemelerin toptan ticareti\"}, {\"nace_code\": \"46.83.17\", \"nace_label\": \"Alçı ve alçı esaslı bileşenlerden inşaat amaçlı ürünlerin toptan ticareti\"}, {\"nace_code\": \"46.83.18\", \"nace_label\": \"Duvar kağıdı, tekstil duvar kaplamaları, plastikten zemin, duvar veya tavan kaplamalarının toptan ticareti\"}, {\"nace_code\": \"46.83.19\", \"nace_label\": \"Plastikten inşaat amaçlı tabakalar, levhalar, filmler, folyolar, şeritler ve borular ile asfalt vb. malzemeden çatı kaplama ürünlerinin toptan ticareti\"}, {\"nace_code\": \"46.83.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer inşaat malzemesi toptan ticareti\"}, {\"nace_code\": \"47.52.01\", \"nace_label\": \"Çimento, alçı, harç, kireç, tuğla, kiremit, briket, taş, kum, çakıl vb. inşaat malzemeleri perakende ticareti\"}, {\"nace_code\": \"47.52.11\", \"nace_label\": \"Banyo küveti, lavabo, klozet kapağı, tuvalet taşı ve rezervuarı ile seramikten karo ve fayans vb. sıhhi ürünlerin perakende ticareti\"}], \"instruction\": \"Bu meslek düğümü için küçük işletme sahibinin yazabileceği 5-15 Türkçe alias üret. Dükkan adı gibi kısa adlar, meslek sözcükleri, birinci tekil şahıs ifadeleri ve yaygın yazım hataları olsun. Başka mesleklere kayan alias yazma.\", \"schema\": {\"aliases\": [\"string\"]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"aliases\": [\n    \"İnşaat malzemeleri\",\n    \"Yapı malzemeleri\",\n    \"İnşaat malzemecisi\",\n    \"Yapı malzemecisi\",\n    \"İnşaat market\",\n    \"Yapı market\",\n    \"Nalbur\",\n    \"İnşaat nalburiyesi\",\n    \"İnşaat malzemeleri satışı\",\n    \"İnşaat malzemeleri ticareti\",\n    \"Ben inşaat malzemeleri satıyorum\",\n    \"inşat malzemeleri\",\n    \"insaat malzemeleri\",\n    \"Yapı malzemeleri ticareti\"\n  ]\n}",
+  "parsed": {
+    "aliases": [
+      "İnşaat malzemeleri",
+      "Yapı malzemeleri",
+      "İnşaat malzemecisi",
+      "Yapı malzemecisi",
+      "İnşaat market",
+      "Yapı market",
+      "Nalbur",
+      "İnşaat nalburiyesi",
+      "İnşaat malzemeleri satışı",
+      "İnşaat malzemeleri ticareti",
+      "Ben inşaat malzemeleri satıyorum",
+      "inşat malzemeleri",
+      "insaat malzemeleri",
+      "Yapı malzemeleri ticareti"
+    ]
+  }
+}

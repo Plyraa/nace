@@ -1,0 +1,63 @@
+{
+  "request": {
+    "task": "alias_validation",
+    "model": "deepseek/deepseek-v4-flash",
+    "temperature": 0.2,
+    "max_tokens": 1200,
+    "messages": [
+      {
+        "role": "system",
+        "content": "Türkçe iş tanımı ile NACE faaliyet kodu uyumunu kontrol eden dikkatli bir değerlendiricisin.\nSadece geçerli JSON döndür. Verdict alanı yes/no/unsure değerlerinden biri olmalı."
+      },
+      {
+        "role": "user",
+        "content": "{\"instruction\": \"Her satır için şu soruyu cevapla: Türkçe konuşan biri kendine alias ifadesini diyorsa, bu işletme verilen NACE kodu altında makul biçimde çalışır mı? Cevap yes/no/unsure olsun. Dar ve dürüst davran.\", \"items\": [{\"id\": \"18\", \"alias\": \"ahşap işleri\", \"meslek_tanim\": \"Marangozluk\", \"nace_code\": \"16.24.90\", \"nace_label\": \"Diğer ahşap konteyner imalatı\"}, {\"id\": \"12684\", \"alias\": \"lastikçi\", \"meslek_tanim\": \"Oto lastik onarımı\", \"nace_code\": \"22.11.19\", \"nace_label\": \"Lastik tekerleklerinin yeniden işlenmesi ve sırt geçirilmesi (lastiğin kaplanması)\"}, {\"id\": \"19204\", \"alias\": \"spor mağazam\", \"meslek_tanim\": \"Spor malzemeleri imalatı, ticareti\", \"nace_code\": \"32.30.17\", \"nace_label\": \"Kar kayakları, kayak ayakkabıları, kayak botları, kayak batonları, buz patenleri ve tekerlekli patenler ile su kayağı araçları, sörf tahtaları, rüzgar sörfleri vb. ekipmanlar ile bunların parçalarının imalatı (kaykaylar dahil)\"}, {\"id\": \"754\", \"alias\": \"ayakkabı malzemeleri\", \"meslek_tanim\": \"Ayakkabıcılık\", \"nace_code\": \"15.20.07\", \"nace_label\": \"Ayakkabı ve terliklerin plastik parçalarının imalatı\"}, {\"id\": \"4331\", \"alias\": \"demir çelik işleri yapıyorum\", \"meslek_tanim\": \"Demir, çelik eşya imalatı, ticareti\", \"nace_code\": \"47.52.13\", \"nace_label\": \"Demirden/çelikten bar ve çubukların, profillerin, tüp ve boruların perakende ticareti\"}, {\"id\": \"14185\", \"alias\": \"makineci\", \"meslek_tanim\": \"Makine kurulumu, onarımı\", \"nace_code\": \"33.12.11\", \"nace_label\": \"Metal işleme makinelerinin ve takım tezgahlarının onarım ve bakımı (CNC olanlar dahil)\"}, {\"id\": \"12031\", \"alias\": \"kurs açtım\", \"meslek_tanim\": \"Kurs işletmeciliği\", \"nace_code\": \"85.59.09\", \"nace_label\": \"Dil ve konuşma becerileri eğitimi veren kursların faaliyetleri (temel, orta ve yükseköğretim düzeyinde verilen eğitim hariç)\"}, {\"id\": \"9200\", \"alias\": \"İnşaat malzemecisi\", \"meslek_tanim\": \"İnşaat malzemeleri ticareti\", \"nace_code\": \"47.52.21\", \"nace_label\": \"Plastikten inşaat amaçlı levhalar, folyolar, şeritler ve borular ile asfalt vb. malzemeden çatı kaplama ürünlerinin perakende ticareti (inşaat için naylon örtü, shingle, mantolama amaçlı strafor vb. dahil)\"}, {\"id\": \"2173\", \"alias\": \"besicilik yaparım\", \"meslek_tanim\": \"Besicilik, celeplik\", \"nace_code\": \"46.23.01\", \"nace_label\": \"Canlı hayvanların toptan ticareti (kümes hayvanları hariç)\"}, {\"id\": \"9296\", \"alias\": \"İnşaat malzemeleri\", \"meslek_tanim\": \"İnşaat malzemeleri ticareti\", \"nace_code\": \"46.83.99\", \"nace_label\": \"Başka yerde sınıflandırılmamış diğer inşaat malzemesi toptan ticareti\"}], \"schema\": {\"results\": [{\"id\": \"string\", \"verdict\": \"yes|no|unsure\"}]}}"
+      }
+    ]
+  },
+  "raw_response": "{\n  \"results\": [\n    {\n      \"id\": \"18\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"12684\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"19204\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"754\",\n      \"verdict\": \"yes\"\n    },\n    {\n      \"id\": \"4331\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"14185\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"12031\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"9200\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"2173\",\n      \"verdict\": \"no\"\n    },\n    {\n      \"id\": \"9296\",\n      \"verdict\": \"no\"\n    }\n  ]\n}",
+  "parsed": {
+    "results": [
+      {
+        "id": "18",
+        "verdict": "yes"
+      },
+      {
+        "id": "12684",
+        "verdict": "no"
+      },
+      {
+        "id": "19204",
+        "verdict": "no"
+      },
+      {
+        "id": "754",
+        "verdict": "yes"
+      },
+      {
+        "id": "4331",
+        "verdict": "no"
+      },
+      {
+        "id": "14185",
+        "verdict": "no"
+      },
+      {
+        "id": "12031",
+        "verdict": "no"
+      },
+      {
+        "id": "9200",
+        "verdict": "no"
+      },
+      {
+        "id": "2173",
+        "verdict": "no"
+      },
+      {
+        "id": "9296",
+        "verdict": "no"
+      }
+    ]
+  }
+}
